@@ -1,0 +1,7 @@
+// @forward here to forward a variable, partial or mixin
+
+@forward "./_variables/colors";
+@forward "./_variables/fonts";
+
+//@use "./_variables/_colors.scss" as *;
+// ^ to import it in your file

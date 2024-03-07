@@ -1,0 +1,18 @@
+@use "../SASS/" as *;
+
+body {
+  div#root {
+    h1 {
+      font-family: $logo-font;
+      color: $main;
+    }
+    h2 {
+      font-family: $serif-font;
+      color: $button-dark;
+    }
+    p {
+      font-family: $sans-font;
+      color: $background;
+    }
+  }
+}
