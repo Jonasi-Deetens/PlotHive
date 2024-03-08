@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
-
 const Navbar = () => {
   return (
     <nav>
+        <Link to="/">
+            <img src="src/assets/Logo/logo-navbar.svg" alt="navbar-logo-PlotHub"/>
+        </Link>
       <ul>
         <li><Link to="/store">Store</Link></li>
         <li><Link to="/explore">Explore</Link></li>
