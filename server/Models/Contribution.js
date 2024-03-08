@@ -15,9 +15,10 @@ const contributionSchema = new mongoose.Schema({
         required: true,
         ref: 'User'
     },
-    date_added: {
+    created_at: {
         type: Date,
-        required: true
+        required: true,
+        default: Date.now()
     },
     upvote_count: {
         type: Number,
