@@ -1,4 +1,5 @@
 import "./assets/styles/app.css";
+import { Write } from "./pages/Write";
 function App() {
   return (
     <>
