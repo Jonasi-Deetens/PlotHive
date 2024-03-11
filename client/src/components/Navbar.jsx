@@ -3,7 +3,7 @@ import "../assets/styles/components/Navbar/navbar.css"
 const Navbar = () => {
   return (
     <nav>
-        <Link to="/Home">
+        <Link to="/">
             <img src="src/assets/Logo/logo-navbar.svg" alt="navbar-logo-PlotHub"/>
         </Link>
       <ul>
