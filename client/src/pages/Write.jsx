@@ -1,5 +1,6 @@
 import React from "react";
 import Tinymce from "../components/Tinymce";
+import Contribution from "../components/Contribution";
 
 export const Write = () => {
   return (
@@ -8,7 +9,7 @@ export const Write = () => {
         “Jonasi stept out of the elevator with blood all over his face, ...”
       </h1>
       <div className="write-book">
-        <div className="write-added-contributions">
+        <div className="write-book-contributions">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae unde
             laudantium nisi velit officiis consectetur facere tempore hic quasi,
@@ -24,7 +25,9 @@ export const Write = () => {
           </p>
           <Tinymce />
         </div>
-        <div className="write-current-contributions"></div>
+        <div className="write-current-contributions">
+          <Contribution />
+        </div>
       </div>
     </div>
   );

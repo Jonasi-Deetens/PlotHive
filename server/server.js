@@ -1,8 +1,9 @@
 import express from "express";
-import path from 'path';
-import dotenv from 'dotenv';
+import path from "path";
+import dotenv from "dotenv";
 import { createUser } from "./Controllers/UserController.js";
 import connectToDatabase from "./Database/database.js";
+import contributionRoutes from "./routes/contributionRoutes.js";
 
 const app = express();
 dotenv.config();
@@ -12,13 +13,14 @@ const port = process.env.PORT || 4000;
 
 connectToDatabase();
 
-app.use(express.static('./public'))
+app.use(express.static("./public"));
+app.use("/api", contributionRoutes);
 
 app.get("/", (req, res) => {
-    res.send('<h1>Vite + React</h1>')
-    createUser();
-})
+  res.send("<h1>Vite + React</h1>");
+  createUser();
+});
 
 app.listen(port, () => {
-    console.log('Welcome ' + host + ', server is listening on port: ' + port );
-})
+  console.log("Welcome " + host + ", server is listening on port: " + port);
+});
