@@ -1,5 +1,9 @@
-import React from "react";
+import React from 'react'
 
-export const Write = () => {
-  return <div>Write a book!</div>;
-};
+const Write = () => {
+  return (
+    <div>Write</div>
+  )
+}
+
+export default Write
