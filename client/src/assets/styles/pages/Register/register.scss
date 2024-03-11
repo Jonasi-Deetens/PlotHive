@@ -47,6 +47,11 @@ body {
                 width: 100%;
                 color: $fontcolor;
               }
+              input:focus {
+                outline: none;
+                border-color: transparent;
+                border-bottom: 2px solid $main;
+              }
             }
             hr {
               width: 100%;

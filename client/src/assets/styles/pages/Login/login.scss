@@ -48,7 +48,9 @@ body {
                 color: $fontcolor;
               }
               input:focus {
-                border: none;
+                outline: none;
+                border-color: transparent;
+                border-bottom: 2px solid $main;
               }
             }
             hr {

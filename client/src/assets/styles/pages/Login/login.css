@@ -9,7 +9,7 @@ body div#root main.login-page div.login-container {
   box-sizing: border-box;
   color: #ecf0f3;
   font-family: "Open Sans", sans-serif;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 body div#root main.login-page div.login-container h2.login-title {
   color: #ecf0f3;
@@ -49,7 +49,9 @@ body div#root main.login-page div.login-container form div div input {
   color: #ecf0f3;
 }
 body div#root main.login-page div.login-container form div div input:focus {
-  border: none;
+  outline: none;
+  border-color: transparent;
+  border-bottom: 2px solid #ffbd59;
 }
 body div#root main.login-page div.login-container form div hr {
   width: 100%;
