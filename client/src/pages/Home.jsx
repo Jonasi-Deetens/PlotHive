@@ -13,20 +13,37 @@ const Home = () => {
     </div>
     <div className="card-container">
   <div className="card">
-    <i className="fas fa-icon"></i>
-    <p>Card 1</p>
+  <img src="src/assets/Logo/logo-navbar.svg" alt="icon1" />
+    <p>Write stories as a community</p>
   </div>
   <div className="card">
-    <i className="fas fa-icon"></i>
-    <p>Card 2</p>
+  <img src="src/assets/Logo/logo-navbar.svg" alt="icon2" />
+    <p>Upvote the part that would fit the story best</p>
   </div>
   <div className="card">
-    <i className="fas fa-icon"></i>
-    <p>Card 3</p>
+  <img src="src/assets/Logo/logo-navbar.svg" alt="icon3" />
+    <p>Earn by contributing</p>
   </div>
   <div className="card">
-    <i className="fas fa-icon"></i>
-    <p>Card 4</p>
+    <img src="src/assets/Logo/logo-navbar.svg" alt="icon4" />
+    <p>Earn badges</p>
+  </div>
+</div>
+<h1>Popular right now</h1>
+<div className="popular-section">
+  <div className='popular-cards'>
+    <div className="popular-card">
+      <img src="src/assets/Logo/logo-navbar.svg" alt="icon1" />
+      <p>Popular story 1</p>
+    </div>
+    <div className="popular-card">
+      <img src="src/assets/Logo/logo-navbar.svg" alt="icon2" />
+      <p>Popular story 2</p>
+    </div>
+    <div className="popular-card">
+      <img src="src/assets/Logo/logo-navbar.svg" alt="icon3" />
+      <p>Popular story 3</p>
+    </div>
   </div>
 </div>
     </main>
