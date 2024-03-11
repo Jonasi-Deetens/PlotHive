@@ -16,6 +16,7 @@ main.home-page button.home-header-button {
   text-decoration: none;
   margin: 20px auto 0;
   padding: 10px 30px;
+  margin-bottom: 5vh;
   border: none;
   border-radius: 50px;
   font-size: 24px;
@@ -30,5 +31,26 @@ main.home-page a {
 main.home-page button:hover,
 main.home-page button:focus {
   background-color: #ffbd59;
+}
+main.home-page .card-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+main.home-page .card-container .card {
+  width: calc(20% - 20px);
+  text-align: center;
+  padding: 20px;
+  background-color: #414042;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 25vh;
+}
+main.home-page .card-container .card i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+main.home-page .card-container .card p {
+  font-size: 14px;
+  color: #ecf0f3;
 }/*# sourceMappingURL=home.css.map */
-

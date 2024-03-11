@@ -17,6 +17,7 @@ main.home-page{
         text-decoration: none;
         margin: 20px auto 0;
         padding: 10px 30px;
+        margin-bottom: 5vh;
         border: none;
         border-radius: 50px;
         font-size: 24px;
@@ -31,5 +32,33 @@ main.home-page{
       button:hover,
       button:focus {
         background-color: $main;
+        
       }
+      .card-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        
+        .card {
+          width: calc(20% - 20px); // Adjust the width as needed
+          text-align: center;
+          padding: 20px;
+          background-color: $background-dark; // Card background color
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          height: 25vh;
+          
+          i {
+            font-size: 24px; // Adjust the icon size as needed
+            margin-bottom: 10px;
+          }
+          
+          p {
+            font-size: 14px; // Adjust the text size as needed
+            color: $fontcolor;
+          }
+        }
+      }
+      
+      
     }
