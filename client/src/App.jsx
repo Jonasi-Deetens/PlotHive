@@ -10,6 +10,7 @@ function App() {
       <br />
       <h2>Refresher how to export a variable or mixin found @:</h2>
       <p>/client/src/assets/_index.scss</p>
+      <Write />
     </>
   );
 }

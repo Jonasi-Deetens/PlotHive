@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
 export default function Tinymce() {
@@ -13,9 +13,9 @@ export default function Tinymce() {
       <Editor
         apiKey="uwgk832t4gctz0whow29vutbfw5cjft0la1kkfbaw78xqfwe"
         onInit={(evt, editor) => (editorRef.current = editor)}
-        initialValue="<p>This is the initial content of the editor.</p>"
+        initialValue="<p>Start writing your story here!</p>"
         init={{
-          height: 500,
+          height: 400,
           menubar: false,
           plugins: [
             "advlist",
@@ -46,7 +46,7 @@ export default function Tinymce() {
             "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
         }}
       />
-      <button onClick={log}>Log editor content</button>
+      <button onClick={log}>Submit</button>
     </>
   );
 }
