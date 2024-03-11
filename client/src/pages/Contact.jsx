@@ -6,6 +6,7 @@ import facebook from "../assets/svgs/facebook.png";
 import twitter from "../assets/svgs/twitter.png";
 import instagram from "../assets/svgs/instagram.png";
 import github from "../assets/svgs/github.png";
+import textUs from "../assets/svgs/text-us.png";
 
 const Contact = () => {
   return (
@@ -81,6 +82,20 @@ const Contact = () => {
                   placeholder="Type your E-mail"
                   required
                 />
+              </div>
+              <hr />
+            </div>
+            <div className="message">
+              <label htmlFor="message">Message</label>
+              <div className="message-input">
+                <img src={textUs} alt="message-logo" />
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="5"
+                  placeholder="Write us!"
+                  required
+                ></textarea>
               </div>
               <hr />
             </div>

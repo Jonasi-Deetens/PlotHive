@@ -844,7 +844,7 @@
 body div#root main.contact-page div.contact-wrapper {
   display: flex;
   margin: 100px auto 100px auto;
-  max-width: 700px;
+  max-width: 1000px;
   background-color: #414042;
   border-radius: 4 0px;
   box-sizing: border-box;
@@ -948,6 +948,28 @@ body div#root main.contact-page div.contact-wrapper div.contact-container form d
   margin-top: 10px;
   margin-bottom: 20px;
 }
+body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea {
+  width: 100%;
+  border: none;
+  background-color: #414042;
+  resize: vertical;
+  font-size: 20px;
+  color: #ecf0f3;
+  font-family: "Open Sans", sans-serif;
+}
+body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea:focus {
+  outline: none;
+  border-color: transparent;
+  border-bottom: 2px solid #ffbd59;
+}
+body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea::-moz-placeholder {
+  font-size: 20px;
+  font-style: italic;
+}
+body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea::placeholder {
+  font-size: 20px;
+  font-style: italic;
+}
 body div#root main.contact-page div.contact-wrapper div.contact-container form button.contact-btn {
   margin: 20px auto 0;
   padding: 10px 30px;
@@ -970,4 +992,49 @@ body div#root main.contact-page div.contact-wrapper div.contact-container form d
   margin: -15px auto 0;
   width: 50px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+  body div#root main.register-page div.register-container {
+    border-radius: 25px;
+    width: 95%;
+  }
+  body div#root main.register-page div.register-container h2.register-title {
+    font-size: 30px;
+  }
+  body div#root main.register-page div.register-container div.errors {
+    width: 90%;
+  }
+  body div#root main.register-page div.register-container div.errors p.error-message {
+    font-size: 18px;
+  }
+  body div#root main.register-page div.register-container form {
+    width: 90%;
+  }
+  body div#root main.register-page div.register-container form div label {
+    font-size: 18px;
+  }
+  body div#root main.register-page div.register-container form div div img {
+    height: 20px;
+  }
+  body div#root main.register-page div.register-container form div div input {
+    font-size: 18px;
+  }
+  body div#root main.register-page div.register-container form div div input::-moz-placeholder {
+    font-style: italic;
+    font-size: 16px;
+  }
+  body div#root main.register-page div.register-container form div div input::placeholder {
+    font-style: italic;
+    font-size: 16px;
+  }
+  body div#root main.register-page div.register-container form a {
+    font-size: 12px;
+  }
+  body div#root main.register-page div.register-container form button.sign-up-btn {
+    font-size: 16px;
+  }
+  body div#root main.register-page div.register-container form div.question p {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=contact.css.map */
