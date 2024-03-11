@@ -81,6 +81,7 @@ body div#root main.register-page div.register-container form button.sign-up-btn 
   border-radius: 50px;
   font-size: 24px;
   cursor: pointer;
+  background-color: #ecf0f3;
 }
 body div#root main.register-page div.register-container form button:hover,
 body div#root main.register-page div.register-container form button:focus {
