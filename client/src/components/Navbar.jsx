@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import "../assets/styles/components/Navbar/navbar.css"
 const Navbar = () => {
   return (
-    <nav>
+    <nav className='main-navigation'>
         <Link to="/">
             <img src="src/assets/Logo/logo-navbar.svg" alt="navbar-logo-PlotHub"/>
         </Link>
