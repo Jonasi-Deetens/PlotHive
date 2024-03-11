@@ -8,6 +8,10 @@ const Register = () => {
     <main className="register-page">
       <div className="register-container">
         <h2 className="register-title">Register</h2>
+        <div className="errors">
+          <p className="error-message">Password deosn&apos;t match</p>
+          <p className="error-message">E-mail field can&apos;t be empty</p>
+        </div>
         <form action="">
           <div className="email">
             <label htmlFor="email">E-mail</label>

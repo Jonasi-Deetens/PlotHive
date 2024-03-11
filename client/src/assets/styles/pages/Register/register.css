@@ -19,6 +19,14 @@ body div#root main.register-page div.register-container h2.register-title {
   text-align: center;
   margin: 0 auto 50px;
 }
+body div#root main.register-page div.register-container div.errors {
+  width: 75%;
+  margin: 0 auto;
+}
+body div#root main.register-page div.register-container div.errors p.error-message {
+  color: red;
+  font-size: 25px;
+}
 body div#root main.register-page div.register-container form {
   width: 75%;
   margin: 0 auto;

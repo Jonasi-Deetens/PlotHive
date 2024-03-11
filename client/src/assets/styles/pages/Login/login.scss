@@ -21,6 +21,14 @@ body {
           text-align: center;
           margin: 0 auto 50px;
         }
+        div.errors {
+          width: 75%;
+          margin: 0 auto;
+          p.error-message {
+            color: red;
+            font-size: 25px;
+          }
+        }
         form {
           width: 75%;
           margin: 0 auto;
