@@ -10,6 +10,10 @@ const promptSchema = mongoose.Schema({
     content: {
         type: String,
         required: true
+    },
+    created_at: {
+      type: Date,
+      default: Date.now
     }
 });
 

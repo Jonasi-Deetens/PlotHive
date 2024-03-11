@@ -13,7 +13,6 @@ import Register from "./pages/Register"
 import Store from "./pages/Store"
 import Write from "./pages/Write"
 
-
 function App() {
   return (
     <>
