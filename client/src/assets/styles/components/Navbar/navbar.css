@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
-nav.main-navigation {
+nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,29 +10,29 @@ nav.main-navigation {
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-nav.main-navigation img {
+nav img {
   width: 150px;
   height: auto;
   margin-right: auto;
 }
-nav.main-navigation ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
-nav.main-navigation ul li {
+nav ul li {
   display: inline;
   font-weight: bold;
   padding: 0 10px;
 }
-nav.main-navigation ul li a {
+nav ul li a {
   color: #ecf0f3;
   text-decoration: none;
   padding: 15px;
   position: relative;
 }
-nav.main-navigation ul li a::after {
+nav ul li a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -43,10 +43,10 @@ nav.main-navigation ul li a::after {
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
-nav.main-navigation ul li a:hover {
+nav ul li a:hover {
   color: #ffbd59;
 }
-nav.main-navigation ul li a:hover::after {
+nav ul li a:hover::after {
   transform: scaleX(1);
   background-color: #ffbd59;
 }/*# sourceMappingURL=navbar.css.map */

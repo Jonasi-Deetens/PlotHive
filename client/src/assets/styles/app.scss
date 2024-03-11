@@ -1,7 +1,20 @@
 @use "../SASS/" as *;
 
 body {
+  background:
+    radial-gradient(circle farthest-side at 0% 50%, #545454 23.5%, #0000 0) 31.5px 45px,
+    radial-gradient(circle farthest-side at 0% 50%, #505050 24%, #0000 0) 28.5px 45px,
+    linear-gradient(#545454 14%, #0000 0, #0000 85%, #545454 0) 0 0,
+    linear-gradient(150deg, #545454 24%, #505050 0, #505050 26%, #0000 0, #0000 74%, #505050 0, #505050 76%, #545454 0)
+      0 0,
+    linear-gradient(30deg, #545454 24%, #505050 0, #505050 26%, #0000 0, #0000 74%, #505050 0, #505050 76%, #545454 0) 0
+      0,
+    linear-gradient(90deg, #505050 2%, #545454 0, #545454 98%, #505050 0%) 0 0 #545454;
+  background-size: 60px 90px;
+  background-color: #545454;
+
   background-color: $background;
+
   margin: 0;
   div#root {
     h1 {
@@ -18,4 +31,3 @@ body {
     }
   }
 }
-
