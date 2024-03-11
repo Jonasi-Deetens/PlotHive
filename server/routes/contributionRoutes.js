@@ -8,6 +8,7 @@ const router = express.Router();
 // Route to fetch all contributions
 router.get("/contributions", async (req, res) => {
   try {
+    console.log("Test contribution route");
     // Fetch all contributions from the database
     const contributions = await ContributionModel.find();
 

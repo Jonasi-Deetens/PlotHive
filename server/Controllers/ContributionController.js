@@ -2,6 +2,7 @@ const { default: ContributionModel } = require("../Models/Contribution");
 
 class ContributionController {
   static async getAllContributions(req, res) {
+    console.log("Test getAllContributions");
     try {
       const contributions = await ContributionModel.find();
       res.status(200).json(contributions);

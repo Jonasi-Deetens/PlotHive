@@ -6,7 +6,9 @@ const Contribution = () => {
   useEffect(() => {
     const fetchContributions = async () => {
       try {
+        console.log("test trying fetch");
         const response = await fetch("/api/contributions");
+        console.log(response);
         if (!response.ok) {
           throw new Error("Failed to fetch contributions");
         }
