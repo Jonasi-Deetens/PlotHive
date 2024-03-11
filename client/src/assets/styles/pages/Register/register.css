@@ -9,6 +9,7 @@ body div#root main.register-page div.register-container {
   box-sizing: border-box;
   color: #ecf0f3;
   font-family: "Open Sans", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 body div#root main.register-page div.register-container h2.register-title {
   color: #ecf0f3;

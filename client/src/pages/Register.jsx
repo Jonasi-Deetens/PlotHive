@@ -1,4 +1,4 @@
-import "../assets/styles/Register/register.css";
+import "../assets/styles/pages/Register/register.css";
 import emailLogo from "../assets/svgs/email.png";
 import userLogo from "../assets/svgs/user.png";
 import userPassword from "../assets/svgs/password.png";
@@ -18,6 +18,7 @@ const Register = () => {
                 name="email"
                 id="email"
                 placeholder="Register with your e-mail"
+                required
               />
             </div>
             <hr />
@@ -27,10 +28,11 @@ const Register = () => {
             <div className="username-input">
               <img src={userLogo} alt="username-logo" />
               <input
-                type="username"
+                type="text"
                 name="username"
                 id="username"
                 placeholder="Type your username"
+                required
               />
             </div>
             <hr />
@@ -44,6 +46,7 @@ const Register = () => {
                 name="password"
                 id="password"
                 placeholder="Type your password"
+                required
               />
             </div>
             <hr />
@@ -57,6 +60,7 @@ const Register = () => {
                 name="repeat-password"
                 id="repeat-password"
                 placeholder="Repeat your password"
+                required
               />
             </div>
             <hr />

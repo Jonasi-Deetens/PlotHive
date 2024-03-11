@@ -1,9 +1,9 @@
-@use "../../SASS/" as *;
+@use "../../../SASS/" as *;
 
 body {
   div#root {
-    main.register-page {
-      div.register-container {
+    main.login-page {
+      div.login-container {
         margin: 100px auto 100px auto;
         padding: 50px 20px;
         max-width: 700px;
@@ -12,7 +12,8 @@ body {
         box-sizing: border-box;
         color: $fontcolor;
         font-family: $sans-font;
-        h2.register-title {
+        @include shadow;
+        h2.login-title {
           color: $fontcolor;
           font-family: $logo-font;
           font-size: 42px;
@@ -46,6 +47,9 @@ body {
                 width: 100%;
                 color: $fontcolor;
               }
+              input:focus {
+                border: none;
+              }
             }
             hr {
               width: 100%;
@@ -53,7 +57,12 @@ body {
               margin-bottom: 20px;
             }
           }
-          button.sign-up-btn {
+          a.forgot-password {
+            color: $main;
+            text-align: end;
+            text-decoration: none;
+          }
+          button.login-btn {
             margin: 20px auto 0;
             padding: 10px 30px;
             border: none;
