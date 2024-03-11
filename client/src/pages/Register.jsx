@@ -1,4 +1,4 @@
-import "../assets/styles/Register/register.css";
+import "../assets/styles/pages/Register/register.css";
 import emailLogo from "../assets/svgs/email.png";
 import userLogo from "../assets/svgs/user.png";
 import userPassword from "../assets/svgs/password.png";
@@ -8,6 +8,10 @@ const Register = () => {
     <main className="register-page">
       <div className="register-container">
         <h2 className="register-title">Register</h2>
+        <div className="errors">
+          <p className="error-message">Password deosn&apos;t match</p>
+          <p className="error-message">E-mail field can&apos;t be empty</p>
+        </div>
         <form action="">
           <div className="email">
             <label htmlFor="email">E-mail</label>
@@ -18,6 +22,7 @@ const Register = () => {
                 name="email"
                 id="email"
                 placeholder="Register with your e-mail"
+                required
               />
             </div>
             <hr />
@@ -27,10 +32,11 @@ const Register = () => {
             <div className="username-input">
               <img src={userLogo} alt="username-logo" />
               <input
-                type="username"
+                type="text"
                 name="username"
                 id="username"
                 placeholder="Type your username"
+                required
               />
             </div>
             <hr />
@@ -44,6 +50,7 @@ const Register = () => {
                 name="password"
                 id="password"
                 placeholder="Type your password"
+                required
               />
             </div>
             <hr />
@@ -57,6 +64,7 @@ const Register = () => {
                 name="repeat-password"
                 id="repeat-password"
                 placeholder="Repeat your password"
+                required
               />
             </div>
             <hr />

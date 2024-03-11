@@ -2,6 +2,7 @@
 
 @forward "./_variables/colors";
 @forward "./_variables/fonts";
+@forward "./_mixins/mixin";
 
 //@use "./_variables/_colors.scss" as *;
 // ^ to import it in your file
