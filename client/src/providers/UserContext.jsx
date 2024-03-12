@@ -65,10 +65,9 @@ const UserProvider = ({ children }) => {
         const errorMessage = await response.json();
         throw new Error(errorMessage.message);
       } else {
-        setUser({
-          username: userData.username,
-          email: userData.email
-        });
+        const data = await response.json();
+        setUser(data.user);
+        localStorage.setItem('token', data.token);
       }
     } catch (error) {
       throw new Error(error.message);

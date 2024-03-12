@@ -19,7 +19,7 @@ const Login = () => {
     }
     try {
       await loginUser(userData);
-      navigate('/');
+      navigate('/dashboard');
     } catch (error) {
       setLoginError(error.message);
     }

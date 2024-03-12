@@ -27,7 +27,8 @@ router.post('/', validateRegistrationData, async (req, res) => {
 
         const savedUser = await newUser.save();
         console.log('User saved successfully:', savedUser);
-        res.status(201).json(savedUser);
+        const token = jwt.sign({userId: savedUser._id}, process.env.JWT_KEY, {expiresIn: '1h'});
+        return res.status(201).json({user: savedUser, token});
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
