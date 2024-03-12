@@ -1,6 +1,8 @@
 @use "../SASS/" as *;
 
 body {
+  background-color: $background;
+  margin: 0;
   div#root {
     h1 {
       font-family: $logo-font;
@@ -12,7 +14,8 @@ body {
     }
     p {
       font-family: $sans-font;
-      color: $background;
+      color: $fontcolor;
     }
   }
 }
+

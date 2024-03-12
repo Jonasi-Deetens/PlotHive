@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
-
+import "../assets/styles/components/Navbar/navbar.css"
 const Navbar = () => {
   return (
-    <nav>
+    <nav className='main-navigation'>
+        <Link to="/">
+            <img src="src/assets/Logo/logo-navbar.svg" alt="navbar-logo-PlotHub"/>
+        </Link>
       <ul>
-        <li><Link to="/store">Store</Link></li>
-        <li><Link to="/explore">Explore</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/Store">Store</Link></li>
+        <li><Link to="/Explore">Explore</Link></li>
+        <li><Link to="/Contact">Contact</Link></li>
+        <li><Link to="/AboutUs">About</Link></li>
+        <li><Link to="/Login">Login</Link></li>
       </ul>
     </nav>
   );
