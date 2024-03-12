@@ -1,67 +1,62 @@
 @use "../../../SASS/" as *;
 
+body {
+  background-color: $background;
+}
+
 main.home-page {
-<<<<<<< HEAD
-    margin-bottom: 20px;
-    .home-page-navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        position: relative; // Add position relative to contain absolutely positioned logo
-      
-        img {
-          width: 60%;
-          position: absolute; // Position the logo absolutely
-          top: 0; // Align to the top
-          left: 0; // Align to the left
-        }
-      
-        .home-page-login {
-          background-color: $fontcolor;
-          margin-left: auto;
-          margin-top: 10px;
-          padding: 10px 30px;
-          margin-bottom: 10vh;
-          border: none;
-          border-radius: 50px;
-          font-size: 24px;
-          cursor: pointer;
-          size: 2vw;
-          font-size: 2vw;
-          transition: all 0.3s ease;
-          }
-        button:hover,
-          button:focus {
-              background-color: $main;
-          }
-        
-      }
-      
-      
-      
-    h1.main-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        height: 60vh;
-        font-size: 5vw;
-=======
   margin-bottom: 20px;
-  h1 {
+  background-color: $background;
+
+  .home-page-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    height: fit-content;
+
+    img {
+      width: 60%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .home-page-login {
+      background-color: $fontcolor;
+      margin-left: auto;
+      margin-top: 10px;
+      padding: 10px 30px;
+      margin-bottom: 10vh;
+      border: none;
+      border-radius: 50px;
+      font-size: 2vw;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover,
+    button:focus {
+      background-color: $main;
+    }
+  }
+
+  h1.main-header {
+    color: $fontcolor;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 60vh;
+    min-height: 60vh;
     font-size: 5vw;
   }
+
   div {
     display: flex;
   }
+
   button.home-header-button {
     text-decoration: none;
     margin: 20px auto 0;
@@ -69,47 +64,105 @@ main.home-page {
     margin-bottom: 10vh;
     border: none;
     border-radius: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    size: 2vw;
     font-size: 2vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
+
   a {
     text-decoration: none;
     color: $background-dark;
   }
+
   button:hover,
   button:focus {
-    background-color: $main;
+    transform: scale(1.05);
+    background-color: $button-hover;
   }
-  .card-container {
-    display: flex;
+}
+
+// Badges section
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card {
+  width: calc(20% - 20px);
+  text-align: center;
+  padding: 20px;
+  background-color: $background-dark;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  transition: all 0.3s ease;
+
+  img {
+    width: 200px;
+    height: auto;
+    margin-bottom: auto;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: bold;
+    color: $fontcolor;
+    margin-bottom: 50px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: $button-hover; // Lighten background color
+  }
+  &:hover p {
+    color: $background-dark;
+  }
+}
+
+// Popular books section
+h1.popular-header {
+  width: 100%;
+  text-align: center;
+  font-size: 5vw;
+  color: $fontcolor;
+}
+
+.popular-section {
+  display: flex;
+
+  .popular-cards {
+    width: 100%;
     justify-content: space-around;
     padding: 10px;
     margin-top: 20px;
     padding-bottom: 20px;
-    height: 30vh;
   }
 
-  .card {
-    width: calc(20% - 20px);
+  .popular-card {
+    width: calc(33% - 20px);
     text-align: center;
-    padding: 20px;
-    background-color: $background-dark;
+    margin: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 50vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 20px;
+    transition: all 0.3s ease;
 
     img {
       width: 200px;
       height: auto;
       margin-bottom: auto;
->>>>>>> main
     }
 
     p {
@@ -118,142 +171,23 @@ main.home-page {
       color: $fontcolor;
       margin-bottom: 50px;
     }
-<<<<<<< HEAD
-    button.home-header-button {
-        text-decoration: none;
-        margin: 20px auto 0;
-        padding: 10px 30px;
-        margin-bottom: 10vh;
-        border: none;
-        border-radius: 50px;
-        font-size: 24px;
-        cursor: pointer;
-        size: 2vw;
-        font-size: 2vw;
-        transition: all 0.3s ease;
+    &:hover {
+      transform: scale(1.05);
     }
-    a {
-        text-decoration: none;
-        color: $background-dark;
+    &:hover p {
+      color: $button-hover;
     }
-    button:hover,
-    button:focus {
-        transform: scale(1.05);
-        background-color: $button-hover;
-    }
-
-    // Badges section
-    .card-container {
-        display: flex;
-        justify-content: space-around;
-        padding: 10px;
-        margin-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .card {
-        width: calc(20% - 20px);
-        text-align: center;
-        padding: 20px;
-        background-color: $background-dark;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        height: 40vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: 20px;
-        transition: all 0.3s ease;
-
-        img {
-            width: 200px;
-            height: auto;
-            margin-bottom: auto;
-        }
-
-        p {
-            font-size: 18px;
-            font-weight: bold;
-            color: $fontcolor;
-            margin-bottom: 50px;
-        }
-
-        &:hover {
-            transform: scale(1.05); // Increase size slightly on hover
-            background-color: $button-hover; // Lighten background color
-        }
-        &:hover p {
-            color: $background-dark; // Change font color on hover
-        }
-    }
-
-    // Popular books section
-    h1.popular-header {
-        width: 100%;
-        text-align: center;
-        font-size: 5vw;
-        color: $fontcolor;
-    }
-
-    .popular-section {
-        display: flex;
-
-        .popular-cards {
-            width: 100%;
-            justify-content: space-around;
-            padding: 10px;
-            margin-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        .popular-card {
-            width: calc(33% - 20px);
-            text-align: center;
-            margin: 20px;
-            border-radius: 10px;
-            height: 40vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            padding-bottom: 20px;
-
-            img {
-                width: 200px;
-                height: auto;
-                margin-bottom: auto;
-            }
-
-            p {
-                font-size: 18px;
-                font-weight: bold;
-                color: $fontcolor;
-                margin-bottom: 50px;
-            }
-        }
-    }
-    h2.section-three {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin-left: 20%;
-        margin-right: 20%;
-        height: 20vh;
-        font-size: 3vw;
-        color: $fontcolor;
-    }
-=======
   }
-  div.popular-section {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    margin-top: 20px;
-    padding-bottom: 20px;
-    height: 30vh;
-  }
->>>>>>> main
+}
+h2.section-three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 20vh;
+  font-size: 3vw;
+  color: $fontcolor;
 }
