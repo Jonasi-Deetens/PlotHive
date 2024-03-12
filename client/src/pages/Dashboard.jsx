@@ -14,7 +14,7 @@ const Dashboard = () => {
         if (!user) {
           await authUser();
           if (!user) {
-            navigate("/");
+            navigate("/Login");
           }
         }
       } catch (error) {

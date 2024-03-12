@@ -16,11 +16,11 @@ import Error404 from "./pages/Error404";
 
 function App() {
   const location = useLocation().pathname;
-  const headerLocations = ["/", "AboutUs", "Contact", "Dashboard", "Explore", "Legal", "Login", "Read", "Register", "Store", "Write"];
+  const headerLocations = ["/", "/aboutus", "/contact", "/dashboard", "/explore", "/legal", "/login", "/read", "/register", "/store", "/write"];
 
   return (
     <>
-      {headerLocations.includes(location) && <Navbar />}
+      {headerLocations.includes(location.toLocaleLowerCase()) && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/AboutUs" element={<AboutUs />} />

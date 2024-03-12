@@ -4,17 +4,24 @@ body {
     div#root {
         main.error-page {
             height: 100svh;
-            position: relative;
             text-align: center;
             font-weight: bold;
             margin: 0 auto;
             width: 100%;
+            position: relative;
+
+            div.wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
 
             h1.error-title {
                 margin: 0;
                 font-size: 5rem;
                 color: $fontcolor;
-                padding: 80px 10px 10px 10px;
             }
 
             img.error-bee {
