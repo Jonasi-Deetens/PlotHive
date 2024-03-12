@@ -844,10 +844,10 @@
 body div#root main.dashboard-page {
   margin: 100px auto 100px auto;
 }
-body div#root main.dashboard-page h2.dashboard-title {
+body div#root main.dashboard-page h1.dashboard-title {
   color: #ecf0f3;
   font-family: "Fredoka", sans-serif;
-  font-size: 42px;
+  font-size: 50px;
   font-weight: 500;
   text-align: center;
   margin: 0 auto 50px;
@@ -857,7 +857,7 @@ body div#root main.dashboard-page section.section-profile {
   border-radius: 50px;
   padding: 50px;
   width: 80%;
-  margin: auto;
+  margin: 50px auto;
 }
 body div#root main.dashboard-page section.section-profile div.flex-wrapper {
   display: flex;
@@ -907,6 +907,7 @@ body div#root main.dashboard-page section.section-profile div.flex-wrapper div.s
   display: flex;
   flex-wrap: wrap;
   padding: 50px;
+  width: 50%;
 }
 body div#root main.dashboard-page section.section-profile div.flex-wrapper div.section-profile-right div.badge {
   width: 50%;
@@ -930,4 +931,28 @@ body div#root main.dashboard-page section.section-profile div.flex-wrapper div.s
 body div#root main.dashboard-page section.section-profile div.flex-wrapper div.section-profile-right div.badge p.badge-number:hover {
   background-color: #ffbd59;
   color: #414042;
+}
+body div#root main.dashboard-page section.section-profile h2.book-prompt {
+  text-align: center;
+  font-size: 50px;
+  color: #ecf0f3;
+}
+body div#root main.dashboard-page section.section-profile div.button-container {
+  display: flex;
+}
+body div#root main.dashboard-page section.section-profile div.button-container button.prompt-button {
+  margin: 20px auto;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  size: 2vw;
+  font-size: 2vw;
+}
+body div#root main.dashboard-page section.section-profile div.button-container button.prompt-button a.link {
+  color: #414042;
+  text-decoration: none;
+}
+body div#root main.dashboard-page section.section-profile div.button-container button.prompt-button:hover {
+  background-color: #ffbd59;
 }/*# sourceMappingURL=dashboard.css.map */
