@@ -3,7 +3,30 @@
 main.home-page {
   margin-bottom: 20px;
 }
-main.home-page h1 {
+main.home-page .home-page-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+main.home-page .home-page-navbar img {
+  width: 40%;
+  height: 50vh;
+}
+main.home-page .home-page-navbar .home-page-login {
+  background-color: #414042;
+  margin-left: auto;
+  margin-bottom: auto;
+  padding: 10px 30px;
+  margin-bottom: 10vh;
+  border: none;
+  border-radius: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  size: 2vw;
+  font-size: 2vw;
+}
+main.home-page h1.main-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +64,6 @@ main.home-page .card-container {
   padding: 10px;
   margin-top: 20px;
   padding-bottom: 20px;
-  height: 30vh;
 }
 main.home-page .card {
   width: calc(20% - 20px);
@@ -50,12 +72,13 @@ main.home-page .card {
   background-color: #414042;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  height: 50vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding-bottom: 20px;
+  transition: all 0.3s ease;
 }
 main.home-page .card img {
   width: 200px;
@@ -68,11 +91,61 @@ main.home-page .card p {
   color: #ecf0f3;
   margin-bottom: 50px;
 }
-main.home-page div.popular-section {
+main.home-page .card:hover {
+  transform: scale(1.05);
+  background-color: #ffbd59;
+}
+main.home-page .card:hover p {
+  color: #414042;
+}
+main.home-page h1.popular-header {
+  width: 100%;
+  text-align: center;
+  font-size: 5vw;
+  color: #ecf0f3;
+}
+main.home-page .popular-section {
   display: flex;
+}
+main.home-page .popular-section .popular-cards {
+  width: 100%;
   justify-content: space-around;
   padding: 10px;
   margin-top: 20px;
   padding-bottom: 20px;
-  height: 30vh;
+}
+main.home-page .popular-section .popular-card {
+  width: calc(33% - 20px);
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+main.home-page .popular-section .popular-card img {
+  width: 200px;
+  height: auto;
+  margin-bottom: auto;
+}
+main.home-page .popular-section .popular-card p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ecf0f3;
+  margin-bottom: 50px;
+}
+main.home-page h2.section-three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 20vh;
+  font-size: 3vw;
+  color: #ecf0f3;
 }/*# sourceMappingURL=home.css.map */

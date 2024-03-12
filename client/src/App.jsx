@@ -1,6 +1,6 @@
 import "./assets/styles/app.css";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
@@ -17,9 +17,9 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route element={<AppWithNavbar />} >
             <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Dashboard" element={<Dashboard />} />
@@ -30,8 +30,30 @@ function App() {
             <Route path="/Register" element={<Register />} />
             <Route path="/Store" element={<Store />} />
             <Route path="/Write" element={<Write />} />
-          </Routes>
+          </Route>
+        </Routes>
       </Router>
+    </>
+  );
+}
+
+function AppWithNavbar() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Navigate to="/AboutUs" />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/Explore" element={<Explore />} />
+        <Route path="/Legal" element={<Legal />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Read" element={<Read />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Store" element={<Store />} />
+        <Route path="/Write" element={<Write />} />
+      </Routes>
     </>
   );
 }
