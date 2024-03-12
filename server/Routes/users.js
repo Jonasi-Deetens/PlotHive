@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router();
 import mongoose from 'mongoose';
 import UserModel from '../Models/User.js';
+import { hashPassword, comparePassword } from '../Encryption/bcrypt.js';
 
 // Create a new item
 router.post('/', validateRegistrationData, async (req, res) => {
@@ -9,8 +10,7 @@ router.post('/', validateRegistrationData, async (req, res) => {
         const newUser = new UserModel({
             _id: new mongoose.Types.ObjectId(),
             username: req.body.username,
-            password: req.body.password,
-            confirmPassword: req.body.confirmPassword,
+            password: await hashPassword(req.body.password),
             email: req.body.email
         });
         
