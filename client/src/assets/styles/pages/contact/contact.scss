@@ -1,0 +1,318 @@
+@use "../../../SASS/" as *;
+
+body {
+  div#root {
+    main.contact-page {
+      div.contact-wrapper {
+        display: flex;
+        margin: 100px auto 100px auto;
+        max-width: 1000px;
+        background-color: $background-dark;
+        border-radius: 4 0px;
+        box-sizing: border-box;
+        color: $fontcolor;
+        font-family: $sans-font;
+        border-radius: 50px;
+        @include shadow;
+        div.social-media-container {
+          background-color: $main;
+          border-radius: 50px 0 0 50px;
+          padding: 50px 0;
+          width: 350px;
+          h2.socials-title {
+            color: $fontcolor-darker;
+            font-family: $logo-font;
+            font-size: 42px;
+            font-weight: 500;
+            text-align: center;
+            margin: 0 auto 125px;
+          }
+          ul.socials-list {
+            height: auto;
+            margin-right: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            li {
+              list-style: none;
+              a {
+                img {
+                  height: 50px;
+                  margin-bottom: 50px;
+                }
+              }
+            }
+          }
+        }
+        div.contact-container {
+          width: 100%;
+          padding: 50px 0;
+          h2.contact-title {
+            color: $fontcolor;
+            font-family: $logo-font;
+            font-size: 42px;
+            font-weight: 500;
+            text-align: center;
+            margin: 0 auto 50px;
+          }
+          div.errors {
+            width: 75%;
+            margin: 0 auto;
+            p.error-message {
+              color: red;
+              font-size: 25px;
+            }
+          }
+          form {
+            width: 75%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            div {
+              display: flex;
+              flex-direction: column;
+              label {
+                font-size: 20px;
+                margin-bottom: 10px;
+              }
+              div {
+                display: flex;
+                flex-direction: row;
+                img {
+                  height: 30px;
+                  margin-right: 20px;
+                }
+                input {
+                  background-color: $background-dark;
+                  border: none;
+                  font-size: 24px;
+                  width: 100%;
+                  color: $fontcolor;
+                }
+                input:focus {
+                  outline: none;
+                  border-color: transparent;
+                  border-bottom: 2px solid $main;
+                }
+                input::placeholder {
+                  font-style: italic;
+                  font-size: 20px;
+                }
+              }
+              hr {
+                width: 100%;
+                margin-top: 10px;
+                margin-bottom: 20px;
+              }
+            }
+            div.message {
+              div.message-input {
+                textarea {
+                  width: 100%;
+                  border: none;
+                  background-color: $background-dark;
+                  resize: vertical;
+                  font-size: 20px;
+                  color: $fontcolor;
+                  font-family: $sans-font;
+                }
+                textarea:focus {
+                  outline: none;
+                  border-color: transparent;
+                  border-bottom: 2px solid $main;
+                }
+                textarea::placeholder {
+                  font-size: 20px;
+                  font-style: italic;
+                }
+              }
+            }
+            button.contact-btn {
+              @include main-button;
+            }
+            button:hover,
+            button:focus {
+              background-color: $main;
+            }
+            div.question {
+              text-align: center;
+              a {
+                color: $main;
+                margin: -15px auto 0;
+                width: 50px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+      div.contact-map {
+        display: flex;
+        align-items: center;
+        iframe {
+          border-radius: 20px;
+          margin: -30px auto 50px;
+          @include shadow;
+          border: 1px solid $main;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    div#root {
+      main.contact-page {
+        div.contact-wrapper {
+          width: 98%;
+          border-radius: 20px;
+          div.social-media-container {
+            border-radius: 20px 0 0 20px;
+            width: 250px;
+            h2.socials-title {
+              font-size: 30px;
+            }
+            ul.socials-list {
+              li {
+                a {
+                  img {
+                    height: 40px;
+                  }
+                }
+              }
+            }
+          }
+          div.contact-container {
+            h2.contact-title {
+              font-size: 30px;
+            }
+            div.errors {
+              width: 90%;
+              p.error-message {
+                font-size: 22px;
+              }
+            }
+            form {
+              width: 90%;
+              div {
+                label {
+                  font-size: 18px;
+                }
+                div {
+                  img {
+                    height: 20px;
+                  }
+                  input {
+                    font-size: 18px;
+                  }
+                  input::placeholder {
+                    font-style: italic;
+                    font-size: 16px;
+                  }
+                }
+              }
+              a {
+                font-size: 12px;
+              }
+              button.contact-btn {
+                font-size: 16px;
+              }
+              div.question {
+                p {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    div#root {
+      main.contact-page {
+        div.contact-wrapper {
+          width: 98%;
+          border-radius: 20px;
+          div.social-media-container {
+            border-radius: 20px 0 0 20px;
+            width: 170px;
+            ul.socials-list {
+              li {
+                a {
+                  img {
+                    height: 35px;
+                  }
+                }
+              }
+            }
+          }
+          div.contact-container {
+            h2.contact-title {
+              font-size: 30px;
+            }
+            div.errors {
+              p.error-message {
+                font-size: 18px;
+              }
+            }
+            form {
+              width: 90%;
+              div {
+                label {
+                  font-size: 16px;
+                }
+                div {
+                  img {
+                    height: 20px;
+                  }
+                  input {
+                    font-size: 18px;
+                  }
+                  input::placeholder {
+                    font-style: italic;
+                    font-size: 16px;
+                  }
+                }
+              }
+              div.message {
+                div.message-input {
+                  textarea {
+                    width: 100%;
+                    border: none;
+                    background-color: $background-dark;
+                    resize: vertical;
+                    font-size: 16px;
+                    color: $fontcolor;
+                    font-family: $sans-font;
+                  }
+                  textarea:focus {
+                    outline: none;
+                    border-color: transparent;
+                    border-bottom: 2px solid $main;
+                  }
+                  textarea::placeholder {
+                    font-size: 16px;
+                    font-style: italic;
+                  }
+                }
+              }
+              button.contact-btn {
+                font-size: 16px;
+              }
+              div.question {
+                p {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
