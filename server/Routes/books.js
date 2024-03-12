@@ -26,7 +26,10 @@ router.post('/', async (req, res) => {
 // Get all items
 router.get('/', async (req, res) => {
     try {
-        const books = await BookModel.find();
+        const books = await BookModel.find()
+            .populate('genres')
+            .populate('prompt_id')
+            .populate('contributions');
         res.json(books);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -74,7 +77,10 @@ router.delete('/:id', getBook, async (req, res) => {
 async function getBook(req, res, next) {
     let book;
     try {
-        book = await BookModel.findById(req.params.id);
+        book = await BookModel.findById(req.params.id)
+            .populate('genres')
+            .populate('prompt_id')
+            .populate('contributions');
         if (book == null) {
             return res.status(404).json({ message: 'Book not found' });
         }

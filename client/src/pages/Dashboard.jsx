@@ -23,6 +23,25 @@ const Dashboard = () => {
     };
 
     isAuthorized();
+
+    const getBooks = async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:5000/api/books', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data);
+        }
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    }
+
+    getBooks();
   }, [authUser, navigate, user]);
 
   return (
