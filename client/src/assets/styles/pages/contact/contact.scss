@@ -178,6 +178,7 @@ body {
               font-size: 30px;
             }
             div.errors {
+              width: 90%;
               p.error-message {
                 font-size: 22px;
               }
@@ -236,6 +237,66 @@ body {
                   img {
                     height: 35px;
                   }
+                }
+              }
+            }
+          }
+          div.contact-container {
+            h2.contact-title {
+              font-size: 30px;
+            }
+            div.errors {
+              p.error-message {
+                font-size: 18px;
+              }
+            }
+            form {
+              width: 90%;
+              div {
+                label {
+                  font-size: 16px;
+                }
+                div {
+                  img {
+                    height: 20px;
+                  }
+                  input {
+                    font-size: 18px;
+                  }
+                  input::placeholder {
+                    font-style: italic;
+                    font-size: 16px;
+                  }
+                }
+              }
+              div.message {
+                div.message-input {
+                  textarea {
+                    width: 100%;
+                    border: none;
+                    background-color: $background-dark;
+                    resize: vertical;
+                    font-size: 16px;
+                    color: $fontcolor;
+                    font-family: $sans-font;
+                  }
+                  textarea:focus {
+                    outline: none;
+                    border-color: transparent;
+                    border-bottom: 2px solid $main;
+                  }
+                  textarea::placeholder {
+                    font-size: 16px;
+                    font-style: italic;
+                  }
+                }
+              }
+              button.contact-btn {
+                font-size: 16px;
+              }
+              div.question {
+                p {
+                  font-size: 12px;
                 }
               }
             }
