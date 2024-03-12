@@ -1,82 +1,81 @@
 @use "../../../SASS/" as *;
 
-main.home-page{
-    margin-bottom: 20px;
-    h1{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        height: 60vh;
-        font-size: 5vw;
+main.home-page {
+  margin-bottom: 20px;
+  h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 60vh;
+    font-size: 5vw;
+  }
+  div {
+    display: flex;
+  }
+  button.home-header-button {
+    text-decoration: none;
+    margin: 20px auto 0;
+    padding: 10px 30px;
+    margin-bottom: 10vh;
+    border: none;
+    border-radius: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    size: 2vw;
+    font-size: 2vw;
+  }
+  a {
+    text-decoration: none;
+    color: $background-dark;
+  }
+  button:hover,
+  button:focus {
+    background-color: $main;
+  }
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    height: 30vh;
+  }
+
+  .card {
+    width: calc(20% - 20px);
+    text-align: center;
+    padding: 20px;
+    background-color: $background-dark;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+    img {
+      width: 200px;
+      height: auto;
+      margin-bottom: auto;
     }
-    div {
-        display: flex;
+
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      color: $fontcolor;
+      margin-bottom: 50px;
     }
-    button.home-header-button {
-        text-decoration: none;
-        margin: 20px auto 0;
-        padding: 10px 30px;
-        margin-bottom: 10vh;
-        border: none;
-        border-radius: 50px;
-        font-size: 24px;
-        cursor: pointer;
-        size: 2vw;
-        font-size: 2vw;
-      }
-      a {
-        text-decoration: none;
-        color: $background-dark;
-      }
-      button:hover,
-      button:focus {
-        background-color: $main;
-        
-      }
-      .card-container {
-        display: flex;
-        justify-content: space-around;
-        padding: 10px;
-        margin-top: 20px;
-        padding-bottom: 20px;
-        height: 30vh;
-      }
-    
-      .card {
-        width: calc(20% - 20px);
-        text-align: center;
-        padding: 20px;
-        background-color: $background-dark;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        height: 50vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: 20px;
-    
-        img {
-          width: 200px;
-          height: auto;
-          margin-bottom: auto;
-        }
-    
-        p {
-          font-size: 18px;
-          font-weight: bold;
-          color: $fontcolor;
-          margin-bottom: 50px;
-        }
-      }
-      div.popular-section {
-        display: flex;
-        justify-content: space-around;
-        padding: 10px;
-        margin-top: 20px;
-        padding-bottom: 20px;
-        height: 30vh;
-      }
-    }
+  }
+  div.popular-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    height: 30vh;
+  }
+}

@@ -146,54 +146,168 @@ body {
           }
         }
       }
+      div.contact-map {
+        display: flex;
+        align-items: center;
+        iframe {
+          border-radius: 20px;
+          margin: -30px auto 50px;
+          @include shadow;
+          border: 1px solid $main;
+        }
+      }
     }
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   body {
     div#root {
-      main.register-page {
-        div.register-container {
-          border-radius: 25px;
-          width: 95%;
-          h2.register-title {
-            font-size: 30px;
-          }
-          div.errors {
-            width: 90%;
-            p.error-message {
-              font-size: 18px;
+      main.contact-page {
+        div.contact-wrapper {
+          width: 98%;
+          border-radius: 20px;
+          div.social-media-container {
+            border-radius: 20px 0 0 20px;
+            width: 250px;
+            h2.socials-title {
+              font-size: 30px;
+            }
+            ul.socials-list {
+              li {
+                a {
+                  img {
+                    height: 40px;
+                  }
+                }
+              }
             }
           }
-          form {
-            width: 90%;
-            div {
-              label {
-                font-size: 18px;
+          div.contact-container {
+            h2.contact-title {
+              font-size: 30px;
+            }
+            div.errors {
+              width: 90%;
+              p.error-message {
+                font-size: 22px;
               }
+            }
+            form {
+              width: 90%;
               div {
-                img {
-                  height: 20px;
-                }
-                input {
+                label {
                   font-size: 18px;
                 }
-                input::placeholder {
-                  font-style: italic;
-                  font-size: 16px;
+                div {
+                  img {
+                    height: 20px;
+                  }
+                  input {
+                    font-size: 18px;
+                  }
+                  input::placeholder {
+                    font-style: italic;
+                    font-size: 16px;
+                  }
+                }
+              }
+              a {
+                font-size: 12px;
+              }
+              button.contact-btn {
+                font-size: 16px;
+              }
+              div.question {
+                p {
+                  font-size: 12px;
                 }
               }
             }
-            a {
-              font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    div#root {
+      main.contact-page {
+        div.contact-wrapper {
+          width: 98%;
+          border-radius: 20px;
+          div.social-media-container {
+            border-radius: 20px 0 0 20px;
+            width: 170px;
+            ul.socials-list {
+              li {
+                a {
+                  img {
+                    height: 35px;
+                  }
+                }
+              }
             }
-            button.sign-up-btn {
-              font-size: 16px;
+          }
+          div.contact-container {
+            h2.contact-title {
+              font-size: 30px;
             }
-            div.question {
-              p {
-                font-size: 12px;
+            div.errors {
+              p.error-message {
+                font-size: 18px;
+              }
+            }
+            form {
+              width: 90%;
+              div {
+                label {
+                  font-size: 16px;
+                }
+                div {
+                  img {
+                    height: 20px;
+                  }
+                  input {
+                    font-size: 18px;
+                  }
+                  input::placeholder {
+                    font-style: italic;
+                    font-size: 16px;
+                  }
+                }
+              }
+              div.message {
+                div.message-input {
+                  textarea {
+                    width: 100%;
+                    border: none;
+                    background-color: $background-dark;
+                    resize: vertical;
+                    font-size: 16px;
+                    color: $fontcolor;
+                    font-family: $sans-font;
+                  }
+                  textarea:focus {
+                    outline: none;
+                    border-color: transparent;
+                    border-bottom: 2px solid $main;
+                  }
+                  textarea::placeholder {
+                    font-size: 16px;
+                    font-style: italic;
+                  }
+                }
+              }
+              button.contact-btn {
+                font-size: 16px;
+              }
+              div.question {
+                p {
+                  font-size: 12px;
+                }
               }
             }
           }

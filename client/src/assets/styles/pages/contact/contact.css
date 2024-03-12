@@ -993,48 +993,135 @@ body div#root main.contact-page div.contact-wrapper div.contact-container form d
   width: 50px;
   font-weight: bold;
 }
+body div#root main.contact-page div.contact-map {
+  display: flex;
+  align-items: center;
+}
+body div#root main.contact-page div.contact-map iframe {
+  border-radius: 20px;
+  margin: -30px auto 50px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border: 1px solid #ffbd59;
+}
 
-@media screen and (max-width: 800px) {
-  body div#root main.register-page div.register-container {
-    border-radius: 25px;
-    width: 95%;
+@media screen and (max-width: 1024px) {
+  body div#root main.contact-page div.contact-wrapper {
+    width: 98%;
+    border-radius: 20px;
   }
-  body div#root main.register-page div.register-container h2.register-title {
+  body div#root main.contact-page div.contact-wrapper div.social-media-container {
+    border-radius: 20px 0 0 20px;
+    width: 250px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.social-media-container h2.socials-title {
     font-size: 30px;
   }
-  body div#root main.register-page div.register-container div.errors {
+  body div#root main.contact-page div.contact-wrapper div.social-media-container ul.socials-list li a img {
+    height: 40px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container h2.contact-title {
+    font-size: 30px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container div.errors {
     width: 90%;
   }
-  body div#root main.register-page div.register-container div.errors p.error-message {
-    font-size: 18px;
+  body div#root main.contact-page div.contact-wrapper div.contact-container div.errors p.error-message {
+    font-size: 22px;
   }
-  body div#root main.register-page div.register-container form {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form {
     width: 90%;
   }
-  body div#root main.register-page div.register-container form div label {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div label {
     font-size: 18px;
   }
-  body div#root main.register-page div.register-container form div div img {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div img {
     height: 20px;
   }
-  body div#root main.register-page div.register-container form div div input {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input {
     font-size: 18px;
   }
-  body div#root main.register-page div.register-container form div div input::-moz-placeholder {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input::-moz-placeholder {
     font-style: italic;
     font-size: 16px;
   }
-  body div#root main.register-page div.register-container form div div input::placeholder {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input::placeholder {
     font-style: italic;
     font-size: 16px;
   }
-  body div#root main.register-page div.register-container form a {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form a {
     font-size: 12px;
   }
-  body div#root main.register-page div.register-container form button.sign-up-btn {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form button.contact-btn {
     font-size: 16px;
   }
-  body div#root main.register-page div.register-container form div.question p {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div.question p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body div#root main.contact-page div.contact-wrapper {
+    width: 98%;
+    border-radius: 20px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.social-media-container {
+    border-radius: 20px 0 0 20px;
+    width: 170px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.social-media-container ul.socials-list li a img {
+    height: 35px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container h2.contact-title {
+    font-size: 30px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container div.errors p.error-message {
+    font-size: 18px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form {
+    width: 90%;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div label {
+    font-size: 16px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div img {
+    height: 20px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input {
+    font-size: 18px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input::-moz-placeholder {
+    font-style: italic;
+    font-size: 16px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input::placeholder {
+    font-style: italic;
+    font-size: 16px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea {
+    width: 100%;
+    border: none;
+    background-color: #414042;
+    resize: vertical;
+    font-size: 16px;
+    color: #ecf0f3;
+    font-family: "Open Sans", sans-serif;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea:focus {
+    outline: none;
+    border-color: transparent;
+    border-bottom: 2px solid #ffbd59;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea::-moz-placeholder {
+    font-size: 16px;
+    font-style: italic;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea::placeholder {
+    font-size: 16px;
+    font-style: italic;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form button.contact-btn {
+    font-size: 16px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div.question p {
     font-size: 12px;
   }
 }/*# sourceMappingURL=contact.css.map */
