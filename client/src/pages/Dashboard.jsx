@@ -1,11 +1,13 @@
 import "../assets/styles/pages/Dashboard/dashboard.css";
 import navBarLogo from "../assets/Logo/logo-navbar.svg";
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../providers/UserContext";
+import cover from "../assets/svgs/cover.png"
 
 const Dashboard = () => {
   const { authUser, user, logout } = useContext(UserContext)
+  const [books, setBooks] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,7 +36,7 @@ const Dashboard = () => {
         });
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
+          setBooks(data);
         }
       } catch (error) {
         throw new Error(error.message);
@@ -91,6 +93,17 @@ const Dashboard = () => {
         <div className='button-container'>
           <button className='prompt-button'><a href="/Write" className='link'>Contribute</a></button>
           <button className='prompt-button'><a href="/Explore" className='link'>Explore</a></button>
+        </div>
+      </section>
+      <section className="section-profile">
+        <h2 className="section-title">You might like</h2>
+        <div className="flex-wrapper">
+        {books && books.map((book) => (
+          <div className="profile-book" key={'BOOK_KEY_' + book._id}>   
+            <img className="profile-book-image" src={cover} width={100} height={160} alt="Placeholder of an image of a book" />
+            <h3 className="profile-book-title">{book.title}</h3>
+          </div>
+        ))}
         </div>
       </section>
     </main>

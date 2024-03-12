@@ -19,6 +19,14 @@ body {
                 width: 80%;
                 margin: 50px auto;
 
+                h2.section-title {
+                    font-family: $logo-font;
+                    font-size: 36px;
+                    color: $fontcolor;
+                    text-align: center;
+                    margin-bottom: 50px;
+                }
+
                 div.flex-wrapper {
                     display: flex;
 
@@ -67,6 +75,31 @@ body {
 
                         button.profile-button-logout:hover {
                             color: $cta;
+                        }
+                    }
+
+                    div.profile-book {
+                        width: 25%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+    
+                        h3.profile-book-title {
+                            color: $fontcolor;
+                            font-family: $logo-font;
+                        }
+                    }
+    
+                    div.profile-book:hover {
+                        transform: scale(1.1);
+    
+                        img.profile-book-image {
+                            filter: drop-shadow(1px 1px 5px $main);
+                        }
+    
+                        h3.profile-book-title {
+                            color: $main;
                         }
                     }
 
