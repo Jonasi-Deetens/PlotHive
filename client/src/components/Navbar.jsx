@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../assets/styles/components/Navbar/navbar.css";
 import { useState, useEffect } from "react";
+import navBarLogo from "../assets/Logo/logo-navbar.svg";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -25,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className="main-navigation">
       <Link to="/">
-        <img src="src/assets/Logo/logo-navbar.svg" alt="navbar-logo-PlotHub" />
+        <img src={navBarLogo} alt="navbar-logo-PlotHub" />
       </Link>
       <button
         className={`hamburger hamburger--collapse ${

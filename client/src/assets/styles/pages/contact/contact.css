@@ -993,6 +993,16 @@ body div#root main.contact-page div.contact-wrapper div.contact-container form d
   width: 50px;
   font-weight: bold;
 }
+body div#root main.contact-page div.contact-map {
+  display: flex;
+  align-items: center;
+}
+body div#root main.contact-page div.contact-map iframe {
+  border-radius: 20px;
+  margin: -30px auto 50px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border: 1px solid #ffbd59;
+}
 
 @media screen and (max-width: 1024px) {
   body div#root main.contact-page div.contact-wrapper {

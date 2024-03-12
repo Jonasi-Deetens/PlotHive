@@ -841,36 +841,35 @@
   transform: rotate(-90deg);
 }
 
-nav {
+body div#root nav.main-navigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   background-color: #414042;
   font-family: "Fredoka", sans-serif;
-  position: relative;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-nav img {
+body div#root nav.main-navigation a img {
   width: 150px;
   height: auto;
   margin-right: auto;
 }
-nav button.hamburger {
+body div#root nav.main-navigation button.hamburger {
   display: none;
 }
-nav ul {
+body div#root nav.main-navigation ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
-nav ul li {
+body div#root nav.main-navigation ul li {
   display: inline;
   font-weight: bold;
   padding: 0 10px;
 }
-nav ul li a {
+body div#root nav.main-navigation ul li a {
   color: #ecf0f3;
   text-decoration: none;
   padding: 15px;
@@ -878,7 +877,7 @@ nav ul li a {
   font-size: 22px;
   font-weight: normal;
 }
-nav ul li a::after {
+body div#root nav.main-navigation ul li a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -889,10 +888,10 @@ nav ul li a::after {
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
-nav ul li a:hover {
+body div#root nav.main-navigation ul li a:hover {
   color: #ffbd59;
 }
-nav ul li a:hover::after {
+body div#root nav.main-navigation ul li a:hover::after {
   transform: scaleX(1);
   background-color: #ffbd59;
 }
@@ -901,7 +900,7 @@ nav ul li a:hover::after {
   body div#root nav.main-navigation ul {
     display: none;
   }
-  body div#root button.hamburger {
+  body div#root nav.main-navigation button.hamburger {
     margin-right: 10px;
     display: block;
   }
