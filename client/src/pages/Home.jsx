@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "../assets/styles/pages/Home/home.css";
 
 const Home = () => {
+
   return (
     <main className='home-page'>
       <div className='home-page-navbar'>

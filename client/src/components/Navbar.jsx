@@ -5,13 +5,15 @@ import navBarLogo from "../assets/Logo/logo-navbar.svg";
 import { UserContext } from "../providers/UserContext";
 
 const Navbar = () => {
-  const {user, logout} = useContext(UserContext);
+  const {user, authUser, logout} = useContext(UserContext);
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
     setIsActive(!isActive);
   };
 
   useEffect(() => {
+
+    authUser();
     const handleResize = () => {
       if (window.innerWidth > 1024) {
         setIsActive(false);

@@ -16,6 +16,9 @@ app.use(express.json());
 app.use(express.static('./public'));
 app.use(cors());
 
+import authRoutes from './Routes/auth.js';
+app.use('/auth', authRoutes);
+
 import bookRoutes from './Routes/books.js';
 app.use('/api/books', bookRoutes);
 
