@@ -4,10 +4,12 @@ import userLogo from "../assets/svgs/user.png";
 import userPassword from "../assets/svgs/password.png";
 import { UserContext } from "../providers/UserContext";
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { registerUser } = useContext(UserContext);
   const [registerError, setRegisterError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,8 +22,9 @@ const Register = () => {
     }
     try {
       await registerUser(userData);
+      navigate('/');
     } catch (error) {
-      setRegisterError('Registration failed:', error.message);
+      setRegisterError(error.message);
     }
     
   }
@@ -31,7 +34,6 @@ const Register = () => {
       <div className="register-container">
         <h2 className="register-title">Register</h2>
         <div className="errors">
-          <p className="error-message">Password deosn&apos;t match</p>
           <p className="error-message">{registerError}</p>
         </div>
         <form action="" onSubmit={handleSubmit}>

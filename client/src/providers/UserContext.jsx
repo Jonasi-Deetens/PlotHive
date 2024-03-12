@@ -1,8 +1,10 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
+  const [userInfo, setUserInfo] = useState(null);
+
   const registerUser = async (userData) => {
     try {
       const response = await fetch('http://127.0.0.1:5000/api/users', {
@@ -13,7 +15,13 @@ const UserProvider = ({ children }) => {
         body: JSON.stringify(userData)
       });
       if (!response.ok) {
-        throw new Error('Failed to register user');
+        const errorMessage = await response.json();
+        throw new Error(errorMessage.message);
+      } else {
+        setUserInfo({
+          username: userData.username,
+          email: userData.email
+        });
       }
     } catch (error) {
       throw new Error(error.message);
@@ -21,7 +29,7 @@ const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{registerUser}}>
+    <UserContext.Provider value={{userInfo, registerUser}}>
       {children}
     </UserContext.Provider>
   );

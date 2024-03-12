@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import UserModel from '../Models/User.js';
 
 // Create a new item
-router.post('/', async (req, res) => {
+router.post('/', validateRegistrationData, async (req, res) => {
     try {
         const newUser = new UserModel({
             _id: new mongoose.Types.ObjectId(),
@@ -78,6 +78,43 @@ async function getUser(req, res, next) {
         return res.status(500).json({ message: err.message });
     }
     res.user = user;
+    next();
+}
+
+async function validateRegistrationData(req, res, next) {
+    const { username, password, confirmPassword, email } = req.body;
+
+    try {
+        const user = await UserModel.findOne({ username: username });
+        if (user) {
+            return res.status(404).json({ message: 'Username already taken' });
+        }
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+
+    try {
+        const user = await UserModel.findOne({ email: email });
+        if (user) {
+            return res.status(404).json({ message: 'Email already in use' });
+        }
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+
+    if (!username || !password || !confirmPassword || !email) {
+        return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    if (password !== confirmPassword) {
+        return res.status(400).json({ message: 'Passwords do not match' });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ message: 'Invalid email format' });
+    }
+
     next();
 }
 

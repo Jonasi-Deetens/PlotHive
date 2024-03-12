@@ -1,6 +1,6 @@
 import "./assets/styles/app.css";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
@@ -12,28 +12,25 @@ import Read from "./pages/Read"
 import Register from "./pages/Register"
 import Store from "./pages/Store"
 import Write from "./pages/Write"
-import { UserProvider } from "./providers/UserContext";
 
 function App() {
   return (
-    <UserProvider>
-      <Router>
-        <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/AboutUs" element={<AboutUs />} />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/Dashboard" element={<Dashboard />} />
-            <Route path="/Explore" element={<Explore />} />
-            <Route path="/Legal" element={<Legal />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Read" element={<Read />} />
-            <Route path="/Register" element={<Register />} />
-            <Route path="/Store" element={<Store />} />
-            <Route path="/Write" element={<Write />} />
-          </Routes>
-      </Router>
-    </UserProvider>
+    <>
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/Explore" element={<Explore />} />
+          <Route path="/Legal" element={<Legal />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Read" element={<Read />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/Store" element={<Store />} />
+          <Route path="/Write" element={<Write />} />
+        </Routes>
+    </>
   );
 }
 
