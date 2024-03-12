@@ -12,6 +12,7 @@ import Read from "./pages/Read"
 import Register from "./pages/Register"
 import Store from "./pages/Store"
 import Write from "./pages/Write"
+import Error404 from "./pages/Error404";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/Register" element={<Register />} />
           <Route path="/Store" element={<Store />} />
           <Route path="/Write" element={<Write />} />
+          <Route path="/*" element={<Error404 />} />
         </Routes>
     </>
   );
