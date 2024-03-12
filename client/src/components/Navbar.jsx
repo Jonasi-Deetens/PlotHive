@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import "../assets/styles/components/Navbar/navbar.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import navBarLogo from "../assets/Logo/logo-navbar.svg";
+import { UserContext } from "../providers/UserContext";
 
 const Navbar = () => {
+  const {user, logout} = useContext(UserContext);
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
     setIsActive(!isActive);
@@ -52,9 +54,14 @@ const Navbar = () => {
         <li>
           <Link to="/AboutUs">About</Link>
         </li>
+        { user ?
+        <li>
+          <Link onClick={logout}>Logout</Link>
+        </li> :
         <li>
           <Link to="/Login">Login</Link>
         </li>
+        }
       </ul>
     </nav>
   );

@@ -2,15 +2,23 @@ import express from 'express';
 const router = express.Router();
 import mongoose from 'mongoose';
 import UserModel from '../Models/User.js';
+import { hashPassword, comparePassword } from '../Encryption/bcrypt.js';
 
-// Create a new item
+// Login user
+router.post('/login', validateLoginData, async (req, res) => {
+    if (res.user) 
+        return res.status(201).json(res.user);
+    else   
+        res.status(500).json({ message: err.message });
+});
+
+// Register new user
 router.post('/', validateRegistrationData, async (req, res) => {
     try {
         const newUser = new UserModel({
             _id: new mongoose.Types.ObjectId(),
             username: req.body.username,
-            password: req.body.password,
-            confirmPassword: req.body.confirmPassword,
+            password: await hashPassword(req.body.password),
             email: req.body.email
         });
         
@@ -22,7 +30,7 @@ router.post('/', validateRegistrationData, async (req, res) => {
     }
 });
 
-// Get all items
+// Get all users
 router.get('/', async (req, res) => {
     try {
         const users = await UserModel.find();
@@ -32,12 +40,12 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Get a single item
+// Get a single user
 router.get('/:id', getUser, (req, res) => {
     res.json(res.user);
 });
 
-// Update an item
+// Update an user
 router.patch('/:id', getUser, async (req, res) => {
     if (req.body.username != null) {
         res.user.username = req.body.username;
@@ -56,7 +64,7 @@ router.patch('/:id', getUser, async (req, res) => {
     }
 });
 
-// Delete an item
+// Delete an user
 router.delete('/:id', getUser, async (req, res) => {
     try {
         console.log(res.user);
@@ -113,6 +121,32 @@ async function validateRegistrationData(req, res, next) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         return res.status(400).json({ message: 'Invalid email format' });
+    }
+
+    next();
+}
+
+async function validateLoginData(req, res, next) {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+        return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    try {
+        const user = await UserModel.findOne({ username: username });
+
+        if (!user) {
+            return res.status(400).json({ message: 'That username does not exist' });
+        }
+
+        const correctPassword = await comparePassword(password, user.password);
+        if (!correctPassword)
+            return res.status(400).json({ message: 'That passsword is incorrect' });
+        else 
+            res.user = user;
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
 
     next();
