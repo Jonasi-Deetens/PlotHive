@@ -868,6 +868,11 @@ body div#root main.dashboard-page section.section-profile div.flex-wrapper div.s
   margin: auto;
   border-right: 4px solid #414042;
 }
+body div#root main.dashboard-page section.section-profile div.flex-wrapper div.section-profile-left p.profile-name {
+  font-family: "Fredoka", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
 body div#root main.dashboard-page section.section-profile div.flex-wrapper div.section-profile-left p.profile-stat {
   font-family: "Fredoka", sans-serif;
   font-weight: bold;
@@ -885,6 +890,18 @@ body div#root main.dashboard-page section.section-profile div.flex-wrapper div.s
 body div#root main.dashboard-page section.section-profile div.flex-wrapper div.section-profile-left button.profile-button:hover {
   background-color: #ffbd59;
   color: #414042;
+}
+body div#root main.dashboard-page section.section-profile div.flex-wrapper div.section-profile-left button.profile-button-logout {
+  color: #ffffff;
+  background-color: #737373;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  font-size: 18px;
+  border: none;
+  padding: 5px;
+}
+body div#root main.dashboard-page section.section-profile div.flex-wrapper div.section-profile-left button.profile-button-logout:hover {
+  color: #ffbd59;
 }
 body div#root main.dashboard-page section.section-profile div.flex-wrapper div.section-profile-right {
   display: flex;

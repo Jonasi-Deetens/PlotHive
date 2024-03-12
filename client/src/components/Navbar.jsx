@@ -5,7 +5,7 @@ import navBarLogo from "../assets/Logo/logo-navbar.svg";
 import { UserContext } from "../providers/UserContext";
 
 const Navbar = () => {
-  const {user, authUser, logout} = useContext(UserContext);
+  const {user, authUser} = useContext(UserContext);
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
     setIsActive(!isActive);
@@ -58,7 +58,7 @@ const Navbar = () => {
         </li>
         { user ?
         <li>
-          <Link onClick={logout}>Logout</Link>
+          <Link to="/Dashboard">{user && user.username}</Link>
         </li> :
         <li>
           <Link to="/Login">Login</Link>

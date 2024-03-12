@@ -28,6 +28,12 @@ body {
                         margin: auto;
                         border-right: 4px solid $background-dark;
 
+                        p.profile-name {
+                            font-family: $logo-font;
+                            font-weight: bold;
+                            font-size: 30px;
+                        }
+
                         p.profile-stat {
                             font-family: $logo-font;
                             font-weight: bold;
@@ -47,6 +53,20 @@ body {
                         button.profile-button:hover { 
                             background-color:  $main;
                             color: $fontcolor-darker;
+                        }
+
+                        button.profile-button-logout {
+                            color: $link;
+                            background-color: $background-light;
+                            text-decoration: underline;
+                            text-underline-offset: 5px;
+                            font-size: 18px;
+                            border: none;
+                            padding: 5px;
+                        }
+
+                        button.profile-button-logout:hover {
+                            color: $cta;
                         }
                     }
 

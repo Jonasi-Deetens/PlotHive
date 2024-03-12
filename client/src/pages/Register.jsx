@@ -22,7 +22,7 @@ const Register = () => {
     }
     try {
       await registerUser(userData);
-      navigate('/');
+      navigate('/dashboard');
     } catch (error) {
       setRegisterError(error.message);
     }

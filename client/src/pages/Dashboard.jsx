@@ -1,8 +1,30 @@
 import "../assets/styles/pages/Dashboard/dashboard.css";
 import navBarLogo from "../assets/Logo/logo-navbar.svg";
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../providers/UserContext";
 
 const Dashboard = () => {
+  const { authUser, user, logout } = useContext(UserContext)
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isAuthorized = async () => {
+      try {
+        if (!user) {
+          await authUser();
+          if (!user) {
+            navigate("/");
+          }
+        }
+      } catch (error) {
+        console.error("Failed to authenticate");
+      }
+    };
+
+    isAuthorized();
+  }, [authUser, navigate, user]);
+
   return (
     <main className="dashboard-page">
       <h2 className="dashboard-title">Dashboard</h2>
@@ -10,9 +32,12 @@ const Dashboard = () => {
         <div className="flex-wrapper">
           <div className="section-profile-left">
             <img src={navBarLogo} alt="profile-picture" />
+            <p className="profile-name">{user && user.username}</p>
             <p className="profile-stat">0 followers</p>
             <p className="profile-stat">0 following</p>
             <button className="profile-button">Edit profile</button>
+            <br />
+            <button className="profile-button-logout" onClick={logout}>Logout</button>
           </div>
           <div className="section-profile-right">
             <div className="badge">
