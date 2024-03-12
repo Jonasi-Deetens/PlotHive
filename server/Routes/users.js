@@ -3,11 +3,14 @@ const router = express.Router();
 import mongoose from 'mongoose';
 import UserModel from '../Models/User.js';
 import { hashPassword, comparePassword } from '../Encryption/bcrypt.js';
+import jwt from 'jsonwebtoken';
 
 // Login user
 router.post('/login', validateLoginData, async (req, res) => {
-    if (res.user) 
-        return res.status(201).json(res.user);
+    if (res.user) {
+        const token = jwt.sign({userId: res.user._id}, process.env.JWT_KEY, {expiresIn: '1h'});
+        return res.status(201).json({user: res.user, token});
+    }
     else   
         res.status(500).json({ message: err.message });
 });
@@ -21,7 +24,7 @@ router.post('/', validateRegistrationData, async (req, res) => {
             password: await hashPassword(req.body.password),
             email: req.body.email
         });
-        
+
         const savedUser = await newUser.save();
         console.log('User saved successfully:', savedUser);
         res.status(201).json(savedUser);

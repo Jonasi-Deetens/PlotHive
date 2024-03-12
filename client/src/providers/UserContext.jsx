@@ -6,7 +6,28 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const logout = () => {
+    localStorage.removeItem('token');
     setUser(null);
+  }
+
+  const authUser = async () => {
+    try {
+      console.log(localStorage)
+      const token = localStorage.getItem('token');
+      const response = await fetch('http://127.0.0.1:5000/auth/user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token
+        }
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setUser(data);
+      }
+    } catch (error) {
+      throw new Error(error.message);
+    }
   }
 
   const loginUser = async (userData) => {
@@ -22,10 +43,9 @@ const UserProvider = ({ children }) => {
         const errorMessage = await response.json();
         throw new Error(errorMessage.message);
       } else {
-        setUser({
-          username: userData.username,
-          email: userData.email
-        });
+        const data = await response.json();
+        setUser(data.user);
+        localStorage.setItem('token', data.token);
       }
     } catch (error) {
       throw new Error(error.message);
@@ -56,7 +76,7 @@ const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{user, registerUser, loginUser, logout}}>
+    <UserContext.Provider value={{user, authUser, registerUser, loginUser, logout}}>
       {children}
     </UserContext.Provider>
   );
