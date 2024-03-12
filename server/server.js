@@ -1,9 +1,7 @@
 import express from "express";
 import path from "path";
 import dotenv from "dotenv";
-import { createUser } from "./Controllers/UserController.js";
 import connectToDatabase from "./Database/database.js";
-import contributionRoutes from "./routes/contributionRoutes.js";
 
 const app = express();
 dotenv.config();
@@ -13,12 +11,29 @@ const port = process.env.PORT || 4000;
 
 connectToDatabase();
 
+app.use(express.json());
 app.use(express.static("./public"));
-app.use("/api", contributionRoutes);
 
-app.get("/", (req, res) => {
-  res.send("<h1>Vite + React</h1>");
-  createUser();
+import bookRoutes from "./Routes/books.js";
+app.use("/api/books", bookRoutes);
+
+import userRoutes from "./Routes/users.js";
+app.use("/api/users", userRoutes);
+
+import genreRoutes from "./Routes/genres.js";
+app.use("/api/genres", genreRoutes);
+
+import promptRoutes from "./Routes/prompts.js";
+app.use("/api/prompts", promptRoutes);
+
+import contributionRoutes from "./Routes/contributions.js";
+app.use("/api/contributions", contributionRoutes);
+
+import commentRoutes from "./Routes/comments.js";
+app.use("/api/comments", commentRoutes);
+
+app.all("*", (req, res) => {
+  res.send("No resource found!");
 });
 
 app.listen(port, () => {

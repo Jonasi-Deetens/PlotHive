@@ -22,9 +22,10 @@ const bookSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Genre'
     }],
-    date_started: {
+    created_at: {
         type: Date,
-        required: true
+        required: true,
+        default: Date.now
     }
 });
 
