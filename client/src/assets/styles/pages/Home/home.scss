@@ -7,26 +7,36 @@ main.home-page {
         justify-content: space-between;
         align-items: center;
         padding: 10px;
+        position: relative; // Add position relative to contain absolutely positioned logo
       
         img {
-          width: 40%;
-          height: 50vh;
+          width: 60%;
+          position: absolute; // Position the logo absolutely
+          top: 0; // Align to the top
+          left: 0; // Align to the left
         }
       
         .home-page-login {
-          background-color: $background-dark;
+          background-color: $fontcolor;
           margin-left: auto;
-          margin-bottom: auto;
-        padding: 10px 30px;
-        margin-bottom: 10vh;
-        border: none;
-        border-radius: 50px;
-        font-size: 24px;
-        cursor: pointer;
-        size: 2vw;
-        font-size: 2vw;
-        }
+          margin-top: 10px;
+          padding: 10px 30px;
+          margin-bottom: 10vh;
+          border: none;
+          border-radius: 50px;
+          font-size: 24px;
+          cursor: pointer;
+          size: 2vw;
+          font-size: 2vw;
+          transition: all 0.3s ease;
+          }
+        button:hover,
+          button:focus {
+              background-color: $main;
+          }
+        
       }
+      
       
       
     h1.main-header {
@@ -52,6 +62,7 @@ main.home-page {
         cursor: pointer;
         size: 2vw;
         font-size: 2vw;
+        transition: all 0.3s ease;
     }
     a {
         text-decoration: none;
@@ -59,7 +70,8 @@ main.home-page {
     }
     button:hover,
     button:focus {
-        background-color: $main;
+        transform: scale(1.05);
+        background-color: $button-hover;
     }
 
     // Badges section

@@ -8,15 +8,18 @@ main.home-page .home-page-navbar {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  position: relative;
 }
 main.home-page .home-page-navbar img {
-  width: 40%;
-  height: 50vh;
+  width: 60%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 main.home-page .home-page-navbar .home-page-login {
-  background-color: #414042;
+  background-color: #ecf0f3;
   margin-left: auto;
-  margin-bottom: auto;
+  margin-top: 10px;
   padding: 10px 30px;
   margin-bottom: 10vh;
   border: none;
@@ -25,6 +28,11 @@ main.home-page .home-page-navbar .home-page-login {
   cursor: pointer;
   size: 2vw;
   font-size: 2vw;
+  transition: all 0.3s ease;
+}
+main.home-page .home-page-navbar button:hover,
+main.home-page .home-page-navbar button:focus {
+  background-color: #ffbd59;
 }
 main.home-page h1.main-header {
   display: flex;
@@ -49,6 +57,7 @@ main.home-page button.home-header-button {
   cursor: pointer;
   size: 2vw;
   font-size: 2vw;
+  transition: all 0.3s ease;
 }
 main.home-page a {
   text-decoration: none;
@@ -56,6 +65,7 @@ main.home-page a {
 }
 main.home-page button:hover,
 main.home-page button:focus {
+  transform: scale(1.05);
   background-color: #ffbd59;
 }
 main.home-page .card-container {

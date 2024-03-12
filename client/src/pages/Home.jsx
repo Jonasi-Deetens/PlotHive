@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <main className='home-page'>
       <div className='home-page-navbar'>
-      <img src="src/assets/Logo/LargeLogo.svg" alt="Large-Logo" />
+      <img src="src/assets/Logo/logo-home.svg" alt="Large-Logo" />
       <button className='home-page-login'><Link to="/Login">Login</Link></button>
       </div>
       <h1 className='main-header'> &quot;Jonasi stepped out of the elevator with blood all over his face, ... &quot;</h1>
