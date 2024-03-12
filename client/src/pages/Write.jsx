@@ -1,8 +1,7 @@
-import React from "react";
 import Tinymce from "../components/Tinymce";
 import Contribution from "../components/Contribution";
 
-export const Write = () => {
+const Write = () => {
   return (
     <div className="write-page">
       <h1>
@@ -32,3 +31,5 @@ export const Write = () => {
     </div>
   );
 };
+
+export default Write;
