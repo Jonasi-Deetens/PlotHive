@@ -12,10 +12,11 @@ import Read from "./pages/Read"
 import Register from "./pages/Register"
 import Store from "./pages/Store"
 import Write from "./pages/Write"
+import { UserProvider } from "./providers/UserContext";
 
 function App() {
   return (
-    <>
+    <UserProvider>
       <Router>
         <Navbar />
           <Routes>
@@ -32,7 +33,7 @@ function App() {
             <Route path="/Write" element={<Write />} />
           </Routes>
       </Router>
-    </>
+    </UserProvider>
   );
 }
 

@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
             _id: new mongoose.Types.ObjectId(),
             username: req.body.username,
             password: req.body.password,
+            confirmPassword: req.body.confirmPassword,
             email: req.body.email
         });
         
