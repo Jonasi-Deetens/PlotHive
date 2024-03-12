@@ -9,6 +9,29 @@ const UserProvider = ({ children }) => {
     setUser(null);
   }
 
+  const loginUser = async (userData) => {
+    try {
+      const response = await fetch('http://127.0.0.1:5000/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+      });
+      if (!response.ok) {
+        const errorMessage = await response.json();
+        throw new Error(errorMessage.message);
+      } else {
+        setUser({
+          username: userData.username,
+          email: userData.email
+        });
+      }
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+
   const registerUser = async (userData) => {
     try {
       const response = await fetch('http://127.0.0.1:5000/api/users', {
@@ -33,7 +56,7 @@ const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{user, registerUser, logout}}>
+    <UserContext.Provider value={{user, registerUser, loginUser, logout}}>
       {children}
     </UserContext.Provider>
   );
