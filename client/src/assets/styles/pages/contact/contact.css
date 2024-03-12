@@ -994,47 +994,67 @@ body div#root main.contact-page div.contact-wrapper div.contact-container form d
   font-weight: bold;
 }
 
-@media screen and (max-width: 800px) {
-  body div#root main.register-page div.register-container {
-    border-radius: 25px;
-    width: 95%;
+@media screen and (max-width: 1024px) {
+  body div#root main.contact-page div.contact-wrapper {
+    width: 98%;
+    border-radius: 20px;
   }
-  body div#root main.register-page div.register-container h2.register-title {
+  body div#root main.contact-page div.contact-wrapper div.social-media-container {
+    border-radius: 20px 0 0 20px;
+    width: 250px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.social-media-container h2.socials-title {
     font-size: 30px;
   }
-  body div#root main.register-page div.register-container div.errors {
+  body div#root main.contact-page div.contact-wrapper div.social-media-container ul.socials-list li a img {
+    height: 40px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container h2.contact-title {
+    font-size: 30px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container div.errors p.error-message {
+    font-size: 22px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.contact-container form {
     width: 90%;
   }
-  body div#root main.register-page div.register-container div.errors p.error-message {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div label {
     font-size: 18px;
   }
-  body div#root main.register-page div.register-container form {
-    width: 90%;
-  }
-  body div#root main.register-page div.register-container form div label {
-    font-size: 18px;
-  }
-  body div#root main.register-page div.register-container form div div img {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div img {
     height: 20px;
   }
-  body div#root main.register-page div.register-container form div div input {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input {
     font-size: 18px;
   }
-  body div#root main.register-page div.register-container form div div input::-moz-placeholder {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input::-moz-placeholder {
     font-style: italic;
     font-size: 16px;
   }
-  body div#root main.register-page div.register-container form div div input::placeholder {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input::placeholder {
     font-style: italic;
     font-size: 16px;
   }
-  body div#root main.register-page div.register-container form a {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form a {
     font-size: 12px;
   }
-  body div#root main.register-page div.register-container form button.sign-up-btn {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form button.contact-btn {
     font-size: 16px;
   }
-  body div#root main.register-page div.register-container form div.question p {
+  body div#root main.contact-page div.contact-wrapper div.contact-container form div.question p {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 700px) {
+  body div#root main.contact-page div.contact-wrapper {
+    width: 98%;
+    border-radius: 20px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.social-media-container {
+    border-radius: 20px 0 0 20px;
+    width: 170px;
+  }
+  body div#root main.contact-page div.contact-wrapper div.social-media-container ul.socials-list li a img {
+    height: 35px;
   }
 }/*# sourceMappingURL=contact.css.map */
