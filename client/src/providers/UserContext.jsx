@@ -3,7 +3,11 @@ import React, { createContext, useState } from 'react';
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-  const [userInfo, setUserInfo] = useState(null);
+  const [user, setUser] = useState(null);
+
+  const logout = () => {
+    setUser(null);
+  }
 
   const registerUser = async (userData) => {
     try {
@@ -18,7 +22,7 @@ const UserProvider = ({ children }) => {
         const errorMessage = await response.json();
         throw new Error(errorMessage.message);
       } else {
-        setUserInfo({
+        setUser({
           username: userData.username,
           email: userData.email
         });
@@ -29,7 +33,7 @@ const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{userInfo, registerUser}}>
+    <UserContext.Provider value={{user, registerUser, logout}}>
       {children}
     </UserContext.Provider>
   );
