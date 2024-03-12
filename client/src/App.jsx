@@ -1,6 +1,6 @@
 import "./assets/styles/app.css";
 import Navbar from "./components/Navbar";
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, useLocation} from 'react-router-dom';
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
@@ -15,9 +15,12 @@ import Write from "./pages/Write"
 import Error404 from "./pages/Error404";
 
 function App() {
+  const location = useLocation().pathname;
+  const headerLocations = ["/", "AboutUs", "Contact", "Dashboard", "Explore", "Legal", "Login", "Read", "Register", "Store", "Write"];
+
   return (
     <>
-      <Navbar />
+      {headerLocations.includes(location) && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/AboutUs" element={<AboutUs />} />
