@@ -8,26 +8,25 @@ import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { registerUser } = useContext(UserContext);
-  const [registerError, setRegisterError] = useState('');
+  const [registerError, setRegisterError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const userData =  {
+    const userData = {
       username: formData.get("username"),
       password: formData.get("password"),
       confirmPassword: formData.get("repeat-password"),
       email: formData.get("email"),
-    }
+    };
     try {
       await registerUser(userData);
-      navigate('/dashboard');
+      navigate("/dashboard");
     } catch (error) {
       setRegisterError(error.message);
     }
-    
-  }
+  };
 
   return (
     <main className="register-page">
@@ -84,7 +83,7 @@ const Register = () => {
             <div className="repeat-password-input">
               <img src={userPassword} alt="password-logo" />
               <input
-                type="repeat-password"
+                type="repeat"
                 name="repeat-password"
                 id="repeat-password"
                 placeholder="Repeat your password"

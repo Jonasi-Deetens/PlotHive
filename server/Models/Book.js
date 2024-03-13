@@ -12,7 +12,8 @@ const bookSchema = new mongoose.Schema({
     },
     prompt_id: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true
+        required: true,
+        ref: 'Prompt'
     },
     contributions: [{
         type: mongoose.Schema.Types.ObjectId,
