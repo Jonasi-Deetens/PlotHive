@@ -97,3 +97,56 @@ body {
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  body {
+    div#root {
+      main.login-page {
+        div.login-container {
+          border-radius: 25px;
+          width: 95%;
+          h2.login-title {
+            font-size: 30px;
+          }
+          div.errors {
+            width: 90%;
+            p.error-message {
+              font-size: 18px;
+            }
+          }
+          form {
+            width: 90%;
+            div {
+              label {
+                font-size: 18px;
+              }
+              div {
+                img {
+                  height: 20px;
+                }
+                input {
+                  font-size: 18px;
+                }
+                input::placeholder {
+                  font-style: italic;
+                  font-size: 16px;
+                }
+              }
+            }
+            a {
+              font-size: 12px;
+            }
+            button.login-btn {
+              font-size: 16px;
+            }
+            div.question {
+              p {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

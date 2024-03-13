@@ -1,6 +1,7 @@
 import express from "express";
-import path from "path";
-import dotenv from "dotenv";
+import path from 'path';
+import dotenv from 'dotenv';
+import cors from 'cors';
 import connectToDatabase from "./Database/database.js";
 
 const app = express();
@@ -12,7 +13,11 @@ const port = process.env.PORT || 4000;
 connectToDatabase();
 
 app.use(express.json());
-app.use(express.static("./public"));
+app.use(express.static('./public'));
+app.use(cors());
+
+import authRoutes from './Routes/auth.js';
+app.use('/auth', authRoutes);
 
 import bookRoutes from "./Routes/books.js";
 app.use("/api/books", bookRoutes);

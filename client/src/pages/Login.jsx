@@ -1,16 +1,39 @@
 import "../assets/styles/pages/Login/login.css";
 import userLogo from "../assets/svgs/user.png";
 import userPassword from "../assets/svgs/password.png";
+import { useContext, useState } from "react";
+import { UserContext } from "../providers/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const { loginUser } = useContext(UserContext);
+  const [loginError, setLoginError] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const userData =  {
+      username: formData.get("username"),
+      password: formData.get("password")
+    }
+    try {
+      await loginUser(userData);
+      navigate('/dashboard');
+    } catch (error) {
+      setLoginError(error.message);
+    }
+    
+  }
+
   return (
     <main className="login-page">
       <div className="login-container">
         <h2 className="login-title">Login</h2>
         <div className="errors">
-          <p className="error-message">Wrong username or password!</p>
+          <p className="error-message">{loginError}</p>
         </div>
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <div className="username">
             <label htmlFor="username">Username</label>
             <div className="username-input">

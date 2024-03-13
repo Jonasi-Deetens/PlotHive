@@ -1,7 +1,29 @@
-import Tinymce from "../components/Tinymce";
+import React, { useContext } from "react";
+import { UserContext } from "../providers/UserContext";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Contribution from "../components/Contribution";
+import Tinymce from "../components/Tinymce";
 
 const Write = () => {
+  const { authUser, user } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isAuthorized = async () => {
+      try {
+        await authUser();
+        if (!user) {
+          navigate("/");
+        }
+      } catch (error) {
+        console.error("Failed to authenticate");
+      }
+    };
+
+    isAuthorized();
+  }, [authUser, navigate, user]);
+
   return (
     <div className="write-page">
       <h1>
