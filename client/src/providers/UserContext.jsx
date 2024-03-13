@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react";
 
 const UserContext = createContext();
 
@@ -6,20 +6,20 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const logout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     setUser(null);
-  }
+  };
 
   const authUser = async () => {
     try {
-      console.log(localStorage)
-      const token = localStorage.getItem('token');
-      const response = await fetch('http://127.0.0.1:5000/auth/user', {
-        method: 'POST',
+      // console.log(localStorage)
+      const token = localStorage.getItem("token");
+      const response = await fetch("http://127.0.0.1:5000/auth/user", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': token
-        }
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
       });
       if (response.ok) {
         const data = await response.json();
@@ -28,16 +28,16 @@ const UserProvider = ({ children }) => {
     } catch (error) {
       throw new Error(error.message);
     }
-  }
+  };
 
   const loginUser = async (userData) => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/users/login', {
-        method: 'POST',
+      const response = await fetch("http://127.0.0.1:5000/api/users/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(userData)
+        body: JSON.stringify(userData),
       });
       if (!response.ok) {
         const errorMessage = await response.json();
@@ -45,21 +45,21 @@ const UserProvider = ({ children }) => {
       } else {
         const data = await response.json();
         setUser(data.user);
-        localStorage.setItem('token', data.token);
+        localStorage.setItem("token", data.token);
       }
     } catch (error) {
       throw new Error(error.message);
     }
-  }
+  };
 
   const registerUser = async (userData) => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/users', {
-        method: 'POST',
+      const response = await fetch("http://127.0.0.1:5000/api/users", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(userData)
+        body: JSON.stringify(userData),
       });
       if (!response.ok) {
         const errorMessage = await response.json();
@@ -67,7 +67,7 @@ const UserProvider = ({ children }) => {
       } else {
         const data = await response.json();
         setUser(data.user);
-        localStorage.setItem('token', data.token);
+        localStorage.setItem("token", data.token);
       }
     } catch (error) {
       throw new Error(error.message);
@@ -75,10 +75,12 @@ const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{user, authUser, registerUser, loginUser, logout}}>
+    <UserContext.Provider
+      value={{ user, authUser, registerUser, loginUser, logout }}
+    >
       {children}
     </UserContext.Provider>
   );
 };
 
-export {UserProvider, UserContext} ;
+export { UserProvider, UserContext };
