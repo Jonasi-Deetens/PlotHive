@@ -39,25 +39,4 @@ function App() {
   );
 }
 
-function AppWithNavbar() {
-  return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Navigate to="/AboutUs" />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/Explore" element={<Explore />} />
-        <Route path="/Legal" element={<Legal />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Read" element={<Read />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/Store" element={<Store />} />
-        <Route path="/Write" element={<Write />} />
-      </Routes>
-    </>
-  );
-}
-
 export default App;
