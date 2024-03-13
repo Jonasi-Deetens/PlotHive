@@ -15,6 +15,7 @@ main.home-page {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    width: 100%;
   }
 
   .home-page-navbar {
@@ -47,19 +48,18 @@ main.home-page {
   div.main-header-container h1 {
     display: inline-block;
   }
-  h1.main-header {
-    color: $fontcolor !important;
+  .custom-header {
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    overflow: hidden;
+    border-right: 0.15em solid $button-hover;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
     font-size: 2.3vw;
     text-align: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: 0.15em solid $button-hover; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: 0.15em; /* Adjust as needed */
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    color: $fontcolor !important;
   }
+
   @keyframes typing {
     from {
       width: 0;
@@ -69,7 +69,6 @@ main.home-page {
     }
   }
 
-  /* The typewriter cursor effect */
   @keyframes blink-caret {
     from,
     to {
@@ -152,7 +151,7 @@ main.home-page {
       background-color: $button-hover;
     }
     &:hover p {
-      color: $background-dark;
+      color: $background-dark !important;
     }
 
     @media (max-width: 768px) {

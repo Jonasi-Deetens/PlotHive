@@ -849,7 +849,6 @@ body {
 main.home-page {
   margin-bottom: 20px;
   background-color: #545454;
-  /* The typewriter cursor effect */
 }
 main.home-page header.home-page-header {
   height: 100vh;
@@ -857,6 +856,7 @@ main.home-page header.home-page-header {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 main.home-page .home-page-navbar {
   display: flex;
@@ -886,18 +886,16 @@ main.home-page .home-page-navbar button:focus {
 main.home-page div.main-header-container h1 {
   display: inline-block;
 }
-main.home-page h1.main-header {
-  color: #ecf0f3 !important;
+main.home-page .custom-header {
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  overflow: hidden;
+  border-right: 0.15em solid #ffbd59;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
   font-size: 2.3vw;
   text-align: center;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid #ffbd59; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.15em; /* Adjust as needed */
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  color: #ecf0f3 !important;
 }
 @keyframes typing {
   from {
@@ -980,7 +978,7 @@ main.home-page .card:hover {
   background-color: #ffbd59;
 }
 main.home-page .card:hover p {
-  color: #414042;
+  color: #414042 !important;
 }
 @media (max-width: 768px) {
   main.home-page .card {
