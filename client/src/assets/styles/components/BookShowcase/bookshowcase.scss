@@ -23,12 +23,11 @@ body {
                 justify-content: space-around;
 
                 div.profile-book {
-                    width: 22%;
+                    width: 24%;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
                     flex-direction: column;
-                    margin: 0 5px;
+                    justify-content: space-around;
+                    align-items: center;
         
                     h3.profile-book-title {
                         color: $fontcolor;
@@ -39,6 +38,10 @@ body {
                     img {
                         max-width: 100%;
                     }
+
+                    div.button-wrapper {
+                        opacity: 0; 
+                    }
                 }
 
                 @media (max-width: 1024px) {
@@ -48,8 +51,11 @@ body {
                 }
         
                 div.profile-book:hover {
-                    transform: scale(1.1);
-                    margin: 0 5px;
+
+                    div.top-wrapper {
+                        display: flex;
+                        justify-content: space-between;
+                    }
         
                     img.profile-book-image {
                         filter: drop-shadow(1px 1px 5px $main);
@@ -57,6 +63,25 @@ body {
         
                     h3.profile-book-title {
                         color: $main;
+                    }
+
+                    div.button-wrapper {
+                        width: 25%;
+                        margin-left: 20px;
+                        opacity: 1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        transition: all 700ms;
+
+                        .link {
+                            color: $fontcolor;
+                            width: fit-content;
+                        }
+    
+                        .link:hover {
+                            color: $cta;
+                        }
                     }
                 }
             }
