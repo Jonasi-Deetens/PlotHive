@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/pages/Home/home.css";
+import BookShowcase from "../components/BookShowcase";
+import book from "../assets/svgs/book-home.svg"
 
 const Home = () => {
   return (
@@ -55,26 +57,13 @@ const Home = () => {
           <p>Earn badges</p>
         </Link>
       </div>
-      <h1 className="popular-header">Popular right now</h1>
-      <div className="popular-section">
-        <div className="popular-cards">
-          <Link to="/Store" className="popular-card">
-            <img src="src/assets/Logo/logo-navbar.svg" alt="icon1" />
-            <p>Popular story 1</p>
-          </Link>
-          <Link to="/Store" className="popular-card">
-            <img src="src/assets/Logo/logo-navbar.svg" alt="icon2" />
-            <p>Popular story 2</p>
-          </Link>
-          <Link to="/Store" className="popular-card">
-            <img src="src/assets/Logo/logo-navbar.svg" alt="icon3" />
-            <p>Popular story 3</p>
-          </Link>
-        </div>
-      </div>
+      <BookShowcase category={"like-this"} />
       <h2 className="section-three">
         Welcome to your journey through the magical art of writing.
       </h2>
+      <figure className="home-figure">
+        <img className="home-image" src={book} alt="Image of a open book" />
+      </figure>
     </main>
   );
 };
