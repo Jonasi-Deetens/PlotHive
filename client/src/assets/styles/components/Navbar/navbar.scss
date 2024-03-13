@@ -56,6 +56,10 @@ body {
               transform: scaleX(1);
               background-color: $button-hover;
             }
+            &.active {
+              color: $button-hover;
+              font-weight: bold;
+            }
           }
         }
       }
