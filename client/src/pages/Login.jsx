@@ -1,14 +1,16 @@
 import "../assets/styles/pages/Login/login.css";
 import userLogo from "../assets/svgs/user.png";
 import userPassword from "../assets/svgs/password.png";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../providers/UserContext";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { loginUser } = useContext(UserContext);
   const [loginError, setLoginError] = useState('');
+
   const navigate = useNavigate();
+  const { authUser, user } = useContext(UserContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +27,21 @@ const Login = () => {
     }
     
   }
+
+  useEffect(() => {
+    const isAuthorized = async () => {
+      try {
+        await authUser();
+        if (user) {
+          navigate("/dashboard");
+        }
+      } catch (error) {
+        console.error("Failed to authenticate");
+      }
+    };
+
+    isAuthorized();
+  }, [authUser, navigate, user]);
 
   return (
     <main className="login-page">

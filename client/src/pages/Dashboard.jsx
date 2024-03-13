@@ -3,11 +3,10 @@ import navBarLogo from "../assets/Logo/logo-navbar.svg";
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../providers/UserContext";
-import cover from "../assets/svgs/cover.png"
+import BookShowcase from "../components/BookShowcase";
 
 const Dashboard = () => {
-  const { authUser, user, logout } = useContext(UserContext)
-  const [books, setBooks] = useState(null);
+  const { authUser, user, logout } = useContext(UserContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,25 +24,6 @@ const Dashboard = () => {
     };
 
     isAuthorized();
-
-    const getBooks = async () => {
-      try {
-        const response = await fetch('http://127.0.0.1:5000/api/books', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setBooks(data);
-        }
-      } catch (error) {
-        throw new Error(error.message);
-      }
-    }
-
-    getBooks();
   }, [authUser, navigate, user]);
 
   return (
@@ -95,17 +75,7 @@ const Dashboard = () => {
           <button className='prompt-button'><a href="/Explore" className='link'>Explore</a></button>
         </div>
       </section>
-      <section className="section-profile">
-        <h2 className="section-title">You might like</h2>
-        <div className="flex-wrapper">
-        {books && books.map((book) => (
-          <div className="profile-book" key={'BOOK_KEY_' + book._id}>   
-            <img className="profile-book-image" src={cover} width={100} height={160} alt="Placeholder of an image of a book" />
-            <h3 className="profile-book-title">{book.title}</h3>
-          </div>
-        ))}
-        </div>
-      </section>
+      <BookShowcase categorie={"like-this"} />
     </main>
   )
 }
