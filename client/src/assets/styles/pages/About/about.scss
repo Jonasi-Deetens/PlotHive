@@ -29,14 +29,20 @@ body {
       }
       section.our-mission {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         article {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          width: 50%;
+          width: 40%;
           box-sizing: border-box;
           padding: 20px;
+          background-color: $background-light;
+          border-radius: 20px;
+          height: 420px;
+          margin: auto 0;
+          box-sizing: border-box;
+          @include shadow;
           h1 {
             font-size: 42px;
             font-weight: 500;
@@ -82,6 +88,51 @@ body {
             grid-row: span 1;
             object-fit: cover;
             @include shadow;
+          }
+        }
+      }
+      section.meet-our-team {
+        @include shadow;
+        background-color: $background-light;
+        box-sizing: border-box;
+        padding: 50px 0;
+        h1 {
+          margin: 0;
+          color: $fontcolor;
+          font-family: $logo-font;
+          font-size: 42px;
+          font-weight: 500;
+          text-align: center;
+          margin-bottom: 40px;
+        }
+        div.portraits {
+          display: flex;
+          justify-content: space-around;
+          width: 80%;
+          margin: 0 auto;
+          div.portrait {
+            img {
+              height: 150px;
+              object-fit: contain;
+              border-radius: 150px;
+              @include shadow;
+            }
+            p {
+              font-size: 25px;
+              text-align: center;
+            }
+            div.social-media-links {
+              display: flex;
+              justify-content: center;
+              gap: 10px;
+              margin-top: -20px;
+              a {
+                img {
+                  height: 20px;
+                  @include shadow;
+                }
+              }
+            }
           }
         }
       }

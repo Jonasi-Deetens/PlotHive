@@ -1,8 +1,15 @@
-
 import "../assets/styles/pages/About/about.css";
 import typewritter from "../assets/img/typewritter.jpg";
 import laptop from "../assets/img/laptop.jpg";
 import bookAuthors from "../assets/img/book-authors.jpg";
+
+import alex from "../assets/img/portraits/portrait2.jpeg";
+import dante from "../assets/img/portraits/portrait1.jpeg";
+import jonasi from "../assets/img/portraits/portrait3.jpeg";
+import kilian from "../assets/img/portraits/portrait4.jpeg";
+
+import github from "../assets/svgs/github.png";
+import linkedin from "../assets/svgs/linkedin.png";
 
 const AboutUs = () => {
   return (
@@ -37,11 +44,51 @@ const AboutUs = () => {
         <h1>Meet our Team</h1>
         <div className="portraits">
           <div className="portrait">
-            <img src="" alt="portrait" />
+            <img className="img-alex" src={alex} alt="portrait" />
             <p className="name">Alex</p>
             <div className="social-media-links">
-              <img src="" alt="linkedin" />
-              <img src="" alt="github" />
+              <a href="">
+                <img src={linkedin} alt="linkedin logo" />
+              </a>
+              <a href="">
+                <img src={github} alt="github" />
+              </a>
+            </div>
+          </div>
+          <div className="portrait">
+            <img className="img-dante" src={dante} alt="portrait" />
+            <p className="name">Dante</p>
+            <div className="social-media-links">
+              <a href="">
+                <img src={linkedin} alt="linkedin logo" />
+              </a>
+              <a href="">
+                <img src={github} alt="github" />
+              </a>
+            </div>
+          </div>
+          <div className="portrait">
+            <img className="img-jonasi" src={jonasi} alt="portrait" />
+            <p className="name">Jonasi</p>
+            <div className="social-media-links">
+              <a href="">
+                <img src={linkedin} alt="linkedin logo" />
+              </a>
+              <a href="">
+                <img src={github} alt="github" />
+              </a>
+            </div>
+          </div>
+          <div className="portrait">
+            <img className="img-kilian" src={kilian} alt="portrait" />
+            <p className="name">Kilian</p>
+            <div className="social-media-links">
+              <a href="">
+                <img src={linkedin} alt="linkedin logo" />
+              </a>
+              <a href="">
+                <img src={github} alt="github" />
+              </a>
             </div>
           </div>
         </div>
