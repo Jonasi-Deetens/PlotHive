@@ -856,6 +856,7 @@ main.home-page header.home-page-header {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 main.home-page .home-page-navbar {
   display: flex;
@@ -876,21 +877,41 @@ main.home-page .home-page-navbar .home-page-login {
   border-radius: 50px;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 main.home-page .home-page-navbar button:hover,
 main.home-page .home-page-navbar button:focus {
   background-color: #ffbd59;
 }
-main.home-page div.main-header-container {
+main.home-page div.main-header-container h1 {
   display: inline-block;
 }
-main.home-page h1.main-header {
-  color: #ecf0f3 !important;
-  font-size: 5vw;
+main.home-page .custom-header {
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  overflow: hidden;
+  border-right: 0.15em solid #ffbd59;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  font-size: 2.3vw;
   text-align: center;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  color: #ecf0f3 !important;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ffbd59;
+  }
 }
 main.home-page .home-button-container {
   display: flex;
@@ -957,7 +978,7 @@ main.home-page .card:hover {
   background-color: #ffbd59;
 }
 main.home-page .card:hover p {
-  color: #414042;
+  color: #414042 !important;
 }
 @media (max-width: 768px) {
   main.home-page .card {
@@ -1015,7 +1036,7 @@ main.home-page .popular-section .popular-card:hover {
   transform: scale(1.05);
 }
 main.home-page .popular-section .popular-card:hover p {
-  color: #ffbd59;
+  color: #ffbd59 !important;
 }
 @media (max-width: 768px) {
   main.home-page .popular-card {

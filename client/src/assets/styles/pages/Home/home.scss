@@ -15,6 +15,7 @@ main.home-page {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    width: 100%;
   }
 
   .home-page-navbar {
@@ -36,7 +37,7 @@ main.home-page {
       border-radius: 50px;
       font-size: 1rem;
       cursor: pointer;
-      transition: all 0.4s ease;
+      transition: all 0.3s ease;
     }
 
     button:hover,
@@ -44,15 +45,38 @@ main.home-page {
       background-color: $main;
     }
   }
-  div.main-header-container {
+  div.main-header-container h1 {
     display: inline-block;
   }
-  h1.main-header {
-    color: $fontcolor !important;
-    font-size: 5vw;
+  .custom-header {
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    overflow: hidden;
+    border-right: 0.15em solid $button-hover;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    font-size: 2.3vw;
     text-align: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    color: $fontcolor !important;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: $button-hover;
+    }
   }
 
   .home-button-container {
@@ -127,7 +151,7 @@ main.home-page {
       background-color: $button-hover;
     }
     &:hover p {
-      color: $background-dark;
+      color: $background-dark !important;
     }
 
     @media (max-width: 768px) {
@@ -187,7 +211,7 @@ main.home-page {
         transform: scale(1.05);
       }
       &:hover p {
-        color: $button-hover;
+        color: $button-hover !important;
       }
     }
   }
