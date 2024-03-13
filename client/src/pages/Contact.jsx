@@ -43,29 +43,29 @@ const Contact = () => {
             <p className="error-message">Email can&apos;t be empty!</p>
           </div>
           <form action="">
-            <div className="username">
-              <label htmlFor="username">Username</label>
-              <div className="username-input">
-                <img src={userLogo} alt="username-logo" />
+            <div className="name">
+              <label htmlFor="name">Name</label>
+              <div className="name-input">
+                <img src={userLogo} alt="name-logo" />
                 <input
                   type="text"
-                  name="username"
-                  id="username"
-                  placeholder="Type your username"
+                  name="name"
+                  id="name"
+                  placeholder="Type your name"
                   required
                 />
               </div>
               <hr />
             </div>
-            <div className="password">
-              <label htmlFor="password">Password</label>
-              <div className="password-input">
-                <img src={userPassword} alt="password-logo" />
+            <div className="surname">
+              <label htmlFor="surname">Surname</label>
+              <div className="surname-input">
+                <img src={userLogo} alt="surname-logo" />
                 <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Type your password"
+                  type="text"
+                  name="surname"
+                  id="surname"
+                  placeholder="Type your surname"
                   required
                 />
               </div>
