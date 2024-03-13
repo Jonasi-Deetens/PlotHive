@@ -29,7 +29,12 @@ router.get('/', async (req, res) => {
         const books = await BookModel.find()
             .populate('genres')
             .populate('prompt_id')
-            .populate('contributions');
+            .populate({
+                path: 'contributions',
+                populate: {
+                    path: 'comments user_id'
+                }
+            });
         res.json(books);
     } catch (err) {
         res.status(500).json({ message: err.message });

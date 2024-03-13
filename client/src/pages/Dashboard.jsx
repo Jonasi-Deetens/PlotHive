@@ -4,6 +4,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../providers/UserContext";
 import BookShowcase from "../components/BookShowcase";
+import LikedBooks from "../components/LikedBooks";
+import LatestContributions from "../components/LatestContributions";
 
 const Dashboard = () => {
   const { authUser, user, logout } = useContext(UserContext);
@@ -73,6 +75,12 @@ const Dashboard = () => {
         <div className='button-container'>
           <button className='prompt-button'><a href="/Write" className='link'>Contribute</a></button>
           <button className='prompt-button'><a href="/Explore" className='link'>Explore</a></button>
+        </div>
+      </section>
+      <section className="section-profile-half">
+        <div className="flex-wrapper">
+          <LatestContributions />
+          <LikedBooks />
         </div>
       </section>
       <BookShowcase category={"top"} />

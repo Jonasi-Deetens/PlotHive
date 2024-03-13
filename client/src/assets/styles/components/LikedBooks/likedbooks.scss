@@ -1,0 +1,44 @@
+@use "../../../SASS/" as *;
+
+body {
+    div#root {
+        section.books-section {
+            background-color: $background-light;
+            border-radius: 50px;
+            width: 40%;
+            margin: auto;
+            padding: 20px;
+
+            h2.books-title {
+                font-family: $logo-font;
+                font-size: 26px;
+                color: $fontcolor;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            
+            div.book-wrapper {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: space-around;
+
+                div.flex-wrapper {
+                    display: flex;
+                    justify-content: space-around;
+                }
+
+                p.book-title {
+                    color: $fontcolor;
+                    font-family: $logo-font;
+                    text-align: center;
+                }
+
+                p.book-date {
+                    color: $fontcolor;
+                    font-family: $logo-font;
+                }
+            }
+        }
+    }
+}

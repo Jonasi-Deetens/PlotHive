@@ -24,7 +24,7 @@ const BookShowcase = ({category}) => {
             setBooksList(books)
             break;
       }
-    }, [category])
+    }, [category, books, getTopBooks])
     
 
     return (
