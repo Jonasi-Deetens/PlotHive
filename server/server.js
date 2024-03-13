@@ -1,6 +1,7 @@
 import express from "express";
 import path from 'path';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import connectToDatabase from "./Database/database.js";
 
 const app = express();
@@ -13,29 +14,33 @@ connectToDatabase();
 
 app.use(express.json());
 app.use(express.static('./public'));
+app.use(cors());
 
-import bookRoutes from './Routes/books.js';
-app.use('/api/books', bookRoutes);
+import authRoutes from './Routes/auth.js';
+app.use('/auth', authRoutes);
 
-import userRoutes from './Routes/users.js';
-app.use('/api/users', userRoutes);
+import bookRoutes from "./Routes/books.js";
+app.use("/api/books", bookRoutes);
 
-import genreRoutes from './Routes/genres.js';
-app.use('/api/genres', genreRoutes);
+import userRoutes from "./Routes/users.js";
+app.use("/api/users", userRoutes);
 
-import promptRoutes from './Routes/prompts.js';
-app.use('/api/prompts', promptRoutes);
+import genreRoutes from "./Routes/genres.js";
+app.use("/api/genres", genreRoutes);
 
-import contributionRoutes from './Routes/contributions.js';
-app.use('/api/contributions', contributionRoutes);
+import promptRoutes from "./Routes/prompts.js";
+app.use("/api/prompts", promptRoutes);
 
-import commentRoutes from './Routes/comments.js';
-app.use('/api/comments', commentRoutes);
+import contributionRoutes from "./Routes/contributions.js";
+app.use("/api/contributions", contributionRoutes);
+
+import commentRoutes from "./Routes/comments.js";
+app.use("/api/comments", commentRoutes);
 
 app.all("*", (req, res) => {
-    res.send('No resource found!');
-})
+  res.send("No resource found!");
+});
 
 app.listen(port, () => {
-    console.log('Welcome ' + host + ', server is listening on port: ' + port );
-})
+  console.log("Welcome " + host + ", server is listening on port: " + port);
+});

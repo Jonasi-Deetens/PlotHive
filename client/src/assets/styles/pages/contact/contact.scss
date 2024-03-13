@@ -146,6 +146,16 @@ body {
           }
         }
       }
+      div.contact-map {
+        display: flex;
+        align-items: center;
+        iframe {
+          border-radius: 20px;
+          margin: -30px auto 50px;
+          @include shadow;
+          border: 1px solid $main;
+        }
+      }
     }
   }
 }

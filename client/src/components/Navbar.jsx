@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
 import "../assets/styles/components/Navbar/navbar.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import navBarLogo from "../assets/Logo/logo-navbar.svg";
+import { UserContext } from "../providers/UserContext";
 
 const Navbar = () => {
+  const {user, authUser} = useContext(UserContext);
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
     setIsActive(!isActive);
   };
 
   useEffect(() => {
+
+    authUser();
     const handleResize = () => {
       if (window.innerWidth > 1024) {
         setIsActive(false);
@@ -25,7 +30,7 @@ const Navbar = () => {
   return (
     <nav className="main-navigation">
       <Link to="/">
-        <img src="src/assets/Logo/logo-navbar.svg" alt="navbar-logo-PlotHub" />
+        <img src={navBarLogo} alt="navbar-logo-PlotHub" />
       </Link>
       <button
         className={`hamburger hamburger--collapse ${
@@ -51,9 +56,14 @@ const Navbar = () => {
         <li>
           <Link to="/AboutUs">About</Link>
         </li>
+        { user ?
+        <li>
+          <Link to="/Dashboard">{user && user.username}</Link>
+        </li> :
         <li>
           <Link to="/Login">Login</Link>
         </li>
+        }
       </ul>
     </nav>
   );

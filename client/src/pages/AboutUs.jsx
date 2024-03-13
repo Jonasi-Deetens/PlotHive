@@ -1,3 +1,4 @@
+
 import "../assets/styles/pages/About/about.css";
 import typewritter from "../assets/img/typewritter.jpg";
 import laptop from "../assets/img/laptop.jpg";
