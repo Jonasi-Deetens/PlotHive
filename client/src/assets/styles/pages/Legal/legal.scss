@@ -1,0 +1,30 @@
+@use "../../../SASS/" as *;
+
+.legal-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $background-dark;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: $fontcolor !important;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: $fontcolor !important;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+}
