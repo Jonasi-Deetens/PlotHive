@@ -6,23 +6,23 @@ import Contribution from "../components/Contribution";
 import Tinymce from "../components/Tinymce";
 
 const Write = () => {
-  const { authUser, user } = useContext(UserContext);
-  const navigate = useNavigate();
+  //  const { authUser, user } = useContext(UserContext);
+  //   const navigate = useNavigate();
 
-  useEffect(() => {
-    const isAuthorized = async () => {
-      try {
-        await authUser();
-        if (!user) {
-          navigate("/");
-        }
-      } catch (error) {
-        console.error("Failed to authenticate");
-      }
-    };
+  //   useEffect(() => {
+  //     const isAuthorized = async () => {
+  //       try {
+  //         await authUser();
+  //         if (!user) {
+  //           navigate("/");
+  //         }
+  //       } catch (error) {
+  //         console.error("Failed to authenticate");
+  //       }
+  //     };
 
-    isAuthorized();
-  }, [authUser, navigate, user]);
+  //     isAuthorized();
+  //   }, [authUser, navigate, user]);
 
   return (
     <div className="write-page">

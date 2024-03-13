@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Contribution = () => {
   const [contributions, setContributions] = useState([]);
@@ -6,10 +6,18 @@ const Contribution = () => {
   useEffect(() => {
     const fetchContributions = async () => {
       try {
-        const response = await fetch("/api/contributions");
+        const response = await fetch(
+          "http://127.0.0.1:5000/api/contributions",
+          {
+            //method: "GET",
+            //headers: { "Content-Type": "application/json" },
+          }
+        );
+
         if (!response.ok) {
           throw new Error("Failed to fetch contributions");
         }
+
         const data = await response.json();
 
         setContributions(data);

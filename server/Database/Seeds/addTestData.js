@@ -1,34 +1,96 @@
 import mongoose from "mongoose";
 import ContributionModel from "../../Models/Contribution.js";
+import UserModel from "../../Models/User.js";
+import BookModel from "../../Models/Book.js";
 
-// Connect to the database
-const uri =
-  "mongodb+srv://kilianboute:2pjgXtDgjJnDS8bB@plothive-development-cl.q5wnh4g.mongodb.net/Plothive?retryWrites=true&w=majority&appName=plothive-development-cluster";
+async function seedDatabase() {
+  try {
+    // Connect to the database
+    const uri =
+      "mongodb+srv://kilianboute:2pjgXtDgjJnDS8bB@plothive-development-cl.q5wnh4g.mongodb.net/Plothive?retryWrites=true&w=majority&appName=plothive-development-cluster";
+    await mongoose.connect(uri);
 
-mongoose.connect(uri);
-console.log(uri);
-mongoose.connection.on("error", (error) => {
-  console.error("MongoDB connection error:", error);
-});
+    // Create example users
+    const user1 = await UserModel.create({
+      _id: new mongoose.Types.ObjectId(),
+      username: "user1",
+      password: "password1",
+      email: "user1@example.com",
+    });
+    const user2 = await UserModel.create({
+      _id: new mongoose.Types.ObjectId(),
+      username: "user2",
+      password: "password2",
+      email: "user2@example.com",
+    });
+    const user3 = await UserModel.create({
+      _id: new mongoose.Types.ObjectId(),
+      username: "user3",
+      password: "password3",
+      email: "user3@example.com",
+    });
 
-// Create a new contribution
-const newContribution = new ContributionModel({
-  _id: new mongoose.Types.ObjectId(),
-  text: "Example contribution",
-  user_id: new mongoose.Types.ObjectId(), // Assuming you have a user ID
-  date_added: new Date(),
-  upvote_count: 0,
-  comments: [], // Assuming comments is an array of Comment IDs
-});
+    // Create example books
+    const book1 = await BookModel.create({
+      _id: new mongoose.Types.ObjectId(),
+      title: "Book 1",
+      prompt_id: new mongoose.Types.ObjectId(),
+    });
+    const book2 = await BookModel.create({
+      _id: new mongoose.Types.ObjectId(),
+      title: "Book 2",
+      prompt_id: new mongoose.Types.ObjectId(),
+    });
+    const book3 = await BookModel.create({
+      _id: new mongoose.Types.ObjectId(),
+      title: "Book 3",
+      prompt_id: new mongoose.Types.ObjectId(),
+    });
+    const book4 = await BookModel.create({
+      _id: new mongoose.Types.ObjectId(),
+      title: "Book 4",
+      prompt_id: new mongoose.Types.ObjectId(),
+    });
 
-// Save the contribution to the database
-newContribution
-  .save()
-  .then(() => {
-    console.log("Contribution added successfully");
-    mongoose.connection.close(); // Close the connection after adding the contribution
-  })
-  .catch((error) => {
-    console.error("Error adding contribution:", error);
-    mongoose.connection.close(); // Close the connection in case of an error
-  });
+    // Create example contributions linked to users and books
+    const contributions = [];
+    for (let i = 0; i < 5; i++) {
+      contributions.push({
+        _id: new mongoose.Types.ObjectId(),
+        text: `Example contribution ${i + 1} for Book 1`,
+        user_id: user1._id,
+        book_id: book1._id,
+      });
+      contributions.push({
+        _id: new mongoose.Types.ObjectId(),
+        text: `Example contribution ${i + 1} for Book 2`,
+        user_id: user2._id,
+        book_id: book2._id,
+      });
+      contributions.push({
+        _id: new mongoose.Types.ObjectId(),
+        text: `Example contribution ${i + 1} for Book 3`,
+        user_id: user3._id,
+        book_id: book3._id,
+      });
+      contributions.push({
+        _id: new mongoose.Types.ObjectId(),
+        text: `Example contribution ${i + 1} for Book 4`,
+        user_id: user1._id,
+        book_id: book4._id,
+      });
+    }
+
+    // Insert contributions into the database
+    await ContributionModel.insertMany(contributions);
+
+    console.log("Contributions added successfully");
+  } catch (error) {
+    console.error("Error seeding database:", error);
+  } finally {
+    // Close the connection after seeding the database
+    mongoose.connection.close();
+  }
+}
+
+seedDatabase();
