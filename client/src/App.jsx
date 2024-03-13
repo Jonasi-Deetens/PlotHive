@@ -16,7 +16,7 @@ import Error404 from "./pages/Error404";
 
 function App() {
   const location = useLocation().pathname;
-  const headerLocations = ["/", "/aboutus", "/contact", "/dashboard", "/explore", "/legal", "/login", "/read", "/register", "/store", "/write"];
+  const headerLocations = ["/aboutus", "/contact", "/dashboard", "/explore", "/legal", "/login", "/read", "/register", "/store", "/write"];
 
   return (
     <>
