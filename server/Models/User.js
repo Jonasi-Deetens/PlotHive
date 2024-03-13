@@ -1,30 +1,30 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 // Define schema for Users collection
 const userSchema = new mongoose.Schema({
   _id: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    primaryKey: true
+    primaryKey: true,
   },
   username: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   created_at: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 const UserModel = mongoose.model("User", userSchema);
