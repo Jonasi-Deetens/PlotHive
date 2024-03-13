@@ -850,7 +850,7 @@
   margin-bottom: 2rem;
 }
 .legal-page h1 {
-  font-size: 24px;
+  font-size: 40px;
   margin-bottom: 20px;
   text-align: center;
   color: #ecf0f3 !important;
@@ -865,4 +865,27 @@
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 15px;
+}
+.legal-page .toggle-btn {
+  background-color: #545454;
+  color: #ecf0f3;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+.legal-page .toggle-btn:hover {
+  background-color: #ffbd59;
+}
+.legal-page .additional-info {
+  display: none;
+}
+.legal-page .additional-info.expanded {
+  display: block;
 }/*# sourceMappingURL=legal.css.map */

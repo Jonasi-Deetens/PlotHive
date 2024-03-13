@@ -9,7 +9,7 @@
   margin-bottom: 2rem;
 
   h1 {
-    font-size: 24px;
+    font-size: 40px;
     margin-bottom: 20px;
     text-align: center;
     color: $fontcolor !important;
@@ -26,5 +26,32 @@
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 15px;
+  }
+
+  .toggle-btn {
+    background-color: $background;
+    color: $fontcolor;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+  }
+
+  .additional-info {
+    display: none;
+  }
+
+  .additional-info.expanded {
+    display: block;
   }
 }
