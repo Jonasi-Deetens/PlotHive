@@ -191,13 +191,13 @@ main.home-page {
   }
   @media (max-width: 768px) {
     .popular-card {
-      width: calc(50% - 20px); /* Adjust width for two cards in a row */
+      width: calc(50% - 20px);
     }
   }
 
   @media (max-width: 480px) {
     .popular-card {
-      width: calc(100% - 20px); /* Adjust width for one card in a row */
+      width: calc(100% - 20px);
     }
   }
   h2.section-three {

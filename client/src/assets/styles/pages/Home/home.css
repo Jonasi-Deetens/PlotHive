@@ -1016,12 +1016,12 @@ main.home-page .popular-section .popular-card:hover p {
 }
 @media (max-width: 768px) {
   main.home-page .popular-card {
-    width: calc(50% - 20px); /* Adjust width for two cards in a row */
+    width: calc(50% - 20px);
   }
 }
 @media (max-width: 480px) {
   main.home-page .popular-card {
-    width: calc(100% - 20px); /* Adjust width for one card in a row */
+    width: calc(100% - 20px);
   }
 }
 main.home-page h2.section-three {
