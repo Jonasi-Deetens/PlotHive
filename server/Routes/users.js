@@ -22,6 +22,7 @@ router.post('/', validateRegistrationData, async (req, res) => {
             _id: new mongoose.Types.ObjectId(),
             username: req.body.username,
             password: await hashPassword(req.body.password),
+            favourites: [],
             email: req.body.email
         });
 
@@ -55,10 +56,13 @@ router.patch('/:id', getUser, async (req, res) => {
         res.user.username = req.body.username;
     }
     if (req.body.password != null) {
-        res.user.password = req.body.password;
+        res.user.password = await hashPassword(req.body.password);
     }
     if (req.body.email != null) {
         res.user.email = req.body.email;
+    }
+    if (req.body.favourites != null) {
+        res.user.favourites = req.body.favourites;
     }
     try {
         const updatedUser = await res.user.save();

@@ -6,7 +6,6 @@ body {
 }
 
 main.home-page {
-  margin-bottom: 20px;
   background-color: $background;
 
   header.home-page-header {
@@ -25,13 +24,13 @@ main.home-page {
     margin: 0;
 
     img {
-      width: 40vw;
+      width: 50vw;
     }
 
     .home-page-login {
       height: fit-content;
       text-decoration: none;
-      margin: 3.5rem 3rem;
+      margin: 5px 1rem;
       padding: 0.7rem 1.5rem;
       border: none;
       border-radius: 50px;
@@ -48,11 +47,12 @@ main.home-page {
   div.main-header-container h1 {
     display: inline-block;
   }
+  
   .custom-header {
     animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
     overflow: hidden;
     border-right: 0.15em solid $button-hover;
-    white-space: nowrap;
+    white-space: pre-line;
     margin: 0 auto;
     letter-spacing: 0.15em;
     font-size: 2.3vw;
@@ -162,70 +162,7 @@ main.home-page {
       width: calc(100% - 20px);
     }
   }
-  h1.popular-header {
-    width: 100%;
-    text-align: center;
-    font-size: 4vh;
-    color: $fontcolor;
-    padding-bottom: 2rem;
-  }
 
-  .popular-section {
-    background-color: $background-dark;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-    .popular-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 10px;
-      margin-top: 20px;
-      padding-bottom: 20px;
-    }
-
-    .popular-card {
-      text-align: center;
-      margin: 20px;
-      border-radius: 10px;
-      height: 40vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-      cursor: pointer;
-
-      img {
-        width: 200px;
-        height: auto;
-        margin-bottom: auto;
-      }
-
-      p {
-        font-size: 18px;
-        font-weight: bold;
-        color: $fontcolor;
-        margin-bottom: 50px;
-      }
-      &:hover {
-        transform: scale(1.05);
-      }
-      &:hover p {
-        color: $button-hover !important;
-      }
-    }
-  }
-  @media (max-width: 768px) {
-    .popular-card {
-      width: calc(50% - 20px);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .popular-card {
-      width: calc(100% - 20px);
-    }
-  }
   h2.section-three {
     display: flex;
     flex-direction: column;
@@ -237,5 +174,16 @@ main.home-page {
     height: 20vh;
     font-size: 3vw;
     color: $fontcolor !important;
+  }
+
+  figure.home-figure {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+
+    img.home-image {
+      max-width: 80%;
+    }
   }
 }
