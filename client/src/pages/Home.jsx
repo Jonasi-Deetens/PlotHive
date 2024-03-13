@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/pages/Home/home.css";
 import BookShowcase from "../components/BookShowcase";
 import book from "../assets/svgs/book-home.svg"
+import { useEffect } from "react";
 
 const Home = () => {
+  const [title, setTitle] = useState('"');
+
+  useEffect(() => {
+    let prompt = "Jonasi stept out of the elevator with blood all over his face, ...";
+    let promptCharArray = prompt.split('');
+
+    const maxIndex = promptCharArray.length;
+    
+    const typeChar = (currentTitle, currentIndex) => {
+      if (currentIndex >= maxIndex) {
+        const nextTitle = currentTitle.split('_')[0] + '"_';
+        setTitle(nextTitle);
+        return; 
+      }
+      
+      const nextTitle = currentTitle.split('_')[0] + promptCharArray[currentIndex] + '_';
+      setTitle(nextTitle);
+    
+      setTimeout(() => {
+        typeChar(nextTitle, currentIndex + 1);
+      }, 50); 
+    }
+
+    typeChar(title, 0);
+      
+  }, [prompt])
+  
+
   return (
     <main className="home-page">
       <header className="home-page-header">
@@ -20,10 +49,7 @@ const Home = () => {
         </div>
         <div className="main-header-container">
           <div className="main-header-container">
-            <h1 className="main-header custom-header">
-              &quot;Jonasi stepped out of the elevator with blood all over his
-              face, ... &quot;
-            </h1>
+            <h1 className="main-header custom-header">{title}</h1>
           </div>
         </div>
         <div className="home-button-container">
