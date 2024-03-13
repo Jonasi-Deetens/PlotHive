@@ -841,222 +841,28 @@
   transform: rotate(-90deg);
 }
 
-body {
-  background-color: #545454;
-  margin: 0;
-}
-
-main.home-page {
-  margin-bottom: 20px;
-  background-color: #545454;
-}
-main.home-page header.home-page-header {
-  height: 100vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-}
-main.home-page .home-page-navbar {
+.footer {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  margin: 0;
-}
-main.home-page .home-page-navbar img {
-  width: 40vw;
-}
-main.home-page .home-page-navbar .home-page-login {
-  height: -moz-fit-content;
-  height: fit-content;
-  text-decoration: none;
-  margin: 3.5rem 3rem;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-main.home-page .home-page-navbar button:hover,
-main.home-page .home-page-navbar button:focus {
-  background-color: #ffbd59;
-}
-main.home-page div.main-header-container h1 {
-  display: inline-block;
-}
-main.home-page .custom-header {
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-  overflow: hidden;
-  border-right: 0.15em solid #ffbd59;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 0.15em;
-  font-size: 2.3vw;
-  text-align: center;
-  color: #ecf0f3 !important;
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #ffbd59;
-  }
-}
-main.home-page .home-button-container {
-  display: flex;
-  margin-bottom: 1rem;
-  justify-content: center;
   align-items: center;
-}
-main.home-page button.home-header-button {
-  text-decoration: none;
-  margin: 0 1rem;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-main.home-page a {
-  text-decoration: none;
-  color: #414042;
-}
-main.home-page button:hover,
-main.home-page button:focus {
-  transform: scale(1.05);
-  background-color: #ffbd59;
-}
-main.home-page .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
-  margin-top: 20px;
-  padding-bottom: 20px;
-}
-main.home-page .card {
-  width: calc(20% - 20px);
-  text-align: center;
+  background-color: #333;
+  color: #fff;
   padding: 20px;
-  background-color: #414042;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  height: 40vh;
+}
+.footer .footer-left img {
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+.footer .footer-right {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding-bottom: 2rem;
-  transition: all 0.3s ease;
-  margin-bottom: 20px;
 }
-main.home-page .card img {
-  width: 200px;
-  height: auto;
-  margin-bottom: auto;
+.footer .footer-right a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px; /* Adjust the spacing between links */
+  transition: color 0.3s ease; /* Add transition for color change */
 }
-main.home-page .card p {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ecf0f3;
-  margin-bottom: 50px;
-}
-main.home-page .card:hover {
-  transform: scale(1.05);
-  background-color: #ffbd59;
-}
-main.home-page .card:hover p {
-  color: #414042 !important;
-}
-@media (max-width: 768px) {
-  main.home-page .card {
-    width: calc(40% - 20px);
-  }
-}
-@media (max-width: 480px) {
-  main.home-page .card {
-    width: calc(100% - 20px);
-  }
-}
-main.home-page h1.popular-header {
-  width: 100%;
-  text-align: center;
-  font-size: 4vh;
-  color: #ecf0f3;
-  padding-bottom: 2rem;
-}
-main.home-page .popular-section {
-  background-color: #414042;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-main.home-page .popular-section .popular-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
-  margin-top: 20px;
-  padding-bottom: 20px;
-}
-main.home-page .popular-section .popular-card {
-  text-align: center;
-  margin: 20px;
-  border-radius: 10px;
-  height: 40vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-main.home-page .popular-section .popular-card img {
-  width: 200px;
-  height: auto;
-  margin-bottom: auto;
-}
-main.home-page .popular-section .popular-card p {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ecf0f3;
-  margin-bottom: 50px;
-}
-main.home-page .popular-section .popular-card:hover {
-  transform: scale(1.05);
-}
-main.home-page .popular-section .popular-card:hover p {
-  color: #ffbd59 !important;
-}
-@media (max-width: 768px) {
-  main.home-page .popular-card {
-    width: calc(50% - 20px);
-  }
-}
-@media (max-width: 480px) {
-  main.home-page .popular-card {
-    width: calc(100% - 20px);
-  }
-}
-main.home-page h2.section-three {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-left: 20%;
-  margin-right: 20%;
-  height: 20vh;
-  font-size: 3vw;
-  color: #ecf0f3 !important;
-}/*# sourceMappingURL=home.css.map */
+.footer .footer-right a:hover {
+  color: #ffbd59; /* Change color on hover */
+}/*# sourceMappingURL=footer.css.map */

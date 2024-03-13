@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../assets/styles/pages/Home/home.css";
 
 const Home = () => {
-
   return (
     <main className="home-page">
       <header className="home-page-header">
@@ -18,11 +17,12 @@ const Home = () => {
           </button>
         </div>
         <div className="main-header-container">
-          <h1 className="main-header">
-            {" "}
-            &quot;Jonasi stepped out of the elevator with blood all over his
-            face, ... &quot;
-          </h1>
+          <div className="main-header-container">
+            <h1 className="main-header custom-header">
+              &quot;Jonasi stepped out of the elevator with blood all over his
+              face, ... &quot;
+            </h1>
+          </div>
         </div>
         <div className="home-button-container">
           <button className="home-header-button">

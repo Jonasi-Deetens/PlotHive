@@ -1,18 +1,17 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../assets/styles/components/Navbar/navbar.css";
 import { useState, useEffect, useContext } from "react";
 import navBarLogo from "../assets/Logo/logo-navbar.svg";
 import { UserContext } from "../providers/UserContext";
 
 const Navbar = () => {
-  const {user, authUser} = useContext(UserContext);
+  const { user, authUser } = useContext(UserContext);
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
     setIsActive(!isActive);
   };
 
   useEffect(() => {
-
     authUser();
     const handleResize = () => {
       if (window.innerWidth > 1024) {
@@ -29,9 +28,9 @@ const Navbar = () => {
 
   return (
     <nav className="main-navigation">
-      <Link to="/">
+      <NavLink to="/">
         <img src={navBarLogo} alt="navbar-logo-PlotHub" />
-      </Link>
+      </NavLink>
       <button
         className={`hamburger hamburger--collapse ${
           isActive ? "is-active" : ""
@@ -45,25 +44,38 @@ const Navbar = () => {
       </button>
       <ul>
         <li>
-          <Link to="/Store">Store</Link>
+          <NavLink to="/Store" activeClassName="active">
+            Store
+          </NavLink>
         </li>
         <li>
-          <Link to="/Explore">Explore</Link>
+          <NavLink to="/Explore" activeClassName="active">
+            Explore
+          </NavLink>
         </li>
         <li>
-          <Link to="/Contact">Contact</Link>
+          <NavLink to="/Contact" activeClassName="active">
+            Contact
+          </NavLink>
         </li>
         <li>
-          <Link to="/AboutUs">About</Link>
+          <NavLink to="/AboutUs" activeClassName="active">
+            About
+          </NavLink>
         </li>
-        { user ?
-        <li>
-          <Link to="/Dashboard">{user && user.username}</Link>
-        </li> :
-        <li>
-          <Link to="/Login">Login</Link>
-        </li>
-        }
+        {user ? (
+          <li>
+            <NavLink to="/Dashboard" activeClassName="active">
+              {user && user.username}
+            </NavLink>
+          </li>
+        ) : (
+          <li>
+            <NavLink to="/Login" activeClassName="active">
+              Login
+            </NavLink>
+          </li>
+        )}
       </ul>
     </nav>
   );

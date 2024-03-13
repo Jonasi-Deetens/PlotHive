@@ -75,7 +75,7 @@ const Dashboard = () => {
           <button className='prompt-button'><a href="/Explore" className='link'>Explore</a></button>
         </div>
       </section>
-      <BookShowcase categorie={"like-this"} />
+      <BookShowcase category={"top"} />
     </main>
   )
 }
