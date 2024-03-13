@@ -1,0 +1,33 @@
+@use "../../../SASS/" as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+
+  .footer-left {
+    img {
+      width: 100px; /* Adjust the width as needed */
+      height: auto; /* Maintain aspect ratio */
+    }
+  }
+
+  .footer-right {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px; /* Adjust the spacing between links */
+      transition: color 0.3s ease; /* Add transition for color change */
+
+      &:hover {
+        color: $button-hover; /* Change color on hover */
+      }
+    }
+  }
+}
