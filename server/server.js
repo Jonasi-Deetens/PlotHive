@@ -19,28 +19,28 @@ app.use(cors());
 import authRoutes from './Routes/auth.js';
 app.use('/auth', authRoutes);
 
-import bookRoutes from './Routes/books.js';
-app.use('/api/books', bookRoutes);
+import bookRoutes from "./Routes/books.js";
+app.use("/api/books", bookRoutes);
 
-import userRoutes from './Routes/users.js';
-app.use('/api/users', userRoutes);
+import userRoutes from "./Routes/users.js";
+app.use("/api/users", userRoutes);
 
-import genreRoutes from './Routes/genres.js';
-app.use('/api/genres', genreRoutes);
+import genreRoutes from "./Routes/genres.js";
+app.use("/api/genres", genreRoutes);
 
-import promptRoutes from './Routes/prompts.js';
-app.use('/api/prompts', promptRoutes);
+import promptRoutes from "./Routes/prompts.js";
+app.use("/api/prompts", promptRoutes);
 
-import contributionRoutes from './Routes/contributions.js';
-app.use('/api/contributions', contributionRoutes);
+import contributionRoutes from "./Routes/contributions.js";
+app.use("/api/contributions", contributionRoutes);
 
-import commentRoutes from './Routes/comments.js';
-app.use('/api/comments', commentRoutes);
+import commentRoutes from "./Routes/comments.js";
+app.use("/api/comments", commentRoutes);
 
 app.all("*", (req, res) => {
-    res.send('No resource found!');
-})
+  res.send("No resource found!");
+});
 
 app.listen(port, () => {
-    console.log('Welcome ' + host + ', server is listening on port: ' + port );
-})
+  console.log("Welcome " + host + ", server is listening on port: " + port);
+});
