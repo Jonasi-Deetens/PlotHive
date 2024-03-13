@@ -1,0 +1,50 @@
+@use "../../../SASS/" as *;
+
+body {
+    div#root {
+        main.error-page {
+            height: 100svh;
+            text-align: center;
+            font-weight: bold;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+
+            div.wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+
+            h1.error-title {
+                margin: 0;
+                font-size: 5rem;
+                color: $fontcolor;
+            }
+
+            img.error-bee {
+                max-width: 80%;
+            }
+
+            img.error-turn {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            p.error-link {
+                font-size: 1.5rem;
+                .error-link-span {
+                    color: $main;
+                    text-decoration: none;
+                }
+
+                .error-link-span:hover {
+                    color:  $fontcolor;
+                }
+            }
+        }
+    }
+}

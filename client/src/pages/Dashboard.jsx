@@ -1,11 +1,12 @@
 import "../assets/styles/pages/Dashboard/dashboard.css";
 import navBarLogo from "../assets/Logo/logo-navbar.svg";
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../providers/UserContext";
+import BookShowcase from "../components/BookShowcase";
 
 const Dashboard = () => {
-  const { authUser, user, logout } = useContext(UserContext)
+  const { authUser, user, logout } = useContext(UserContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,7 +15,7 @@ const Dashboard = () => {
         if (!user) {
           await authUser();
           if (!user) {
-            navigate("/");
+            navigate("/Login");
           }
         }
       } catch (error) {
@@ -27,7 +28,7 @@ const Dashboard = () => {
 
   return (
     <main className="dashboard-page">
-      <h2 className="dashboard-title">Dashboard</h2>
+      <h1 className="dashboard-title">Dashboard</h1>
       <section className="section-profile">
         <div className="flex-wrapper">
           <div className="section-profile-left">
@@ -67,6 +68,14 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
+      <section className="section-profile">
+        <h2 className='book-prompt'> &quot;Jonasi stepped out of the elevator with blood all over his face, ... &quot;</h2>
+        <div className='button-container'>
+          <button className='prompt-button'><a href="/Write" className='link'>Contribute</a></button>
+          <button className='prompt-button'><a href="/Explore" className='link'>Explore</a></button>
+        </div>
+      </section>
+      <BookShowcase categorie={"like-this"} />
     </main>
   )
 }

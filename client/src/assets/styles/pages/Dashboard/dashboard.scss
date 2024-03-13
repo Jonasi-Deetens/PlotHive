@@ -4,10 +4,10 @@ body {
     div#root {
         main.dashboard-page {
             margin: 100px auto 100px auto;
-            h2.dashboard-title {
+            h1.dashboard-title {
                 color: $fontcolor;
                 font-family: $logo-font;
-                font-size: 42px;
+                font-size: 50px;
                 font-weight: 500;
                 text-align: center;
                 margin: 0 auto 50px;
@@ -17,7 +17,7 @@ body {
                 border-radius: 50px;
                 padding: 50px;
                 width: 80%;
-                margin: auto;
+                margin: 50px auto;
 
                 div.flex-wrapper {
                     display: flex;
@@ -74,6 +74,7 @@ body {
                         display: flex;
                         flex-wrap: wrap;
                         padding: 50px;
+                        width: 50%;
 
                         div.badge {
                             width: 50%;
@@ -99,6 +100,35 @@ body {
                                 color: $fontcolor-darker;
                             }
                         }
+                    }
+                }
+
+                h2.book-prompt {
+                    text-align: center;
+                    font-size: 50px;
+                    color: $fontcolor;
+                }
+
+                div.button-container {
+                    display: flex;
+                    
+                    button.prompt-button {
+                        margin: 20px auto;
+                        padding: 10px 30px;
+                        border: none;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        size: 2vw;
+                        font-size: 2vw;
+
+                        a.link {
+                            color: $fontcolor-darker;
+                            text-decoration: none;
+                        }
+                    }
+
+                    button.prompt-button:hover {
+                        background-color: $main;
                     }
                 }
             }
