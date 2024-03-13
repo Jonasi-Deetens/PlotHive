@@ -12,13 +12,14 @@ main.home-page {
   header.home-page-header {
     height: 100vh;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     flex-direction: column;
   }
 
   .home-page-navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     margin: 0;
 
@@ -27,8 +28,9 @@ main.home-page {
     }
 
     .home-page-login {
+      height: fit-content;
       text-decoration: none;
-      margin: 0 1rem;
+      margin: 3.5rem 3rem;
       padding: 0.7rem 1.5rem;
       border: none;
       border-radius: 50px;
@@ -46,16 +48,16 @@ main.home-page {
     display: inline-block;
   }
   h1.main-header {
-    color: $fontcolor;
+    color: $fontcolor !important;
     font-size: 5vw;
     text-align: center;
-    margin-top: 10rem;
     margin-left: 1rem;
     margin-right: 1rem;
   }
 
   .home-button-container {
     display: flex;
+    margin-bottom: 1rem;
     justify-content: center;
     align-items: center;
   }
@@ -210,6 +212,6 @@ main.home-page {
     margin-right: 20%;
     height: 20vh;
     font-size: 3vw;
-    color: $fontcolor;
+    color: $fontcolor !important;
   }
 }
