@@ -1,0 +1,90 @@
+@use "../../../SASS/" as *;
+
+body {
+  div#root {
+    main.aboutUs {
+      section.about {
+        background-color: $background-light;
+        margin-top: 50px;
+        padding: 50px 0;
+        @include shadow;
+        h1 {
+          margin: 0;
+          color: $fontcolor;
+          font-family: $logo-font;
+          font-size: 42px;
+          font-weight: 500;
+          text-align: center;
+          margin-bottom: 40px;
+        }
+        p {
+          width: 1024px;
+          margin: 0 auto;
+          font-size: 20px;
+          a {
+            color: $main;
+            font-weight: bold;
+          }
+        }
+      }
+      section.our-mission {
+        display: flex;
+        justify-content: space-around;
+        article {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 50%;
+          box-sizing: border-box;
+          padding: 20px;
+          h1 {
+            font-size: 42px;
+            font-weight: 500;
+            color: $fontcolor;
+            margin: 0;
+            margin-bottom: 40px;
+          }
+          p {
+            margin: 0;
+            font-size: 20px;
+          }
+        }
+        div.images {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 10px;
+          overflow: hidden;
+          padding: 30px;
+          margin: 50px 0;
+          img.typewritter {
+            border-radius: 10px;
+            height: 200px;
+            grid-column: span 6;
+            grid-row: span 1;
+            object-fit: cover;
+            @include shadow;
+          }
+          img.laptop {
+            border-radius: 10px;
+            height: 200px;
+            width: 200px;
+            grid-column: span 6;
+            grid-row: span 1;
+            object-fit: cover;
+            @include shadow;
+          }
+          img.authors {
+            border-radius: 10px;
+            height: 200px;
+            width: 420px;
+            grid-column: span 12;
+            grid-row: span 1;
+            object-fit: cover;
+            @include shadow;
+          }
+        }
+      }
+    }
+  }
+}
