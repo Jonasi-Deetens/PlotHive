@@ -861,4 +861,8 @@
   color: #fff;
   text-decoration: none;
   margin-left: 20px; /* Adjust the spacing between links */
+  transition: color 0.3s ease; /* Add transition for color change */
+}
+.footer .footer-right a:hover {
+  color: #ffbd59; /* Change color on hover */
 }/*# sourceMappingURL=footer.css.map */

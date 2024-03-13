@@ -23,6 +23,11 @@
       color: #fff;
       text-decoration: none;
       margin-left: 20px; /* Adjust the spacing between links */
+      transition: color 0.3s ease; /* Add transition for color change */
+
+      &:hover {
+        color: $button-hover; /* Change color on hover */
+      }
     }
   }
 }
