@@ -5,9 +5,9 @@ body {
         section.showcase-section {
             background-color: $background-light;
             border-radius: 50px;
-            width: 80%;
+            width: 90%;
             margin: auto;
-            padding: 50px;
+            padding: 20px;
 
             h2.showcase-title {
                 font-family: $logo-font;
@@ -19,22 +19,37 @@ body {
             
             div.showcase-wrapper {
                 display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
 
                 div.profile-book {
-                    width: 25%;
+                    width: 22%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
+                    margin: 0 5px;
         
                     h3.profile-book-title {
                         color: $fontcolor;
                         font-family: $logo-font;
+                        text-align: center;
+                    }
+
+                    img {
+                        max-width: 100%;
+                    }
+                }
+
+                @media (max-width: 1024px) {
+                    div.profile-book {
+                        width: 45%;
                     }
                 }
         
                 div.profile-book:hover {
                     transform: scale(1.1);
+                    margin: 0 5px;
         
                     img.profile-book-image {
                         filter: drop-shadow(1px 1px 5px $main);

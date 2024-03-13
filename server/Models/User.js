@@ -21,6 +21,10 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  favourites: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Book'
+  }],
   created_at: {
     type: Date,
     default: Date.now
