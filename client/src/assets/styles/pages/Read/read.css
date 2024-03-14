@@ -892,40 +892,38 @@ main.read-page section.read-page-section div.read-page-contribution p.read-page-
 main.read-page section.read-page-section div.read-page-contribution p.read-page-contribution-text {
   font-family: "Libre Baskerville", serif !important;
 }
-main.read-page section.read-page-section div.read-page-contribution:hover {
-  background-color: #ffbd59;
-  transform: scaleX(1.02);
-  padding: 20px 25px;
-  transition: all 100ms ease-in-out;
-}
-main.read-page section.read-page-section div.read-page-contribution:hover p {
-  color: #545454 !important;
-  font-weight: bold;
-  margin: 0;
-}
-main.read-page section.read-page-section div.read-page-contribution:hover p.read-page-contribution-name {
-  opacity: 1;
-  padding-right: 15px;
-  margin: 0;
-}
-main.read-page section.read-page-section div.read-page-contribution:hover p.read-page-contribution-text {
-  border-left: 2px solid #949494;
-  padding-left: 50px;
+@media (min-width: 800px) {
+  main.read-page div.read-page-contribution:hover {
+    background-color: #ffbd59;
+    transform: scaleX(1.02);
+    padding: 20px 25px;
+    transition: all 100ms ease-in-out;
+  }
+  main.read-page div.read-page-contribution:hover p {
+    color: #545454 !important;
+    font-weight: bold;
+    margin: 0;
+  }
+  main.read-page div.read-page-contribution:hover p.read-page-contribution-name {
+    color: #545454;
+    opacity: 1 !important;
+    padding-right: 15px;
+    margin: 0;
+  }
+  main.read-page div.read-page-contribution:hover p.read-page-contribution-text {
+    border-left: 2px solid #949494;
+    padding-left: 50px;
+  }
 }
 @media (max-width: 1260px) {
+  main.read-page h1.read-page-title {
+    font-size: 1.5rem;
+  }
   main.read-page section.read-page-section {
     width: 90%;
   }
   main.read-page section.read-page-section div.read-page-contribution {
     padding: 10px 40px 10px 10px;
-  }
-}
-@media (max-width: 800px) {
-  main.read-page section.read-page-section {
-    width: 100%;
-  }
-  main.read-page section.read-page-section div.read-page-contribution {
-    padding: 10px 20px 10px 5px;
   }
 }
 main.read-page section.read-page-buttons {
@@ -950,6 +948,20 @@ main.read-page section.read-page-buttons .read-page-button {
 main.read-page section.read-page-buttons .read-page-button:hover {
   background-color: #ffbd59;
   transform: scale(1.05);
+}
+@media (max-width: 800px) {
+  main.read-page section.read-page-section {
+    width: 100%;
+  }
+  main.read-page section.read-page-section div.read-page-contribution {
+    padding: 10px 25px 10px 25px;
+  }
+  main.read-page section.read-page-section p.read-page-contribution-name {
+    display: none;
+  }
+  main.read-page section.read-page-buttons {
+    width: 90%;
+  }
 }
 
 @media (max-width: 800px) {

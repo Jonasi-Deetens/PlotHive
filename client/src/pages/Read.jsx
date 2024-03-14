@@ -25,7 +25,9 @@ const Read = () => {
     setBook(fetchedBook);
     
     if (book) { 
-      setNumberOfPages(book.contributions.length / 2);
+      if (book.contributions.length > 0)
+        setNumberOfPages(Math.round(book.contributions.length / 2));
+      else setNumberOfPages(1);
       setPageData();
     }
   }, [book])
