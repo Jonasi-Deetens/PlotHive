@@ -841,81 +841,100 @@
   transform: rotate(-90deg);
 }
 
-body div#root main.register-page div.register-container {
-  margin: 100px auto 100px auto;
-  padding: 50px 20px;
-  max-width: 700px;
+main.read-page {
+  width: 80%;
+  margin: auto;
+}
+main.read-page h1.read-page-title {
+  text-align: center;
+  color: #ecf0f3 !important;
+  margin: 100px 0;
+  font-size: 3rem;
+}
+main.read-page section.read-page-section {
   background-color: #414042;
-  border-radius: 50px;
-  box-sizing: border-box;
-  color: #ecf0f3;
-  font-family: "Open Sans", sans-serif;
+  width: 70%;
+  max-height: 900px;
+  padding: 100px 0 0 0;
+  margin: 50px auto;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-body div#root main.register-page div.register-container h2.register-title {
-  color: #ecf0f3;
-  font-family: "Fredoka", sans-serif;
-  font-size: 42px;
-  font-weight: 500;
-  text-align: center;
-  margin: 0 auto 50px;
+main.read-page section.read-page-section section.read-page-text {
+  height: 95%;
 }
-body div#root main.register-page div.register-container div.errors {
-  width: 75%;
-  margin: 0 auto;
-}
-body div#root main.register-page div.register-container div.errors p.error-message {
-  color: red;
-  font-size: 25px;
-}
-body div#root main.register-page div.register-container form {
-  width: 75%;
-  margin: 0 auto;
+main.read-page section.read-page-section section.read-page-select {
   display: flex;
-  flex-direction: column;
+  height: 5%;
+  padding: 20px;
+  margin: 0;
+  justify-content: center;
 }
-body div#root main.register-page div.register-container form div {
-  display: flex;
-  flex-direction: column;
-}
-body div#root main.register-page div.register-container form div label {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-body div#root main.register-page div.register-container form div div {
-  display: flex;
-  flex-direction: row;
-}
-body div#root main.register-page div.register-container form div div img {
-  height: 30px;
-  margin-right: 20px;
-}
-body div#root main.register-page div.register-container form div div input {
-  background-color: #414042;
+main.read-page section.read-page-section section.read-page-select button.read-page-select-button {
+  background-color: transparent;
   border: none;
-  font-size: 24px;
-  width: 100%;
   color: #ecf0f3;
+  font-weight: bold;
 }
-body div#root main.register-page div.register-container form div div input:focus {
-  outline: none;
-  border-color: transparent;
-  border-bottom: 2px solid #ffbd59;
+main.read-page section.read-page-section section.read-page-select button.read-page-select-button:hover {
+  cursor: pointer;
+  color: #ffbd59;
+  transform: scale(1.1);
 }
-body div#root main.register-page div.register-container form div div input::-moz-placeholder {
-  font-style: italic;
-  font-size: 20px;
+main.read-page section.read-page-section div.read-page-contribution {
+  display: flex;
+  padding: 10px 80px 10px 40px;
+  align-items: center;
 }
-body div#root main.register-page div.register-container form div div input::placeholder {
-  font-style: italic;
-  font-size: 20px;
+main.read-page section.read-page-section div.read-page-contribution p.read-page-contribution-name {
+  opacity: 0;
+  writing-mode: vertical-rl;
 }
-body div#root main.register-page div.register-container form div hr {
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 20px;
+main.read-page section.read-page-section div.read-page-contribution p.read-page-contribution-text {
+  font-family: "Libre Baskerville", serif !important;
 }
-body div#root main.register-page div.register-container form button.sign-up-btn {
+main.read-page section.read-page-section div.read-page-contribution:hover {
+  background-color: #ffbd59;
+  transform: scaleX(1.02);
+  padding: 20px 25px;
+  transition: all 100ms ease-in-out;
+}
+main.read-page section.read-page-section div.read-page-contribution:hover p {
+  color: #545454 !important;
+  font-weight: bold;
+  margin: 0;
+}
+main.read-page section.read-page-section div.read-page-contribution:hover p.read-page-contribution-name {
+  opacity: 1;
+  padding-right: 15px;
+  margin: 0;
+}
+main.read-page section.read-page-section div.read-page-contribution:hover p.read-page-contribution-text {
+  border-left: 2px solid #949494;
+  padding-left: 50px;
+}
+@media (max-width: 1260px) {
+  main.read-page section.read-page-section {
+    width: 90%;
+  }
+  main.read-page section.read-page-section div.read-page-contribution {
+    padding: 10px 40px 10px 10px;
+  }
+}
+@media (max-width: 800px) {
+  main.read-page section.read-page-section {
+    width: 100%;
+  }
+  main.read-page section.read-page-section div.read-page-contribution {
+    padding: 10px 20px 10px 5px;
+  }
+}
+main.read-page section.read-page-buttons {
+  display: flex;
+  width: 50%;
+  margin: 50px auto;
+  justify-content: space-around;
+}
+main.read-page section.read-page-buttons .read-page-button {
   margin: 20px auto 0;
   padding: 10px 30px;
   border: none;
@@ -924,62 +943,17 @@ body div#root main.register-page div.register-container form button.sign-up-btn 
   cursor: pointer;
   background-color: #ecf0f3;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  text-decoration: none;
+  color: #414042;
 }
-body div#root main.register-page div.register-container form button:hover,
-body div#root main.register-page div.register-container form button:focus {
+main.read-page section.read-page-buttons .read-page-button:hover {
   background-color: #ffbd59;
-}
-body div#root main.register-page div.register-container form div.question {
-  text-align: center;
-}
-body div#root main.register-page div.register-container form div.question a {
-  color: #ffbd59;
-  margin: -15px auto 0;
-  width: 50px;
-  font-weight: bold;
+  transform: scale(1.05);
 }
 
-@media screen and (max-width: 800px) {
-  body div#root main.register-page div.register-container {
-    border-radius: 25px;
+@media (max-width: 800px) {
+  main.read-page {
     width: 95%;
   }
-  body div#root main.register-page div.register-container h2.register-title {
-    font-size: 30px;
-  }
-  body div#root main.register-page div.register-container div.errors {
-    width: 90%;
-  }
-  body div#root main.register-page div.register-container div.errors p.error-message {
-    font-size: 18px;
-  }
-  body div#root main.register-page div.register-container form {
-    width: 90%;
-  }
-  body div#root main.register-page div.register-container form div label {
-    font-size: 18px;
-  }
-  body div#root main.register-page div.register-container form div div img {
-    height: 20px;
-  }
-  body div#root main.register-page div.register-container form div div input {
-    font-size: 18px;
-  }
-  body div#root main.register-page div.register-container form div div input::-moz-placeholder {
-    font-style: italic;
-    font-size: 16px;
-  }
-  body div#root main.register-page div.register-container form div div input::placeholder {
-    font-style: italic;
-    font-size: 16px;
-  }
-  body div#root main.register-page div.register-container form a {
-    font-size: 12px;
-  }
-  body div#root main.register-page div.register-container form button.sign-up-btn {
-    font-size: 16px;
-  }
-  body div#root main.register-page div.register-container form div.question p {
-    font-size: 12px;
-  }
-}/*# sourceMappingURL=register.css.map */
+}/*# sourceMappingURL=read.css.map */

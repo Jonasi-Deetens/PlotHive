@@ -69,25 +69,27 @@ const Home = () => {
           </button>
         </div>
       </header>
-      <div className="card-container">
-        <Link to="/About" className="card">
-          <img src="src/assets/Logo/logo-navbar.svg" alt="icon1" />
-          <p>Write stories as a community</p>
-        </Link>
-        <Link to="/About" className="card">
-          <img src="src/assets/Logo/logo-navbar.svg" alt="icon2" />
-          <p>Upvote the part that would fit the story best</p>
-        </Link>
-        <Link to="/About" className="card">
-          <img src="src/assets/Logo/logo-navbar.svg" alt="icon3" />
-          <p>Earn by contributing</p>
-        </Link>
-        <Link to="/About" className="card">
-          <img src="src/assets/Logo/logo-navbar.svg" alt="icon4" />
-          <p>Earn badges</p>
-        </Link>
-      </div>
-      <BookShowcase category={"like-this"} />
+      <section className="card-container-wrapper">
+        <div className="card-container">
+          <Link to="/About" className="card">
+            <img src="src/assets/Logo/logo-navbar.svg" alt="icon1" />
+            <p>Write stories as a community</p>
+          </Link>
+          <Link to="/About" className="card">
+            <img src="src/assets/Logo/logo-navbar.svg" alt="icon2" />
+            <p>Upvote the part that would fit the story best</p>
+          </Link>
+          <Link to="/About" className="card">
+            <img src="src/assets/Logo/logo-navbar.svg" alt="icon3" />
+            <p>Earn by contributing</p>
+          </Link>
+          <Link to="/About" className="card">
+            <img src="src/assets/Logo/logo-navbar.svg" alt="icon4" />
+            <p>Earn badges</p>
+          </Link>
+        </div>
+        <BookShowcase category={"like-this"} />
+      </section>
       <h2 className="section-three">
         Welcome to your journey through the magical art of writing.
       </h2>

@@ -53,9 +53,19 @@ const BookProvider = ({ children }) => {
         return books[0];
     }
   }
+  
+  const getBookById = (id) => {
+    if (books) {
+      let bookWithId;
+      books.forEach(book => {
+        if (book._id === id) bookWithId = book;
+      });
+      return bookWithId;
+    }
+  }
 
   return (
-    <BookContext.Provider value={{books, getTopBooks, getLatestBook}}>
+    <BookContext.Provider value={{books, getTopBooks, getLatestBook, getBookById}}>
       {books && children}
     </BookContext.Provider>
   );
