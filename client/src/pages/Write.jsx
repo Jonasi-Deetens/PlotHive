@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../providers/UserContext";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,51 +6,77 @@ import Contribution from "../components/Contribution";
 import Tinymce from "../components/Tinymce";
 
 const Write = () => {
-  //  const { authUser, user } = useContext(UserContext);
-  //   const navigate = useNavigate();
+  const { authUser, user } = useContext(UserContext);
+  const navigate = useNavigate();
+  //const [contributions, setContributions] = useState([]);
+  const [book, setBook] = useState();
 
-  //   useEffect(() => {
-  //     const isAuthorized = async () => {
-  //       try {
-  //         await authUser();
-  //         if (!user) {
-  //           navigate("/");
-  //         }
-  //       } catch (error) {
-  //         console.error("Failed to authenticate");
-  //       }
-  //     };
+  useEffect(() => {
+    const fetchBook = async () => {
+      try {
+        const response = await fetch(
+          "http://127.0.0.1:5000/api/books/65f18ccb703f62991757d0ee",
+          {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+          }
+        );
 
-  //     isAuthorized();
-  //   }, [authUser, navigate, user]);
+        if (!response.ok) {
+          throw new Error("Failed to fetch contributions");
+        }
+
+        const data = await response.json();
+
+        console.log(data);
+
+        setBook(data);
+      } catch (error) {
+        console.error("Error fetching contributions:", error);
+      }
+    };
+
+    fetchBook();
+  }, []);
+
+  useEffect(() => {
+    const isAuthorized = async () => {
+      try {
+        await authUser();
+        if (!user) {
+          navigate("/");
+        }
+      } catch (error) {
+        console.error("Failed to authenticate");
+      }
+    };
+
+    isAuthorized();
+  }, [authUser, navigate, user]);
 
   return (
-    <div className="write-page">
-      <h1>
-        “Jonasi stept out of the elevator with blood all over his face, ...”
-      </h1>
-      <div className="write-book">
-        <div className="write-book-contributions">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae unde
-            laudantium nisi velit officiis consectetur facere tempore hic quasi,
-            est aspernatur at placeat in odio fugiat eius! Cumque, quae
-            molestiae. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Cum, culpa iste nulla accusamus distinctio rerum at amet veniam
-            quas, fuga, minus deserunt magni inventore voluptas? In quasi
-            repellat repellendus fuga? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Veniam quis aliquid voluptates optio enim
-            obcaecati ratione corrupti commodi deleniti! Doloribus, illo
-            praesentium impedit minima iusto necessitatibus eum tenetur dolorem
-            architecto.
-          </p>
-          <Tinymce />
+    <>
+      {book && (
+        <div className="write-page">
+          <h1>{book.title}</h1>
+          <div className="write-book">
+            <div className="write-book-contributions">
+              <p>{book.text}</p>
+              <Tinymce />
+            </div>
+            <div className="write-current-contributions">
+              <h1>Contributions</h1>
+              {book.contributions.map((contribution) => (
+                <Contribution
+                  key={contribution._id}
+                  contribution={contribution}
+                />
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="write-current-contributions">
-          <Contribution />
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
