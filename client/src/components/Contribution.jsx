@@ -3,13 +3,9 @@ import PropTypes from "prop-types";
 const Contribution = ({ contribution }) => {
   return (
     <div>
-      <h1>Contributions</h1>
-      <ul>
-        <li key={contribution._id}>
-          <p>{contribution.text}</p>
-          {/* Render other contribution properties as needed */}
-        </li>
-      </ul>
+      <button>{contribution.upvote_count}</button>
+      <p>{contribution.text}</p>
+      <p>By: {contribution.user_id}</p> {/*placeholder*/}
     </div>
   );
 };
@@ -18,6 +14,8 @@ Contribution.propTypes = {
   contribution: PropTypes.shape({
     _id: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
+    upvote_count: PropTypes.number.isRequired,
+    user_id: PropTypes.string.isRequired,
   }).isRequired,
 };
 

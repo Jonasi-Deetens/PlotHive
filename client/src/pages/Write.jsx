@@ -37,7 +37,7 @@ const Write = () => {
     };
 
     fetchBook();
-  }, [book]);
+  }, []);
 
   useEffect(() => {
     const isAuthorized = async () => {
@@ -65,7 +65,13 @@ const Write = () => {
               <Tinymce />
             </div>
             <div className="write-current-contributions">
-              <Contribution contribution={book.contributions[1]} />
+              <h1>Contributions</h1>
+              {book.contributions.map((contribution) => (
+                <Contribution
+                  key={contribution._id}
+                  contribution={contribution}
+                />
+              ))}
             </div>
           </div>
         </div>
