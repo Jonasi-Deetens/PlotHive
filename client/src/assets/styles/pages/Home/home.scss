@@ -37,6 +37,7 @@ main.home-page {
       font-size: 1rem;
       cursor: pointer;
       transition: all 0.3s ease;
+      @include shadow;
     }
 
     button:hover,
@@ -53,7 +54,10 @@ main.home-page {
     white-space: pre-line;
     margin: 0 auto;
     letter-spacing: 0.15em;
-    font-size: 2rem;
+
+    font-size: 3rem;
+    padding: 10px;
+
     text-align: center;
     color: $fontcolor !important;
   }
@@ -74,6 +78,7 @@ main.home-page {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    @include shadow;
   }
 
   a {
@@ -87,12 +92,16 @@ main.home-page {
     background-color: $button-hover;
   }
 
+  .card-container-wrapper {
+    background-color: $background-dark;
+    padding: 50px;
+  }
+
   .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
-    margin-top: 20px;
     padding-bottom: 20px;
   }
 
@@ -100,9 +109,8 @@ main.home-page {
     width: calc(20% - 20px);
     text-align: center;
     padding: 20px;
-    background-color: $background-dark;
+    background-color: $background-light;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 40vh;
     display: flex;
     flex-direction: column;
@@ -111,6 +119,7 @@ main.home-page {
     padding-bottom: 2rem;
     transition: all 0.3s ease;
     margin-bottom: 20px;
+    @include shadow;
 
     img {
       width: 200px;
@@ -162,7 +171,9 @@ main.home-page {
     margin: 0;
 
     img.home-image {
-      max-width: 80%;
+
+      max-width: 20%;
+
     }
   }
 }

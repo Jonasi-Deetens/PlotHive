@@ -1,47 +1,22 @@
-import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-const Contribution = () => {
-  const [contributions, setContributions] = useState([]);
-
-  useEffect(() => {
-    const fetchContributions = async () => {
-      try {
-        const response = await fetch(
-          "http://127.0.0.1:5000/api/contributions",
-          {
-            //method: "GET",
-            //headers: { "Content-Type": "application/json" },
-          }
-        );
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch contributions");
-        }
-
-        const data = await response.json();
-
-        setContributions(data);
-      } catch (error) {
-        console.error("Error fetching contributions:", error);
-      }
-    };
-
-    fetchContributions();
-  }, []);
-
+const Contribution = ({ contribution }) => {
   return (
     <div>
-      <h1>Contributions</h1>
-      <ul>
-        {contributions.map((contribution) => (
-          <li key={contribution._id}>
-            <p>{contribution.text}</p>
-            {/* Render other contribution properties as needed */}
-          </li>
-        ))}
-      </ul>
+      <button>{contribution.upvote_count}</button>
+      <p>{contribution.text}</p>
+      <p>By: {contribution.user_id}</p> {/*placeholder*/}
     </div>
   );
+};
+
+Contribution.propTypes = {
+  contribution: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    upvote_count: PropTypes.number.isRequired,
+    user_id: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Contribution;

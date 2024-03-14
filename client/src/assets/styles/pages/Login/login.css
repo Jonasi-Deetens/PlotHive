@@ -841,12 +841,6 @@
   transform: rotate(-90deg);
 }
 
-body div#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 body div#root main.login-page div.login-container {
   margin: 100px auto 100px auto;
   padding: 50px 20px;

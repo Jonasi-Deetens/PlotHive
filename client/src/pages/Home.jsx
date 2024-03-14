@@ -1,37 +1,43 @@
-import React, { useState } from "react";
+
+import React, { useContext, useState } from "react";
+
 import { Link } from "react-router-dom";
 import "../assets/styles/pages/Home/home.css";
 import BookShowcase from "../components/BookShowcase";
 import book from "../assets/svgs/book-home.svg"
 import { useEffect } from "react";
+import { BookContext } from "../providers/BookContext";
 
 const Home = () => {
+  const { getLatestBook } = useContext(BookContext);
   const [title, setTitle] = useState('"');
 
   useEffect(() => {
-    let prompt = "Jonasi stept out of the elevator with blood all over his face, ...";
-    let promptCharArray = prompt.split('');
+    if (getLatestBook()) {
+      let prompt = getLatestBook().prompt_id.content + ", ...";
+      let promptCharArray = prompt.split('');
 
-    const maxIndex = promptCharArray.length;
-    
-    const typeChar = (currentTitle, currentIndex) => {
-      if (currentIndex >= maxIndex) {
-        const nextTitle = currentTitle.split('_')[0] + '"_';
+      const maxIndex = promptCharArray.length;
+      
+      const typeChar = (currentTitle, currentIndex) => {
+        if (currentIndex >= maxIndex) {
+          const nextTitle = currentTitle.split('_')[0] + '"_';
+          setTitle(nextTitle);
+          return; 
+        }
+        
+        const nextTitle = currentTitle.split('_')[0] + promptCharArray[currentIndex] + '_';
         setTitle(nextTitle);
-        return; 
+      
+        setTimeout(() => {
+          typeChar(nextTitle, currentIndex + 1);
+        }, 50); 
       }
-      
-      const nextTitle = currentTitle.split('_')[0] + promptCharArray[currentIndex] + '_';
-      setTitle(nextTitle);
-    
-      setTimeout(() => {
-        typeChar(nextTitle, currentIndex + 1);
-      }, 50); 
-    }
 
-    typeChar(title, 0);
+      typeChar(title, 0);
+    }
       
-  }, [prompt])
+  }, [])
   
 
   return (
@@ -65,25 +71,27 @@ const Home = () => {
           </button>
         </div>
       </header>
-      <div className="card-container">
-        <Link to="/About" className="card">
-          <img src="src/assets/Logo/logo-navbar.svg" alt="icon1" />
-          <p>Write stories as a community</p>
-        </Link>
-        <Link to="/About" className="card">
-          <img src="src/assets/Logo/logo-navbar.svg" alt="icon2" />
-          <p>Upvote the part that would fit the story best</p>
-        </Link>
-        <Link to="/About" className="card">
-          <img src="src/assets/Logo/logo-navbar.svg" alt="icon3" />
-          <p>Earn by contributing</p>
-        </Link>
-        <Link to="/About" className="card">
-          <img src="src/assets/Logo/logo-navbar.svg" alt="icon4" />
-          <p>Earn badges</p>
-        </Link>
-      </div>
-      <BookShowcase category={"like-this"} />
+      <section className="card-container-wrapper">
+        <div className="card-container">
+          <Link to="/About" className="card">
+            <img src="src/assets/Logo/logo-navbar.svg" alt="icon1" />
+            <p>Write stories as a community</p>
+          </Link>
+          <Link to="/About" className="card">
+            <img src="src/assets/Logo/logo-navbar.svg" alt="icon2" />
+            <p>Upvote the part that would fit the story best</p>
+          </Link>
+          <Link to="/About" className="card">
+            <img src="src/assets/Logo/logo-navbar.svg" alt="icon3" />
+            <p>Earn by contributing</p>
+          </Link>
+          <Link to="/About" className="card">
+            <img src="src/assets/Logo/logo-navbar.svg" alt="icon4" />
+            <p>Earn badges</p>
+          </Link>
+        </div>
+        <BookShowcase category={"like-this"} />
+      </section>
       <h2 className="section-three">
         Welcome to your journey through the magical art of writing.
       </h2>
