@@ -54,8 +54,10 @@ main.home-page {
     white-space: pre-line;
     margin: 0 auto;
     letter-spacing: 0.15em;
+
     font-size: 3rem;
     padding: 10px;
+
     text-align: center;
     color: $fontcolor !important;
   }
@@ -169,7 +171,9 @@ main.home-page {
     margin: 0;
 
     img.home-image {
+
       max-width: 20%;
+
     }
   }
 }
