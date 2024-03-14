@@ -2,6 +2,10 @@
 
 body {
   div#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     main.login-page {
       div.login-container {
         margin: 100px auto 100px auto;

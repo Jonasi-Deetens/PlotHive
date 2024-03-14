@@ -31,7 +31,7 @@ const AboutUs = () => {
             Our mission is to democratize storytelling by providing a platform
             where everyone&apos;s voice can be heard. We strive to foster a
             supportive and inclusive environment where writers of all skill
-            levels can unleash their creativity and
+            levels can unleash their creativity.
           </p>
         </article>
         <div className="images">
@@ -94,9 +94,6 @@ const AboutUs = () => {
         </div>
       </section>
       <section className="contactUs">
-        <button>
-          <a href="/contact">Contact Us</a>
-        </button>
         <article className="hiring">
           <h1>We&apos;re Hiring!</h1>
           <p>
@@ -105,6 +102,9 @@ const AboutUs = () => {
             part of the adventure. Together, le&apos;s create something truly
             magical!
           </p>
+          <a href="/contact">
+            <button>Contact Us</button>
+          </a>
         </article>
       </section>
     </main>

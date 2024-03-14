@@ -3,10 +3,18 @@
 body {
   div#root {
     main.aboutUs {
+      width: 1024px;
+      margin: 0 auto;
       section.about {
-        background-color: $background-light;
-        margin-top: 50px;
-        padding: 50px 0;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        margin-top: 100px;
+        padding: 50px;
+        box-sizing: border-box;
+        border-radius: 30px 30px 10px 10px;
         @include shadow;
         h1 {
           margin: 0;
@@ -18,7 +26,6 @@ body {
           margin-bottom: 40px;
         }
         p {
-          width: 1024px;
           margin: 0 auto;
           font-size: 20px;
           a {
@@ -28,17 +35,23 @@ body {
         }
       }
       section.our-mission {
+        width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        margin: -50px 0;
         article {
           display: flex;
+          width: 57%;
           flex-direction: column;
           justify-content: center;
-          width: 40%;
           box-sizing: border-box;
           padding: 20px;
-          background-color: $background-light;
-          border-radius: 20px;
+          background: rgba(255, 255, 255, 0.25);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+          border-radius: 10px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          border-radius: 10px;
           height: 420px;
           margin: auto 0;
           box-sizing: border-box;
@@ -56,16 +69,18 @@ body {
           }
         }
         div.images {
+          width: auto;
           display: grid;
           grid-template-columns: repeat(12, 1fr);
           grid-template-rows: repeat(2, 1fr);
           gap: 10px;
           overflow: hidden;
           padding: 30px;
-          margin: 50px 0;
+          margin: 50px -30px 50px 0;
           img.typewritter {
             border-radius: 10px;
             height: 200px;
+            width: 200px;
             grid-column: span 6;
             grid-row: span 1;
             object-fit: cover;
@@ -83,7 +98,7 @@ body {
           img.authors {
             border-radius: 10px;
             height: 200px;
-            width: 420px;
+            width: 410px;
             grid-column: span 12;
             grid-row: span 1;
             object-fit: cover;
@@ -92,8 +107,13 @@ body {
         }
       }
       section.meet-our-team {
+        border-radius: 10px;
         @include shadow;
-        background-color: $background-light;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
         box-sizing: border-box;
         padding: 50px 0;
         h1 {
@@ -108,7 +128,6 @@ body {
         div.portraits {
           display: flex;
           justify-content: space-around;
-          width: 80%;
           margin: 0 auto;
           div.portrait {
             img {
@@ -133,6 +152,52 @@ body {
                 }
               }
             }
+          }
+        }
+      }
+      section.contactUs {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 100px;
+        a {
+          display: flex;
+          flex-direction: column;
+          text-decoration: none;
+          justify-content: center;
+          height: 75px;
+          button {
+            @include main-button;
+            font-size: 20px;
+            margin: 0 auto;
+            width: 200px;
+            height: 75px;
+            background-color: $main;
+            color: $button-dark;
+          }
+        }
+        article.hiring {
+          background: rgba(255, 255, 255, 0.25);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+          border-radius: 10px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          box-sizing: border-box;
+          padding: 20px;
+          border-radius: 10px 10px 30px 30px;
+          @include shadow;
+          h1 {
+            font-size: 42px;
+            color: $fontcolor;
+            font-family: $logo-font;
+            font-weight: 500;
+            text-align: center;
+          }
+          p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-align: center;
           }
         }
       }
