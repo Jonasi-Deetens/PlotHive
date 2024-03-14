@@ -4,11 +4,12 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/pages/Home/home.css";
 import BookShowcase from "../components/BookShowcase";
-import book from "../assets/svgs/book-home.svg"
 import { useEffect } from "react";
 import { BookContext } from "../providers/BookContext";
+import { UserContext } from "../providers/UserContext";
 
 const Home = () => {
+  const { user } = useContext(UserContext);
   const { getLatestBook } = useContext(BookContext);
   const [title, setTitle] = useState('"');
 
@@ -50,7 +51,11 @@ const Home = () => {
             <img src="src/assets/Logo/logo-home.svg" alt="Large-Logo" />
           </Link>
           <button className="home-page-login">
-            <Link to="/Login">Login</Link>
+            { user ? (
+              <Link to="/Dashboard">{user.username}</Link>
+            ) : (
+              <Link to="/Login">Login</Link>
+            )}
           </button>
         </div>
         <div className="main-header-container">
@@ -61,7 +66,7 @@ const Home = () => {
         <div className="home-button-container">
           <button className="home-header-button">
             <Link to="/Write" className="home-link">
-              Keep writing
+              Contribute
             </Link>
           </button>
           <button className="home-header-button">
@@ -73,20 +78,20 @@ const Home = () => {
       </header>
       <section className="card-container-wrapper">
         <div className="card-container">
-          <Link to="/About" className="card">
-            <img src="src/assets/svgs/book.svg" alt="icon1" />
+          <Link to="/AboutUs" className="card">
+            <img src="src/assets/svgs/book.svg" alt="icon of a book" />
             <p>Write stories as a community</p>
           </Link>
-          <Link to="/About" className="card">
-            <img src="src/assets/svgs/vote.svg" alt="icon2" />
+          <Link to="/AboutUs" className="card">
+            <img src="src/assets/svgs/vote.svg" alt="icon of a arrow pointing up" />
             <p>Upvote the part that would fit the story best</p>
           </Link>
-          <Link to="/About" className="card">
-            <img src="src/assets/svgs/money.svg" alt="icon3" />
+          <Link to="/AboutUs" className="card">
+            <img src="src/assets/svgs/money.svg" alt="icon of a hand holding a bag of money" />
             <p>Earn by contributing</p>
           </Link>
-          <Link to="/About" className="card">
-            <img src="src/assets/svgs/badge.svg" alt="icon4" />
+          <Link to="/AboutUs" className="card">
+            <img src="src/assets/svgs/badge.svg" alt="icon of a badge with a star" />
             <p>Earn badges</p>
           </Link>
         </div>
@@ -95,9 +100,6 @@ const Home = () => {
       <h2 className="section-three">
         Welcome to your journey through the magical art of writing.
       </h2>
-      <figure className="home-figure">
-        <img className="home-image" src={book} alt="Image of a open book" />
-      </figure>
     </main>
   );
 };
