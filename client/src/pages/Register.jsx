@@ -4,7 +4,7 @@ import userLogo from "../assets/svgs/user.png";
 import userPassword from "../assets/svgs/password.png";
 import { UserContext } from "../providers/UserContext";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { registerUser } = useContext(UserContext);
@@ -97,7 +97,9 @@ const Register = () => {
           </button>
           <div className="question">
             <p>Already have an account?</p>
-            <a href="/login">Login</a>
+            <Link to="/Login">
+              Login
+            </Link>
           </div>
         </form>
       </div>

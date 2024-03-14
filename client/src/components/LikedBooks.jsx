@@ -12,7 +12,7 @@ const LikedBooks = () => {
         const fillFavouriteList = () => {
             let favourites = [];
 
-            if (books) {
+            if (books && user) {
                 books.map((book) => {
                     if (user.favourites.includes(book._id)) favourites.push(book);
                 });
