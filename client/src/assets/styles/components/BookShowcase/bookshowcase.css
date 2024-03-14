@@ -862,6 +862,7 @@ body div#root section.showcase-section div.showcase-wrapper {
 }
 body div#root section.showcase-section div.showcase-wrapper div.profile-book {
   width: 24%;
+  border-bottom: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -881,6 +882,13 @@ body div#root section.showcase-section div.showcase-wrapper div.profile-book div
 @media (max-width: 1024px) {
   body div#root section.showcase-section div.showcase-wrapper div.profile-book {
     width: 45%;
+  }
+}
+@media (max-width: 800px) {
+  body div#root section.showcase-section div.showcase-wrapper div.profile-book {
+    margin-top: 30px;
+    width: 85%;
+    border-bottom: 1px solid #949494;
   }
 }
 body div#root section.showcase-section div.showcase-wrapper div.profile-book:hover div.top-wrapper {

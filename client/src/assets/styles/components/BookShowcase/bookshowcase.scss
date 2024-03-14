@@ -25,6 +25,7 @@ body {
                 div.profile-book {
 
                     width: 24%;
+                    border-bottom: none;
 
                     display: flex;
                     flex-direction: column;
@@ -53,6 +54,14 @@ body {
                 @media (max-width: 1024px) {
                     div.profile-book {
                         width: 45%;
+                    }
+                }
+
+                @media (max-width: 800px) {
+                    div.profile-book {
+                        margin-top: 30px;
+                        width: 85%;
+                        border-bottom: 1px solid $break-line-dark;
                     }
                 }
         
