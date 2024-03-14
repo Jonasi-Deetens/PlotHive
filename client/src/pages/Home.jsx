@@ -74,19 +74,19 @@ const Home = () => {
       <section className="card-container-wrapper">
         <div className="card-container">
           <Link to="/About" className="card">
-            <img src="src/assets/Logo/logo-navbar.svg" alt="icon1" />
+            <img src="src/assets/svgs/book.svg" alt="icon1" />
             <p>Write stories as a community</p>
           </Link>
           <Link to="/About" className="card">
-            <img src="src/assets/Logo/logo-navbar.svg" alt="icon2" />
+            <img src="src/assets/svgs/vote.svg" alt="icon2" />
             <p>Upvote the part that would fit the story best</p>
           </Link>
           <Link to="/About" className="card">
-            <img src="src/assets/Logo/logo-navbar.svg" alt="icon3" />
+            <img src="src/assets/svgs/money.svg" alt="icon3" />
             <p>Earn by contributing</p>
           </Link>
           <Link to="/About" className="card">
-            <img src="src/assets/Logo/logo-navbar.svg" alt="icon4" />
+            <img src="src/assets/svgs/badge.svg" alt="icon4" />
             <p>Earn badges</p>
           </Link>
         </div>
