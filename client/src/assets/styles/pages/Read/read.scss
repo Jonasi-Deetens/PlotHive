@@ -13,6 +13,7 @@ main.read-page {
 
     section.read-page-section {
         background-color: $background-dark;
+        position: relative;
         width: 70%;
         max-height: 900px;
         padding: 100px 0 0 0;
@@ -57,6 +58,44 @@ main.read-page {
             p.read-page-contribution-text {
                 font-family: $serif-font !important;
             }
+        }
+        .read-page-favourite {
+            border: none;
+            @include shadow;
+            width: 40px;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            img {
+                max-height: 20px;
+                width: auto;
+            }
+        }
+        .read-page-favourite:hover {
+            background-color: $main;
+            transform: scale(1.05);
+        }
+
+        .read-page-unfavourite {
+            border: none;
+            @include shadow;
+            width: 40px;
+            height: 80px;
+            background-color: $main;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            img {
+                max-height: 20px;
+                width: auto;
+            }
+        }
+        .read-page-unfavourite:hover {
+            background-color: $button-color;
+            transform: scale(1.05);
         }
     }
 
@@ -116,43 +155,10 @@ main.read-page {
             @include shadow;
             text-decoration: none;
             color: $fontcolor-darker;
+            font-size: 1rem;
         }
         .read-page-button:hover {
             background-color: $main;
-            transform: scale(1.05);
-        }
-        .read-page-favourite {
-            border-radius: 50px;
-            border: none;
-            @include shadow;
-            width: 60px;
-            height: 60px;
-
-            img {
-                max-height: 40px;
-                width: auto;
-            }
-        }
-        .read-page-favourite:hover {
-            background-color: $main;
-            transform: scale(1.05);
-        }
-
-        .read-page-unfavourite {
-            border-radius: 50px;
-            border: none;
-            @include shadow;
-            width: 60px;
-            height: 60px;
-            background-color: $main;
-
-            img {
-                max-height: 40px;
-                width: auto;
-            }
-        }
-        .read-page-unfavourite:hover {
-            background-color: $button-color;
             transform: scale(1.05);
         }
     }
