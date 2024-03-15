@@ -1,106 +1,120 @@
 @use "../../../SASS/" as *;
 
 body {
-    div#root {
-        section.showcase-section {
-            background-color: $background-dark;
-            border-radius: 50px;
-            width: 90%;
-            margin: auto;
-            padding: 20px;
+  div#root {
+    section.showcase-section {
+      background-color: $background-dark;
+      border-radius: 50px;
+      width: 90%;
+      margin: auto;
+      padding: 20px;
 
-            h2.showcase-title {
-                font-family: $logo-font;
-                font-size: 50px;
-                color: $fontcolor;
-                text-align: center;
-                margin-bottom: 50px;
+      h2.showcase-title {
+        font-family: $logo-font;
+        font-size: 50px;
+        color: $fontcolor;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      div.showcase-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        div.profile-book {
+          width: 24%;
+          border-bottom: none;
+
+          display: flex;
+          flex-direction: column;
+
+          justify-content: space-between;
+          align-items: center;
+
+          h3.profile-book-title {
+            color: $fontcolor;
+            font-family: $logo-font;
+            text-align: center;
+          }
+
+          img {
+            max-width: 100%;
+          }
+
+          div.button-wrapper {
+            opacity: 0;
+            a {
+              text-decoration: none;
+              color: $background-dark;
             }
-            
-            div.showcase-wrapper {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-
-                div.profile-book {
-
-                    width: 24%;
-                    border-bottom: none;
-
-                    display: flex;
-                    flex-direction: column;
-
-                    justify-content: space-between;
-                    align-items: center;
-
-        
-                    h3.profile-book-title {
-                        color: $fontcolor;
-                        font-family: $logo-font;
-                        text-align: center;
-                    }
-
-                    img {
-                        max-width: 100%;
-                    }
-
-
-                    div.button-wrapper {
-                        opacity: 0; 
-                    }
-
-                }
-
-                @media (max-width: 1024px) {
-                    div.profile-book {
-                        width: 45%;
-                    }
-                }
-
-                @media (max-width: 800px) {
-                    div.profile-book {
-                        margin-top: 30px;
-                        width: 85%;
-                        border-bottom: 1px solid $break-line-dark;
-                    }
-                }
-        
-                div.profile-book:hover {
-
-
-                    div.top-wrapper {
-                        display: flex;
-                        justify-content: space-between;
-                    }
-        
-                    img.profile-book-image {
-                        filter: drop-shadow(1px 1px 5px $main);
-                    }
-        
-                    h3.profile-book-title {
-                        color: $main;
-                    }
-
-                    div.button-wrapper {
-                        width: 25%;
-                        margin-left: 20px;
-                        opacity: 1;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        transition: all 700ms;
-
-                        .link {
-                            color: $fontcolor;
-                            width: fit-content;
-                        }
-    
-                        .link:hover {
-                            color: $cta;
-                        }
-                    }
-                }
+            button {
+              color: $background-dark;
+              text-decoration: none;
+              padding: 0.7rem 1.5rem;
+              border: none;
+              border-radius: 50px;
+              font-size: 1rem;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              @include shadow;
             }
+            button:hover,
+            button:focus {
+              transform: scale(1.05);
+              background-color: $button-hover;
+            }
+          }
         }
+
+        @media (max-width: 1024px) {
+          div.profile-book {
+            width: 45%;
+          }
+        }
+
+        @media (max-width: 800px) {
+          div.profile-book {
+            margin-top: 30px;
+            width: 85%;
+            border-bottom: 1px solid $break-line-dark;
+          }
+        }
+
+        div.profile-book:hover {
+          div.top-wrapper {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          img.profile-book-image {
+            filter: drop-shadow(1px 1px 5px $main);
+          }
+
+          h3.profile-book-title {
+            color: $main;
+          }
+
+          div.button-wrapper {
+            width: 25%;
+            margin-left: 20px;
+            opacity: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            transition: all 700ms;
+
+            .link {
+              color: $fontcolor;
+              width: fit-content;
+            }
+
+            .link:hover {
+              color: $cta;
+            }
+          }
+        }
+      }
     }
+  }
 }
