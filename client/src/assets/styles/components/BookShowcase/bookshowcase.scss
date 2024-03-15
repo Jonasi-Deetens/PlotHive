@@ -3,9 +3,7 @@
 body {
     div#root {
         section.showcase-section {
-            background-color: $background-dark;
             border-radius: 50px;
-            width: 90%;
             margin: auto;
             padding: 20px;
 
@@ -13,8 +11,10 @@ body {
                 font-family: $logo-font;
                 font-size: 50px;
                 color: $fontcolor;
-                text-align: center;
+                text-decoration: underline;
+                margin-left: 100px;
                 margin-bottom: 50px;
+                filter: drop-shadow(1px 1px 1px black);
             }
             
             div.showcase-wrapper {
@@ -99,6 +99,13 @@ body {
                             color: $cta;
                         }
                     }
+                }
+            }
+
+            @media (max-width: 1024px) {
+                h2.showcase-title {
+                    margin-left: 0;
+                    text-align: center;
                 }
             }
         }

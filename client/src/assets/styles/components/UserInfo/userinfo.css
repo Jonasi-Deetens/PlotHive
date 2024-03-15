@@ -841,24 +841,43 @@
   transform: rotate(-90deg);
 }
 
-div.profile-update p.profile-error {
-  color: red !important;
-  font-weight: bold;
-  font-family: "Fredoka", sans-serif;
-  font-size: 1rem;
+div.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
 }
-div.profile-update p.profile-succes {
-  color: green !important;
-  font-weight: bold;
-  font-family: "Fredoka", sans-serif;
-  font-size: 1rem;
+div.profile img {
+  border-radius: 100%;
+  max-width: 100px;
 }
-div.profile-update form.profile-update-form {
-  margin: auto;
-  font-family: "Fredoka", sans-serif;
+div.profile p.profile-name {
+  padding: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+div.profile p.profile-email {
+  padding: 20px;
+  font-size: 0.8rem;
+}
+div.profile div.profile-update {
+  background-color: #414042;
+  padding: 5px;
+  border-radius: 20px;
+}
+div.profile button.profile-button {
+  background-color: transparent;
+  border: none;
+  color: #ffbd59;
+  margin: 5px;
+  font-weight: bold;
+}
+div.profile button.profile-button:hover {
   color: #ecf0f3;
 }
-div.profile-update form.profile-update-form button.update-button {
+div.profile button.profile-logout {
   margin: 20px auto 0;
   padding: 10px 30px;
   border: none;
@@ -867,10 +886,21 @@ div.profile-update form.profile-update-form button.update-button {
   cursor: pointer;
   background-color: #ecf0f3;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
 }
-div.profile-update form.profile-update-form button.update-button:hover {
+div.profile button.profile-logout:hover {
   background-color: #ffbd59;
-  font-size: 1rem;
-}/*# sourceMappingURL=userupdateform.css.map */
+  transform: scale(1.05);
+}
+div.profile hr {
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  div.profile p.profile-name {
+    font-size: 1.3rem;
+  }
+  div.profile p.profile-email {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=userinfo.css.map */

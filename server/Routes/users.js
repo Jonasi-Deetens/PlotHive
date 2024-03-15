@@ -55,7 +55,7 @@ router.patch('/:id', getUser, async (req, res) => {
     if (req.body.username != null) {
         res.user.username = req.body.username;
     }
-    if (req.body.password != null && req.body.confirmPassword != null) {
+    if ((req.body.password != null && req.body.confirmPassword != null) && (req.body.password != "" && req.body.confirmPassword != "")) {
         if (req.body.password == req.body.confirmPassword) 
             res.user.password = await hashPassword(req.body.password);
         else    

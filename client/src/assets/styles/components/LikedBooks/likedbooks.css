@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 .hamburger {
@@ -843,10 +842,10 @@
 }
 
 body div#root section.books-section {
-  background-color: #737373;
-  border-radius: 50px;
-  width: 40%;
-  margin: auto;
+  background-color: #414042;
+  border-radius: 20px;
+  width: 35%;
+  margin: 20px auto;
   padding: 20px;
 }
 body div#root section.books-section h2.books-title {
@@ -866,13 +865,30 @@ body div#root section.books-section div.book-wrapper div.flex-wrapper {
   display: flex;
   justify-content: space-around;
 }
+body div#root section.books-section div.book-wrapper div.flex-wrapper:hover {
+  display: flex;
+  justify-content: space-around;
+}
 body div#root section.books-section div.book-wrapper p.book-title {
-  color: #ecf0f3;
+  color: #ffbd59 !important;
   font-family: "Fredoka", sans-serif;
   text-align: center;
 }
 body div#root section.books-section div.book-wrapper p.book-date {
-  color: #ecf0f3;
+  color: #ffbd59 !important;
   font-family: "Fredoka", sans-serif;
+}
+body div#root section.books-section div.book-wrapper p.book-title:hover {
+  color: #ecf0f3 !important;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+body div#root section.books-section div.book-wrapper p.book-date:hover {
+  color: #ffbd59 !important;
+}
+@media (max-width: 760px) {
+  body div#root section.books-section {
+    margin: 10px;
+    width: 90%;
+  }
 }/*# sourceMappingURL=likedbooks.css.map */
-
