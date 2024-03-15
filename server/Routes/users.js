@@ -55,8 +55,11 @@ router.patch('/:id', getUser, async (req, res) => {
     if (req.body.username != null) {
         res.user.username = req.body.username;
     }
-    if (req.body.password != null) {
-        res.user.password = await hashPassword(req.body.password);
+    if (req.body.password != null && req.body.confirmPassword != null) {
+        if (req.body.password == req.body.confirmPassword) 
+            res.user.password = await hashPassword(req.body.password);
+        else    
+            return res.status(400).json({ message: 'Passwords do not match' });
     }
     if (req.body.email != null) {
         res.user.email = req.body.email;
@@ -66,7 +69,7 @@ router.patch('/:id', getUser, async (req, res) => {
     }
     try {
         const updatedUser = await res.user.save();
-        res.json(updatedUser);
+        res.status(201).json(updatedUser);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
