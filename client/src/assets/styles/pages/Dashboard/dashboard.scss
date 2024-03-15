@@ -23,6 +23,7 @@ body {
             section.section-profile {
                 margin: auto;
                 width: 80%;
+                margin-bottom: 100px;
 
                 div.flex-wrapper {
                     display: flex;
@@ -62,9 +63,7 @@ body {
 
             section.section-title {
                 padding: 50px;
-                margin: auto;
-                width: 80%;
-                filter: drop-shadow(1px 1px 1px black);
+                background-color: $background-dark;
 
                 h2.book-prompt {
                     text-align: center;
@@ -89,6 +88,10 @@ body {
                         transform: scale(1.05);
                     }
                 }
+            }
+
+            hr.no-margin {
+                margin: 0;
             }
 
             @media (max-width: 800px) {

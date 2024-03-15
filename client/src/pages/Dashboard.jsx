@@ -49,6 +49,7 @@ const Dashboard = () => {
           </section>
         </div>
       </section>
+      <hr className="no-margin" />
       <section className="section-title">
         <h2 className='book-prompt'>{'"' + getLatestBook().prompt_id.content + ',..."'}</h2>
         <div className='button-container'>
@@ -56,6 +57,7 @@ const Dashboard = () => {
           <Link to="/Explore" className='link'><button className='prompt-button'>Explore</button></Link>
         </div>
       </section>
+      <hr className="no-margin" />
       <BookShowcase category={"top"} />
     </main>
   )

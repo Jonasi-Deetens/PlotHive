@@ -861,6 +861,7 @@ body div#root main.dashboard-page section.section-profile-half div.flex-wrapper 
 body div#root main.dashboard-page section.section-profile {
   margin: auto;
   width: 80%;
+  margin-bottom: 100px;
 }
 body div#root main.dashboard-page section.section-profile div.flex-wrapper {
   display: flex;
@@ -893,9 +894,7 @@ body div#root main.dashboard-page section.section-profile div.flex-wrapper secti
 }
 body div#root main.dashboard-page section.section-title {
   padding: 50px;
-  margin: auto;
-  width: 80%;
-  filter: drop-shadow(1px 1px 1px black);
+  background-color: #414042;
 }
 body div#root main.dashboard-page section.section-title h2.book-prompt {
   text-align: center;
@@ -923,6 +922,9 @@ body div#root main.dashboard-page section.section-title div.button-container but
 body div#root main.dashboard-page section.section-title div.button-container button.prompt-button:hover {
   background-color: #ffbd59;
   transform: scale(1.05);
+}
+body div#root main.dashboard-page hr.no-margin {
+  margin: 0;
 }
 @media (max-width: 800px) {
   body div#root main.dashboard-page section.section-profile {
