@@ -44,34 +44,34 @@ const Navbar = () => {
       </button>
       <ul>
         <li>
-          <NavLink to="/Store" activeClassName="active">
+          <NavLink to="/Store" activeclassname="active">
             Store
           </NavLink>
         </li>
         <li>
-          <NavLink to="/Explore" activeClassName="active">
+          <NavLink to="/Explore" activeclassname="active">
             Explore
           </NavLink>
         </li>
         <li>
-          <NavLink to="/Contact" activeClassName="active">
+          <NavLink to="/Contact" activeclassname="active">
             Contact
           </NavLink>
         </li>
         <li>
-          <NavLink to="/AboutUs" activeClassName="active">
+          <NavLink to="/AboutUs" activeclassname="active">
             About
           </NavLink>
         </li>
         {user ? (
           <li>
-            <NavLink to="/Dashboard" activeClassName="active">
+            <NavLink to="/Dashboard" activeclassname="active">
               {user && user.username}
             </NavLink>
           </li>
         ) : (
           <li>
-            <NavLink to="/Login" activeClassName="active">
+            <NavLink to="/Login" activeclassname="active">
               Login
             </NavLink>
           </li>
