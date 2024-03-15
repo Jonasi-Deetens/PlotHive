@@ -23,11 +23,16 @@ body {
                 justify-content: space-around;
 
                 div.profile-book {
+
                     width: 24%;
+                    border-bottom: none;
+
                     display: flex;
                     flex-direction: column;
+
                     justify-content: space-between;
                     align-items: center;
+
         
                     h3.profile-book-title {
                         color: $fontcolor;
@@ -39,9 +44,11 @@ body {
                         max-width: 100%;
                     }
 
+
                     div.button-wrapper {
                         opacity: 0; 
                     }
+
                 }
 
                 @media (max-width: 1024px) {
@@ -49,8 +56,17 @@ body {
                         width: 45%;
                     }
                 }
+
+                @media (max-width: 800px) {
+                    div.profile-book {
+                        margin-top: 30px;
+                        width: 85%;
+                        border-bottom: 1px solid $break-line-dark;
+                    }
+                }
         
                 div.profile-book:hover {
+
 
                     div.top-wrapper {
                         display: flex;

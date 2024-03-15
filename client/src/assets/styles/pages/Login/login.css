@@ -841,15 +841,31 @@
   transform: rotate(-90deg);
 }
 
+body div#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body div#root main.login-page {
+  background-image: url("../../../img/login.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+}
 body div#root main.login-page div.login-container {
-  margin: 100px auto 100px auto;
+  margin: auto;
   padding: 50px 20px;
-  max-width: 700px;
+  width: 700px;
   background-color: #414042;
   border-radius: 50px;
   box-sizing: border-box;
   color: #ecf0f3;
   font-family: "Open Sans", sans-serif;
+  opacity: 0.95;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 body div#root main.login-page div.login-container h2.login-title {
@@ -947,6 +963,7 @@ body div#root main.login-page div.login-container form div.question a {
 @media screen and (max-width: 800px) {
   body div#root main.login-page div.login-container {
     border-radius: 25px;
+    padding: 20px 10px;
     width: 95%;
   }
   body div#root main.login-page div.login-container h2.login-title {

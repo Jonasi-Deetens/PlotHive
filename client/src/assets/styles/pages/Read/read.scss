@@ -13,6 +13,7 @@ main.read-page {
 
     section.read-page-section {
         background-color: $background-dark;
+        position: relative;
         width: 70%;
         max-height: 900px;
         padding: 100px 0 0 0;
@@ -58,6 +59,47 @@ main.read-page {
                 font-family: $serif-font !important;
             }
         }
+        .read-page-favourite {
+            border: none;
+            @include shadow;
+            width: 40px;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            img {
+                max-height: 20px;
+                width: auto;
+            }
+        }
+        .read-page-favourite:hover {
+            background-color: $main;
+            transform: scale(1.05);
+        }
+
+        .read-page-unfavourite {
+            border: none;
+            @include shadow;
+            width: 40px;
+            height: 80px;
+            background-color: $main;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            img {
+                max-height: 20px;
+                width: auto;
+            }
+        }
+        .read-page-unfavourite:hover {
+            background-color: $button-color;
+            transform: scale(1.05);
+        }
+    }
+
+    @media (min-width: 800px) {
 
         div.read-page-contribution:hover {
             background-color: $main;
@@ -72,7 +114,8 @@ main.read-page {
             }
 
             p.read-page-contribution-name {
-                opacity: 1;
+                color: $fontcolor-dark;
+                opacity: 1 !important;
                 padding-right: 15px;
                 margin: 0;
             }
@@ -85,6 +128,11 @@ main.read-page {
     }
 
     @media (max-width: 1260px) {
+
+        h1.read-page-title {
+            font-size: 1.5rem;
+        }
+
         section.read-page-section {
             width: 90%;
 
@@ -92,21 +140,13 @@ main.read-page {
                 padding: 10px 40px 10px 10px;
             }
         }
-    }
-
-    @media (max-width: 800px) {
-        section.read-page-section {
-            width: 100%;
-
-            div.read-page-contribution {
-                padding: 10px 20px 10px 5px;
-            }
-        }
+        
     }
 
     section.read-page-buttons {
         display: flex;
         width: 50%;
+        align-items: center;
         margin: 50px auto;
         justify-content: space-around;
 
@@ -115,10 +155,32 @@ main.read-page {
             @include shadow;
             text-decoration: none;
             color: $fontcolor-darker;
+            font-size: 1rem;
         }
         .read-page-button:hover {
             background-color: $main;
             transform: scale(1.05);
+        }
+    }
+
+    @media (max-width: 800px) {
+        section.read-page-section {
+            width: 100%;
+
+            div.read-page-contribution {
+                padding: 10px 25px 10px 25px;
+            }
+
+            p.read-page-contribution-name {
+                display: none;
+            }
+        }
+
+        section.read-page-buttons {
+            width: 100%;
+            a {
+                font-size: 1rem !important;
+            }
         }
     }
 }

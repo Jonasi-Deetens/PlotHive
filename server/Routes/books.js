@@ -85,7 +85,12 @@ async function getBook(req, res, next) {
         book = await BookModel.findById(req.params.id)
             .populate('genres')
             .populate('prompt_id')
-            .populate('contributions');
+            .populate({
+                path: 'contributions',
+                populate: {
+                    path: 'comments user_id'
+                }
+            });
         if (book == null) {
             return res.status(404).json({ message: 'Book not found' });
         }

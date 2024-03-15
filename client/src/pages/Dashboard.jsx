@@ -15,8 +15,8 @@ const Dashboard = () => {
     const isAuthorized = async () => {
       try {
         if (!user) {
-          await authUser();
-          if (!user) {
+          const checkAuth = await authUser();
+          if (!checkAuth) {
             navigate("/Login");
           }
         }
@@ -36,8 +36,6 @@ const Dashboard = () => {
           <div className="section-profile-left">
             <img src={navBarLogo} alt="profile-picture" />
             <p className="profile-name">{user && user.username}</p>
-            <p className="profile-stat">0 followers</p>
-            <p className="profile-stat">0 following</p>
             <button className="profile-button">Edit profile</button>
             <br />
             <button className="profile-button-logout" onClick={logout}>Logout</button>

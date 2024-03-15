@@ -12,7 +12,7 @@ const LatestContributions = () => {
         const fillContributeList = () => {
             let contributions = [];
 
-            if (books) {
+            if (books && user) {
                 books.map((book) => {
                     book.contributions.forEach(contribution => {
                         if (contribution.user_id._id === user._id) contributions.push(book);
