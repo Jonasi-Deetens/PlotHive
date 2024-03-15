@@ -50,13 +50,12 @@ const Home = () => {
             {/* Link to the homepage */}
             <img src="src/assets/Logo/logo-home.svg" alt="Large-Logo" />
           </Link>
-          <button className="home-page-login">
-            { user ? (
-              <Link to="/Dashboard">{user.username}</Link>
-            ) : (
-              <Link to="/Login">Login</Link>
-            )}
-          </button>
+          { user ? (
+            <Link to="/Dashboard">
+            <button className="home-page-login">{user.username}</button></Link>
+          ) : (
+            <Link to="/Login"><button className="home-page-login">Login</button></Link>
+          )}
         </div>
         <div className="main-header-container">
           <div className="main-header-container">
@@ -64,16 +63,12 @@ const Home = () => {
           </div>
         </div>
         <div className="home-button-container">
-          <button className="home-header-button">
             <Link to="/Write" className="home-link">
-              Contribute
+            <button className="home-header-button">Contribute</button>
             </Link>
-          </button>
-          <button className="home-header-button">
             <Link to="/Explore" className="home-link">
-              Explore
+              <button className="home-header-button">Explore</button>
             </Link>
-          </button>
         </div>
       </header>
       <section className="card-container-wrapper">
