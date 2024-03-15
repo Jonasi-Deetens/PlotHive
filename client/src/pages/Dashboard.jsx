@@ -1,5 +1,5 @@
 import "../assets/styles/pages/Dashboard/dashboard.css";
-import navBarLogo from "../assets/Logo/logo-navbar.svg";
+import profile from "../assets/img/portraits/portrait1.jpeg";
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../providers/UserContext";
@@ -34,7 +34,7 @@ const Dashboard = () => {
       <section className="section-profile">
         <div className="flex-wrapper">
           <div className="section-profile-left">
-            <img src={navBarLogo} alt="profile-picture" />
+            <img src={profile} alt="profile-picture" />
             <p className="profile-name">{user && user.username}</p>
             <button className="profile-button">Edit profile</button>
             <br />
