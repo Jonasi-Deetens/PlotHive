@@ -15,8 +15,8 @@ const Dashboard = () => {
     const isAuthorized = async () => {
       try {
         if (!user) {
-          await authUser();
-          if (!user) {
+          const checkAuth = await authUser();
+          if (!checkAuth) {
             navigate("/Login");
           }
         }

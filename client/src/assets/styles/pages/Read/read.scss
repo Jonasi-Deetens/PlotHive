@@ -107,6 +107,7 @@ main.read-page {
     section.read-page-buttons {
         display: flex;
         width: 50%;
+        align-items: center;
         margin: 50px auto;
         justify-content: space-around;
 
@@ -118,6 +119,40 @@ main.read-page {
         }
         .read-page-button:hover {
             background-color: $main;
+            transform: scale(1.05);
+        }
+        .read-page-favourite {
+            border-radius: 50px;
+            border: none;
+            @include shadow;
+            width: 60px;
+            height: 60px;
+
+            img {
+                max-height: 40px;
+                width: auto;
+            }
+        }
+        .read-page-favourite:hover {
+            background-color: $main;
+            transform: scale(1.05);
+        }
+
+        .read-page-unfavourite {
+            border-radius: 50px;
+            border: none;
+            @include shadow;
+            width: 60px;
+            height: 60px;
+            background-color: $main;
+
+            img {
+                max-height: 40px;
+                width: auto;
+            }
+        }
+        .read-page-unfavourite:hover {
+            background-color: $button-color;
             transform: scale(1.05);
         }
     }
@@ -136,7 +171,10 @@ main.read-page {
         }
 
         section.read-page-buttons {
-            width: 90%;
+            width: 100%;
+            a {
+                font-size: 1rem !important;
+            }
         }
     }
 }

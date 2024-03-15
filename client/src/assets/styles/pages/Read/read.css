@@ -929,6 +929,7 @@ main.read-page section.read-page-section div.read-page-contribution p.read-page-
 main.read-page section.read-page-buttons {
   display: flex;
   width: 50%;
+  align-items: center;
   margin: 50px auto;
   justify-content: space-around;
 }
@@ -949,6 +950,37 @@ main.read-page section.read-page-buttons .read-page-button:hover {
   background-color: #ffbd59;
   transform: scale(1.05);
 }
+main.read-page section.read-page-buttons .read-page-favourite {
+  border-radius: 50px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  width: 60px;
+  height: 60px;
+}
+main.read-page section.read-page-buttons .read-page-favourite img {
+  max-height: 40px;
+  width: auto;
+}
+main.read-page section.read-page-buttons .read-page-favourite:hover {
+  background-color: #ffbd59;
+  transform: scale(1.05);
+}
+main.read-page section.read-page-buttons .read-page-unfavourite {
+  border-radius: 50px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  width: 60px;
+  height: 60px;
+  background-color: #ffbd59;
+}
+main.read-page section.read-page-buttons .read-page-unfavourite img {
+  max-height: 40px;
+  width: auto;
+}
+main.read-page section.read-page-buttons .read-page-unfavourite:hover {
+  background-color: #ecf0f3;
+  transform: scale(1.05);
+}
 @media (max-width: 800px) {
   main.read-page section.read-page-section {
     width: 100%;
@@ -960,7 +992,10 @@ main.read-page section.read-page-buttons .read-page-button:hover {
     display: none;
   }
   main.read-page section.read-page-buttons {
-    width: 90%;
+    width: 100%;
+  }
+  main.read-page section.read-page-buttons a {
+    font-size: 1rem !important;
   }
 }
 

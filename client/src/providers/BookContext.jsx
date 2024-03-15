@@ -32,12 +32,9 @@ const BookProvider = ({ children }) => {
     if (books) {
       books.sort((bookA, bookB) => {
         const itemCountA = bookA.contributions.length;
-        console.log(itemCountA);
         const itemCountB = bookB.contributions.length;
-        console.log(itemCountB);
         return itemCountB - itemCountA;
       });
-      console.log(books);
       return books;
     }
   };

@@ -1,18 +1,41 @@
 import '../assets/styles/pages/Read/read.css'
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BookContext } from '../providers/BookContext'
+import star from '../assets/svgs/star.svg'
+import { UserContext } from '../providers/UserContext'
 
 const Read = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const queryParams = new URLSearchParams(location.search);
   const bookId = queryParams.get('id');
+
+  const { user, authUser } = useContext(UserContext);
   const { getBookById } = useContext(BookContext);
   const [book, setBook] = useState(null);
   const [page, setPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(1);
   const [pageContributions, setPageContributions] = useState(null);
+  const [inFavourites, setInFavourites] = useState(false);
   
+  useEffect(() => {
+    const isAuthorized = async () => {
+      try {
+        if (!user) {
+          const checkAuth = await authUser();
+          if (!checkAuth) {
+            navigate("/Login");
+          }
+        }
+      } catch (error) {
+        console.error("Failed to authenticate");
+      }
+    };
+
+    isAuthorized();
+  }, [authUser, navigate, user]);
+
   useEffect(() => {
     const fetchedBook = getBookById(bookId)
     fetchedBook.contributions.sort((bookA, bookB) => {
@@ -20,17 +43,18 @@ const Read = () => {
       const dateB = new Date(bookB.created_at);
       return dateB - dateA;
     })
-    console.log(page);
-    console.log(fetchedBook.contributions)
     setBook(fetchedBook);
     
-    if (book) { 
+    if (book && user) { 
       if (book.contributions.length > 0)
         setNumberOfPages(Math.round(book.contributions.length / 2));
       else setNumberOfPages(1);
       setPageData();
+
+      if (user.favourites.includes(book._id)) setInFavourites(true);
+      else setInFavourites(false);
     }
-  }, [book])
+  }, [book, user])
 
   useEffect(() => {
     if (book) setPageData();
@@ -59,6 +83,35 @@ const Read = () => {
     setPageContributions(contributionsCopy.slice(startIndex, endIndex));
   }
 
+  const favourite = async () => {
+    if (!inFavourites) {
+      user.favourites.push(book._id);
+    } else {
+      const index = user.favourites.indexOf(book._id);
+      if (index !== -1) {
+        user.favourites.splice(index, 1);
+      }
+    }
+
+    try {
+      const response = await fetch('http://127.0.0.1:5000/api/users/' + user._id, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          favourites: user.favourites
+        })
+      })
+      if (response.ok) {
+        console.log(user.favourites)
+        setInFavourites(!inFavourites);
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
   return (
     <main className='read-page'>
       <h1 className='read-page-title'>{book && '"' + book.prompt_id.content + ',..."' }</h1>
@@ -79,6 +132,7 @@ const Read = () => {
       </section>
       <section className='read-page-buttons'>
         <Link to='/explore' className='read-page-button'>Back</Link>
+        <button className={inFavourites ? 'read-page-unfavourite' : 'read-page-favourite'} onClick={favourite}><img src={star} alt="icon of a star" /></button>
         <Link to={book && '/write?' + book._id} className='read-page-button'>Contribute</Link>
       </section>
     </main>

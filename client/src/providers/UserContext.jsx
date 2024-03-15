@@ -12,7 +12,6 @@ const UserProvider = ({ children }) => {
 
   const authUser = async () => {
     try {
-      // console.log(localStorage)
       const token = localStorage.getItem("token");
       const response = await fetch("http://127.0.0.1:5000/auth/user", {
         method: "POST",
@@ -24,6 +23,7 @@ const UserProvider = ({ children }) => {
       if (response.ok) {
         const data = await response.json();
         setUser(data);
+        return data;
       }
     } catch (error) {
       throw new Error(error.message);
@@ -46,6 +46,7 @@ const UserProvider = ({ children }) => {
         const data = await response.json();
         setUser(data.user);
         localStorage.setItem("token", data.token);
+        return data.user;
       }
     } catch (error) {
       throw new Error(error.message);
@@ -68,6 +69,7 @@ const UserProvider = ({ children }) => {
         const data = await response.json();
         setUser(data.user);
         localStorage.setItem("token", data.token);
+        return data.user;
       }
     } catch (error) {
       throw new Error(error.message);

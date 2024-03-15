@@ -3,7 +3,7 @@ import userLogo from "../assets/svgs/user.png";
 import userPassword from "../assets/svgs/password.png";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../providers/UserContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { loginUser } = useContext(UserContext);
@@ -31,9 +31,11 @@ const Login = () => {
   useEffect(() => {
     const isAuthorized = async () => {
       try {
-        await authUser();
-        if (user) {
-          navigate("/dashboard");
+        if (!user){
+          const checkAuth = await authUser();
+          if (checkAuth) {
+            navigate("/dashboard");
+          }
         }
       } catch (error) {
         console.error("Failed to authenticate");
@@ -87,7 +89,9 @@ const Login = () => {
           </button>
           <div className="question">
             <p>Don&apos;t have an account?</p>
-            <a href="/register">Register</a>
+            <Link to="/Register">
+              Register
+            </Link>
           </div>
         </form>
       </div>
