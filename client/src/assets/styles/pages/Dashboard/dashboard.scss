@@ -36,6 +36,11 @@ body {
                         margin: auto;
                         border-right: 4px solid $background-dark;
 
+                        img {
+                            max-width: 150px;
+                            border-radius: 100%;
+                        }
+
                         p.profile-name {
                             font-family: $logo-font;
                             font-weight: bold;
@@ -48,14 +53,8 @@ body {
                         }
 
                         button.profile-button {
-                            font-family: $logo-font;
-                            font-size: 18px;
-                            font-weight: bold;
-                            border: none;
-                            background-color:  $background-dark;
-                            color: $fontcolor;
-                            padding: 15px;
-                            border-radius: 50px;
+                            @include main-button;
+                            margin-bottom: 10px;
                         }
 
                         button.profile-button:hover { 
@@ -71,6 +70,7 @@ body {
                             font-size: 18px;
                             border: none;
                             padding: 5px;
+                            cursor: pointer;
                         }
 
                         button.profile-button-logout:hover {
@@ -79,35 +79,10 @@ body {
                     }
 
                     div.section-profile-right {
-                        display: flex;
-                        flex-wrap: wrap;
                         padding: 50px;
                         width: 50%;
-
-                        div.badge {
-                            width: 50%;
-                            text-align: center;
-
-                            p.badge-title {
-                                font-family: $logo-font;
-                                font-weight: bold;
-                            }
-                            p.badge-number {
-                                font-family: $logo-font;
-                                font-weight: bold;
-                                background-color: $background-dark;
-                                height: 50px;
-                                width: 50px;
-                                line-height: 50px;
-                                padding: 10px;
-                                margin: auto;
-                                border-radius: 100%;
-                            }
-                            p.badge-number:hover {
-                                background-color:  $main;
-                                color: $fontcolor-darker;
-                            }
-                        }
+                        display: flex;
+                        align-items: center;
                     }
                 }
 

@@ -1,0 +1,31 @@
+@use "../../../SASS/" as *;
+
+div.stat-container {
+    display: flex;
+    flex-wrap: wrap;
+    
+    div.badge {
+        width: 50%;
+        text-align: center;
+    
+        p.badge-title {
+            font-family: $logo-font;
+            font-weight: bold;
+        }
+        p.badge-number {
+            font-family: $logo-font;
+            font-weight: bold;
+            background-color: $background-dark;
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+            padding: 15px;
+            margin: auto;
+            border-radius: 100%;
+        }
+        p.badge-number:hover {
+            background-color:  $main;
+            color: $fontcolor-darker;
+        }
+    }
+}
