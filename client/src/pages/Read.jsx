@@ -116,6 +116,7 @@ const Read = () => {
     <main className='read-page'>
       <h1 className='read-page-title'>{book && '"' + book.prompt_id.content + ',..."' }</h1>
       <section className='read-page-section'>
+        <button className={inFavourites ? 'read-page-unfavourite' : 'read-page-favourite'} onClick={favourite}><img src={star} alt="icon of a star" /></button>
         <section className='read-page-text'>
           {pageContributions && pageContributions.map((contribution) => (
             <div className='read-page-contribution'>
@@ -132,7 +133,6 @@ const Read = () => {
       </section>
       <section className='read-page-buttons'>
         <Link to='/explore' className='read-page-button'>Back</Link>
-        <button className={inFavourites ? 'read-page-unfavourite' : 'read-page-favourite'} onClick={favourite}><img src={star} alt="icon of a star" /></button>
         <Link to={book && '/write?' + book._id} className='read-page-button'>Contribute</Link>
       </section>
     </main>
