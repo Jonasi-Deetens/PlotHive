@@ -2,21 +2,32 @@
 
 body {
   div#root {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
     main.login-page {
+      background-image: url('../../../img/login.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      padding: 20px;
+      height: 100%;
+      display: flex;
+
       div.login-container {
-        margin: 100px auto 100px auto;
+        margin: auto;
         padding: 50px 20px;
-        max-width: 700px;
+        width: 700px;
         background-color: $background-dark;
         border-radius: 50px;
         box-sizing: border-box;
         color: $fontcolor;
         font-family: $sans-font;
+        opacity: 0.95;
         @include shadow;
+
         h2.login-title {
           color: $fontcolor;
           font-family: $logo-font;
@@ -108,6 +119,7 @@ body {
       main.login-page {
         div.login-container {
           border-radius: 25px;
+          padding: 20px 10px;
           width: 95%;
           h2.login-title {
             font-size: 30px;
