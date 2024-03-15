@@ -52,8 +52,8 @@ const Dashboard = () => {
       <section className="section-title">
         <h2 className='book-prompt'>{'"' + getLatestBook().prompt_id.content + ',..."'}</h2>
         <div className='button-container'>
-          <button className='prompt-button'><Link to={"/Write" + getLatestBook()._id}  className='link'>Contribute</Link></button>
-          <button className='prompt-button'><Link to="/Explore" className='link'>Explore</Link></button>
+          <Link to={"/Write?" + getLatestBook()._id}  className='link'><button className='prompt-button'>Contribute</button></Link>
+          <Link to="/Explore" className='link'><button className='prompt-button'>Explore</button></Link>
         </div>
       </section>
       <BookShowcase category={"top"} />

@@ -74,6 +74,7 @@ body {
 
                 div.button-container {
                     display: flex;
+                    justify-content: space-around;
                     
                     button.prompt-button {
                         @include main-button;
@@ -105,10 +106,7 @@ body {
 
                 button.prompt-button {
                     line-height: 1rem;
-                }
-
-                .link {
-                    font-size: 1rem;
+                    font-size: 1rem !important;
                 }
             }
         }

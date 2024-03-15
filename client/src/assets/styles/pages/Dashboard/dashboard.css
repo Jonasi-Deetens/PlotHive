@@ -904,6 +904,7 @@ body div#root main.dashboard-page section.section-title h2.book-prompt {
 }
 body div#root main.dashboard-page section.section-title div.button-container {
   display: flex;
+  justify-content: space-around;
 }
 body div#root main.dashboard-page section.section-title div.button-container button.prompt-button {
   margin: 20px auto 0;
@@ -936,8 +937,6 @@ body div#root main.dashboard-page section.section-title div.button-container but
   }
   body div#root main.dashboard-page button.prompt-button {
     line-height: 1rem;
-  }
-  body div#root main.dashboard-page .link {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
 }/*# sourceMappingURL=dashboard.css.map */
