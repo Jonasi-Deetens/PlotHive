@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from "react";
 
 import { Link } from "react-router-dom";
@@ -16,30 +15,29 @@ const Home = () => {
   useEffect(() => {
     if (getLatestBook()) {
       let prompt = getLatestBook().prompt_id.content + ", ...";
-      let promptCharArray = prompt.split('');
+      let promptCharArray = prompt.split("");
 
       const maxIndex = promptCharArray.length;
-      
+
       const typeChar = (currentTitle, currentIndex) => {
         if (currentIndex >= maxIndex) {
-          const nextTitle = currentTitle.split('_')[0] + '"_';
+          const nextTitle = currentTitle.split("_")[0] + '"_';
           setTitle(nextTitle);
-          return; 
+          return;
         }
-        
-        const nextTitle = currentTitle.split('_')[0] + promptCharArray[currentIndex] + '_';
+
+        const nextTitle =
+          currentTitle.split("_")[0] + promptCharArray[currentIndex] + "_";
         setTitle(nextTitle);
-      
+
         setTimeout(() => {
           typeChar(nextTitle, currentIndex + 1);
-        }, 50); 
-      }
+        }, 50);
+      };
 
       typeChar(title, 0);
     }
-      
-  }, [])
-  
+  }, []);
 
   return (
     <main className="home-page">
@@ -50,11 +48,14 @@ const Home = () => {
             {/* Link to the homepage */}
             <img src="src/assets/Logo/logo-home.svg" alt="Large-Logo" />
           </Link>
-          { user ? (
+          {user ? (
             <Link to="/Dashboard">
-            <button className="home-page-login">{user.username}</button></Link>
+              <button className="home-page-login">{user.username}</button>
+            </Link>
           ) : (
-            <Link to="/Login"><button className="home-page-login">Login</button></Link>
+            <Link to="/Login">
+              <button className="home-page-login">Login</button>
+            </Link>
           )}
         </div>
         <div className="main-header-container">
@@ -63,12 +64,12 @@ const Home = () => {
           </div>
         </div>
         <div className="home-button-container">
-            <Link to="/Write" className="home-link">
+          <Link to="/Write" className="home-link">
             <button className="home-header-button">Contribute</button>
-            </Link>
-            <Link to="/Explore" className="home-link">
-              <button className="home-header-button">Explore</button>
-            </Link>
+          </Link>
+          <Link to="/Explore" className="home-link">
+            <button className="home-header-button">Explore</button>
+          </Link>
         </div>
       </header>
       <section className="card-container-wrapper">
@@ -78,15 +79,24 @@ const Home = () => {
             <p>Write stories as a community</p>
           </Link>
           <Link to="/AboutUs" className="card">
-            <img src="src/assets/svgs/vote.svg" alt="icon of a arrow pointing up" />
+            <img
+              src="src/assets/svgs/vote.svg"
+              alt="icon of a arrow pointing up"
+            />
             <p>Upvote the part that would fit the story best</p>
           </Link>
           <Link to="/AboutUs" className="card">
-            <img src="src/assets/svgs/money.svg" alt="icon of a hand holding a bag of money" />
+            <img
+              src="src/assets/svgs/money.svg"
+              alt="icon of a hand holding a bag of money"
+            />
             <p>Earn by contributing</p>
           </Link>
           <Link to="/AboutUs" className="card">
-            <img src="src/assets/svgs/badge.svg" alt="icon of a badge with a star" />
+            <img
+              src="src/assets/svgs/badge.svg"
+              alt="icon of a badge with a star"
+            />
             <p>Earn badges</p>
           </Link>
         </div>
