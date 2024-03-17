@@ -64,6 +64,7 @@ body {
             section.section-title {
                 padding: 50px;
                 background-color: $background-dark;
+                @include shadow;
 
                 h2.book-prompt {
                     text-align: center;

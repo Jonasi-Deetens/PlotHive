@@ -895,6 +895,7 @@ body div#root main.dashboard-page section.section-profile div.flex-wrapper secti
 body div#root main.dashboard-page section.section-title {
   padding: 50px;
   background-color: #414042;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 body div#root main.dashboard-page section.section-title h2.book-prompt {
   text-align: center;
