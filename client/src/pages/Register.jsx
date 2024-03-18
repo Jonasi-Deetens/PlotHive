@@ -83,7 +83,7 @@ const Register = () => {
             <div className="repeat-password-input">
               <img src={userPassword} alt="password-logo" />
               <input
-                type="repeat"
+                type="password"
                 name="repeat-password"
                 id="repeat-password"
                 placeholder="Repeat your password"
@@ -97,9 +97,7 @@ const Register = () => {
           </button>
           <div className="question">
             <p>Already have an account?</p>
-            <Link to="/Login">
-              Login
-            </Link>
+            <Link to="/Login">Login</Link>
           </div>
         </form>
       </div>

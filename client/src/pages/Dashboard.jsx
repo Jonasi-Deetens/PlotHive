@@ -1,14 +1,17 @@
 import "../assets/styles/pages/Dashboard/dashboard.css";
-import navBarLogo from "../assets/Logo/logo-navbar.svg";
-import React, { useContext, useEffect, useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect } from 'react'
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../providers/UserContext";
 import BookShowcase from "../components/BookShowcase";
+import UserStats from "../components/UserStats";
 import LikedBooks from "../components/LikedBooks";
 import LatestContributions from "../components/LatestContributions";
+import UserInfo from "../components/UserInfo";
+import { BookContext } from "../providers/BookContext";
 
 const Dashboard = () => {
-  const { authUser, user, logout } = useContext(UserContext);
+  const { authUser, user } = useContext(UserContext);
+  const { getLatestBook } = useContext(BookContext)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,54 +36,28 @@ const Dashboard = () => {
       <h1 className="dashboard-title">Dashboard</h1>
       <section className="section-profile">
         <div className="flex-wrapper">
-          <div className="section-profile-left">
-            <img src={navBarLogo} alt="profile-picture" />
-            <p className="profile-name">{user && user.username}</p>
-            <button className="profile-button">Edit profile</button>
-            <br />
-            <button className="profile-button-logout" onClick={logout}>Logout</button>
-          </div>
-          <div className="section-profile-right">
-            <div className="badge">
-              <p className="badge-title">Books contributed to</p>
-              <p className="badge-number">13</p>
-            </div>
-            <div className="badge">
-              <p className="badge-title">Made the final version</p>
-              <p className="badge-number">3</p>
-            </div>
-            <div className="badge">
-              <p className="badge-title">Comments received</p>
-              <p className="badge-number">45</p>
-            </div>
-            <div className="badge">
-              <p className="badge-title">Character written</p>
-              <p className="badge-number">2964</p>
-            </div>
-            <div className="badge">
-              <p className="badge-title">Chapters written</p>
-              <p className="badge-number">24</p>
-            </div>
-            <div className="badge">
-              <p className="badge-title">Upvotes received</p>
-              <p className="badge-number">344</p>
-            </div>
-          </div>
+          <section className="section-profile-left">
+              <UserInfo />
+          </section>
+          <section className="section-profile-right">
+              <UserStats />
+              <hr />
+              <div className="flex-wrapper">
+                <LatestContributions />
+                <LikedBooks />
+              </div>
+          </section>
         </div>
       </section>
-      <section className="section-profile">
-        <h2 className='book-prompt'> &quot;Jonasi stepped out of the elevator with blood all over his face, ... &quot;</h2>
+      {/* <hr className="no-margin" /> */}
+      <section className="section-title">
+        <h2 className='book-prompt'>{'"' + getLatestBook().prompt_id.content + ',..."'}</h2>
         <div className='button-container'>
-          <button className='prompt-button'><a href="/Write" className='link'>Contribute</a></button>
-          <button className='prompt-button'><a href="/Explore" className='link'>Explore</a></button>
+          <Link to={"/Write?" + getLatestBook()._id}  className='link'><button className='prompt-button'>Contribute</button></Link>
+          <Link to="/Explore" className='link'><button className='prompt-button'>Explore</button></Link>
         </div>
       </section>
-      <section className="section-profile-half">
-        <div className="flex-wrapper">
-          <LatestContributions />
-          <LikedBooks />
-        </div>
-      </section>
+      {/* <hr className="no-margin" /> */}
       <BookShowcase category={"top"} />
     </main>
   )

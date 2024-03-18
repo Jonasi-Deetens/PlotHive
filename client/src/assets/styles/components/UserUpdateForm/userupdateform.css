@@ -841,54 +841,36 @@
   transform: rotate(-90deg);
 }
 
-body div#root section.books-section {
-  background-color: #414042;
-  border-radius: 20px;
-  width: 35%;
-  margin: 20px auto;
-  padding: 20px;
-}
-body div#root section.books-section h2.books-title {
+div.profile-update p.profile-error {
+  color: red !important;
+  font-weight: bold;
   font-family: "Fredoka", sans-serif;
-  font-size: 26px;
+  font-size: 1rem;
+}
+div.profile-update p.profile-succes {
+  color: green !important;
+  font-weight: bold;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+}
+div.profile-update form.profile-update-form {
+  margin: auto;
+  font-family: "Fredoka", sans-serif;
   color: #ecf0f3;
-  text-align: center;
-  margin-bottom: 50px;
 }
-body div#root section.books-section div.book-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-body div#root section.books-section div.book-wrapper div.flex-wrapper {
-  display: flex;
-  justify-content: space-around;
-}
-body div#root section.books-section div.book-wrapper div.flex-wrapper:hover {
-  display: flex;
-  justify-content: space-around;
-}
-body div#root section.books-section div.book-wrapper p.book-title {
-  color: #ffbd59 !important;
-  font-family: "Fredoka", sans-serif;
-  text-align: center;
-}
-body div#root section.books-section div.book-wrapper p.book-date {
-  color: #ffbd59 !important;
-  font-family: "Fredoka", sans-serif;
-}
-body div#root section.books-section div.book-wrapper p.book-title:hover {
-  color: #ecf0f3 !important;
-  transform: scale(1.05);
+div.profile-update form.profile-update-form button.update-button {
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 24px;
   cursor: pointer;
+  background-color: #ecf0f3;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
-body div#root section.books-section div.book-wrapper p.book-date:hover {
-  color: #ffbd59 !important;
-}
-@media (max-width: 760px) {
-  body div#root section.books-section {
-    margin: 10px;
-    width: 90%;
-  }
-}/*# sourceMappingURL=likedbooks.css.map */
+div.profile-update form.profile-update-form button.update-button:hover {
+  background-color: #ffbd59;
+  font-size: 1rem;
+}/*# sourceMappingURL=userupdateform.css.map */

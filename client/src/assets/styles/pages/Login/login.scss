@@ -6,9 +6,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+
     main.login-page {
-      background-image: url('../../../img/login.png');
+      background-image: url("../../../img/login.png");
       background-size: cover;
       background-attachment: fixed;
       background-position: center;

@@ -3,10 +3,10 @@
 body {
     div#root {
         section.books-section {
-            background-color: $background-light;
-            border-radius: 50px;
-            width: 40%;
-            margin: auto;
+            background-color: $background-dark;
+            border-radius: 20px;
+            width: 35%;
+            margin: 20px auto;
             padding: 20px;
 
             h2.books-title {
@@ -28,16 +28,38 @@ body {
                     justify-content: space-around;
                 }
 
+                div.flex-wrapper:hover {
+                    display: flex;
+                    justify-content: space-around;
+                }
+
                 p.book-title {
-                    color: $fontcolor;
+                    color: $main !important;
                     font-family: $logo-font;
                     text-align: center;
                 }
 
                 p.book-date {
-                    color: $fontcolor;
+                    color: $main !important;
                     font-family: $logo-font;
                 }
+
+                p.book-title:hover {
+                    color: $fontcolor !important;
+                    transform: scale(1.05);
+                    cursor: pointer;
+                }
+
+                p.book-date:hover {
+                    color: $main !important;
+                }
+            }
+        }
+
+        @media (max-width: 760px) {
+            section.books-section {
+                margin: 10px;
+                width: 90%;
             }
         }
     }
