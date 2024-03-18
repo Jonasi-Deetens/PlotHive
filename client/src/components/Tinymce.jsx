@@ -27,7 +27,7 @@ const Tinymce = ({ bookId }) => {
 
       const postData = {
         text: content,
-        user_id: user._id,
+        user_id: user,
       };
       try {
         const response = await fetch(

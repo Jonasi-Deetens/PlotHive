@@ -37,14 +37,28 @@ const BookProvider = ({ children }) => {
     }
   };
 
-  const addContributionToBook = (bookId, contribution) => {
+  const addContributionToBook = async (bookId, contribution) => {
     console.log(bookId);
     console.log(contribution);
     if (books) {
-      const book = getBookById(bookId);
-      if (book) {
-        console.log(book.title);
-        book.contributions.push(contribution);
+      const updatedBook = getBookById(bookId);
+      updatedBook.contributions.push(contribution);
+      try {
+        const response = await fetch(
+          `http://127.0.0.1:5000/api/books/${bookId}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedBook.contributions),
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Failed to update book");
+        }
+      } catch (e) {
+        console.log(e.message);
       }
     }
   };
