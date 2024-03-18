@@ -1,0 +1,69 @@
+@use "../../../SASS/" as *;
+
+div.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-family: $sans-font;
+
+    img {
+        border-radius: 100%;
+        max-width: 100px;
+    }
+
+    p.profile-name {
+        padding: 20px;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    p.profile-email {
+        padding: 20px;
+        font-size: 0.8rem;
+    }
+
+    div.profile-update {
+        background-color: $background-dark;
+        padding: 5px;
+        border-radius: 20px;
+    }
+
+    button.profile-button {
+        background-color: transparent;
+        border: none;
+        color: $main;
+        margin: 5px;
+        font-weight: bold;
+    }
+
+    button.profile-button:hover {
+        color: $fontcolor;
+    }
+
+    button.profile-logout {
+        @include main-button;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    button.profile-logout:hover {
+        background-color: $main;
+        transform: scale(1.05);
+    }
+
+    hr {
+        width: 50%;
+    }
+
+    @media (max-width: 1024px) {
+        p.profile-name {
+            font-size: 1.3rem;
+        }
+
+        p.profile-email {
+            font-size: 0.9rem;
+        }
+    }
+}

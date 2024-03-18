@@ -841,54 +841,42 @@
   transform: rotate(-90deg);
 }
 
-body div#root section.books-section {
-  background-color: #414042;
-  border-radius: 20px;
-  width: 35%;
-  margin: 20px auto;
-  padding: 20px;
-}
-body div#root section.books-section h2.books-title {
-  font-family: "Fredoka", sans-serif;
-  font-size: 26px;
-  color: #ecf0f3;
-  text-align: center;
-  margin-bottom: 50px;
-}
-body div#root section.books-section div.book-wrapper {
+div.stat-container {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
 }
-body div#root section.books-section div.book-wrapper div.flex-wrapper {
-  display: flex;
-  justify-content: space-around;
-}
-body div#root section.books-section div.book-wrapper div.flex-wrapper:hover {
-  display: flex;
-  justify-content: space-around;
-}
-body div#root section.books-section div.book-wrapper p.book-title {
-  color: #ffbd59 !important;
+div.stat-container div.badge {
   font-family: "Fredoka", sans-serif;
+  width: 25%;
   text-align: center;
+  background-color: #414042;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  font-size: 1rem;
 }
-body div#root section.books-section div.book-wrapper p.book-date {
+div.stat-container div.badge p.badge-title {
+  font-weight: bold;
+}
+div.stat-container div.badge p.badge-number {
+  font-weight: bold;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  padding: 15px;
+  margin: auto;
+  border-radius: 100%;
   color: #ffbd59 !important;
-  font-family: "Fredoka", sans-serif;
 }
-body div#root section.books-section div.book-wrapper p.book-title:hover {
-  color: #ecf0f3 !important;
-  transform: scale(1.05);
-  cursor: pointer;
-}
-body div#root section.books-section div.book-wrapper p.book-date:hover {
-  color: #ffbd59 !important;
+@media (max-width: 1024px) {
+  div.stat-container div.badge {
+    width: 35%;
+  }
 }
 @media (max-width: 760px) {
-  body div#root section.books-section {
-    margin: 10px;
+  div.stat-container div.badge {
     width: 90%;
   }
-}/*# sourceMappingURL=likedbooks.css.map */
+}/*# sourceMappingURL=userstats.css.map */

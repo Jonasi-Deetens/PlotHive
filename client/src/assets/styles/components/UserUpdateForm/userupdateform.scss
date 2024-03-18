@@ -1,0 +1,35 @@
+@use "../../../SASS/" as *;
+
+div.profile-update {
+
+    p.profile-error {
+        color: red !important;
+        font-weight: bold;
+        font-family: $logo-font;
+        font-size: 1rem;
+    }
+
+    p.profile-succes {
+        color: green !important;
+        font-weight: bold;
+        font-family: $logo-font;
+        font-size: 1rem;
+    }
+
+    form.profile-update-form {
+        margin: auto;
+        font-family: $logo-font;
+        color: $fontcolor;
+
+        button.update-button {
+            @include main-button;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        button.update-button:hover {
+            background-color: $main;
+            font-size: 1rem;
+        }
+    }
+}
