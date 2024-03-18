@@ -19,6 +19,10 @@ const BookShowcase = ({ category }) => {
         setTitle("You might like");
         setBooksList(books);
         break;
+      case "search-results":
+        setTitle("Search results");
+        setBooksList(books);
+        break;
       default:
         setTitle("Error");
         setBooksList(books);

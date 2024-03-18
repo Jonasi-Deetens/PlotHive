@@ -1,17 +1,7 @@
 @use "../../../SASS/" as *;
 
 body.store-page-body {
-  margin-top: auto;
   background-color: $background;
-  background-image: url("../../../img/parallax.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  position: static;
-}
-div.store-page-banner {
-  height: 300px;
 }
 h1.store-page-titel {
   display: flex;

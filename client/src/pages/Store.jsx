@@ -6,7 +6,9 @@ const Store = () => {
   return (
     <>
       <body className="store-page-body">
-        <div className="store-page-banner"></div>
+        <div className="store-page-banner">
+          <h1>Shop our community written books!</h1>
+        </div>
         <div className="store-search-bar">
           <input
             type="search"
@@ -15,7 +17,7 @@ const Store = () => {
             placeholder="e.g. Pieter and the little kids..."
           />
           <a href="">
-            <img src="../assets/svgs/404-bee.svg" alt="search loupe image" />
+            <img src="src/assets/svgs/search.png" alt="search-loupe-image" />
           </a>
         </div>
         <div className="book-store-showcase-all">

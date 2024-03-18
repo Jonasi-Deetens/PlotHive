@@ -842,7 +842,9 @@
 }
 
 body div#root section.showcase-section {
+  background-color: #414042;
   border-radius: 50px;
+  width: 90%;
   margin: auto;
   padding: 20px;
 }
@@ -850,10 +852,8 @@ body div#root section.showcase-section h2.showcase-title {
   font-family: "Fredoka", sans-serif;
   font-size: 50px;
   color: #ecf0f3;
-  text-decoration: underline;
-  margin-left: 100px;
+  text-align: center;
   margin-bottom: 50px;
-  filter: drop-shadow(1px 1px 1px black);
 }
 body div#root section.showcase-section div.showcase-wrapper {
   display: flex;
@@ -938,10 +938,4 @@ body div#root section.showcase-section div.showcase-wrapper div.profile-book:hov
 }
 body div#root section.showcase-section div.showcase-wrapper div.profile-book:hover div.button-wrapper .link:hover {
   color: #ffbd59;
-}
-@media (max-width: 1024px) {
-  body div#root section.showcase-section h2.showcase-title {
-    margin-left: 0;
-    text-align: center;
-  }
 }/*# sourceMappingURL=bookshowcase.css.map */
