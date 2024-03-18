@@ -1,0 +1,38 @@
+@use "../../../SASS/" as *;
+
+div.contribution-component {
+
+    background-color: $background-dark;
+    padding: 20px;
+    border-radius: 20px;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    p {
+        font-family: $serif-font;
+        font-size: 1.2rem;
+    }
+
+    p.contribution-author {
+        text-align: right;
+        font-size: 0.9rem;
+    }
+
+    div.contribution-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    button.contribution-button {
+        background-color: transparent;
+        border: none;
+        border-radius: 100%;
+    }
+
+    button.contribution-button:hover {
+        padding-bottom: 5px;
+    }
+}

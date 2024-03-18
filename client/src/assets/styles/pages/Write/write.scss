@@ -1,0 +1,61 @@
+@use "../../../SASS/" as *;
+
+div.write-page {
+    h3.book-prompt {
+        color: $fontcolor;
+        font-family: $logo-font;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    hr {
+        width: 50%;
+        margin: auto;
+        border: none;
+        border-top: 2px solid;
+        border-color: $break-line-dark;
+        margin: 20px auto;
+    }
+
+    .title {
+        color: $fontcolor;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .editor-submit {
+        @include main-button;
+    }
+
+    .editor-submit:hover {
+        background-color: $main;
+        transform: scale(1.05);
+    }
+
+    .write-book-contributions {
+        background-color: $background-light;
+        border-radius: 20px;
+        padding: 50px;
+        width: 80%;
+        margin: auto;
+        @include shadow;
+    }
+
+    .write-current-contributions {
+        background-color: $background-light;
+        border-radius: 20px;
+        padding: 50px;
+        width: 80%;
+        margin: 50px auto;
+        @include shadow;
+    }
+
+    @media (max-width: 800px) {
+        .write-current-contributions {
+            padding: 20px;
+        }
+        .write-book-contributions {
+            padding: 20px;
+        }
+    }
+}

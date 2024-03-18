@@ -1,0 +1,13 @@
+@use "../../../SASS/" as *;
+
+.editor {
+    body {
+        background-color: black;
+    }
+
+    p {
+            font-family: $serif-font;
+            font-weight: bold;
+                color: red !important;
+    }
+}

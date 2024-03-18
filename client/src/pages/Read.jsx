@@ -134,7 +134,7 @@ const Read = () => {
       </section>
       <section className='read-page-buttons'>
         <Link to='/explore' className='read-page-button'>Back</Link>
-        <Link to={book && '/write?' + book._id} className='read-page-button'>Contribute</Link>
+        <Link to={book && '/write?id=' + book._id} className='read-page-button'>Contribute</Link>
       </section>
     </main>
   )
