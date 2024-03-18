@@ -40,31 +40,38 @@ const BookShowcase = ({ category, query }) => {
     <section className="showcase-section">
       <h2 className="showcase-title">{title}</h2>
       <div className="showcase-wrapper">
-        {booksList &&
-          booksList.slice(0, 4).map((book) => (
-            <div className="profile-book" key={"BOOK_KEY_" + book._id}>
-              <div className="top-wrapper">
-                <div>
-                  <img
-                    className="profile-book-image"
-                    src={cover}
-                    width={120}
-                    height={190}
-                    alt="Placeholder of an image of a book"
-                  />
+        {booksList ? (
+          booksList.length ? (
+            booksList.slice(0, 4).map((book) => (
+              <div className="profile-book" key={"BOOK_KEY_" + book._id}>
+                <div className="top-wrapper">
+                  <div>
+                    <img
+                      className="profile-book-image"
+                      src={cover}
+                      width={120}
+                      height={190}
+                      alt="Placeholder of an image of a book"
+                    />
+                  </div>
+                  <div className="button-wrapper">
+                    <Link className="link" to={"/read?id=" + book._id}>
+                      read
+                    </Link>
+                    <Link className="link" to={"/write?id=" + book._id}>
+                      write
+                    </Link>
+                  </div>
                 </div>
-                <div className="button-wrapper">
-                  <Link className="link" to={"/read?id=" + book._id}>
-                    read
-                  </Link>
-                  <Link className="link" to={"/write?id=" + book._id}>
-                    write
-                  </Link>
-                </div>
+                <h3 className="profile-book-title">{book.title}</h3>
               </div>
-              <h3 className="profile-book-title">{book.title}</h3>
-            </div>
-          ))}
+            ))
+          ) : (
+            <h1>No books found while looking for &quot;{query}&quot;</h1>
+          )
+        ) : (
+          ""
+        )}
       </div>
     </section>
   );
