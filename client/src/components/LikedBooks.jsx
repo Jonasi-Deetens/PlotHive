@@ -29,7 +29,7 @@ const LikedBooks = () => {
             <h2 className="books-title">Favourites</h2>
             <div className="book-wrapper">
             {favourites.length ? (favourites.slice(0,4).map((book) => (
-                <Link className='book-link' to={"/write?" + book._id}><p className="book-title">{book.title}</p></Link>
+                <Link className='book-link' to={"/write?id=" + book._id}><p className="book-title">{book.title}</p></Link>
             ))) : (
                 <p className='book-error'>No favourites yet.</p>
             )}

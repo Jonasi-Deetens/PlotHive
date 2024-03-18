@@ -52,7 +52,7 @@ const Dashboard = () => {
       <section className="section-title">
         <h2 className='book-prompt'>{'"' + getLatestBook().prompt_id.content + ',..."'}</h2>
         <div className='button-container'>
-          <Link to={"/Write?" + getLatestBook()._id}  className='link'><button className='prompt-button'>Contribute</button></Link>
+          <Link to={"/Write?id=" + getLatestBook()._id}  className='link'><button className='prompt-button'>Contribute</button></Link>
           <Link to="/Explore" className='link'><button className='prompt-button'>Explore</button></Link>
         </div>
       </section>

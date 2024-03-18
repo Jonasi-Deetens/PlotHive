@@ -32,7 +32,7 @@ const LatestContributions = () => {
             <div className="book-wrapper">
             {contributed.length ?( contributed.slice(0,4).map((book) => (
                 <div className='flex-wrapper'>
-                    <Link className='book-link' to={"/write?" + book._id}><p className="book-title">{book.title}</p></Link>
+                    <Link className='book-link' to={"/write?id=" + book._id}><p className="book-title">{book.title}</p></Link>
                     <p className="book-date">{book.created_at.split("T")[0]}</p>
                 </div>
             ))) : (
