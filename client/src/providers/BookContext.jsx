@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+import { createContext, useEffect, useState } from "react";
 
 const BookContext = createContext();
 
@@ -24,7 +25,7 @@ const BookProvider = ({ children }) => {
     };
 
     getBooks();
-  }, [setBooks]);
+  }, [books]);
 
   const getTopBooks = () => {
     if (books) {
@@ -34,6 +35,33 @@ const BookProvider = ({ children }) => {
         return itemCountB - itemCountA;
       });
       return books;
+    }
+  };
+
+  const addContributionToBook = async (bookId, contribution) => {
+    console.log(bookId);
+    console.log(contribution);
+    if (books) {
+      const updatedBook = await getBookById(bookId);
+      updatedBook.contributions.push(contribution);
+      try {
+        const response = await fetch(
+          `http://127.0.0.1:5000/api/books/${bookId}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedBook),
+          }
+        );
+        console.log(updatedBook);
+        if (!response.ok) {
+          throw new Error("Failed to update book");
+        }
+      } catch (e) {
+        console.log(e.message);
+      }
     }
   };
 
@@ -70,7 +98,14 @@ const BookProvider = ({ children }) => {
 
   return (
     <BookContext.Provider
-      value={{ books, getTopBooks, getLatestBook, getBookById, getBookByTitle }}
+      value={{
+        books,
+        getTopBooks,
+        getLatestBook,
+        getBookById,
+        getBookByTitle,
+        addContributionToBook,
+      }}
     >
       {books && children}
     </BookContext.Provider>
