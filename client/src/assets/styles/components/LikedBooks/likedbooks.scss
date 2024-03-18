@@ -33,6 +33,14 @@ body {
                     justify-content: space-around;
                 }
 
+                .book-link {
+                    text-decoration: none;
+                }
+
+                p.book-error {
+                    text-align: center;
+                }
+
                 p.book-title {
                     color: $main !important;
                     font-family: $logo-font;

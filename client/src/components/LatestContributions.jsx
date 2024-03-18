@@ -2,6 +2,7 @@ import '../assets/styles/components/LikedBooks/likedbooks.css'
 import React, { useContext, useEffect, useState } from 'react'
 import { BookContext } from '../providers/BookContext';
 import { UserContext } from '../providers/UserContext';
+import { Link } from 'react-router-dom';
 
 const LatestContributions = () => {
     const { user } = useContext(UserContext);
@@ -29,12 +30,14 @@ const LatestContributions = () => {
         <section className="books-section">
             <h2 className="books-title">Latest contributions</h2>
             <div className="book-wrapper">
-            {contributed && contributed.slice(0,4).map((book) => (
+            {contributed.length ?( contributed.slice(0,4).map((book) => (
                 <div className='flex-wrapper'>
-                    <p className="book-title">{book.title}</p>
+                    <Link className='book-link' to={"/write?id=" + book._id}><p className="book-title">{book.title}</p></Link>
                     <p className="book-date">{book.created_at.split("T")[0]}</p>
                 </div>
-            ))}
+            ))) : (
+                <p className="book-error">No contributions yet.</p>
+            )}
             </div>
         </section>
     )

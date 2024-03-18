@@ -1,13 +1,60 @@
-import { useRef } from "react";
+/* eslint-disable react/prop-types */
+import { useContext, useEffect, useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
+import { UserContext } from "../providers/UserContext";
+import { BookContext } from "../providers/BookContext";
 
-export default function Tinymce() {
+const Tinymce = ({ bookId }) => {
   const editorRef = useRef(null);
-  const log = () => {
-    if (editorRef.current) {
-      console.log(editorRef.current.getContent());
+  const { authUser, user } = useContext(UserContext);
+  const { addContributionToBook } = useContext(BookContext);
+
+  useEffect(() => {
+    const isAuthorized = async () => {
+      try {
+        await authUser();
+      } catch (error) {
+        console.error("Failed to authenticate");
+      }
+    };
+
+    isAuthorized();
+  }, [authUser, user]);
+
+  const submit = async () => {
+    if (editorRef.current && user) {
+      const content = editorRef.current.getContent();
+
+      const postData = {
+        text: content,
+        user_id: user,
+      };
+      try {
+        const response = await fetch(
+          "http://127.0.0.1:5000/api/contributions",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postData),
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data);
+          addContributionToBook(bookId, data);
+          console.log("Post created successfully");
+        } else {
+          console.error("Failed to create post");
+        }
+      } catch (e) {
+        console.log(e.message);
+      }
     }
   };
+
   return (
     <>
       <Editor
@@ -46,7 +93,9 @@ export default function Tinymce() {
             "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
         }}
       />
-      <button onClick={log}>Submit</button>
+      <button onClick={submit}>Submit</button>
     </>
   );
-}
+};
+
+export default Tinymce;

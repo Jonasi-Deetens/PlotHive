@@ -50,7 +50,9 @@ const Home = () => {
           </Link>
           {user ? (
             <Link to="/Dashboard">
-              <button className="home-page-login">{user.username}</button>
+              <button className="home-page-login">
+                {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
+              </button>
             </Link>
           ) : (
             <Link to="/Login">
@@ -64,7 +66,7 @@ const Home = () => {
           </div>
         </div>
         <div className="home-button-container">
-          <Link to="/Write" className="home-link">
+          <Link to={"/write?id=" + getLatestBook()._id} className="home-link">
             <button className="home-header-button">Contribute</button>
           </Link>
           <Link to="/Explore" className="home-link">

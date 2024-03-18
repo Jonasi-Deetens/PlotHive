@@ -1,6 +1,5 @@
-
-import React, { createContext, useContext, useEffect, useState } from "react";
-
+/* eslint-disable react/prop-types */
+import { createContext, useEffect, useState } from "react";
 
 const BookContext = createContext();
 
@@ -26,7 +25,7 @@ const BookProvider = ({ children }) => {
     };
 
     getBooks();
-  }, [setBooks])
+  }, [books]);
 
   const getTopBooks = () => {
     if (books) {
@@ -39,32 +38,75 @@ const BookProvider = ({ children }) => {
     }
   };
 
-  const getLatestBook = () => {
-    console.log("in");
+  const addContributionToBook = async (bookId, contribution) => {
+    console.log(bookId);
+    console.log(contribution);
     if (books) {
-        console.log("in in");
-        books.sort((bookA, bookB) => {
-            const dateA = new Date(bookA.created_at);
-            const dateB = new Date(bookB.created_at);
-            
-            return dateB - dateA;
-        });
-        return books[0];
+      const updatedBook = await getBookById(bookId);
+      updatedBook.contributions.push(contribution);
+      try {
+        const response = await fetch(
+          `http://127.0.0.1:5000/api/books/${bookId}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedBook),
+          }
+        );
+        console.log(updatedBook);
+        if (!response.ok) {
+          throw new Error("Failed to update book");
+        }
+      } catch (e) {
+        console.log(e.message);
+      }
     }
-  }
-  
+  };
+
+  const getLatestBook = () => {
+    if (books) {
+      books.sort((bookA, bookB) => {
+        const dateA = new Date(bookA.created_at);
+        const dateB = new Date(bookB.created_at);
+
+        return dateB - dateA;
+      });
+      return books[0];
+    }
+  };
+
   const getBookById = (id) => {
     if (books) {
       let bookWithId;
-      books.forEach(book => {
+      books.forEach((book) => {
         if (book._id === id) bookWithId = book;
       });
       return bookWithId;
     }
-  }
+  };
+
+  const getBookByTitle = (query) => {
+    if (books) {
+      let booksByName = books.filter((book) =>
+        book.title.toLowerCase().includes(query.toLowerCase())
+      );
+      return booksByName;
+    }
+  };
 
   return (
-    <BookContext.Provider value={{books, getTopBooks, getLatestBook, getBookById}}>
+    <BookContext.Provider
+      value={{
+        books,
+        getTopBooks,
+        getLatestBook,
+        getBookById,
+        getBookByTitle,
+        addContributionToBook,
+      }}
+    >
       {books && children}
     </BookContext.Provider>
   );

@@ -47,7 +47,7 @@ const Read = () => {
     
     if (book && user) { 
       if (book.contributions.length > 0)
-        setNumberOfPages(Math.round(book.contributions.length / 2));
+        setNumberOfPages(Math.round(book.contributions.length / 5));
       else setNumberOfPages(1);
       setPageData();
 
@@ -77,8 +77,8 @@ const Read = () => {
   }
 
   const setPageData = () => {
-    const startIndex = (page - 1) * 2;
-    const endIndex = startIndex + 2; 
+    const startIndex = (page - 1) * 5;
+    const endIndex = startIndex + 5; 
     const contributionsCopy = [...book.contributions];
     setPageContributions(contributionsCopy.slice(startIndex, endIndex));
   }
@@ -104,7 +104,7 @@ const Read = () => {
         })
       })
       if (response.ok) {
-        console.log(user.favourites)
+        inFavourites ? alert("Succesfully removed from favourites!") : alert("Succesfully added to favourites!");
         setInFavourites(!inFavourites);
       }
     } catch (error) {

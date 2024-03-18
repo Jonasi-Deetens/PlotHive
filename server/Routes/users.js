@@ -55,12 +55,15 @@ router.patch('/:id', getUser, async (req, res) => {
     if (req.body.username != null) {
         res.user.username = req.body.username;
     }
-    if ((req.body.password != null && req.body.confirmPassword != null) && (req.body.password != "" && req.body.confirmPassword != "")) {
-        if (req.body.password == req.body.confirmPassword) 
-            res.user.password = await hashPassword(req.body.password);
-        else    
-            return res.status(400).json({ message: 'Passwords do not match' });
-    }
+    if ((req.body.password != null && req.body.confirmPassword != null)) {
+        if (req.body.password != "" && req.body.confirmPassword != "") {
+            if (req.body.password == req.body.confirmPassword) 
+                res.user.password = await hashPassword(req.body.password);
+            else    
+                return res.status(400).json({ message: 'Passwords do not match' });
+        } else return res.status(400).json({ message: 'Please fill in both fields' });
+    } 
+
     if (req.body.email != null) {
         res.user.email = req.body.email;
     }

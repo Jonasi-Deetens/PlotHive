@@ -1,6 +1,5 @@
 import "../assets/styles/pages/Store/store.css";
 import BookShowcase from "../components/BookShowcase";
-// import loupe from "../assets/svgs/search.png";
 
 const Store = () => {
   return (
