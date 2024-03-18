@@ -30,12 +30,14 @@ const LatestContributions = () => {
         <section className="books-section">
             <h2 className="books-title">Latest contributions</h2>
             <div className="book-wrapper">
-            {contributed && contributed.slice(0,4).map((book) => (
+            {contributed.length ?( contributed.slice(0,4).map((book) => (
                 <div className='flex-wrapper'>
                     <Link className='book-link' to={"/write?" + book._id}><p className="book-title">{book.title}</p></Link>
                     <p className="book-date">{book.created_at.split("T")[0]}</p>
                 </div>
-            ))}
+            ))) : (
+                <p className="book-error">No contributions yet.</p>
+            )}
             </div>
         </section>
     )
