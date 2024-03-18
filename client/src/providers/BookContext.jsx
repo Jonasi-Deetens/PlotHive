@@ -25,6 +25,7 @@ const BookProvider = ({ children }) => {
 
     getBooks();
   }, []);
+  }, [setBooks]);
 
   const getTopBooks = () => {
     if (books) {
@@ -61,20 +62,13 @@ const BookProvider = ({ children }) => {
     }
   };
 
-  const addContributionToBook = (bookId, contribution) => {
-    const book = getBookById(bookId);
-    book.contributions.push(contribution);
+  const getBookByTitle = (query) => {
+    console.log(query);
   };
 
   return (
     <BookContext.Provider
-      value={{
-        books,
-        getTopBooks,
-        getLatestBook,
-        getBookById,
-        addContributionToBook,
-      }}
+      value={{ books, getTopBooks, getLatestBook, getBookById, getBookByTitle }}
     >
       {books && children}
     </BookContext.Provider>
