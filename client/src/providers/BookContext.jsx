@@ -1,6 +1,4 @@
-
 import React, { createContext, useContext, useEffect, useState } from "react";
-
 
 const BookContext = createContext();
 
@@ -26,7 +24,7 @@ const BookProvider = ({ children }) => {
     };
 
     getBooks();
-  }, [setBooks])
+  }, [setBooks]);
 
   const getTopBooks = () => {
     if (books) {
@@ -42,29 +40,35 @@ const BookProvider = ({ children }) => {
   const getLatestBook = () => {
     console.log("in");
     if (books) {
-        console.log("in in");
-        books.sort((bookA, bookB) => {
-            const dateA = new Date(bookA.created_at);
-            const dateB = new Date(bookB.created_at);
-            
-            return dateB - dateA;
-        });
-        return books[0];
+      console.log("in in");
+      books.sort((bookA, bookB) => {
+        const dateA = new Date(bookA.created_at);
+        const dateB = new Date(bookB.created_at);
+
+        return dateB - dateA;
+      });
+      return books[0];
     }
-  }
-  
+  };
+
   const getBookById = (id) => {
     if (books) {
       let bookWithId;
-      books.forEach(book => {
+      books.forEach((book) => {
         if (book._id === id) bookWithId = book;
       });
       return bookWithId;
     }
-  }
+  };
+
+  const getBookByTitle = (query) => {
+    console.log(query);
+  };
 
   return (
-    <BookContext.Provider value={{books, getTopBooks, getLatestBook, getBookById}}>
+    <BookContext.Provider
+      value={{ books, getTopBooks, getLatestBook, getBookById, getBookByTitle }}
+    >
       {books && children}
     </BookContext.Provider>
   );
