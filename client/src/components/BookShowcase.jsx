@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 
 const BookShowcase = ({ category, query }) => {
   const { books, getTopBooks, getBookByTitle } = useContext(BookContext);
+
   const [booksList, setBooksList] = useState(null);
+
   const [title, setTitle] = useState(null);
 
   useEffect(() => {
@@ -20,15 +22,19 @@ const BookShowcase = ({ category, query }) => {
         setBooksList(books);
         break;
       case "search-results":
-        setTitle("Search results");
-        setBooksList(getBookByTitle(query));
+        setTitle("");
+        setBooksList(null);
+        if (query) {
+          setTitle("Search results");
+          setBooksList(getBookByTitle(query));
+        }
         break;
       default:
         setTitle("Error");
         setBooksList(books);
         break;
     }
-  }, [category, books, getTopBooks]);
+  }, [category, books, getTopBooks, query]);
 
   return (
     <section className="showcase-section">
