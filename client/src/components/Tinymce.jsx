@@ -84,12 +84,12 @@ const Tinymce = ({ bookId }) => {
             "help",
             "wordcount",
           ],
-          toolbar:
-            "undo redo | blocks | " +
-            "bold italic forecolor | alignleft aligncenter " +
-            "alignright alignjustify | bullist numlist outdent indent | " +
-            "removeformat | help",
-          content_style: "p { color: #fefefe } body { background-color: #414042; }"
+          toolbar: "bold italic | alignleft aligncenter alignright alignjustify | outdent indent",
+            // "undo redo | blocks | " +
+            // "bold italic forecolor | alignleft aligncenter " +
+            // "alignright alignjustify | bullist numlist outdent indent | " +
+            // "removeformat | help",
+          content_style: "p { color: #fefefe; font-family: 'Libre Baskerville', serif; font-size: 1.2rem; } body { background-color: #414042; }"
         }}
       />
       <button className='editor-submit' onClick={submit}>Submit</button>
