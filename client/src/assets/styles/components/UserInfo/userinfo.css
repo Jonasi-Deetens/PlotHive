@@ -841,54 +841,66 @@
   transform: rotate(-90deg);
 }
 
-body div#root section.books-section {
-  background-color: #414042;
-  border-radius: 20px;
-  width: 35%;
-  margin: 20px auto;
-  padding: 20px;
-}
-body div#root section.books-section h2.books-title {
-  font-family: "Fredoka", sans-serif;
-  font-size: 26px;
-  color: #ecf0f3;
-  text-align: center;
-  margin-bottom: 50px;
-}
-body div#root section.books-section div.book-wrapper {
+div.profile {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-body div#root section.books-section div.book-wrapper div.flex-wrapper {
-  display: flex;
-  justify-content: space-around;
-}
-body div#root section.books-section div.book-wrapper div.flex-wrapper:hover {
-  display: flex;
-  justify-content: space-around;
-}
-body div#root section.books-section div.book-wrapper p.book-title {
-  color: #ffbd59 !important;
-  font-family: "Fredoka", sans-serif;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
+  font-family: "Open Sans", sans-serif;
 }
-body div#root section.books-section div.book-wrapper p.book-date {
-  color: #ffbd59 !important;
-  font-family: "Fredoka", sans-serif;
+div.profile img {
+  border-radius: 100%;
+  max-width: 100px;
 }
-body div#root section.books-section div.book-wrapper p.book-title:hover {
-  color: #ecf0f3 !important;
-  transform: scale(1.05);
+div.profile p.profile-name {
+  padding: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+div.profile p.profile-email {
+  padding: 20px;
+  font-size: 0.8rem;
+}
+div.profile div.profile-update {
+  background-color: #414042;
+  padding: 5px;
+  border-radius: 20px;
+}
+div.profile button.profile-button {
+  background-color: transparent;
+  border: none;
+  color: #ffbd59;
+  margin: 5px;
+  font-weight: bold;
+}
+div.profile button.profile-button:hover {
+  color: #ecf0f3;
+}
+div.profile button.profile-logout {
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 24px;
   cursor: pointer;
+  background-color: #ecf0f3;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  font-size: 1rem;
+  font-weight: bold;
 }
-body div#root section.books-section div.book-wrapper p.book-date:hover {
-  color: #ffbd59 !important;
+div.profile button.profile-logout:hover {
+  background-color: #ffbd59;
+  transform: scale(1.05);
 }
-@media (max-width: 760px) {
-  body div#root section.books-section {
-    margin: 10px;
-    width: 90%;
+div.profile hr {
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  div.profile p.profile-name {
+    font-size: 1.3rem;
   }
-}/*# sourceMappingURL=likedbooks.css.map */
+  div.profile p.profile-email {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=userinfo.css.map */

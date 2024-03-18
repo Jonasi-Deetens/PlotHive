@@ -44,32 +44,12 @@ const BookShowcase = ({ category }) => {
                   />
                 </div>
                 <div className="button-wrapper">
-                  <button
-                    className="link"
-                    onClick={() => {
-                      window.location.href = "/read?id=" + book._id;
-                    }}
-                  >
-                    <Link to={"/read?id=" + book._id}>
-                      <img
-                        src="src/assets/svgs/book.svg"
-                        alt="icon of a book"
-                      />
-                    </Link>
-                  </button>
-                  <button
-                    className="link"
-                    onClick={() => {
-                      window.location.href = "/write?id=" + book._id;
-                    }}
-                  >
-                    <Link to={"/write?id=" + book._id}>
-                      <img
-                        src="src/assets/svgs/book-home.svg"
-                        alt="icon of a book"
-                      />
-                    </Link>
-                  </button>
+                  <Link className="link" to={"/read?id=" + book._id}>
+                    read
+                  </Link>
+                  <Link className="link" to={"/write?id=" + book._id}>
+                    write
+                  </Link>
                 </div>
               </div>
               <h3 className="profile-book-title">{book.title}</h3>
