@@ -14,7 +14,7 @@ const UserInfo = () => {
             <button onClick={() => setEditing(!editing)} className="profile-button">{ editing ? '< Back' : 'Change password' }</button>
             {editing ? (
                 <div className="profile-update">
-                    <UserUpdateForm />
+                    <UserUpdateForm setEditing={setEditing} />
                 </div>
             ) : ( 
                 <div className='profile-info'>

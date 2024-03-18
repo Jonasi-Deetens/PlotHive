@@ -2,6 +2,7 @@ import '../assets/styles/components/LikedBooks/likedbooks.css'
 import React, { useContext, useEffect, useState } from 'react'
 import { BookContext } from '../providers/BookContext';
 import { UserContext } from '../providers/UserContext';
+import { Link } from 'react-router-dom';
 
 const LikedBooks = () => {
     const { user } = useContext(UserContext);
@@ -28,7 +29,7 @@ const LikedBooks = () => {
             <h2 className="books-title">Favourites</h2>
             <div className="book-wrapper">
             {favourites && favourites.slice(0,4).map((book) => (
-                <p className="book-title">{book.title}</p>
+                <Link className='book-link' to={"/write?" + book._id}><p className="book-title">{book.title}</p></Link>
             ))}
             </div>
         </section>
