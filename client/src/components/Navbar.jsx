@@ -11,6 +11,10 @@ const Navbar = () => {
     setIsActive(!isActive);
   };
 
+  const hideModal = () => {
+    setIsActive(false);
+  };
+
   useEffect(() => {
     authUser();
     const handleResize = () => {
@@ -27,57 +31,118 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="main-navigation">
-      <NavLink to="/">
-        <img src={navBarLogo} alt="navbar-logo-PlotHub" />
-      </NavLink>
-      <button
-        className={`hamburger hamburger--collapse ${
-          isActive ? "is-active" : ""
-        }`}
-        type="button"
-        onClick={handleClick}
-      >
-        <span className="hamburger-box">
-          <span className="hamburger-inner"></span>
-        </span>
-      </button>
-      <ul>
-        <li>
-          <NavLink to="/Store" activeClassName="active">
-            Store
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/Explore" activeClassName="active">
-            Explore
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/Contact" activeClassName="active">
-            Contact
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/AboutUs" activeClassName="active">
-            About
-          </NavLink>
-        </li>
-        {user ? (
+    <>
+      <nav className="main-navigation">
+        <NavLink to="/">
+          <img src={navBarLogo} alt="navbar-logo-PlotHub" />
+        </NavLink>
+        <button
+          className={`hamburger hamburger--collapse ${
+            isActive ? "is-active" : ""
+          }`}
+          type="button"
+          onClick={handleClick}
+        >
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </button>
+        <ul>
           <li>
-            <NavLink to="/Dashboard" activeClassName="active">
-              {user && user.username}
+            <NavLink to="/Store" activeclassname="active">
+              Store
             </NavLink>
           </li>
-        ) : (
           <li>
-            <NavLink to="/Login" activeClassName="active">
-              Login
+            <NavLink to="/Explore" activeclassname="active">
+              Explore
             </NavLink>
           </li>
-        )}
-      </ul>
-    </nav>
+          <li>
+            <NavLink to="/Contact" activeclassname="active">
+              Contact
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/AboutUs" activeclassname="active">
+              About
+            </NavLink>
+          </li>
+          {user ? (
+            <li>
+              <NavLink to="/Dashboard" activeclassname="active">
+                {user && user.username}
+              </NavLink>
+            </li>
+          ) : (
+            <li>
+              <NavLink to="/Login" activeclassname="active">
+                Login
+              </NavLink>
+            </li>
+          )}
+        </ul>
+      </nav>
+      {isActive && (
+        <nav className="menu-modal">
+          <ul>
+            <li>
+              <NavLink to="/Store" activeclassname="active" onClick={hideModal}>
+                Store
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/Explore"
+                activeclassname="active"
+                onClick={hideModal}
+              >
+                Explore
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/Contact"
+                activeclassname="active"
+                onClick={hideModal}
+              >
+                Contact
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/AboutUs"
+                activeclassname="active"
+                onClick={hideModal}
+              >
+                About
+              </NavLink>
+            </li>
+            {user ? (
+              <li>
+                <NavLink
+                  to="/Dashboard"
+                  activeclassname="active"
+                  onClick={hideModal}
+                >
+                  {user && user.username}
+                </NavLink>
+              </li>
+            ) : (
+              <li>
+                <NavLink
+                  to="/Login"
+                  activeclassname="active"
+                  onClick={hideModal}
+                >
+                  Login
+                </NavLink>
+              </li>
+            )}
+          </ul>
+        </nav>
+      )}
+    </>
   );
 };
 

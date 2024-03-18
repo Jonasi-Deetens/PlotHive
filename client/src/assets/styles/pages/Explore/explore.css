@@ -883,6 +883,10 @@ body div#root div.search-bar input::placeholder {
   font-style: italic;
   font-size: 40px;
 }
+body div#root div.search-bar img {
+  height: 40px;
+  margin: auto 0;
+}
 body div#root section.showcase-section {
   margin-bottom: 50px;
 }/*# sourceMappingURL=explore.css.map */
