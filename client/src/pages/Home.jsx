@@ -50,7 +50,9 @@ const Home = () => {
           </Link>
           {user ? (
             <Link to="/Dashboard">
-              <button className="home-page-login">{user.username}</button>
+              <button className="home-page-login">
+                {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
+              </button>
             </Link>
           ) : (
             <Link to="/Login">

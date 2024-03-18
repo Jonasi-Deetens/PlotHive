@@ -71,7 +71,10 @@ const Navbar = () => {
           {user ? (
             <li>
               <NavLink to="/Dashboard" activeclassname="active">
-                {user && user.username}
+                {user &&
+                  user.username &&
+                  user.username.charAt(0).toUpperCase() +
+                    user.username.slice(1)}
               </NavLink>
             </li>
           ) : (
@@ -125,7 +128,10 @@ const Navbar = () => {
                   activeclassname="active"
                   onClick={hideModal}
                 >
-                  {user && user.username}
+                  {user &&
+                    user.username &&
+                    user.username.charAt(0).toUpperCase() +
+                      user.username.slice(1)}
                 </NavLink>
               </li>
             ) : (
