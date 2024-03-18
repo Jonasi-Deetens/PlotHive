@@ -1,8 +1,9 @@
 import express from "express";
-import path from 'path';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import cron from "node-cron";
 import connectToDatabase from "./Database/database.js";
+import BookController from "./Controllers/BookController.js";
 
 const app = express();
 dotenv.config();
@@ -11,6 +12,11 @@ const host = process.env.HOST || "localhost";
 const port = process.env.PORT || 4000;
 
 connectToDatabase();
+
+cron.schedule('0 0 * * *', async () => {
+  console.log('Creating new book...');
+  await BookController.createBook();
+});
 
 app.use(express.json());
 app.use(express.static('./public'));
