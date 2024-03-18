@@ -884,6 +884,7 @@ body div#root section.showcase-section div.showcase-wrapper div.profile-book div
   color: #414042;
 }
 body div#root section.showcase-section div.showcase-wrapper div.profile-book div.button-wrapper button {
+  background-color: #545454;
   color: #414042;
   text-decoration: none;
   padding: 0.7rem 1.5rem;

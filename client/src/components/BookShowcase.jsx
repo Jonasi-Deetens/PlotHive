@@ -50,7 +50,12 @@ const BookShowcase = ({ category }) => {
                       window.location.href = "/read?id=" + book._id;
                     }}
                   >
-                    <Link to={"/read?id=" + book._id}>Read</Link>
+                    <Link to={"/read?id=" + book._id}>
+                      <img
+                        src="src/assets/svgs/book.svg"
+                        alt="icon of a book"
+                      />
+                    </Link>
                   </button>
                   <button
                     className="link"
@@ -58,7 +63,12 @@ const BookShowcase = ({ category }) => {
                       window.location.href = "/write?id=" + book._id;
                     }}
                   >
-                    <Link to={"/write?id=" + book._id}>Write</Link>
+                    <Link to={"/write?id=" + book._id}>
+                      <img
+                        src="src/assets/svgs/book-home.svg"
+                        alt="icon of a book"
+                      />
+                    </Link>
                   </button>
                 </div>
               </div>
