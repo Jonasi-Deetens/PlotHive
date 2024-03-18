@@ -25,7 +25,6 @@ const BookProvider = ({ children }) => {
 
     getBooks();
   }, []);
-  }, [setBooks]);
 
   const getTopBooks = () => {
     if (books) {
@@ -38,10 +37,20 @@ const BookProvider = ({ children }) => {
     }
   };
 
-  const getLatestBook = () => {
-    console.log("in");
+  const addContributionToBook = (bookId, contribution) => {
+    console.log(bookId);
+    console.log(contribution);
     if (books) {
-      console.log("in in");
+      const book = getBookById(bookId);
+      if (book) {
+        console.log(book.title);
+        book.contributions.push(contribution);
+      }
+    }
+  };
+
+  const getLatestBook = () => {
+    if (books) {
       books.sort((bookA, bookB) => {
         const dateA = new Date(bookA.created_at);
         const dateB = new Date(bookB.created_at);
@@ -68,7 +77,14 @@ const BookProvider = ({ children }) => {
 
   return (
     <BookContext.Provider
-      value={{ books, getTopBooks, getLatestBook, getBookById, getBookByTitle }}
+      value={{
+        books,
+        getTopBooks,
+        getLatestBook,
+        getBookById,
+        getBookByTitle,
+        addContributionToBook,
+      }}
     >
       {books && children}
     </BookContext.Provider>

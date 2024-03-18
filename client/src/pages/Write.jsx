@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../providers/UserContext";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Contribution from "../components/Contribution";
-import Tinymce from "../components/Tinymce";
 import { BookContext } from "../providers/BookContext";
+import Tinymce from "../components/Tinymce";
 
 const Write = () => {
   const { authUser, user } = useContext(UserContext);
@@ -21,9 +21,11 @@ const Write = () => {
   useEffect(() => {
     const isAuthorized = async () => {
       try {
-        await authUser();
         if (!user) {
-          navigate("/");
+          const checkAuth = await authUser();
+          if (!checkAuth) {
+            navigate("/Login");
+          }
         }
       } catch (error) {
         console.error("Failed to authenticate");
@@ -42,7 +44,7 @@ const Write = () => {
           <div className="write-book">
             <div className="write-book-contributions">
               <p>{book.text}</p>
-              <Tinymce />
+              <Tinymce bookId={book._id} />
             </div>
             <div className="write-current-contributions">
               <h1>Contributions</h1>

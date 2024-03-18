@@ -1,10 +1,13 @@
+/* eslint-disable react/prop-types */
 import { useContext, useEffect, useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { UserContext } from "../providers/UserContext";
+import { BookContext } from "../providers/BookContext";
 
-export default function Tinymce() {
+const Tinymce = ({ bookId }) => {
   const editorRef = useRef(null);
   const { authUser, user } = useContext(UserContext);
+  const { addContributionToBook } = useContext(BookContext);
 
   useEffect(() => {
     const isAuthorized = async () => {
@@ -18,7 +21,7 @@ export default function Tinymce() {
     isAuthorized();
   }, [authUser, user]);
 
-  const submit = () => {
+  const submit = async () => {
     if (editorRef.current && user) {
       const content = editorRef.current.getContent();
 
@@ -26,24 +29,29 @@ export default function Tinymce() {
         text: content,
         user_id: user._id,
       };
-
-      fetch("http://127.0.0.1:5000/api/contribution", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(postData),
-      })
-        .then((response) => {
-          if (response.ok) {
-            console.log("Post created successfully");
-          } else {
-            console.error("Failed to create post");
+      try {
+        const response = await fetch(
+          "http://127.0.0.1:5000/api/contributions",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postData),
           }
-        })
-        .catch((error) => {
-          console.error("Error creating post:", error);
-        });
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data);
+          addContributionToBook(bookId, data);
+          console.log("Post created successfully");
+        } else {
+          console.error("Failed to create post");
+        }
+      } catch (e) {
+        console.log(e.message);
+      }
     }
   };
 
@@ -88,4 +96,6 @@ export default function Tinymce() {
       <button onClick={submit}>Submit</button>
     </>
   );
-}
+};
+
+export default Tinymce;
