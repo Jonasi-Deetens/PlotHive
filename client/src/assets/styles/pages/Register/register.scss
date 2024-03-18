@@ -2,13 +2,13 @@
 
 body {
   div#root {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    // min-height: 100vh;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
 
     main.register-page {
-      background-image: url('../../../img/register.png');
+      background-image: url("../../../img/register.png");
       background-size: cover;
       background-attachment: fixed;
       background-position: center;

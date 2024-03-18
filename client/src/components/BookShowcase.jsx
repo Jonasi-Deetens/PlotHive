@@ -4,8 +4,8 @@ import cover from "../assets/svgs/cover.png";
 import { BookContext } from "../providers/BookContext";
 import { Link } from "react-router-dom";
 
-const BookShowcase = ({ category }) => {
-  const { books, getTopBooks } = useContext(BookContext);
+const BookShowcase = ({ category, query }) => {
+  const { books, getTopBooks, getBookByTitle } = useContext(BookContext);
   const [booksList, setBooksList] = useState(null);
   const [title, setTitle] = useState(null);
 
@@ -21,7 +21,7 @@ const BookShowcase = ({ category }) => {
         break;
       case "search-results":
         setTitle("Search results");
-        setBooksList(books);
+        setBooksList(getBookByTitle(query));
         break;
       default:
         setTitle("Error");
