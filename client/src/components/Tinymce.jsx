@@ -1,13 +1,52 @@
-import { useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
+import { UserContext } from "../providers/UserContext";
 
 export default function Tinymce() {
   const editorRef = useRef(null);
-  const log = () => {
-    if (editorRef.current) {
-      console.log(editorRef.current.getContent());
+  const { authUser, user } = useContext(UserContext);
+
+  useEffect(() => {
+    const isAuthorized = async () => {
+      try {
+        await authUser();
+      } catch (error) {
+        console.error("Failed to authenticate");
+      }
+    };
+
+    isAuthorized();
+  }, [authUser, user]);
+
+  const submit = () => {
+    if (editorRef.current && user) {
+      const content = editorRef.current.getContent();
+
+      const postData = {
+        text: content,
+        user_id: user._id,
+      };
+
+      fetch("http://127.0.0.1:5000/api/contribution", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
+      })
+        .then((response) => {
+          if (response.ok) {
+            console.log("Post created successfully");
+          } else {
+            console.error("Failed to create post");
+          }
+        })
+        .catch((error) => {
+          console.error("Error creating post:", error);
+        });
     }
   };
+
   return (
     <>
       <Editor
@@ -46,7 +85,7 @@ export default function Tinymce() {
             "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
         }}
       />
-      <button onClick={log}>Submit</button>
+      <button onClick={submit}>Submit</button>
     </>
   );
 }

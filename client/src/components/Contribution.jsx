@@ -8,7 +8,7 @@ const Contribution = ({ contribution }) => {
     <div>
       <button>{upvote_count}</button>
       <p>{text}</p>
-      <p>By: {username}</p> {/*placeholder*/}
+      <p>By: {username}</p>
     </div>
   );
 };

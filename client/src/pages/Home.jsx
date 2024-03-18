@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from "react";
 
 import { Link } from "react-router-dom";
@@ -16,30 +15,29 @@ const Home = () => {
   useEffect(() => {
     if (getLatestBook()) {
       let prompt = getLatestBook().prompt_id.content + ", ...";
-      let promptCharArray = prompt.split('');
+      let promptCharArray = prompt.split("");
 
       const maxIndex = promptCharArray.length;
-      
+
       const typeChar = (currentTitle, currentIndex) => {
         if (currentIndex >= maxIndex) {
-          const nextTitle = currentTitle.split('_')[0] + '"_';
+          const nextTitle = currentTitle.split("_")[0] + '"_';
           setTitle(nextTitle);
-          return; 
+          return;
         }
-        
-        const nextTitle = currentTitle.split('_')[0] + promptCharArray[currentIndex] + '_';
+
+        const nextTitle =
+          currentTitle.split("_")[0] + promptCharArray[currentIndex] + "_";
         setTitle(nextTitle);
-      
+
         setTimeout(() => {
           typeChar(nextTitle, currentIndex + 1);
-        }, 50); 
-      }
+        }, 50);
+      };
 
       typeChar(title, 0);
     }
-      
-  }, [])
-  
+  }, []);
 
   return (
     <main className="home-page">
@@ -51,7 +49,7 @@ const Home = () => {
             <img src="src/assets/Logo/logo-home.svg" alt="Large-Logo" />
           </Link>
           <button className="home-page-login">
-            { user ? (
+            {user ? (
               <Link to="/Dashboard">{user.username}</Link>
             ) : (
               <Link to="/Login">Login</Link>
@@ -65,7 +63,7 @@ const Home = () => {
         </div>
         <div className="home-button-container">
           <button className="home-header-button">
-            <Link to="/Write" className="home-link">
+            <Link to={"/write?id=" + getLatestBook()._id} className="home-link">
               Contribute
             </Link>
           </button>
@@ -83,15 +81,24 @@ const Home = () => {
             <p>Write stories as a community</p>
           </Link>
           <Link to="/AboutUs" className="card">
-            <img src="src/assets/svgs/vote.svg" alt="icon of a arrow pointing up" />
+            <img
+              src="src/assets/svgs/vote.svg"
+              alt="icon of a arrow pointing up"
+            />
             <p>Upvote the part that would fit the story best</p>
           </Link>
           <Link to="/AboutUs" className="card">
-            <img src="src/assets/svgs/money.svg" alt="icon of a hand holding a bag of money" />
+            <img
+              src="src/assets/svgs/money.svg"
+              alt="icon of a hand holding a bag of money"
+            />
             <p>Earn by contributing</p>
           </Link>
           <Link to="/AboutUs" className="card">
-            <img src="src/assets/svgs/badge.svg" alt="icon of a badge with a star" />
+            <img
+              src="src/assets/svgs/badge.svg"
+              alt="icon of a badge with a star"
+            />
             <p>Earn badges</p>
           </Link>
         </div>
