@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+import { createContext, useEffect, useState } from "react";
 
 const BookContext = createContext();
 
@@ -24,7 +25,7 @@ const BookProvider = ({ children }) => {
     };
 
     getBooks();
-  }, []);
+  }, [books]);
 
   const getTopBooks = () => {
     if (books) {
@@ -41,7 +42,7 @@ const BookProvider = ({ children }) => {
     console.log(bookId);
     console.log(contribution);
     if (books) {
-      const updatedBook = getBookById(bookId);
+      const updatedBook = await getBookById(bookId);
       updatedBook.contributions.push(contribution);
       try {
         const response = await fetch(
@@ -51,9 +52,10 @@ const BookProvider = ({ children }) => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(updatedBook.contributions),
+            body: JSON.stringify(updatedBook),
           }
         );
+        console.log(updatedBook);
         if (!response.ok) {
           throw new Error("Failed to update book");
         }
