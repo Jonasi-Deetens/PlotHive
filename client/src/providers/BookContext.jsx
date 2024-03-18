@@ -88,7 +88,12 @@ const BookProvider = ({ children }) => {
   };
 
   const getBookByTitle = (query) => {
-    console.log(query);
+    if (books) {
+      let booksByName = books.filter((book) =>
+        book.title.toLowerCase().includes(query.toLowerCase())
+      );
+      return booksByName;
+    }
   };
 
   return (
