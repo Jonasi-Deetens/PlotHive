@@ -841,96 +841,26 @@
   transform: rotate(-90deg);
 }
 
-body div#root main.login-page {
-  background-image: url("../../../img/login.png");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  padding: 20px;
-  height: 100vh;
-  display: flex;
-}
-body div#root main.login-page div.login-container {
-  margin: auto;
-  padding: 50px 20px;
-  width: 700px;
-  background-color: #414042;
-  border-radius: 50px;
-  box-sizing: border-box;
-  color: #ecf0f3;
-  font-family: "Open Sans", sans-serif;
-  opacity: 0.95;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-body div#root main.login-page div.login-container h2.login-title {
+div.write-page h3.book-prompt {
   color: #ecf0f3;
   font-family: "Fredoka", sans-serif;
-  font-size: 42px;
-  font-weight: 500;
   text-align: center;
-  margin: 0 auto 50px;
+  font-size: 2rem;
 }
-body div#root main.login-page div.login-container div.errors {
-  width: 75%;
-  margin: 0 auto;
-}
-body div#root main.login-page div.login-container div.errors p.error-message {
-  color: red;
-  font-size: 25px;
-}
-body div#root main.login-page div.login-container form {
-  width: 75%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-body div#root main.login-page div.login-container form div {
-  display: flex;
-  flex-direction: column;
-}
-body div#root main.login-page div.login-container form div label {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-body div#root main.login-page div.login-container form div div {
-  display: flex;
-  flex-direction: row;
-}
-body div#root main.login-page div.login-container form div div img {
-  height: 30px;
-  margin-right: 20px;
-}
-body div#root main.login-page div.login-container form div div input {
-  background-color: #414042;
+div.write-page hr {
+  width: 50%;
+  margin: auto;
   border: none;
-  font-size: 24px;
-  width: 100%;
+  border-top: 2px solid;
+  border-color: #949494;
+  margin: 20px auto;
+}
+div.write-page .title {
   color: #ecf0f3;
+  text-align: center;
+  margin-bottom: 50px;
 }
-body div#root main.login-page div.login-container form div div input:focus {
-  outline: none;
-  border-color: transparent;
-  border-bottom: 2px solid #ffbd59;
-}
-body div#root main.login-page div.login-container form div div input::-moz-placeholder {
-  font-style: italic;
-  font-size: 20px;
-}
-body div#root main.login-page div.login-container form div div input::placeholder {
-  font-style: italic;
-  font-size: 20px;
-}
-body div#root main.login-page div.login-container form div hr {
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-body div#root main.login-page div.login-container form a.forgot-password {
-  color: #ffbd59;
-  text-align: end;
-  text-decoration: none;
-}
-body div#root main.login-page div.login-container form button.login-btn {
+div.write-page .editor-submit {
   margin: 20px auto 0;
   padding: 10px 30px;
   border: none;
@@ -940,62 +870,31 @@ body div#root main.login-page div.login-container form button.login-btn {
   background-color: #ecf0f3;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-body div#root main.login-page div.login-container form button:hover,
-body div#root main.login-page div.login-container form button:focus {
+div.write-page .editor-submit:hover {
   background-color: #ffbd59;
+  transform: scale(1.05);
 }
-body div#root main.login-page div.login-container form div.question {
-  text-align: center;
+div.write-page .write-book-contributions {
+  background-color: #737373;
+  border-radius: 20px;
+  padding: 50px;
+  width: 80%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-body div#root main.login-page div.login-container form div.question a {
-  color: #ffbd59;
-  margin: -15px auto 0;
-  width: 50px;
-  font-weight: bold;
+div.write-page .write-current-contributions {
+  background-color: #737373;
+  border-radius: 20px;
+  padding: 50px;
+  width: 80%;
+  margin: 50px auto;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-
-@media screen and (max-width: 800px) {
-  body div#root main.login-page div.login-container {
-    border-radius: 25px;
-    padding: 20px 10px;
-    width: 95%;
+@media (max-width: 800px) {
+  div.write-page .write-current-contributions {
+    padding: 20px;
   }
-  body div#root main.login-page div.login-container h2.login-title {
-    font-size: 30px;
+  div.write-page .write-book-contributions {
+    padding: 20px;
   }
-  body div#root main.login-page div.login-container div.errors {
-    width: 90%;
-  }
-  body div#root main.login-page div.login-container div.errors p.error-message {
-    font-size: 18px;
-  }
-  body div#root main.login-page div.login-container form {
-    width: 90%;
-  }
-  body div#root main.login-page div.login-container form div label {
-    font-size: 18px;
-  }
-  body div#root main.login-page div.login-container form div div img {
-    height: 20px;
-  }
-  body div#root main.login-page div.login-container form div div input {
-    font-size: 18px;
-  }
-  body div#root main.login-page div.login-container form div div input::-moz-placeholder {
-    font-style: italic;
-    font-size: 16px;
-  }
-  body div#root main.login-page div.login-container form div div input::placeholder {
-    font-style: italic;
-    font-size: 16px;
-  }
-  body div#root main.login-page div.login-container form a {
-    font-size: 12px;
-  }
-  body div#root main.login-page div.login-container form button.login-btn {
-    font-size: 16px;
-  }
-  body div#root main.login-page div.login-container form div.question p {
-    font-size: 12px;
-  }
-}/*# sourceMappingURL=login.css.map */
+}/*# sourceMappingURL=write.css.map */
