@@ -38,9 +38,7 @@ const BookProvider = ({ children }) => {
   };
 
   const getLatestBook = () => {
-    console.log("in");
     if (books) {
-      console.log("in in");
       books.sort((bookA, bookB) => {
         const dateA = new Date(bookA.created_at);
         const dateB = new Date(bookB.created_at);
@@ -62,7 +60,12 @@ const BookProvider = ({ children }) => {
   };
 
   const getBookByTitle = (query) => {
-    console.log(query);
+    if (books) {
+      let booksByName = books.filter((book) =>
+        book.title.toLowerCase().includes(query.toLowerCase())
+      );
+      return booksByName;
+    }
   };
 
   return (

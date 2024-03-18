@@ -5,11 +5,11 @@ import BookShowcase from "../components/BookShowcase";
 useState;
 
 const Explore = () => {
-  const [title, setTitle] = useState(null);
+  const [query, setQuery] = useState(null);
 
   let handleSearch = ({ currentTarget = {} }) => {
     const { value } = currentTarget;
-    setTitle(value);
+    setQuery(value);
   };
 
   return (
@@ -27,7 +27,7 @@ const Explore = () => {
           <img src={loupe} alt="search loupe image" />
         </a>
       </div>
-      <BookShowcase category={"search-results"} query={title} />
+      <BookShowcase category={"search-results"} query={query} />
       <BookShowcase category={"like-this"} />
     </>
   );
