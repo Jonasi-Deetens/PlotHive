@@ -27,7 +27,7 @@ const Explore = () => {
           <img src={loupe} alt="search loupe image" />
         </a>
       </div>
-      <BookShowcase category={"search-results"} query={query} />
+      {query && <BookShowcase category={"search-results"} query={query} />}
       <BookShowcase category={"like-this"} />
     </>
   );
