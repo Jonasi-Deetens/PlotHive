@@ -33,6 +33,10 @@ body {
                     justify-content: space-around;
                 }
 
+                .book-link {
+                    text-decoration: none;
+                }
+
                 p.book-title {
                     color: $main !important;
                     font-family: $logo-font;

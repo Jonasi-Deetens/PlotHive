@@ -2,10 +2,13 @@ import "../assets/styles/components/UserUpdateForm/userupdateform.css"
 import React, { useContext, useState } from 'react'
 import { UserContext } from '../providers/UserContext';
 
-const UserUpdateForm = () => {
+const UserUpdateForm = ({ setEditing }) => {
     const { user } = useContext(UserContext)
     const [error, setError] = useState(null);
-    const [succes, setSucces] = useState(null);
+
+    const clearMessages = () => {
+        setError(null);
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -24,11 +27,15 @@ const UserUpdateForm = () => {
             })
             if (!response.ok) {
                 const error = await response.json();
+                clearMessages();
                 setError(error.message);
             } else {
-                setSucces("Update succesfull!");
+                clearMessages();
+                alert("Password updated succesfully!");
+                setEditing(false);
             }
         } catch (error) {
+            clearMessages();
             setError(error.message);
         }
     }
@@ -36,7 +43,6 @@ const UserUpdateForm = () => {
     return (
         <div className='profile-update'>
             <p className="profile-error">{error}</p>
-            <p className="profile-succes">{succes}</p>
             <form action="" onSubmit={handleSubmit} className='profile-update-form'>
                 <div className="password">
                     <label htmlFor="password">New Password</label>
