@@ -19,11 +19,11 @@ body {
   div#root {
     h1 {
       font-family: $logo-font;
-      color: $main;
+      color: $fontcolor;
     }
     h2 {
       font-family: $serif-font;
-      color: $button-dark;
+      color: $fontcolor;
     }
     p {
       font-family: $sans-font;
