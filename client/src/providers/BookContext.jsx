@@ -25,7 +25,7 @@ const BookProvider = ({ children }) => {
     };
 
     getBooks();
-  }, [books]);
+  }, []);
 
   const getTopBooks = () => {
     if (books) {
@@ -42,7 +42,7 @@ const BookProvider = ({ children }) => {
     console.log(bookId);
     console.log(contribution);
     if (books) {
-      const updatedBook = await getBookById(bookId);
+      const updatedBook = getBookById(bookId);
       updatedBook.contributions.push(contribution);
       try {
         const response = await fetch(
@@ -79,11 +79,7 @@ const BookProvider = ({ children }) => {
 
   const getBookById = (id) => {
     if (books) {
-      let bookWithId;
-      books.forEach((book) => {
-        if (book._id === id) bookWithId = book;
-      });
-      return bookWithId;
+      return books.find((book) => book._id === id);
     }
   };
 

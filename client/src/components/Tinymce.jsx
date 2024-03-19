@@ -4,6 +4,7 @@ import { useContext, useEffect, useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { UserContext } from "../providers/UserContext";
 import { BookContext } from "../providers/BookContext";
+import { Link } from 'react-router-dom';
 
 const Tinymce = ({ bookId }) => {
   const editorRef = useRef(null);
@@ -93,6 +94,7 @@ const Tinymce = ({ bookId }) => {
         }}
       />
       <button className='editor-submit' onClick={submit}>Submit</button>
+      <Link to={"/read?id=" + bookId}><button className='editor-submit'>Read</button></Link>
     </>
   );
 };

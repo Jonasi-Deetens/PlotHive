@@ -851,8 +851,8 @@ div.contribution-component img {
   height: 20px;
 }
 div.contribution-component p {
-  font-family: "Libre Baskerville", serif;
-  font-size: 1.2rem;
+  font-family: "Libre Baskerville", serif !important;
+  font-size: 1rem;
 }
 div.contribution-component p.contribution-author {
   text-align: right;
@@ -869,4 +869,9 @@ div.contribution-component button.contribution-button {
 }
 div.contribution-component button.contribution-button:hover {
   padding-bottom: 5px;
+  cursor: pointer;
+}
+div.contribution-component button.contribution-button:hover img {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transform: scale(1.1);
 }/*# sourceMappingURL=contribution.css.map */

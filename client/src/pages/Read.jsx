@@ -34,25 +34,28 @@ const Read = () => {
     };
 
     isAuthorized();
-  }, [authUser, navigate, user]);
+  }, [user, authUser]);
 
   useEffect(() => {
+    console.log("z")
     const fetchedBook = getBookById(bookId)
-    fetchedBook.contributions.sort((bookA, bookB) => {
-      const dateA = new Date(bookA.created_at);
-      const dateB = new Date(bookB.created_at);
-      return dateB - dateA;
-    })
-    setBook(fetchedBook);
-    
-    if (book && user) { 
-      if (book.contributions.length > 0)
-        setNumberOfPages(Math.ceil(book.contributions.length / 5));
-      else setNumberOfPages(1);
-      setPageData();
-
-      if (user.favourites.includes(book._id)) setInFavourites(true);
-      else setInFavourites(false);
+    if (fetchedBook) {
+      fetchedBook.contributions.sort((bookA, bookB) => {
+        const dateA = new Date(bookA.created_at);
+        const dateB = new Date(bookB.created_at);
+        return dateA - dateB;
+      })
+      setBook(fetchedBook);
+      
+      if (book && user) { 
+        if (book.contributions.length > 0)
+          setNumberOfPages(Math.ceil(book.contributions.length / 5));
+        else setNumberOfPages(1);
+        setPageData();
+  
+        if (user.favourites.includes(book._id)) setInFavourites(true);
+        else setInFavourites(false);
+      }
     }
   }, [book, user])
 
