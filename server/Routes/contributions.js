@@ -47,8 +47,8 @@ router.patch("/:id", getContribution, async (req, res) => {
   if (req.body.user_id != null) {
     res.contribution.user_id = req.body.user_id;
   }
-  if (req.body.upvote_count != null) {
-    res.contribution.upvote_count = req.body.upvote_count;
+  if (req.body.upvoters != null) {
+    res.contribution.upvoters = req.body.upvoters;
   }
   if (req.body.comments != null) {
     res.contribution.comments = req.body.comments;
