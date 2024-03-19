@@ -842,9 +842,7 @@
 }
 
 body div#root section.showcase-section {
-  background-color: #414042;
   border-radius: 50px;
-  width: 90%;
   margin: auto;
   padding: 20px;
 }
@@ -852,8 +850,10 @@ body div#root section.showcase-section h2.showcase-title {
   font-family: "Fredoka", sans-serif;
   font-size: 50px;
   color: #ecf0f3;
-  text-align: center;
+  text-decoration: underline;
+  margin-left: 100px;
   margin-bottom: 50px;
+  filter: drop-shadow(1px 1px 1px black);
 }
 body div#root section.showcase-section div.showcase-wrapper {
   display: flex;
