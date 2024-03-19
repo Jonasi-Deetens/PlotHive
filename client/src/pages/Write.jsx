@@ -11,6 +11,8 @@ const Write = () => {
   const { getBookById } = useContext(BookContext);
   const navigate = useNavigate();
   const [book, setBook] = useState(null);
+  const [userContributed, setUserContributed] = useState(false);
+  const [userContribution, setUserContribution] = useState(null);
 
   useEffect(() => {
     const isAuthorized = async () => {
@@ -36,6 +38,23 @@ const Write = () => {
     isAuthorized();
   }, [authUser, user]);
 
+  useEffect(() => {
+    if (book && book.contributions) {
+      const contribution = book.contributions.find(contribution => contribution.user_id._id === user._id);
+      
+      console.log("'contribution'")
+      console.log(contribution)
+      if (contribution) {
+        setUserContributed(true);
+        setUserContribution(contribution);
+      } else {
+        setUserContributed(false)
+        setUserContribution(null);
+      }
+    }
+  }, [book])
+  
+
   const getBookIdFromUrl = () => {
     const queryParams = new URLSearchParams(window.location.search);
     return queryParams.get("id");
@@ -50,7 +69,11 @@ const Write = () => {
             <div className="write-book-contributions">
               <h3 className='book-prompt'>{`"${book.prompt_id.content}..."`}</h3>
               <p>{book.contributions?.[0]?.text}</p>
-              <Tinymce bookId={book._id} />
+              {(userContributed && userContribution) ?
+                <Contribution contribution={userContribution} userContribution={true} />
+                :
+                <Tinymce bookId={book._id} />
+              }
             </div>
             <div className="write-current-contributions">
               <h2 className='title'>Contributions</h2>

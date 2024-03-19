@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../assets/styles/components/Contribution/contribution.css";
 
-const Contribution = ({ contribution }) => {
+const Contribution = ({ contribution, userContribution }) => {
   const { text, upvoters, user_id } = contribution;
   const username = user_id.username;
   const [upvoted, setUpvoted] = useState(contribution.upvoters.indexOf(user_id._id) != -1);
@@ -35,7 +35,7 @@ const Contribution = ({ contribution }) => {
 
   return (
     <div className="contribution-component">
-      <div className="contribution-wrapper">
+      { !userContribution && <div className="contribution-wrapper">
         <button onClick={upvote} className="contribution-button">
           <img
             src={upvoted ? "src/assets/svgs/vote-yellow.svg" : "src/assets/svgs/vote.svg"}
@@ -43,9 +43,9 @@ const Contribution = ({ contribution }) => {
           />
         </button>
         <p>{upvoters.length}</p>
-      </div>
+      </div> }
       <p>{text}</p>
-      <p className="contribution-author">By: {username}</p>
+      <p className="contribution-author">By: {!userContribution ? username : 'You'}</p>
     </div>
   );
 };
