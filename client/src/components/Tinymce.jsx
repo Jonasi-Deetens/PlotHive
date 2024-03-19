@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import '../assets/styles/components/Tinymce/tinymce.css'
 import { useContext, useEffect, useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { UserContext } from "../providers/UserContext";
@@ -43,7 +44,6 @@ const Tinymce = ({ bookId }) => {
 
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
           addContributionToBook(bookId, data);
           console.log("Post created successfully");
         } else {
@@ -84,16 +84,15 @@ const Tinymce = ({ bookId }) => {
             "help",
             "wordcount",
           ],
-          toolbar:
-            "undo redo | blocks | " +
-            "bold italic forecolor | alignleft aligncenter " +
-            "alignright alignjustify | bullist numlist outdent indent | " +
-            "removeformat | help",
-          content_style:
-            "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+          toolbar: "bold italic | alignleft aligncenter alignright alignjustify | outdent indent",
+            // "undo redo | blocks | " +
+            // "bold italic forecolor | alignleft aligncenter " +
+            // "alignright alignjustify | bullist numlist outdent indent | " +
+            // "removeformat | help",
+          content_style: "p { color: #fefefe; font-family: 'Libre Baskerville', serif; font-size: 1.2rem; } body { background-color: #414042; }"
         }}
       />
-      <button onClick={submit}>Submit</button>
+      <button className='editor-submit' onClick={submit}>Submit</button>
     </>
   );
 };
