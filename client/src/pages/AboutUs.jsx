@@ -103,7 +103,7 @@ const AboutUs = () => {
             magical!
           </p>
           <a href="/contact">
-            <button>Contact Us</button>
+            <button className="contact-us">Contact Us</button>
           </a>
         </article>
       </section>

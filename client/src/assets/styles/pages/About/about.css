@@ -1022,8 +1022,13 @@ body div#root main.aboutUs section.contactUs a button {
   margin: 0 auto;
   width: 200px;
   height: 75px;
-  background-color: #ffbd59;
+  background-color: #ecf0f3;
   color: #414042;
+  transition: all 0.3s ease;
+}
+body div#root main.aboutUs section.contactUs a button:hover {
+  transform: scale(1.05);
+  background-color: #ffbd59;
 }
 body div#root main.aboutUs section.contactUs article.hiring {
   background: rgba(255, 255, 255, 0.25);

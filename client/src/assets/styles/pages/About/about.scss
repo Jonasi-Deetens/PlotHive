@@ -173,8 +173,13 @@ body {
             margin: 0 auto;
             width: 200px;
             height: 75px;
-            background-color: $main;
+            background-color: $fontcolor;
             color: $button-dark;
+            transition: all 0.3s ease;
+            &:hover {
+              transform: scale(1.05);
+              background-color: $button-hover;
+            }
           }
         }
         article.hiring {
