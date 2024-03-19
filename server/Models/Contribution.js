@@ -20,11 +20,10 @@ const contributionSchema = new mongoose.Schema({
         required: true,
         default: Date.now()
     },
-    upvote_count: {
-        type: Number,
-        min: 0,
-        default: 0
-    },
+    upvoters: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }],
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'

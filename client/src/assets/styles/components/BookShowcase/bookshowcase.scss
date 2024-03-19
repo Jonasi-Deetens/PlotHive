@@ -3,9 +3,7 @@
 body {
   div#root {
     section.showcase-section {
-      background-color: $background-dark;
       border-radius: 50px;
-      width: 90%;
       margin: auto;
       padding: 20px;
 
@@ -13,8 +11,10 @@ body {
         font-family: $logo-font;
         font-size: 50px;
         color: $fontcolor;
-        text-align: center;
+        text-decoration: underline;
+        margin-left: 100px;
         margin-bottom: 50px;
+        filter: drop-shadow(1px 1px 1px black);
       }
 
       div.showcase-wrapper {
@@ -44,6 +44,7 @@ body {
 
           div.button-wrapper {
             opacity: 0;
+
             a {
               text-decoration: none;
               color: $background-dark;
@@ -59,8 +60,8 @@ body {
               cursor: pointer;
               transition: all 0.3s ease;
               @include shadow;
-              height: 30px;
-              width: 40px;
+              height: 20px;
+              width: 30px;
             }
             img:hover,
             img:focus {

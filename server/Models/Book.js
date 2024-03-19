@@ -27,6 +27,11 @@ const bookSchema = new mongoose.Schema({
         type: Date,
         required: true,
         default: Date.now
+    },
+    finished: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 });
 
