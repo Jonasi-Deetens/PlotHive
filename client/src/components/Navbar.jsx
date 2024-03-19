@@ -5,7 +5,7 @@ import navBarLogo from "../assets/Logo/logo-navbar.svg";
 import { UserContext } from "../providers/UserContext";
 
 const Navbar = () => {
-  const { user, authUser } = useContext(UserContext);
+  const { user, authUser, logout } = useContext(UserContext);
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
     setIsActive(!isActive);
@@ -49,37 +49,44 @@ const Navbar = () => {
         </button>
         <ul>
           <li>
-            <NavLink to="/Store" activeclassname="active">
+            <NavLink to="/Store" activeClassName="active">
               Store
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Explore" activeclassname="active">
+            <NavLink to="/Explore" activeClassName="active">
               Explore
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Contact" activeclassname="active">
+            <NavLink to="/Contact" activeClassName="active">
               Contact
             </NavLink>
           </li>
           <li>
-            <NavLink to="/AboutUs" activeclassname="active">
+            <NavLink to="/AboutUs" activeClassName="active">
               About
             </NavLink>
           </li>
           {user ? (
-            <li>
-              <NavLink to="/Dashboard" activeclassname="active">
-                {user &&
-                  user.username &&
-                  user.username.charAt(0).toUpperCase() +
-                    user.username.slice(1)}
-              </NavLink>
-            </li>
+            <>
+              <li>
+                <NavLink to="/Dashboard" activeClassName="active">
+                  {user &&
+                    user.username &&
+                    user.username.charAt(0).toUpperCase() +
+                      user.username.slice(1)}
+                </NavLink>
+              </li>
+              <li>
+                <a className="logout-button" onClick={logout}>
+                  <img src="src/assets/svgs/logout.svg" alt="logout-icon" />
+                </a>
+              </li>
+            </>
           ) : (
             <li>
-              <NavLink to="/Login" activeclassname="active">
+              <NavLink to="/Login" activeClassName="active">
                 Login
               </NavLink>
             </li>
@@ -90,14 +97,14 @@ const Navbar = () => {
         <nav className="menu-modal">
           <ul>
             <li>
-              <NavLink to="/Store" activeclassname="active" onClick={hideModal}>
+              <NavLink to="/Store" activeClassName="active" onClick={hideModal}>
                 Store
               </NavLink>
             </li>
             <li>
               <NavLink
                 to="/Explore"
-                activeclassname="active"
+                activeClassName="active"
                 onClick={hideModal}
               >
                 Explore
@@ -106,7 +113,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/Contact"
-                activeclassname="active"
+                activeClassName="active"
                 onClick={hideModal}
               >
                 Contact
@@ -115,30 +122,37 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/AboutUs"
-                activeclassname="active"
+                activeClassName="active"
                 onClick={hideModal}
               >
                 About
               </NavLink>
             </li>
             {user ? (
-              <li>
-                <NavLink
-                  to="/Dashboard"
-                  activeclassname="active"
-                  onClick={hideModal}
-                >
-                  {user &&
-                    user.username &&
-                    user.username.charAt(0).toUpperCase() +
-                      user.username.slice(1)}
-                </NavLink>
-              </li>
+              <>
+                <li>
+                  <NavLink
+                    to="/Dashboard"
+                    activeClassName="active"
+                    onClick={hideModal}
+                  >
+                    {user &&
+                      user.username &&
+                      user.username.charAt(0).toUpperCase() +
+                        user.username.slice(1)}
+                  </NavLink>
+                </li>
+                <li>
+                  <a className="logout-button" onClick={logout}>
+                    <img src="src/assets/svgs/logout.svg" alt="logout-icon" />
+                  </a>
+                </li>
+              </>
             ) : (
               <li>
                 <NavLink
                   to="/Login"
-                  activeclassname="active"
+                  activeClassName="active"
                   onClick={hideModal}
                 >
                   Login

@@ -37,6 +37,13 @@ body {
             position: relative;
             font-size: 22px;
             font-weight: normal;
+            img {
+              width: 20px;
+              height: 20px;
+              &:hover {
+                cursor: pointer;
+              }
+            }
             &::after {
               content: "";
               position: absolute;

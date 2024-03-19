@@ -16,7 +16,7 @@ import Error404 from "./pages/Error404";
 import Footer from "./components/Footer";
 
 function App() {
-  const location = useLocation().pathname;
+  const location = useLocation();
   const headerLocations = [
     "/aboutus",
     "/contact",
@@ -30,24 +30,32 @@ function App() {
     "/write",
   ];
 
+  const is404Page = location.pathname === "/Error404";
+
+  const isHeaderLocation = headerLocations.includes(
+    location.pathname.toLowerCase()
+  );
+
   return (
     <>
-      {headerLocations.includes(location.toLocaleLowerCase()) && <Navbar />}
+      {isHeaderLocation && <Navbar />}
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/Explore" element={<Explore />} />
-        <Route path="/Legal" element={<Legal />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Read" element={<Read />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/Store" element={<Store />} />
-        <Route path="/Write" element={<Write />} />
-        <Route path="/*" element={<Error404 />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/legal" element={<Legal />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/read" element={<Read />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/write" element={<Write />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
-      <Footer />
+
+      {!is404Page && <Footer />}
     </>
   );
 }
