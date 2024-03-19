@@ -50,18 +50,14 @@ body {
               color: $background-dark;
             }
             img {
-              background-color: $background;
-              color: $background-dark;
               text-decoration: none;
-              padding: 0.7rem 1.5rem;
-              border: none;
-              border-radius: 50px;
               font-size: 1rem;
+              border-radius: 50px;
               cursor: pointer;
               transition: all 0.3s ease;
               @include shadow;
-              height: 20px;
-              width: 30px;
+              height: 35px;
+              width: 50px;
             }
             img:hover,
             img:focus {

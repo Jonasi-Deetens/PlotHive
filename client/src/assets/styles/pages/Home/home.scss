@@ -7,7 +7,7 @@ body {
 
 main.home-page {
   background-color: $background;
-  background-image: url('../../../img/parallax.png');
+  background-image: url("../../../img/parallax.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -54,7 +54,7 @@ main.home-page {
   div.main-header-container h1 {
     display: inline-block;
   }
-  
+
   .custom-header {
     overflow: hidden;
     white-space: pre-line;
@@ -178,7 +178,7 @@ main.home-page {
     color: $fontcolor !important;
     filter: drop-shadow(1px 1px 2px #0f0f0f);
   }
-  
+
   @media (max-width: 768px) {
     h2.section-three {
       padding: 20px;
