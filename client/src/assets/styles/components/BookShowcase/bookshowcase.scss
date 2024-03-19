@@ -48,7 +48,7 @@ body {
               text-decoration: none;
               color: $background-dark;
             }
-            button {
+            img {
               background-color: $background;
               color: $background-dark;
               text-decoration: none;
@@ -59,9 +59,11 @@ body {
               cursor: pointer;
               transition: all 0.3s ease;
               @include shadow;
+              height: 20px;
+              width: 30px;
             }
-            button:hover,
-            button:focus {
+            img:hover,
+            img:focus {
               transform: scale(1.05);
               background-color: $button-hover;
             }

@@ -56,10 +56,16 @@ const BookShowcase = ({ category, query }) => {
                   </div>
                   <div className="button-wrapper">
                     <Link className="link" to={"/read?id=" + book._id}>
-                      read
+                      <img
+                        src="src/assets/svgs/book.svg"
+                        alt="read-book-icon"
+                      />
                     </Link>
                     <Link className="link" to={"/write?id=" + book._id}>
-                      write
+                      <img
+                        src="src/assets/svgs/book-home.svg"
+                        alt="write-book-icon"
+                      />
                     </Link>
                   </div>
                 </div>
