@@ -881,6 +881,7 @@ body div#root nav.main-navigation ul li a {
 body div#root nav.main-navigation ul li a img {
   width: 20px;
   height: 20px;
+  color: black;
 }
 body div#root nav.main-navigation ul li a img:hover {
   cursor: pointer;
