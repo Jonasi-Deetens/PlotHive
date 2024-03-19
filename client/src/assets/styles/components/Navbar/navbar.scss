@@ -84,6 +84,15 @@ body {
         li {
           list-style: none;
           margin-bottom: 30px;
+          img {
+            width: 40px;
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+            &:hover {
+              cursor: pointer;
+            }
+          }
           a {
             color: $fontcolor;
             text-decoration: none;
