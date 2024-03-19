@@ -878,6 +878,13 @@ body div#root nav.main-navigation ul li a {
   font-size: 22px;
   font-weight: normal;
 }
+body div#root nav.main-navigation ul li a img {
+  width: 20px;
+  height: 20px;
+}
+body div#root nav.main-navigation ul li a img:hover {
+  cursor: pointer;
+}
 body div#root nav.main-navigation ul li a::after {
   content: "";
   position: absolute;
