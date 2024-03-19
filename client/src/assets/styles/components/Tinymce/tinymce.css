@@ -841,11 +841,43 @@
   transform: rotate(-90deg);
 }
 
-.editor body {
-  background-color: black;
+.tox .tox-tbtn svg {
+  fill: #ecf0f3 !important;
 }
-.editor p {
-  font-family: "Libre Baskerville", serif;
-  font-weight: bold;
-  color: red !important;
+
+.tox-tinymce {
+  border: none !important;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary {
+  background-color: #414042 !important;
+  border-bottom: 1px solid #949494 !important;
+}
+
+.tox:not(.tox-tinymce-inline) .tox-editor-header {
+  background-color: #414042 !important;
+}
+
+.tox .tox-statusbar {
+  background-color: #414042 !important;
+  height: auto !important;
+}
+
+.tox .tox-statusbar a, .tox .tox-statusbar__path-item, .tox .tox-statusbar__wordcount {
+  color: #ecf0f3 !important;
+  margin: 5px;
+}
+
+.tox .tox-statusbar a:hover, .tox .tox-statusbar__path-item:hover, .tox .tox-statusbar__wordcount:hover {
+  color: #ffbd59 !important;
+  margin: 5px;
+}
+
+.tox:not([dir=rtl]) .tox-statusbar__branding {
+  display: none;
+}
+
+.tox .tox-statusbar__resize-handle, .tox .tox-statusbar__help-text {
+  visibility: hidden;
 }/*# sourceMappingURL=tinymce.css.map */

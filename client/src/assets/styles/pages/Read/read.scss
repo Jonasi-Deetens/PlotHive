@@ -45,6 +45,11 @@ main.read-page {
             }
         }
 
+        p.read-page-prompt {
+            padding: 10px 80px 10px 93px;
+            font-family: $serif-font !important;
+        }
+
         div.read-page-contribution {
             display: flex;
             padding: 10px 80px 10px 40px;
@@ -139,8 +144,20 @@ main.read-page {
             div.read-page-contribution {
                 padding: 10px 40px 10px 10px;
             }
+
+            p.read-page-prompt {
+                padding: 10px 23px 10px 63px;
+            }
         }
         
+    }
+
+    @media (max-width: 800px) {
+        section.read-page-section {
+            p.read-page-prompt {
+                padding: 10px 40px 10px 23px;
+            }
+        }
     }
 
     section.read-page-buttons {
@@ -157,6 +174,7 @@ main.read-page {
             color: $fontcolor-darker;
             font-size: 1rem;
         }
+        
         .read-page-button:hover {
             background-color: $main;
             transform: scale(1.05);

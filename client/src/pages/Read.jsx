@@ -47,7 +47,7 @@ const Read = () => {
     
     if (book && user) { 
       if (book.contributions.length > 0)
-        setNumberOfPages(Math.round(book.contributions.length / 5));
+        setNumberOfPages(Math.ceil(book.contributions.length / 5));
       else setNumberOfPages(1);
       setPageData();
 
@@ -114,10 +114,11 @@ const Read = () => {
 
   return (
     <main className='read-page'>
-      <h1 className='read-page-title'>{book && '"' + book.prompt_id.content + ',..."' }</h1>
+      <h1 className='read-page-title'>{book && book.title}</h1>
       <section className='read-page-section'>
         <button className={inFavourites ? 'read-page-unfavourite' : 'read-page-favourite'} onClick={favourite}><img src={star} alt="icon of a star" /></button>
         <section className='read-page-text'>
+          {(book && page == 1) && <p className='read-page-prompt'>{'"' + book.prompt_id.content + ',..."'} </p>}
           {pageContributions && pageContributions.map((contribution) => (
             <div className='read-page-contribution'>
               <p className='read-page-contribution-name'>{contribution.user_id.username}</p>

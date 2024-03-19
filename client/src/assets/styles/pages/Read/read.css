@@ -881,6 +881,10 @@ main.read-page section.read-page-section section.read-page-select button.read-pa
   color: #ffbd59;
   transform: scale(1.1);
 }
+main.read-page section.read-page-section p.read-page-prompt {
+  padding: 10px 80px 10px 93px;
+  font-family: "Libre Baskerville", serif !important;
+}
 main.read-page section.read-page-section div.read-page-contribution {
   display: flex;
   padding: 10px 80px 10px 40px;
@@ -961,6 +965,14 @@ main.read-page section.read-page-section .read-page-unfavourite:hover {
   main.read-page section.read-page-section div.read-page-contribution {
     padding: 10px 40px 10px 10px;
   }
+  main.read-page section.read-page-section p.read-page-prompt {
+    padding: 10px 23px 10px 63px;
+  }
+}
+@media (max-width: 800px) {
+  main.read-page section.read-page-section p.read-page-prompt {
+    padding: 10px 40px 10px 23px;
+  }
 }
 main.read-page section.read-page-buttons {
   display: flex;
@@ -974,7 +986,7 @@ main.read-page section.read-page-buttons .read-page-button {
   padding: 10px 30px;
   border: none;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 24px;
   cursor: pointer;
   background-color: #ecf0f3;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;

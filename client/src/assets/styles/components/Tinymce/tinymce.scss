@@ -1,13 +1,42 @@
 @use "../../../SASS/" as *;
 
-.editor {
-    body {
-        background-color: black;
-    }
+.tox .tox-tbtn svg {
+    fill: $fontcolor !important;
+}
 
-    p {
-            font-family: $serif-font;
-            font-weight: bold;
-                color: red !important;
-    }
+.tox-tinymce {
+    border: none !important;
+    @include shadow;
+}
+
+.tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary { 
+    background-color: #414042 !important; 
+    border-bottom: 1px solid $break-line-dark !important;
+}
+
+.tox:not(.tox-tinymce-inline) .tox-editor-header {
+    background-color: #414042 !important; 
+}
+
+.tox .tox-statusbar {
+    background-color: #414042 !important; 
+    height: auto !important;
+}
+
+.tox .tox-statusbar a, .tox .tox-statusbar__path-item, .tox .tox-statusbar__wordcount {
+    color: $fontcolor !important;
+    margin: 5px;
+} 
+
+.tox .tox-statusbar a:hover, .tox .tox-statusbar__path-item:hover, .tox .tox-statusbar__wordcount:hover {
+    color: $main !important;
+    margin: 5px;
+} 
+
+.tox:not([dir=rtl]) .tox-statusbar__branding {
+    display: none;
+}
+
+.tox .tox-statusbar__resize-handle, .tox .tox-statusbar__help-text {
+    visibility: hidden;
 }
