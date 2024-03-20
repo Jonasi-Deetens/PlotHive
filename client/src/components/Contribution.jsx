@@ -1,16 +1,19 @@
 /* eslint-disable react/prop-types */
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../assets/styles/components/Contribution/contribution.css";
 import { UserContext } from "../providers/UserContext";
 import CommentSection from "./CommentSection";
 
 const Contribution = ({ contribution, userContribution }) => {
   const { user } = useContext(UserContext);
-  const { text, upvoters, user_id } = contribution;
-  const username = user_id.username;
-  const [upvoted, setUpvoted] = useState(
-    contribution.upvoters.indexOf(user._id) != -1
-  );
+  const [upvoted, setUpvoted] = useState();
+
+  useEffect(() => {
+    if (contribution) {
+      setUpvoted(contribution.upvoters.indexOf(user?._id) != -1);
+    }
+    
+  }, [])
 
   const upvote = async () => {
     const index = contribution.upvoters.indexOf(user._id);
@@ -43,28 +46,25 @@ const Contribution = ({ contribution, userContribution }) => {
   };
 
   return (
-    <div className="contribution-component">
-      {!userContribution && (
+    <>
+    {contribution && (
+      <div className="contribution-component">
+        { !userContribution && 
         <div className="contribution-wrapper">
           <button onClick={upvote} className="contribution-button">
             <img
-              src={
-                upvoted
-                  ? "src/assets/svgs/vote-yellow.svg"
-                  : "src/assets/svgs/vote.svg"
-              }
+              src={upvoted ? "src/assets/svgs/vote-yellow.svg" : "src/assets/svgs/vote.svg"}
               alt="icon of a arrow pointing up"
             />
           </button>
-          <p>{upvoters.length}</p>
-        </div>
-      )}
-      <div dangerouslySetInnerHTML={{ __html: text }}></div>
-      <p className="contribution-author">
-        By: {!userContribution ? username : "You"}
-      </p>
-      <CommentSection contribtion={contribution} />
-    </div>
+          <p>{contribution.upvoters.length}</p>
+        </div> }
+        <div dangerouslySetInnerHTML={{ __html: contribution.text }}></div>
+        <p className="contribution-author">By: {!userContribution ? contribution.user_id.username : 'You'}</p>
+        <CommentSection contribtion={contribution} />
+      </div>
+    )}
+    </>
   );
 };
 

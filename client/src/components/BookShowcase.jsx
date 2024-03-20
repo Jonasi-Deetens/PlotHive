@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import "../assets/styles/components/BookShowcase/bookshowcase.css";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import cover from "../assets/svgs/cover.png";
 import { BookContext } from "../providers/BookContext";
 import { Link } from "react-router-dom";
