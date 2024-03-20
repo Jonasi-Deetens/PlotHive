@@ -35,8 +35,10 @@ const AboutUs = () => {
           </p>
         </article>
         <div className="images">
-          <img className="typewritter" src={typewritter} alt="picture" />
-          <img className="laptop" src={laptop} alt="picture" />
+          <div className="top-images">
+            <img className="typewritter" src={typewritter} alt="picture" />
+            <img className="laptop" src={laptop} alt="picture" />
+          </div>
           <img className="authors" src={bookAuthors} alt="picture" />
         </div>
       </section>

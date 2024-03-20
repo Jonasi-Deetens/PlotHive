@@ -3,8 +3,8 @@
 body {
   div#root {
     main.aboutUs {
-      width: 1024px;
       margin: 0 auto;
+      width: 80vw;
       section.about {
         background: rgba(255, 255, 255, 0.25);
         backdrop-filter: blur(4px);
@@ -16,6 +16,7 @@ body {
         box-sizing: border-box;
         border-radius: 30px 30px 10px 10px;
         @include shadow;
+        margin-bottom: 20px;
         h1 {
           margin: 0;
           color: $fontcolor;
@@ -37,23 +38,26 @@ body {
       section.our-mission {
         width: 100%;
         display: flex;
-        justify-content: space-between;
-        margin: -50px 0;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
         article {
           display: flex;
-          width: 57%;
+          margin-right: 2%;
+          width: 58%;
+          min-height: 410px;
           flex-direction: column;
           justify-content: center;
           box-sizing: border-box;
           padding: 20px;
+          padding-bottom: 40px;
           background: rgba(255, 255, 255, 0.25);
           backdrop-filter: blur(4px);
           -webkit-backdrop-filter: blur(4px);
           border-radius: 10px;
           border: 1px solid rgba(255, 255, 255, 0.18);
           border-radius: 10px;
-          height: 420px;
-          margin: auto 0;
           box-sizing: border-box;
           @include shadow;
           h1 {
@@ -61,6 +65,7 @@ body {
             font-weight: 500;
             color: $fontcolor;
             margin: 0;
+            margin-top: 40px;
             margin-bottom: 40px;
           }
           p {
@@ -69,44 +74,46 @@ body {
           }
         }
         div.images {
-          width: auto;
-          display: grid;
-          grid-template-columns: repeat(12, 1fr);
-          grid-template-rows: repeat(2, 1fr);
+          max-width: 40%;
+          display: flex;
+          flex-wrap: wrap;
           gap: 10px;
           overflow: hidden;
-          padding: 30px;
-          margin: 50px -30px 50px 0;
+          .top-images {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+          }
           img.typewritter {
             border-radius: 10px;
-            height: 200px;
-            width: 200px;
-            grid-column: span 6;
-            grid-row: span 1;
+            width: 49%;
+            margin-right: 2%;
+            min-width: 180px;
+            min-height: 200px;
             object-fit: cover;
             @include shadow;
           }
           img.laptop {
             border-radius: 10px;
-            height: 200px;
-            width: 200px;
-            grid-column: span 6;
-            grid-row: span 1;
+            width: 49%;
+            min-width: 180px;
+            min-height: 200px;
             object-fit: cover;
             @include shadow;
           }
           img.authors {
             border-radius: 10px;
             height: 200px;
-            width: 410px;
-            grid-column: span 12;
-            grid-row: span 1;
+            width: 100%;
             object-fit: cover;
             @include shadow;
           }
         }
       }
       section.meet-our-team {
+        display: flex;
+        flex-wrap: wrap;
         border-radius: 10px;
         @include shadow;
         background: rgba(255, 255, 255, 0.25);
@@ -115,9 +122,9 @@ body {
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.18);
         box-sizing: border-box;
-        padding: 50px 0;
+        margin-bottom: 20px;
         h1 {
-          margin: 0;
+          width: 100%;
           color: $fontcolor;
           font-family: $logo-font;
           font-size: 42px;
@@ -127,9 +134,13 @@ body {
         }
         div.portraits {
           display: flex;
-          justify-content: space-around;
-          margin: 0 auto;
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 100%;
           div.portrait {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             img {
               height: 150px;
               object-fit: contain;
@@ -137,11 +148,13 @@ body {
               @include shadow;
             }
             p {
+              width: 100%;
               font-size: 25px;
               text-align: center;
             }
             div.social-media-links {
               display: flex;
+              width: 100%;
               justify-content: center;
               gap: 10px;
               margin-top: -20px;
@@ -149,6 +162,7 @@ body {
                 img {
                   height: 20px;
                   @include shadow;
+                  margin-bottom: 30px;
                 }
               }
             }
@@ -161,6 +175,7 @@ body {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 100px;
+        margin-bottom: 20px;
         a {
           display: flex;
           flex-direction: column;
@@ -207,5 +222,10 @@ body {
         }
       }
     }
+  }
+}
+@media (max-width: 768px) {
+  main.aboutUs section.our-mission {
+    width: 100%; // Set width to 100% for small screens
   }
 }
