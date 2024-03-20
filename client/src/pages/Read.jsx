@@ -23,6 +23,7 @@ const Read = () => {
     const isAuthorized = async () => {
       try {
         if (!user) {
+          console.log('a')
           const checkAuth = await authUser();
           if (!checkAuth) {
             navigate("/Login");
