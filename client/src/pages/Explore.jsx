@@ -53,7 +53,7 @@ const Explore = () => {
   };
 
   return (
-    <main>
+    <main className="explore-page">
       <h1 className="explore">Explore our titles!</h1>
       <div className="search-bar">
         <input

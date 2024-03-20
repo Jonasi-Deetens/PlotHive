@@ -79,7 +79,7 @@ const BookShowcase = ({ category, query, selectedGenre }) => {
               </div>
             ))
           ) : (
-            <h1>No books found while looking for &quot;{query}&quot;</h1>
+            <h1>No books found that match your</h1>
           )
         ) : (
           ""
