@@ -22,7 +22,7 @@ const Explore = () => {
 
   return (
     <main>
-      <h1>Explore our titles!</h1>
+      <h1 className="explore">Explore our titles!</h1>
       <div className="search-bar">
         <input
           type="search"
