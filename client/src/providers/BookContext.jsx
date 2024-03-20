@@ -25,7 +25,7 @@ const BookProvider = ({ children }) => {
     };
 
     getBooks();
-  }, []);
+  }, [books]);
 
   const getTopBooks = () => {
     if (books) {
@@ -58,7 +58,7 @@ const BookProvider = ({ children }) => {
         console.log(updatedBook);
         if (!response.ok) {
           throw new Error("Failed to update book");
-        }
+        } else setBooks(null);
       } catch (e) {
         console.log(e.message);
       }

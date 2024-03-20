@@ -6,10 +6,10 @@ import { UserContext } from "../providers/UserContext";
 import { BookContext } from "../providers/BookContext";
 import { Link } from 'react-router-dom';
 
-const Tinymce = ({ bookId }) => {
+const Tinymce = ({ bookId, setBook }) => {
   const editorRef = useRef(null);
   const { authUser, user } = useContext(UserContext);
-  const { addContributionToBook } = useContext(BookContext);
+  const { addContributionToBook, getBookById } = useContext(BookContext);
 
   useEffect(() => {
     const isAuthorized = async () => {
@@ -45,7 +45,8 @@ const Tinymce = ({ bookId }) => {
 
         if (response.ok) {
           const data = await response.json();
-          addContributionToBook(bookId, data);
+          await addContributionToBook(bookId, data);
+          //setBook(getBookById(bookId));
           console.log("Post created successfully");
         } else {
           console.error("Failed to create post");
