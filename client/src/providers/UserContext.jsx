@@ -11,23 +11,26 @@ const UserProvider = ({ children }) => {
   };
 
   const authUser = async () => {
-    try {
-      const token = localStorage.getItem("token");
-      const response = await fetch("http://127.0.0.1:5000/auth/user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-      });
-      if (response.ok) {
-        const data = await response.json();
-        setUser(data);
-        return data;
+    if (!user) {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch("http://127.0.0.1:5000/auth/user", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setUser(data);
+          return data;
+        }
+      } catch (error) {
+        throw new Error(error.message);
       }
-    } catch (error) {
-      throw new Error(error.message);
     }
+    
   };
 
   const loginUser = async (userData) => {

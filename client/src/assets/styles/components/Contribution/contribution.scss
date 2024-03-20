@@ -12,8 +12,8 @@ div.contribution-component {
     }
 
     p {
-        font-family: $serif-font;
-        font-size: 1.2rem;
+        font-family: $serif-font !important;
+        font-size: 1rem;
     }
 
     p.contribution-author {
@@ -34,5 +34,11 @@ div.contribution-component {
 
     button.contribution-button:hover {
         padding-bottom: 5px;
+        cursor: pointer;
+
+        img {
+            @include shadow;
+            transform: scale(1.1);
+        }
     }
 }

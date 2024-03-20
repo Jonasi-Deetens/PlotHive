@@ -6,7 +6,7 @@ import { UserProvider } from "./providers/UserContext.jsx";
 import { BookProvider } from "./providers/BookContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <UserProvider>
     <BookProvider>
       <Router>
@@ -14,5 +14,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </Router>
     </BookProvider>
     </UserProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
