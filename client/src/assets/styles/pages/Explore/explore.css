@@ -841,7 +841,7 @@
   transform: rotate(-90deg);
 }
 
-body div#root h1 {
+body div#root h1.explore {
   font-family: "Fredoka", sans-serif;
   font-size: 50px;
   font-weight: 500;

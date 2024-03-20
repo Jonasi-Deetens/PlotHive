@@ -6,15 +6,23 @@ useState;
 
 const Explore = () => {
   const [query, setQuery] = useState(null);
+  let timeoutId = null;
 
   let handleSearch = ({ currentTarget = {} }) => {
     const { value } = currentTarget;
-    setQuery(value);
+
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
+    timeoutId = setTimeout(() => {
+      setQuery(value);
+    }, 300);
   };
 
   return (
     <main>
-      <h1>Explore our titles!</h1>
+      <h1 className="explore">Explore our titles!</h1>
       <div className="search-bar">
         <input
           type="search"
