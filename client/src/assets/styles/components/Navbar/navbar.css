@@ -919,6 +919,11 @@ body div#root nav.menu-modal {
   justify-content: center;
   border-radius: 0 0 20px 20px;
 }
+body div#root nav.menu-modal ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 body div#root nav.menu-modal ul li {
   list-style: none;
   margin-bottom: 30px;
@@ -927,10 +932,11 @@ body div#root nav.menu-modal ul li img {
   width: 40px;
   height: 40px;
   display: block;
-  margin: 0 auto;
+  transition: transform 0.15s ease-in-out;
 }
 body div#root nav.menu-modal ul li img:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
 body div#root nav.menu-modal ul li a {
   color: #ecf0f3;

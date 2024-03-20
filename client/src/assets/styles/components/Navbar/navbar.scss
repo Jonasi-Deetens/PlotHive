@@ -82,6 +82,9 @@ body {
       justify-content: center;
       border-radius: 0 0 20px 20px;
       ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         li {
           list-style: none;
           margin-bottom: 30px;
@@ -89,9 +92,10 @@ body {
             width: 40px;
             height: 40px;
             display: block;
-            margin: 0 auto;
+            transition: transform 0.15s ease-in-out;
             &:hover {
               cursor: pointer;
+              transform: scale(1.2);
             }
           }
           a {
@@ -99,6 +103,7 @@ body {
             text-decoration: none;
             font-size: 50px;
             font-family: $sans-font;
+
             &.active {
               text-decoration: underline;
               color: $main;
