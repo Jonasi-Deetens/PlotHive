@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import UserModel from '../Models/User.js';
 import { hashPassword, comparePassword } from '../Encryption/bcrypt.js';
 import jwt from 'jsonwebtoken';
+import ContributionModel from '../Models/Contribution.js';
 
 // Login user
 router.post('/login', validateLoginData, async (req, res) => {
@@ -82,6 +83,12 @@ router.patch('/:id', getUser, async (req, res) => {
 router.delete('/:id', getUser, async (req, res) => {
     try {
         console.log(res.user);
+        const contributions = await ContributionModel.find();
+        for (const contribution of contributions) {
+            if (contribution.user_id.toString() === res.user._id.toString()) {
+                await contribution.deleteOne();
+            }
+        }
         await res.user.deleteOne();
         res.json({ message: 'Deleted user' });
     } catch (err) {
