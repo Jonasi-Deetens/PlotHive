@@ -4,8 +4,10 @@ import cors from 'cors';
 import cron from "node-cron";
 import connectToDatabase from "./Database/database.js";
 import BookController from "./Controllers/BookController.js";
+import configureWebSocket from "./Websocket/websocket.js";
 
 const app = express();
+
 dotenv.config();
 
 const host = process.env.HOST || "localhost";
@@ -17,6 +19,8 @@ cron.schedule('0 0 * * *', async () => {
   console.log('Creating new book...');
   await BookController.createBook();
 });
+
+const wss = configureWebSocket(app);
 
 app.use(express.json());
 app.use(express.static('./public'));
@@ -50,3 +54,7 @@ app.all("*", (req, res) => {
 app.listen(port, () => {
   console.log("Welcome " + host + ", server is listening on port: " + port);
 });
+
+export {
+  wss
+}

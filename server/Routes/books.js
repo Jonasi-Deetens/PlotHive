@@ -1,7 +1,9 @@
 import express from 'express';
-const router = express.Router();
 import mongoose from 'mongoose';
 import BookModel from '../Models/Book.js';
+import { wss } from '../server.js';
+
+const router = express.Router();
 
 // Create a new item
 router.post('/', async (req, res) => {
@@ -63,8 +65,16 @@ router.patch('/:id', getBook, async (req, res) => {
     try {
         const updatedBook = await res.book.save();
         res.json(updatedBook);
+        wss.clients.forEach((client) => {
+            console.log(wss)
+            if (client.readyState === WebSocket.OPEN) {
+                console.log("message sent")
+                client.send(JSON.stringify({ event: 'bookUpdate' }));
+            }
+        });
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        console.log(err.message)
+        //res.status(400).json({ message: err.message });
     }
 });
 
