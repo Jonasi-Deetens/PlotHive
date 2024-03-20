@@ -75,7 +75,13 @@ const Explore = () => {
             ))}
         </ul>
       </div>
-      {query && <BookShowcase category={"search-results"} query={query} />}
+      {(query || selectedGenre) && (
+        <BookShowcase
+          category={"search-results"}
+          query={query}
+          selectedGenre={selectedGenre}
+        />
+      )}
       <BookShowcase category={"like-this"} />
     </main>
   );
