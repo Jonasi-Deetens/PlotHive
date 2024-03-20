@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useContext, useEffect, useState } from "react";
 import "../assets/styles/components/Contribution/contribution.css";
 import { UserContext } from "../providers/UserContext";
+import CommentSection from "./CommentSection";
 
 const Contribution = ({ contribution, userContribution }) => {
   const { user } = useContext(UserContext);
@@ -12,7 +14,6 @@ const Contribution = ({ contribution, userContribution }) => {
     }
     
   }, [])
-  
 
   const upvote = async () => {
     const index = contribution.upvoters.indexOf(user._id);
@@ -23,15 +24,18 @@ const Contribution = ({ contribution, userContribution }) => {
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/contributions/' + contribution._id, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          upvoters: contribution.upvoters
-        })
-      })
+      const response = await fetch(
+        "http://127.0.0.1:5000/api/contributions/" + contribution._id,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            upvoters: contribution.upvoters,
+          }),
+        }
+      );
       if (response.ok) {
         upvoted ? alert("Succesfully unvoted!") : alert("Succesfully upvoted!");
         setUpvoted(!upvoted);
@@ -39,7 +43,7 @@ const Contribution = ({ contribution, userContribution }) => {
     } catch (error) {
       console.log(error.message);
     }
-  }
+  };
 
   return (
     <>
@@ -57,6 +61,7 @@ const Contribution = ({ contribution, userContribution }) => {
         </div> }
         <div dangerouslySetInnerHTML={{ __html: contribution.text }}></div>
         <p className="contribution-author">By: {!userContribution ? contribution.user_id.username : 'You'}</p>
+        <CommentSection contribtion={contribution} />
       </div>
     )}
     </>
