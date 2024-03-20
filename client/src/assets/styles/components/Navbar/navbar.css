@@ -923,6 +923,7 @@ body div#root nav.menu-modal ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 0;
 }
 body div#root nav.menu-modal ul li {
   list-style: none;
