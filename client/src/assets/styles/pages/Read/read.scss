@@ -22,6 +22,10 @@ main.read-page {
 
         section.read-page-text {
             height: 95%;
+
+            .read-page-text-html {
+                width: 100%;
+            }
         }
 
         section.read-page-select {

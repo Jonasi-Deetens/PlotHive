@@ -1,7 +1,7 @@
 import '../assets/styles/pages/Write/write.css';
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../providers/UserContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Contribution from "../components/Contribution";
 import { BookContext } from "../providers/BookContext";
 import Tinymce from "../components/Tinymce";
@@ -68,9 +68,12 @@ const Write = () => {
             <h1 className='title'>{book.title}</h1>
             <div className="write-book-contributions">
               <h3 className='book-prompt'>{`"${book.prompt_id.content}..."`}</h3>
-              <p>{book.contributions?.[0]?.text}</p>
+              <div dangerouslySetInnerHTML={{ __html: book.contributions?.[0]?.text }}></div>
               {(userContributed && userContribution) ?
-                <Contribution contribution={userContribution} userContribution={true} />
+                <div>
+                  <Contribution contribution={userContribution} userContribution={true} />
+                  <Link to={"/read?id=" + book._id}><button className='editor-submit'>Read</button></Link>
+                </div>
                 :
                 <Tinymce bookId={book._id} />
               }
