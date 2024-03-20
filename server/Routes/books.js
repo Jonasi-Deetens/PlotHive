@@ -64,17 +64,15 @@ router.patch('/:id', getBook, async (req, res) => {
     }
     try {
         const updatedBook = await res.book.save();
-        res.json(updatedBook);
         wss.clients.forEach((client) => {
-            console.log(wss)
-            if (client.readyState === WebSocket.OPEN) {
+            if (client._readyState === client.OPEN) {
                 console.log("message sent")
                 client.send(JSON.stringify({ event: 'bookUpdate' }));
             }
         });
+        res.json(updatedBook);
     } catch (err) {
-        console.log(err.message)
-        //res.status(400).json({ message: err.message });
+        res.status(400).json({ message: err.message });
     }
 });
 

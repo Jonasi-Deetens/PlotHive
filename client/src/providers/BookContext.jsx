@@ -33,16 +33,13 @@ const BookProvider = ({ children }) => {
     };
     ws.onmessage = (event) => {
       const message = JSON.parse(event.data);
-      // Handle the event message from WebSocket
       if (message.event === "bookUpdate") {
-        // Refresh books after receiving book update event
         console.log('message received')
         getBooks();
       }
     };
 
     return () => {
-      // Clean up WebSocket connection
       ws.close();
     };
   }, []);
