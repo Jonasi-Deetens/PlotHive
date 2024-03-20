@@ -25,6 +25,7 @@ div.write-page {
 
     .editor-submit {
         @include main-button;
+        margin: 10px 10px;
     }
 
     .editor-submit:hover {
