@@ -47,10 +47,18 @@ const AboutUs = () => {
             <img className="img-alex" src={alex} alt="portrait" />
             <p className="name">Alex</p>
             <div className="social-media-links">
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={linkedin} alt="linkedin logo" />
               </a>
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={github} alt="github" />
               </a>
             </div>
@@ -59,10 +67,18 @@ const AboutUs = () => {
             <img className="img-dante" src={dante} alt="portrait" />
             <p className="name">Dante</p>
             <div className="social-media-links">
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={linkedin} alt="linkedin logo" />
               </a>
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={github} alt="github" />
               </a>
             </div>
@@ -71,10 +87,18 @@ const AboutUs = () => {
             <img className="img-jonasi" src={jonasi} alt="portrait" />
             <p className="name">Jonasi</p>
             <div className="social-media-links">
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={linkedin} alt="linkedin logo" />
               </a>
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={github} alt="github" />
               </a>
             </div>
@@ -83,10 +107,18 @@ const AboutUs = () => {
             <img className="img-kilian" src={kilian} alt="portrait" />
             <p className="name">Kilian</p>
             <div className="social-media-links">
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={linkedin} alt="linkedin logo" />
               </a>
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={github} alt="github" />
               </a>
             </div>

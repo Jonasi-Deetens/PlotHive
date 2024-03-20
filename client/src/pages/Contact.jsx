@@ -16,22 +16,38 @@ const Contact = () => {
           <h2 className="socials-title">Socials</h2>
           <ul className="socials-list">
             <li>
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={facebook} alt="facebook logo" />
               </a>
             </li>
             <li>
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={twitter} alt="X logo" />
               </a>
             </li>
             <li>
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={instagram} alt="instagram logo" />
               </a>
             </li>
             <li>
-              <a href="">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={github} alt="github" />
               </a>
             </li>
