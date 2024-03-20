@@ -6,10 +6,18 @@ useState;
 
 const Explore = () => {
   const [query, setQuery] = useState(null);
+  let timeoutId = null;
 
   let handleSearch = ({ currentTarget = {} }) => {
     const { value } = currentTarget;
-    setQuery(value);
+
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
+    timeoutId = setTimeout(() => {
+      setQuery(value);
+    }, 300);
   };
 
   return (
