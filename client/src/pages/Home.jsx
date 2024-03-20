@@ -1,16 +1,14 @@
-import React, { useContext, useState } from "react";
-
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/pages/Home/home.css";
 import BookShowcase from "../components/BookShowcase";
-import { useEffect } from "react";
 import { BookContext } from "../providers/BookContext";
 import { UserContext } from "../providers/UserContext";
 
 const Home = () => {
   const { user } = useContext(UserContext);
   const { getLatestBook } = useContext(BookContext);
-  const [title, setTitle] = useState('"');
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     if (getLatestBook()) {
@@ -21,7 +19,7 @@ const Home = () => {
 
       const typeChar = (currentTitle, currentIndex) => {
         if (currentIndex >= maxIndex) {
-          const nextTitle = currentTitle.split("_")[0] + '"_';
+          const nextTitle = currentTitle.split("_")[0];
           setTitle(nextTitle);
           return;
         }
@@ -44,8 +42,6 @@ const Home = () => {
       <header className="home-page-header">
         <div className="home-page-navbar">
           <Link to="/">
-            {" "}
-            {/* Link to the homepage */}
             <img src="src/assets/Logo/logo-home.svg" alt="Large-Logo" />
           </Link>
           {user ? (
@@ -60,11 +56,7 @@ const Home = () => {
             </Link>
           )}
         </div>
-        <div className="main-header-container">
-          <div className="main-header-container">
-            <h1 className="main-header custom-header">{title}</h1>
-          </div>
-        </div>
+        <h1 className="main-header custom-header">{title}</h1>
         <div className="home-button-container">
           <Link to={"/write?id=" + getLatestBook()._id} className="home-link">
             <button className="home-header-button">Contribute</button>

@@ -881,6 +881,7 @@ body div#root nav.main-navigation ul li a {
 body div#root nav.main-navigation ul li a img {
   width: 20px;
   height: 20px;
+  color: black;
 }
 body div#root nav.main-navigation ul li a img:hover {
   cursor: pointer;
@@ -921,6 +922,15 @@ body div#root nav.menu-modal {
 body div#root nav.menu-modal ul li {
   list-style: none;
   margin-bottom: 30px;
+}
+body div#root nav.menu-modal ul li img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+}
+body div#root nav.menu-modal ul li img:hover {
+  cursor: pointer;
 }
 body div#root nav.menu-modal ul li a {
   color: #ecf0f3;
