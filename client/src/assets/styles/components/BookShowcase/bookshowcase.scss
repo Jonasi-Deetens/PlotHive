@@ -1,13 +1,13 @@
 @use "../../../SASS/" as *;
 
 body {
-  div#root {
+div#root {
     section.showcase-section {
-      border-radius: 50px;
-      margin: auto;
-      padding: 20px;
+    border-radius: 50px;
+    margin: auto;
+    padding: 20px;
 
-      h2.showcase-title {
+    h2.showcase-title {
         font-family: $logo-font;
         font-size: 50px;
         color: $fontcolor;
@@ -15,87 +15,87 @@ body {
         margin-left: 100px;
         margin-bottom: 50px;
         filter: drop-shadow(1px 1px 1px black);
-      }
+    }
 
-      div.showcase-wrapper {
+    div.showcase-wrapper {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
 
         div.profile-book {
-          width: 24%;
-          border-bottom: none;
+        width: 24%;
+        border-bottom: none;
 
-          display: flex;
-          flex-direction: column;
+        display: flex;
+        flex-direction: column;
 
-          justify-content: space-between;
-          align-items: center;
+        justify-content: space-between;
+        align-items: center;
 
-          h3.profile-book-title {
+        h3.profile-book-title {
             color: $fontcolor;
             font-family: $logo-font;
             text-align: center;
-          }
+        }
 
-          img {
+        img {
             max-width: 100%;
-          }
+        }
 
-          div.button-wrapper {
+        div.button-wrapper {
             opacity: 0;
 
             a {
-              text-decoration: none;
-              color: $background-dark;
+            text-decoration: none;
+            color: $background-dark;
             }
             img {
-              text-decoration: none;
-              font-size: 1rem;
-              border-radius: 50px;
-              cursor: pointer;
-              transition: all 0.3s ease;
-              @include shadow;
-              height: 35px;
-              width: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            @include shadow;
+            height: 35px;
+            width: 50px;
             }
             img:hover,
             img:focus {
-              transform: scale(1.05);
-              background-color: $button-hover;
+            transform: scale(1.05);
+            background-color: $button-hover;
             }
-          }
+        }
         }
 
         @media (max-width: 1024px) {
-          div.profile-book {
+        div.profile-book {
             width: 45%;
-          }
+        }
         }
 
         @media (max-width: 800px) {
-          div.profile-book {
+        div.profile-book {
             margin-top: 30px;
             width: 85%;
             border-bottom: 1px solid $break-line-dark;
-          }
+        }
         }
 
         div.profile-book:hover {
-          div.top-wrapper {
+        div.top-wrapper {
             display: flex;
             justify-content: space-between;
-          }
+        }
 
-          img.profile-book-image {
+        img.profile-book-image {
             filter: drop-shadow(1px 1px 5px $main);
-          }
+        }
 
-          h3.profile-book-title {
+        h3.profile-book-title {
             color: $main;
-          }
+        }
 
-          div.button-wrapper {
+        div.button-wrapper {
             width: 25%;
             margin-left: 20px;
             opacity: 1;
@@ -105,16 +105,23 @@ body {
             transition: all 700ms;
 
             .link {
-              color: $fontcolor;
-              width: fit-content;
+            color: $fontcolor;
+            width: fit-content;
             }
 
             .link:hover {
-              color: $cta;
+            color: $cta;
             }
-          }
         }
-      }
+        }
     }
-  }
+    }
+
+    @media (max-width: 800px) {
+        h2.showcase-title {
+            margin-left: 0 !important;
+            text-align: center;
+        }
+    }
+}
 }

@@ -37,7 +37,8 @@ const Contribution = ({ contribution, userContribution }) => {
 
   return (
     <div className="contribution-component">
-      { !userContribution && <div className="contribution-wrapper">
+      { !userContribution && 
+      <div className="contribution-wrapper">
         <button onClick={upvote} className="contribution-button">
           <img
             src={upvoted ? "src/assets/svgs/vote-yellow.svg" : "src/assets/svgs/vote.svg"}
@@ -46,7 +47,7 @@ const Contribution = ({ contribution, userContribution }) => {
         </button>
         <p>{upvoters.length}</p>
       </div> }
-      <p>{text}</p>
+      <div dangerouslySetInnerHTML={{ __html: text }}></div>
       <p className="contribution-author">By: {!userContribution ? username : 'You'}</p>
     </div>
   );

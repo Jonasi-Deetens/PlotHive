@@ -125,7 +125,7 @@ const Read = () => {
           {pageContributions && pageContributions.map((contribution) => (
             <div className='read-page-contribution'>
               <p className='read-page-contribution-name'>{contribution.user_id.username}</p>
-              <p className='read-page-contribution-text'>{contribution.text}</p>
+              <div className='read-page-text-html' dangerouslySetInnerHTML={{ __html: contribution.text }}></div>
             </div>
           ))}
         </section>
