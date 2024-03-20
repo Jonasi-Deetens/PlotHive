@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "../assets/styles/components/Contribution/contribution.css";
+import { UserContext } from "../providers/UserContext";
 
 const Contribution = ({ contribution, userContribution }) => {
+  const { user } = useContext(UserContext);
   const { text, upvoters, user_id } = contribution;
   const username = user_id.username;
-  const [upvoted, setUpvoted] = useState(contribution.upvoters.indexOf(user_id._id) != -1);
+  const [upvoted, setUpvoted] = useState(contribution.upvoters.indexOf(user._id) != -1);
 
   const upvote = async () => {
-    const index = contribution.upvoters.indexOf(user_id._id);
-    if (index !== -1) {
+    const index = contribution.upvoters.indexOf(user._id);
+    if (user && index !== -1) {
       contribution.upvoters.splice(index, 1);
     } else {
-      contribution.upvoters.push(user_id._id);
+      contribution.upvoters.push(user._id);
     }
 
     try {
