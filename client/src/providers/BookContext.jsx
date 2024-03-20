@@ -25,7 +25,7 @@ const BookProvider = ({ children }) => {
     };
 
     getBooks();
-  }, []);
+  }, [books]);
 
   const getTopBooks = () => {
     if (books) {
@@ -58,7 +58,7 @@ const BookProvider = ({ children }) => {
         console.log(updatedBook);
         if (!response.ok) {
           throw new Error("Failed to update book");
-        }
+        } else setBooks(null);
       } catch (e) {
         console.log(e.message);
       }
@@ -92,6 +92,17 @@ const BookProvider = ({ children }) => {
     }
   };
 
+  const getBooksByGenre = (selectedGenre) => {
+    if (books) {
+      let booksByGenre = books.filter((book) => {
+        const titles = book.genres.map((genre) => genre.title);
+        return titles.includes(selectedGenre);
+      });
+      console.log(booksByGenre);
+      return booksByGenre;
+    }
+  };
+
   return (
     <BookContext.Provider
       value={{
@@ -100,6 +111,7 @@ const BookProvider = ({ children }) => {
         getLatestBook,
         getBookById,
         getBookByTitle,
+        getBooksByGenre,
         addContributionToBook,
       }}
     >

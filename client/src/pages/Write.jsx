@@ -1,7 +1,7 @@
 import '../assets/styles/pages/Write/write.css';
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../providers/UserContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Contribution from "../components/Contribution";
 import { BookContext } from "../providers/BookContext";
 import Tinymce from "../components/Tinymce";
@@ -41,9 +41,8 @@ const Write = () => {
   useEffect(() => {
     if (book && book.contributions) {
       const contribution = book.contributions.find(contribution => contribution.user_id._id === user._id);
-      
-      console.log("'contribution'")
-      console.log(contribution)
+      console.log("aaa")
+      console.log(book);
       if (contribution) {
         setUserContributed(true);
         setUserContribution(contribution);
@@ -62,23 +61,26 @@ const Write = () => {
 
   return (
     <>
-      {book && (
+      {(book && user) && (
         <div className="write-page">
           <div className="write-book">
             <h1 className='title'>{book.title}</h1>
             <div className="write-book-contributions">
               <h3 className='book-prompt'>{`"${book.prompt_id.content}..."`}</h3>
-              <p>{book.contributions?.[0]?.text}</p>
-              {(userContributed && userContribution) ?
-                <Contribution contribution={userContribution} userContribution={true} />
+              <div dangerouslySetInnerHTML={{ __html: book.contributions?.[0]?.text }}></div>
+              {(userContributed) ?
+                <div>
+                  <Contribution contribution={userContribution} userContribution={true} />
+                  <Link to={"/read?id=" + book._id}><button className='editor-submit'>Read</button></Link>
+                </div>
                 :
-                <Tinymce bookId={book._id} />
+                <Tinymce bookId={book._id} setBook={setBook} />
               }
             </div>
             <div className="write-current-contributions">
               <h2 className='title'>Contributions</h2>
-              {book.contributions.map((contribution, index) => (
-                (user && contribution.user_id._id != user._id) && 
+              {book.contributions?.map((contribution, index) => (
+                (contribution.user_id._id != user._id) && 
                 <div key={contribution._id}>
                   <Contribution contribution={contribution} />
                   {index < book.contributions.length - 1 && <hr />}

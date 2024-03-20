@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 import "../assets/styles/components/BookShowcase/bookshowcase.css";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import cover from "../assets/svgs/cover.png";
 import { BookContext } from "../providers/BookContext";
 import { Link } from "react-router-dom";
 
-const BookShowcase = ({ category, query }) => {
-  const { books, getTopBooks, getBookByTitle } = useContext(BookContext);
+const BookShowcase = ({ category, query, selectedGenre }) => {
+  const { books, getTopBooks, getBookByTitle, getBooksByGenre } =
+    useContext(BookContext);
 
   const [booksList, setBooksList] = useState(null);
 
@@ -24,6 +26,11 @@ const BookShowcase = ({ category, query }) => {
       case "search-results":
         setTitle("");
         setBooksList(null);
+
+        if (selectedGenre) {
+          setTitle("Search results");
+          setBooksList(getBooksByGenre(selectedGenre));
+        }
         if (query) {
           setTitle("Search results");
           setBooksList(getBookByTitle(query));
@@ -34,7 +41,7 @@ const BookShowcase = ({ category, query }) => {
         setBooksList(books);
         break;
     }
-  }, [category, books, getTopBooks, query]);
+  }, [category, books, getTopBooks, query, selectedGenre]);
 
   return (
     <section className="showcase-section">
@@ -73,7 +80,7 @@ const BookShowcase = ({ category, query }) => {
               </div>
             ))
           ) : (
-            <h1>No books found while looking for &quot;{query}&quot;</h1>
+            <h1>No books found that match your</h1>
           )
         ) : (
           ""

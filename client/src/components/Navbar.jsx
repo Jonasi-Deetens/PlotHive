@@ -47,31 +47,31 @@ const Navbar = () => {
             <span className="hamburger-inner"></span>
           </span>
         </button>
-        <ul>
+        <ul className="hamburger-list">
           <li>
-            <NavLink to="/Store" activeClassName="active">
+            <NavLink to="/Store" activeclassname="active">
               Store
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Explore" activeClassName="active">
+            <NavLink to="/Explore" activeclassname="active">
               Explore
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Contact" activeClassName="active">
+            <NavLink to="/Contact" activeclassname="active">
               Contact
             </NavLink>
           </li>
           <li>
-            <NavLink to="/AboutUs" activeClassName="active">
+            <NavLink to="/AboutUs" activeclassname="active">
               About
             </NavLink>
           </li>
           {user ? (
             <>
               <li>
-                <NavLink to="/Dashboard" activeClassName="active">
+                <NavLink to="/Dashboard" activeclassname="active">
                   {user &&
                     user.username &&
                     user.username.charAt(0).toUpperCase() +
@@ -86,7 +86,7 @@ const Navbar = () => {
             </>
           ) : (
             <li>
-              <NavLink to="/Login" activeClassName="active">
+              <NavLink to="/Login" activeclassname="active">
                 Login
               </NavLink>
             </li>
@@ -97,14 +97,14 @@ const Navbar = () => {
         <nav className="menu-modal">
           <ul>
             <li>
-              <NavLink to="/Store" activeClassName="active" onClick={hideModal}>
+              <NavLink to="/Store" activeclassname="active" onClick={hideModal}>
                 Store
               </NavLink>
             </li>
             <li>
               <NavLink
                 to="/Explore"
-                activeClassName="active"
+                activeclassname="active"
                 onClick={hideModal}
               >
                 Explore
@@ -113,7 +113,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/Contact"
-                activeClassName="active"
+                activeclassname="active"
                 onClick={hideModal}
               >
                 Contact
@@ -122,7 +122,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/AboutUs"
-                activeClassName="active"
+                activeclassname="active"
                 onClick={hideModal}
               >
                 About
@@ -133,7 +133,7 @@ const Navbar = () => {
                 <li>
                   <NavLink
                     to="/Dashboard"
-                    activeClassName="active"
+                    activeclassname="active"
                     onClick={hideModal}
                   >
                     {user &&
@@ -152,7 +152,7 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to="/Login"
-                  activeClassName="active"
+                  activeclassname="active"
                   onClick={hideModal}
                 >
                   Login

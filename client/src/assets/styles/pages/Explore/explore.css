@@ -841,14 +841,14 @@
   transform: rotate(-90deg);
 }
 
-body div#root h1 {
+body div#root main.explore-page h1.explore {
   font-family: "Fredoka", sans-serif;
   font-size: 50px;
   font-weight: 500;
   text-align: center;
   margin: 50px auto;
 }
-body div#root div.search-bar {
+body div#root main.explore-page div.search-bar {
   display: flex;
   justify-content: space-between;
   background-color: #414042;
@@ -859,7 +859,7 @@ body div#root div.search-bar {
   width: 900px;
   margin-bottom: 50px;
 }
-body div#root div.search-bar input {
+body div#root main.explore-page div.search-bar input {
   background-color: #414042;
   border: none;
   width: 85%;
@@ -867,26 +867,61 @@ body div#root div.search-bar input {
   margin: 0 auto;
   color: #ecf0f3;
 }
-body div#root div.search-bar input:focus {
+body div#root main.explore-page div.search-bar input:focus {
   outline: none;
   border-color: transparent;
   border-bottom: 2px solid #ffbd59;
 }
-body div#root div.search-bar input[type=search]::-webkit-search-cancel-button {
+body div#root main.explore-page div.search-bar input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
-body div#root div.search-bar input::-moz-placeholder {
+body div#root main.explore-page div.search-bar input::-moz-placeholder {
   font-style: italic;
   font-size: 40px;
 }
-body div#root div.search-bar input::placeholder {
+body div#root main.explore-page div.search-bar input::placeholder {
   font-style: italic;
   font-size: 40px;
 }
-body div#root div.search-bar img {
+body div#root main.explore-page div.search-bar img {
   height: 40px;
   margin: auto 0;
 }
-body div#root section.showcase-section {
+body div#root main.explore-page div.search-buttons ul.buttons-list {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+body div#root main.explore-page div.search-buttons ul.buttons-list button {
+  padding: 10px 20px;
+  background-color: #ecf0f3;
+  border: none;
+  margin: 0 5px 0 0;
+  border-radius: 5px;
+}
+body div#root main.explore-page div.search-buttons ul.buttons-list button:hover,
+body div#root main.explore-page div.search-buttons ul.buttons-list button:focus {
+  background-color: #ffbd59;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+body div#root main.explore-page section.showcase-section {
   margin-bottom: 50px;
+  background-color: #414042;
+  border-radius: 30px;
+}
+body div#root main.explore-page section.showcase-section h2.showcase-title {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  text-align: center;
+  font-weight: normal;
+  font-size: 46px;
+}
+body div#root main.explore-page section.showcase-section div.showcase-wrapper div.profile-book h3 {
+  font-family: "Libre Baskerville", serif;
+  margin: 0;
+  color: rgb(211, 211, 211);
+  font-size: 16px;
 }/*# sourceMappingURL=explore.css.map */
