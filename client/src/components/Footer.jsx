@@ -13,7 +13,9 @@ const Footer = () => {
       <div className="footer-right">
         <Link to="/aboutus">About</Link>
         <Link to="/legal">Legal</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact" className="contact-link">
+          Contact
+        </Link>
       </div>
     </footer>
   );

@@ -1,21 +1,6 @@
 @use "../../../SASS/" as *;
 
-body.store-page-body {
-  background-color: $background;
-}
-h1.store-page-titel {
-  font-size: 50px;
-  font-weight: 500;
-  margin: 50px auto;
-  display: flex;
-  text-align: center;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: $fontcolor !important;
-}
-div.store-search-bar {
+div.search-bar {
   display: flex;
   background-color: $background-dark;
   width: 230px;
@@ -26,19 +11,20 @@ div.store-search-bar {
   margin-bottom: 50px;
   margin-top: 50px;
   @include shadow;
-  .store-searchbar-button {
+  .searchbar-button {
     display: flex;
     justify-content: center;
     background-color: $background-dark;
     margin: 0;
     padding: 20px;
     border-radius: 100%;
-    border: solid black;
+    border: solid $background;
     @include shadow;
     &:hover,
     &:focus {
       background-color: $button-hover;
-      border: solid black;
+      border: solid $background-dark;
+      cursor: pointer;
     }
   }
 
@@ -70,24 +56,4 @@ div.store-search-bar {
     height: 40px;
     margin: auto 0;
   }
-}
-section.showcase-section {
-  h2.showcase-title {
-    font-family: $sans-font;
-    text-decoration: none;
-    text-align: center;
-    font-weight: normal;
-    font-size: 46px;
-  }
-}
-div.book-store-showcase1 {
-  margin: 50px;
-  background-color: $background-dark;
-  border-radius: 20px;
-}
-div.book-store-showcase2 {
-  margin: 50px;
-  background-color: $background-dark;
-  border-radius: 20px;
-  margin-top: 0;
 }

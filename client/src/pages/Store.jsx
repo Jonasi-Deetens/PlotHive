@@ -1,26 +1,27 @@
 import "../assets/styles/pages/Store/store.css";
 import BookShowcase from "../components/BookShowcase";
+import SearchBar from "../components/SearchBar";
 
 const Store = () => {
+  const handleSearch = () => {
+    // Handle search logic here
+  };
+
   return (
     <>
-      <body className="store-page-body">
+      <div className="store-page-body">
         <div className="store-page-banner">
           <h1 className="store-page-titel">
             Shop our community written books!
           </h1>
         </div>
-        <div className="store-search-bar">
-          <input
-            type="search"
-            name="search"
-            id="search"
-            placeholder="e.g. Pieter and the little kids..."
-          />
-          <a href="">
+        <SearchBar
+          placeholder="e.g. Pieter and the little kids..."
+          buttonText={
             <img src="src/assets/svgs/search.png" alt="search-loupe-image" />
-          </a>
-        </div>
+          }
+          onSubmit={handleSearch}
+        />
         <div className="book-store-showcase-all">
           <div className="book-store-showcase1">
             <BookShowcase category={"top"} />
@@ -30,7 +31,7 @@ const Store = () => {
             <BookShowcase category={"like-this"} />
           </div>
         </div>
-      </body>
+      </div>
     </>
   );
 };

@@ -860,45 +860,65 @@ h1.store-page-titel {
 
 div.store-search-bar {
   display: flex;
-  justify-content: space-between;
   background-color: #414042;
   width: 230px;
   margin: 0 auto;
-  padding: 20px 30px;
-  border-radius: 100px;
-  width: 80%;
+  padding: 0px 0px;
+  border-radius: 170px;
+  width: 65%;
   margin-bottom: 50px;
   margin-top: 50px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+div.store-search-bar .store-searchbar-button {
+  display: flex;
+  justify-content: center;
+  background-color: #414042;
+  margin: 0;
+  padding: 20px;
+  border-radius: 100%;
+  border: solid black;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+div.store-search-bar .store-searchbar-button:hover, div.store-search-bar .store-searchbar-button:focus {
+  background-color: #ffbd59;
+  border: solid black;
 }
 div.store-search-bar input {
   background-color: #414042;
   border: none;
+  border-radius: 200px;
   width: 85%;
-  font-size: 50px;
+  font-size: 30px;
   margin: 0 auto;
   color: #ecf0f3;
+  padding-left: 30px;
 }
 div.store-search-bar input:focus {
   outline: none;
   border-color: transparent;
-  border-bottom: 2px solid #ffbd59;
+  -webkit-text-decoration: underline #ffbd59;
+          text-decoration: underline #ffbd59;
+  text-decoration-thickness: 2px;
 }
 div.store-search-bar input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
 div.store-search-bar input::-moz-placeholder {
   font-style: italic;
-  font-size: 40px;
+  font-size: 30px;
+  margin-left: 20px;
 }
 div.store-search-bar input::placeholder {
   font-style: italic;
-  font-size: 40px;
+  font-size: 30px;
+  margin-left: 20px;
+}
+div.store-search-bar img {
+  height: 40px;
+  margin: auto 0;
 }
 
-section.showcase-section {
-  background-color: #414042;
-  border-radius: 30px;
-}
 section.showcase-section h2.showcase-title {
   font-family: "Open Sans", sans-serif;
   text-decoration: none;
@@ -909,9 +929,13 @@ section.showcase-section h2.showcase-title {
 
 div.book-store-showcase1 {
   margin: 50px;
+  background-color: #414042;
+  border-radius: 20px;
 }
 
 div.book-store-showcase2 {
   margin: 50px;
+  background-color: #414042;
+  border-radius: 20px;
   margin-top: 0;
 }/*# sourceMappingURL=store.css.map */
