@@ -867,8 +867,14 @@ div.profile-update form.profile-update-form button.update-button {
   cursor: pointer;
   background-color: #ecf0f3;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: all 0.3s ease;
   font-size: 0.8rem;
   font-weight: bold;
+}
+div.profile-update form.profile-update-form button.update-button button:hover,
+div.profile-update form.profile-update-form button.update-button button:focus {
+  transform: scale(1.05);
+  background-color: #ffbd59;
 }
 div.profile-update form.profile-update-form button.update-button:hover {
   background-color: #ffbd59;
