@@ -7,7 +7,6 @@ const BookProvider = ({ children }) => {
   const [books, setBooks] = useState(null);
 
   useEffect(() => {
-    console.log("a");
     const getBooks = async () => {
       try {
         const response = await fetch("http://127.0.0.1:5000/api/books", {
@@ -82,6 +81,44 @@ const BookProvider = ({ children }) => {
     }
   };
 
+  const addCommentToContribution = async (contributionId, comment) => {
+    try {
+      // Fetch contribution data
+      const contributionResponse = await fetch(
+        `http://127.0.0.1:5000/api/contributions/${contributionId}`
+      );
+      console.log("response cont: ");
+      console.log(contributionResponse);
+
+      if (!contributionResponse.ok) {
+        throw new Error("Failed to fetch contribution data");
+      }
+
+      const contributionData = await contributionResponse.json();
+
+      contributionData.comments.push(comment);
+
+      const updateResponse = await fetch(
+        `http://127.0.0.1:5000/api/contributions/${contributionId}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ comments: contributionData.comments }),
+        }
+      );
+
+      if (!updateResponse.ok) {
+        throw new Error("Failed to update contribution with new comment");
+      }
+
+      console.log("Comment added to contribution successfully");
+    } catch (e) {
+      console.error(e.message);
+    }
+  };
+
   const getLatestBook = () => {
     if (books) {
       books.sort((bookA, bookB) => {
@@ -130,6 +167,7 @@ const BookProvider = ({ children }) => {
         getBookByTitle,
         getBooksByGenre,
         addContributionToBook,
+        addCommentToContribution,
       }}
     >
       {books && children}

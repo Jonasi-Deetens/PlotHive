@@ -2,12 +2,11 @@
 import { useContext, useEffect } from "react";
 import { UserContext } from "../providers/UserContext";
 import { Navigate } from "react-router-dom";
-import Contribution from "./Contribution";
 import Comment from "./Comment";
 import CommentInput from "./CommentInput";
 
 const CommentSection = ({ contribution }) => {
-  const { authUser, user } = useContext(UserContext);
+  const { user, authUser } = useContext(UserContext);
 
   useEffect(() => {
     const isAuthorized = async () => {
@@ -33,7 +32,7 @@ const CommentSection = ({ contribution }) => {
         contribution.comments.map((comment, index) => (
           <Comment key={index} comment={comment} />
         ))}
-      <CommentInput />
+      <CommentInput contributionId={contribution._id} />
     </div>
   );
 };
