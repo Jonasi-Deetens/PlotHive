@@ -993,10 +993,16 @@ main.read-page section.read-page-buttons .read-page-button {
   cursor: pointer;
   background-color: #ecf0f3;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: all 0.3s ease;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   text-decoration: none;
   color: #414042;
   font-size: 1rem;
+}
+main.read-page section.read-page-buttons .read-page-button button:hover,
+main.read-page section.read-page-buttons .read-page-button button:focus {
+  transform: scale(1.05);
+  background-color: #ffbd59;
 }
 main.read-page section.read-page-buttons .read-page-button:hover {
   background-color: #ffbd59;

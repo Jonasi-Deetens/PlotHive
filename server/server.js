@@ -7,24 +7,33 @@ import BookController from "./Controllers/BookController.js";
 import configureWebSocket from "./Websocket/websocket.js";
 
 const app = express();
-
+const wss = configureWebSocket(app);
 dotenv.config();
+
+
+app.use(express.json());
+app.use(express.static('./public'));
+app.use(cors());
 
 const host = process.env.HOST || "localhost";
 const port = process.env.PORT || 4000;
 
 connectToDatabase();
 
-cron.schedule('0 0 * * *', async () => {
+cron.schedule('59 23 * * *', async () => {
   console.log('Creating new book...');
   await BookController.createBook();
+
+  console.log('Updating Contributions...');
+  await BookController.addFavoriteContributionsToBooks();
+
+  wss.clients.forEach((client) => {
+    if (client._readyState === client.OPEN) {
+        console.log("message sent")
+        client.send(JSON.stringify({ event: 'bookUpdate' }));
+    }
+  });
 });
-
-const wss = configureWebSocket(app);
-
-app.use(express.json());
-app.use(express.static('./public'));
-app.use(cors());
 
 import authRoutes from './Routes/auth.js';
 app.use('/auth', authRoutes);

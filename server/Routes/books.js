@@ -32,6 +32,12 @@ router.get('/', async (req, res) => {
             .populate('genres')
             .populate('prompt_id')
             .populate({
+                path: 'sections',
+                populate: {
+                    path: 'comments user_id'
+                }
+            })
+            .populate({
                 path: 'contributions',
                 populate: {
                     path: 'comments user_id'

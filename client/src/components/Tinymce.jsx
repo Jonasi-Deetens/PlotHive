@@ -1,15 +1,17 @@
 /* eslint-disable react/prop-types */
 import '../assets/styles/components/Tinymce/tinymce.css'
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { UserContext } from "../providers/UserContext";
 import { BookContext } from "../providers/BookContext";
 import { Link } from 'react-router-dom';
+import ConfirmationModal from './ConfirmationModal';
 
 const Tinymce = ({ bookId }) => {
   const editorRef = useRef(null);
   const { authUser, user } = useContext(UserContext);
   const { addContributionToBook } = useContext(BookContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const isAuthorized = async () => {
@@ -54,6 +56,16 @@ const Tinymce = ({ bookId }) => {
         console.log(e.message);
       }
     }
+
+    setIsModalOpen(false);
+  };
+
+  const handleFormSubmit = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -93,8 +105,13 @@ const Tinymce = ({ bookId }) => {
           content_style: "p { color: #fefefe; font-family: 'Libre Baskerville', serif; font-size: 1.2rem; } body { background-color: #414042; }"
         }}
       />
-      <button className='editor-submit' onClick={submit}>Submit</button>
+      <button className='editor-submit' onClick={handleFormSubmit}>Submit</button>
       <Link to={"/read?id=" + bookId}><button className='editor-submit'>Read</button></Link>
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onCancel={closeModal}
+        onConfirm={submit}
+      />
     </>
   );
 };
