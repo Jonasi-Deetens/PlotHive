@@ -5,7 +5,7 @@ body {
     main.aboutUs {
       margin: 0 auto;
       width: 80vw;
-      
+
       h1 {
         color: $fontcolor;
         font-family: $logo-font;
@@ -114,13 +114,13 @@ body {
         box-sizing: border-box;
         padding: 50px;
         margin-bottom: 20px;
-        
+
         div.portraits {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
           width: 100%;
-          
+
           div.portrait {
             width: 25%;
             display: flex;
@@ -201,12 +201,11 @@ body {
   }
 }
 @media (max-width: 1024px) {
-    div.portrait {
-      width: 50% !important;
-    }
+  div.portrait {
+    width: 50% !important;
+  }
 }
 @media (max-width: 768px) {
-
   main.aboutUs {
     p {
       font-size: 1rem !important;

@@ -1008,11 +1008,17 @@ body div#root main.aboutUs section.contactUs a button {
   cursor: pointer;
   background-color: #ecf0f3;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: all 0.3s ease;
   font-size: 20px;
   margin: 0 auto;
   background-color: #ecf0f3;
   color: #414042;
   transition: all 0.3s ease;
+}
+body div#root main.aboutUs section.contactUs a button button:hover,
+body div#root main.aboutUs section.contactUs a button button:focus {
+  transform: scale(1.05);
+  background-color: #ffbd59;
 }
 body div#root main.aboutUs section.contactUs a button:hover {
   transform: scale(1.05);

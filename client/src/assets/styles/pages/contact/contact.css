@@ -979,6 +979,12 @@ body div#root main.contact-page div.contact-wrapper div.contact-container form b
   cursor: pointer;
   background-color: #ecf0f3;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: all 0.3s ease;
+}
+body div#root main.contact-page div.contact-wrapper div.contact-container form button.contact-btn button:hover,
+body div#root main.contact-page div.contact-wrapper div.contact-container form button.contact-btn button:focus {
+  transform: scale(1.05);
+  background-color: #ffbd59;
 }
 body div#root main.contact-page div.contact-wrapper div.contact-container form button:hover,
 body div#root main.contact-page div.contact-wrapper div.contact-container form button:focus {
