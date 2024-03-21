@@ -1,0 +1,59 @@
+@use "../../../SASS/" as *;
+
+div.search-bar {
+  display: flex;
+  background-color: $background-dark;
+  width: 230px;
+  margin: 0 auto;
+  padding: 0px 0px;
+  border-radius: 170px;
+  width: 65%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  @include shadow;
+  .searchbar-button {
+    display: flex;
+    justify-content: center;
+    background-color: $background-dark;
+    margin: 0;
+    padding: 20px;
+    border-radius: 100%;
+    border: solid $background;
+    @include shadow;
+    &:hover,
+    &:focus {
+      background-color: $button-hover;
+      border: solid $background-dark;
+      cursor: pointer;
+    }
+  }
+
+  input {
+    background-color: $background-dark;
+    border: none;
+    border-radius: 200px;
+    width: 85%;
+    font-size: 30px;
+    margin: 0 auto;
+    color: $fontcolor;
+    padding-left: 30px;
+  }
+  input:focus {
+    outline: none;
+    border-color: transparent;
+    text-decoration: underline $button-hover;
+    text-decoration-thickness: 2px;
+  }
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+  input::placeholder {
+    font-style: italic;
+    font-size: 30px;
+    margin-left: 20px;
+  }
+  img {
+    height: 40px;
+    margin: auto 0;
+  }
+}
