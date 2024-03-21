@@ -41,7 +41,7 @@ const Read = () => {
     console.log("z")
     const fetchedBook = getBookById(bookId)
     if (fetchedBook) {
-      fetchedBook.contributions.sort((bookA, bookB) => {
+      fetchedBook.sections.sort((bookA, bookB) => {
         const dateA = new Date(bookA.created_at);
         const dateB = new Date(bookB.created_at);
         return dateA - dateB;
@@ -49,8 +49,8 @@ const Read = () => {
       setBook(fetchedBook);
       
       if (book && user) { 
-        if (book.contributions.length > 0)
-          setNumberOfPages(Math.ceil(book.contributions.length / 5));
+        if (book.sections.length > 0)
+          setNumberOfPages(Math.ceil(book.sections.length / 5));
         else setNumberOfPages(1);
         setPageData();
   
@@ -83,7 +83,7 @@ const Read = () => {
   const setPageData = () => {
     const startIndex = (page - 1) * 5;
     const endIndex = startIndex + 5; 
-    const contributionsCopy = [...book.contributions];
+    const contributionsCopy = [...book.sections];
     setPageContributions(contributionsCopy.slice(startIndex, endIndex));
   }
 

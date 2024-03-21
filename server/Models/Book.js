@@ -15,6 +15,10 @@ const bookSchema = new mongoose.Schema({
         required: true,
         ref: 'Prompt'
     },
+    sections: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Contribution'
+    }],
     contributions: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Contribution'
