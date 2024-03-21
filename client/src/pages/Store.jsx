@@ -17,9 +17,15 @@ const Store = () => {
             id="search"
             placeholder="e.g. Pieter and the little kids..."
           />
-          <a href="">
-            <img src="src/assets/svgs/search.png" alt="search-loupe-image" />
-          </a>
+          <div className="searchbar-button-div">
+            <a href="">
+              <img
+                className="store-searchbar-button"
+                src="src/assets/svgs/search.png"
+                alt="search-loupe-image"
+              />
+            </a>
+          </div>
         </div>
         <div className="book-store-showcase-all">
           <div className="book-store-showcase1">

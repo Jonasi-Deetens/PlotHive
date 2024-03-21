@@ -866,6 +866,7 @@
   margin-left: 20px;
   transition: color 0.3s ease;
   padding-right: 2rem;
+  padding-left: 1rem;
   border: 0;
   border-right: solid #ffbd59;
 }
