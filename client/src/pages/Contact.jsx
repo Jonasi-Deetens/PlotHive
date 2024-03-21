@@ -134,6 +134,46 @@ const Contact = () => {
             title="Google Maps"
           ></iframe>
         </div>
+        <div className="social-media-container-small">
+          <ul className="socials-list">
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img src={facebook} alt="facebook logo" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img src={twitter} alt="X logo" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img src={instagram} alt="instagram logo" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <img src={github} alt="github" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </main>
   );

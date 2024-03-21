@@ -6,7 +6,9 @@ const Store = () => {
     <>
       <body className="store-page-body">
         <div className="store-page-banner">
-          <h1>Shop our community written books!</h1>
+          <h1 className="store-page-titel">
+            Shop our community written books!
+          </h1>
         </div>
         <div className="store-search-bar">
           <input
