@@ -5,227 +5,231 @@ body {
     main.aboutUs {
       margin: 0 auto;
       width: 80vw;
+      
+      h1 {
+        color: $fontcolor;
+        font-family: $logo-font;
+        font-size: 50px;
+        font-weight: 500;
+        text-align: center;
+        margin: 50px auto;
+      }
+
+      h2 {
+        font-family: $logo-font;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 40px;
+      }
+
       section.about {
         background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.18);
-        margin-top: 100px;
         padding: 50px;
         box-sizing: border-box;
         border-radius: 30px 30px 10px 10px;
         @include shadow;
         margin-bottom: 20px;
-        h1 {
-          margin: 0;
-          color: $fontcolor;
-          font-family: $logo-font;
-          font-size: 42px;
-          font-weight: 500;
-          text-align: center;
-          margin-bottom: 40px;
-        }
+
         p {
           margin: 0 auto;
           font-size: 20px;
+
           a {
             color: $main;
             font-weight: bold;
           }
         }
       }
+
       section.our-mission {
         width: 100%;
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         margin-bottom: 20px;
+
         article {
           display: flex;
-          margin-right: 2%;
-          width: 58%;
-          min-height: 410px;
+          margin: 20px auto;
+          width: 100%;
           flex-direction: column;
           justify-content: center;
           box-sizing: border-box;
-          padding: 20px;
-          padding-bottom: 40px;
+          padding: 50px;
           background: rgba(255, 255, 255, 0.25);
-          backdrop-filter: blur(4px);
-          -webkit-backdrop-filter: blur(4px);
           border-radius: 10px;
           border: 1px solid rgba(255, 255, 255, 0.18);
           border-radius: 10px;
           box-sizing: border-box;
           @include shadow;
-          h1 {
-            font-size: 42px;
-            font-weight: 500;
-            color: $fontcolor;
-            margin: 0;
-            margin-top: 40px;
-            margin-bottom: 40px;
-          }
+
           p {
             margin: 0;
             font-size: 20px;
           }
         }
+
         div.images {
-          max-width: 40%;
+          width: 100%;
           display: flex;
           flex-wrap: wrap;
-          gap: 10px;
-          overflow: hidden;
-          .top-images {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-          }
+          justify-content: space-between;
+
           img.typewritter {
             border-radius: 10px;
+            max-height: 400px;
             width: 49%;
-            margin-right: 2%;
-            min-width: 180px;
-            min-height: 200px;
             object-fit: cover;
             @include shadow;
           }
+
           img.laptop {
             border-radius: 10px;
+            max-height: 400px;
             width: 49%;
-            min-width: 180px;
-            min-height: 200px;
             object-fit: cover;
             @include shadow;
           }
+
           img.authors {
             border-radius: 10px;
-            height: 200px;
+            max-height: 200px;
             width: 100%;
             object-fit: cover;
             @include shadow;
           }
         }
       }
+
       section.meet-our-team {
-        display: flex;
-        flex-wrap: wrap;
         border-radius: 10px;
         @include shadow;
         background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.18);
         box-sizing: border-box;
+        padding: 50px;
         margin-bottom: 20px;
-        h1 {
-          width: 100%;
-          color: $fontcolor;
-          font-family: $logo-font;
-          font-size: 42px;
-          font-weight: 500;
-          text-align: center;
-          margin-bottom: 40px;
-        }
+        
         div.portraits {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
           width: 100%;
+          
           div.portrait {
+            width: 25%;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            img {
+
+            img.img-profile {
               height: 150px;
               object-fit: contain;
               border-radius: 150px;
               @include shadow;
             }
+
             p {
               width: 100%;
-              font-size: 25px;
+              font-size: 20px;
               text-align: center;
             }
+
             div.social-media-links {
               display: flex;
               width: 100%;
+              align-items: center;
               justify-content: center;
               gap: 10px;
-              margin-top: -20px;
+
               a {
                 img {
                   height: 20px;
                   @include shadow;
                   margin-bottom: 30px;
+                  border-radius: 150px;
                 }
               }
             }
           }
         }
       }
+
       section.contactUs {
-        margin-top: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        padding: 50px;
         margin-bottom: 100px;
-        margin-bottom: 20px;
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-sizing: border-box;
+        border-radius: 10px 10px 30px 30px;
+        @include shadow;
+
         a {
           display: flex;
           flex-direction: column;
           text-decoration: none;
           justify-content: center;
           height: 75px;
+
           button {
             @include main-button;
             font-size: 20px;
             margin: 0 auto;
-            width: 200px;
-            height: 75px;
             background-color: $fontcolor;
             color: $button-dark;
             transition: all 0.3s ease;
+
             &:hover {
               transform: scale(1.05);
               background-color: $button-hover;
             }
           }
         }
-        article.hiring {
-          background: rgba(255, 255, 255, 0.25);
-          backdrop-filter: blur(4px);
-          -webkit-backdrop-filter: blur(4px);
-          border-radius: 10px;
-          border: 1px solid rgba(255, 255, 255, 0.18);
-          box-sizing: border-box;
-          padding: 20px;
-          border-radius: 10px 10px 30px 30px;
-          @include shadow;
-          h1 {
-            font-size: 42px;
-            color: $fontcolor;
-            font-family: $logo-font;
-            font-weight: 500;
-            text-align: center;
-          }
-          p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            text-align: center;
-          }
+
+        p {
+          font-size: 20px;
+          margin-bottom: 30px;
         }
       }
     }
   }
 }
+@media (max-width: 1024px) {
+    div.portrait {
+      width: 50% !important;
+    }
+}
 @media (max-width: 768px) {
+
+  main.aboutUs {
+    p {
+      font-size: 1rem !important;
+    }
+
+    div.portrait {
+      img.img-profile {
+        height: 120px !important;
+      }
+    }
+  }
+
   main.aboutUs section.our-mission {
-    width: 100%; // Set width to 100% for small screens
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  main.aboutUs {
+    section.meet-our-team {
+      padding: 20px !important;
+    }
+    div.portrait {
+      width: 100% !important;
+    }
   }
 }

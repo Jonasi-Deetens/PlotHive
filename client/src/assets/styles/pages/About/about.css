@@ -845,27 +845,29 @@ body div#root main.aboutUs {
   margin: 0 auto;
   width: 80vw;
 }
+body div#root main.aboutUs h1 {
+  color: #ecf0f3;
+  font-family: "Fredoka", sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  text-align: center;
+  margin: 50px auto;
+}
+body div#root main.aboutUs h2 {
+  font-family: "Fredoka", sans-serif;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
 body div#root main.aboutUs section.about {
   background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  margin-top: 100px;
   padding: 50px;
   box-sizing: border-box;
   border-radius: 30px 30px 10px 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   margin-bottom: 20px;
-}
-body div#root main.aboutUs section.about h1 {
-  margin: 0;
-  color: #ecf0f3;
-  font-family: "Fredoka", sans-serif;
-  font-size: 42px;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 40px;
 }
 body div#root main.aboutUs section.about p {
   margin: 0 auto;
@@ -878,6 +880,7 @@ body div#root main.aboutUs section.about p a {
 body div#root main.aboutUs section.our-mission {
   width: 100%;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -885,43 +888,24 @@ body div#root main.aboutUs section.our-mission {
 }
 body div#root main.aboutUs section.our-mission article {
   display: flex;
-  margin-right: 2%;
-  width: 58%;
-  min-height: 410px;
+  margin: 20px auto;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  padding: 20px;
-  padding-bottom: 40px;
+  padding: 50px;
   background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 10px;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-body div#root main.aboutUs section.our-mission article h1 {
-  font-size: 42px;
-  font-weight: 500;
-  color: #ecf0f3;
-  margin: 0;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
 body div#root main.aboutUs section.our-mission article p {
   margin: 0;
   font-size: 20px;
 }
 body div#root main.aboutUs section.our-mission div.images {
-  max-width: 40%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  overflow: hidden;
-}
-body div#root main.aboutUs section.our-mission div.images .top-images {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -929,52 +913,37 @@ body div#root main.aboutUs section.our-mission div.images .top-images {
 }
 body div#root main.aboutUs section.our-mission div.images img.typewritter {
   border-radius: 10px;
+  max-height: 400px;
   width: 49%;
-  margin-right: 2%;
-  min-width: 180px;
-  min-height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 body div#root main.aboutUs section.our-mission div.images img.laptop {
   border-radius: 10px;
+  max-height: 400px;
   width: 49%;
-  min-width: 180px;
-  min-height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 body div#root main.aboutUs section.our-mission div.images img.authors {
   border-radius: 10px;
-  height: 200px;
+  max-height: 200px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 body div#root main.aboutUs section.meet-our-team {
-  display: flex;
-  flex-wrap: wrap;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-sizing: border-box;
+  padding: 50px;
   margin-bottom: 20px;
-}
-body div#root main.aboutUs section.meet-our-team h1 {
-  width: 100%;
-  color: #ecf0f3;
-  font-family: "Fredoka", sans-serif;
-  font-size: 42px;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 40px;
 }
 body div#root main.aboutUs section.meet-our-team div.portraits {
   display: flex;
@@ -983,11 +952,12 @@ body div#root main.aboutUs section.meet-our-team div.portraits {
   width: 100%;
 }
 body div#root main.aboutUs section.meet-our-team div.portraits div.portrait {
+  width: 25%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-body div#root main.aboutUs section.meet-our-team div.portraits div.portrait img {
+body div#root main.aboutUs section.meet-our-team div.portraits div.portrait img.img-profile {
   height: 150px;
   -o-object-fit: contain;
      object-fit: contain;
@@ -996,28 +966,31 @@ body div#root main.aboutUs section.meet-our-team div.portraits div.portrait img 
 }
 body div#root main.aboutUs section.meet-our-team div.portraits div.portrait p {
   width: 100%;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
 }
 body div#root main.aboutUs section.meet-our-team div.portraits div.portrait div.social-media-links {
   display: flex;
   width: 100%;
+  align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: -20px;
 }
 body div#root main.aboutUs section.meet-our-team div.portraits div.portrait div.social-media-links a img {
   height: 20px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   margin-bottom: 30px;
+  border-radius: 150px;
 }
 body div#root main.aboutUs section.contactUs {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 50px;
   margin-bottom: 100px;
-  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-sizing: border-box;
+  border-radius: 10px 10px 30px 30px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 body div#root main.aboutUs section.contactUs a {
   display: flex;
@@ -1037,8 +1010,6 @@ body div#root main.aboutUs section.contactUs a button {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   font-size: 20px;
   margin: 0 auto;
-  width: 200px;
-  height: 75px;
   background-color: #ecf0f3;
   color: #414042;
   transition: all 0.3s ease;
@@ -1047,32 +1018,32 @@ body div#root main.aboutUs section.contactUs a button:hover {
   transform: scale(1.05);
   background-color: #ffbd59;
 }
-body div#root main.aboutUs section.contactUs article.hiring {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-sizing: border-box;
-  padding: 20px;
-  border-radius: 10px 10px 30px 30px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-body div#root main.aboutUs section.contactUs article.hiring h1 {
-  font-size: 42px;
-  color: #ecf0f3;
-  font-family: "Fredoka", sans-serif;
-  font-weight: 500;
-  text-align: center;
-}
-body div#root main.aboutUs section.contactUs article.hiring p {
+body div#root main.aboutUs section.contactUs p {
   font-size: 20px;
   margin-bottom: 30px;
-  text-align: center;
 }
 
+@media (max-width: 1024px) {
+  div.portrait {
+    width: 50% !important;
+  }
+}
 @media (max-width: 768px) {
+  main.aboutUs p {
+    font-size: 1rem !important;
+  }
+  main.aboutUs div.portrait img.img-profile {
+    height: 120px !important;
+  }
   main.aboutUs section.our-mission {
     width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  main.aboutUs section.meet-our-team {
+    padding: 20px !important;
+  }
+  main.aboutUs div.portrait {
+    width: 100% !important;
   }
 }/*# sourceMappingURL=about.css.map */

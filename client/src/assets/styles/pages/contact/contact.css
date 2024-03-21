@@ -841,31 +841,26 @@
   transform: rotate(-90deg);
 }
 
+body div#root main.contact-page {
+  margin: 100px auto;
+}
 body div#root main.contact-page div.contact-wrapper {
   display: flex;
-  margin: 100px auto 100px auto;
-  max-width: 1000px;
+  margin: auto;
+  width: 80vw;
   background-color: #414042;
   border-radius: 4 0px;
   box-sizing: border-box;
   color: #ecf0f3;
   font-family: "Open Sans", sans-serif;
-  border-radius: 50px;
+  border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 body div#root main.contact-page div.contact-wrapper div.social-media-container {
   background-color: #ffbd59;
-  border-radius: 50px 0 0 50px;
+  border-radius: 20px 0 0 20px;
   padding: 50px 0;
-  width: 350px;
-}
-body div#root main.contact-page div.contact-wrapper div.social-media-container h2.socials-title {
-  color: #414042;
-  font-family: "Fredoka", sans-serif;
-  font-size: 42px;
-  font-weight: 500;
-  text-align: center;
-  margin: 0 auto 125px;
+  width: 150px;
 }
 body div#root main.contact-page div.contact-wrapper div.social-media-container ul.socials-list {
   height: auto;
@@ -878,8 +873,13 @@ body div#root main.contact-page div.contact-wrapper div.social-media-container u
   list-style: none;
 }
 body div#root main.contact-page div.contact-wrapper div.social-media-container ul.socials-list li a img {
-  height: 50px;
-  margin-bottom: 50px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+body div#root main.contact-page div.contact-wrapper div.social-media-container ul.socials-list li a img:hover {
+  transform: scale(1.05);
+  border-radius: 150px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 body div#root main.contact-page div.contact-wrapper div.contact-container {
   width: 100%;
@@ -983,6 +983,7 @@ body div#root main.contact-page div.contact-wrapper div.contact-container form b
 body div#root main.contact-page div.contact-wrapper div.contact-container form button:hover,
 body div#root main.contact-page div.contact-wrapper div.contact-container form button:focus {
   background-color: #ffbd59;
+  transform: scale(1.05);
 }
 body div#root main.contact-page div.contact-wrapper div.contact-container form div.question {
   text-align: center;
@@ -994,134 +995,43 @@ body div#root main.contact-page div.contact-wrapper div.contact-container form d
   font-weight: bold;
 }
 body div#root main.contact-page div.contact-map {
-  display: flex;
-  align-items: center;
+  max-width: 500px;
 }
 body div#root main.contact-page div.contact-map iframe {
-  border-radius: 20px;
-  margin: -30px auto 50px;
+  max-width: 500px;
+  height: 100%;
+  border-radius: 0 20px 20px 0;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   border: 1px solid #ffbd59;
 }
 
-@media screen and (max-width: 1024px) {
-  body div#root main.contact-page div.contact-wrapper {
-    width: 98%;
-    border-radius: 20px;
+@media (max-width: 1200px) {
+  div.contact-wrapper {
+    flex-wrap: wrap;
   }
-  body div#root main.contact-page div.contact-wrapper div.social-media-container {
-    border-radius: 20px 0 0 20px;
-    width: 250px;
+  div.contact-wrapper div.social-media-container {
+    width: 100px !important;
+    border-radius: 20px 0 0 0 !important;
   }
-  body div#root main.contact-page div.contact-wrapper div.social-media-container h2.socials-title {
-    font-size: 30px;
+  div.contact-wrapper div.contact-container {
+    width: 80% !important;
   }
-  body div#root main.contact-page div.contact-wrapper div.social-media-container ul.socials-list li a img {
-    height: 40px;
+  div.contact-wrapper div.contact-map {
+    width: 100%;
+    max-width: 100% !important;
   }
-  body div#root main.contact-page div.contact-wrapper div.contact-container h2.contact-title {
-    font-size: 30px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container div.errors {
-    width: 90%;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container div.errors p.error-message {
-    font-size: 22px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form {
-    width: 90%;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div label {
-    font-size: 18px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div div img {
-    height: 20px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input {
-    font-size: 18px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input::-moz-placeholder {
-    font-style: italic;
-    font-size: 16px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input::placeholder {
-    font-style: italic;
-    font-size: 16px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form a {
-    font-size: 12px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form button.contact-btn {
-    font-size: 16px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div.question p {
-    font-size: 12px;
+  div.contact-wrapper div.contact-map iframe {
+    height: 300px !important;
+    border-radius: 0 0 20px 20px !important;
+    width: 100%;
+    max-width: 100% !important;
   }
 }
-@media screen and (max-width: 700px) {
-  body div#root main.contact-page div.contact-wrapper {
-    width: 98%;
-    border-radius: 20px;
+@media (max-width: 700px) {
+  div.contact-wrapper div.social-media-container {
+    display: none;
   }
-  body div#root main.contact-page div.contact-wrapper div.social-media-container {
-    border-radius: 20px 0 0 20px;
-    width: 170px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.social-media-container ul.socials-list li a img {
-    height: 35px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container h2.contact-title {
-    font-size: 30px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container div.errors p.error-message {
-    font-size: 18px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form {
-    width: 90%;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div label {
-    font-size: 16px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div div img {
-    height: 20px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input {
-    font-size: 18px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input::-moz-placeholder {
-    font-style: italic;
-    font-size: 16px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div div input::placeholder {
-    font-style: italic;
-    font-size: 16px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea {
-    width: 100%;
-    border: none;
-    background-color: #414042;
-    resize: vertical;
-    font-size: 16px;
-    color: #ecf0f3;
-    font-family: "Open Sans", sans-serif;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea:focus {
-    outline: none;
-    border-color: transparent;
-    border-bottom: 2px solid #ffbd59;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea::-moz-placeholder {
-    font-size: 16px;
-    font-style: italic;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div.message div.message-input textarea::placeholder {
-    font-size: 16px;
-    font-style: italic;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form button.contact-btn {
-    font-size: 16px;
-  }
-  body div#root main.contact-page div.contact-wrapper div.contact-container form div.question p {
-    font-size: 12px;
+  div.contact-wrapper div.contact-container {
+    width: 100% !important;
   }
 }/*# sourceMappingURL=contact.css.map */
