@@ -7,6 +7,7 @@ const BookProvider = ({ children }) => {
   const [books, setBooks] = useState(null);
 
   useEffect(() => {
+    console.log("a")
     const getBooks = async () => {
       try {
         const response = await fetch("http://127.0.0.1:5000/api/books", {
@@ -25,7 +26,23 @@ const BookProvider = ({ children }) => {
     };
 
     getBooks();
-  }, [books]);
+
+    const ws = new WebSocket("ws://127.0.0.1:5000/ws");
+    ws.onopen = () => {
+      console.log("WebSocket connected");
+    };
+    ws.onmessage = (event) => {
+      const message = JSON.parse(event.data);
+      if (message.event === "bookUpdate") {
+        console.log('message received')
+        getBooks();
+      }
+    };
+
+    return () => {
+      ws.close();
+    };
+  }, []);
 
   const getTopBooks = () => {
     if (books) {
@@ -58,7 +75,7 @@ const BookProvider = ({ children }) => {
         console.log(updatedBook);
         if (!response.ok) {
           throw new Error("Failed to update book");
-        } else setBooks(null);
+        }
       } catch (e) {
         console.log(e.message);
       }
@@ -79,7 +96,8 @@ const BookProvider = ({ children }) => {
 
   const getBookById = (id) => {
     if (books) {
-      return books.find((book) => book._id === id);
+        const book = books.find((book) => book._id === id);
+        return book;
     }
   };
 

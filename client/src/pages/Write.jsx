@@ -8,7 +8,7 @@ import Tinymce from "../components/Tinymce";
 
 const Write = () => {
   const { authUser, user } = useContext(UserContext);
-  const { getBookById } = useContext(BookContext);
+  const { books, getBookById } = useContext(BookContext);
   const navigate = useNavigate();
   const [book, setBook] = useState(null);
   const [userContributed, setUserContributed] = useState(false);
@@ -39,20 +39,24 @@ const Write = () => {
   }, [authUser, user]);
 
   useEffect(() => {
-    if (book && book.contributions) {
+    const bookId = getBookIdFromUrl();
+    const foundBook = getBookById(bookId);
+    setBook(foundBook);
+
+    if (user && book) {
       const contribution = book.contributions.find(contribution => contribution.user_id._id === user._id);
-      console.log("aaa")
-      console.log(book);
+      console.log("aa");
       if (contribution) {
+        console.log("ba")
         setUserContributed(true);
         setUserContribution(contribution);
       } else {
+        console.log("ca")
         setUserContributed(false)
         setUserContribution(null);
       }
     }
-  }, [book])
-  
+  }, [user, book, books])
 
   const getBookIdFromUrl = () => {
     const queryParams = new URLSearchParams(window.location.search);
