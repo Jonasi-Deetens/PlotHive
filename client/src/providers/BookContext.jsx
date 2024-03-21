@@ -7,7 +7,7 @@ const BookProvider = ({ children }) => {
   const [books, setBooks] = useState(null);
 
   useEffect(() => {
-    console.log("a")
+    console.log("a");
     const getBooks = async () => {
       try {
         const response = await fetch("http://127.0.0.1:5000/api/books", {
@@ -34,7 +34,7 @@ const BookProvider = ({ children }) => {
     ws.onmessage = (event) => {
       const message = JSON.parse(event.data);
       if (message.event === "bookUpdate") {
-        console.log('message received')
+        console.log("message received");
         getBooks();
       }
     };
@@ -82,6 +82,12 @@ const BookProvider = ({ children }) => {
     }
   };
 
+  const addCommentToContribution = async (contributionId, comment) => {
+    try{
+      const response = await fetch()
+    }
+  };
+
   const getLatestBook = () => {
     if (books) {
       books.sort((bookA, bookB) => {
@@ -96,8 +102,8 @@ const BookProvider = ({ children }) => {
 
   const getBookById = (id) => {
     if (books) {
-        const book = books.find((book) => book._id === id);
-        return book;
+      const book = books.find((book) => book._id === id);
+      return book;
     }
   };
 
@@ -131,6 +137,7 @@ const BookProvider = ({ children }) => {
         getBookByTitle,
         getBooksByGenre,
         addContributionToBook,
+        addCommentToContribution,
       }}
     >
       {books && children}
