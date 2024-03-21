@@ -4,7 +4,11 @@ body.store-page-body {
   background-color: $background;
 }
 h1.store-page-titel {
+  font-size: 50px;
+  font-weight: 500;
+  margin: 50px auto;
   display: flex;
+  text-align: center;
   height: auto;
   justify-content: center;
   align-items: center;
@@ -43,9 +47,20 @@ div.store-search-bar {
     font-size: 40px;
   }
 }
+section.showcase-section {
+  background-color: $background-dark;
+  border-radius: 30px;
+  h2.showcase-title {
+    font-family: $sans-font;
+    text-decoration: none;
+    text-align: center;
+    font-weight: normal;
+    font-size: 46px;
+  }
+}
 div.book-store-showcase1 {
-  margin: 100px;
+  margin: 50px;
 }
 div.book-store-showcase2 {
-  margin: 100px;
+  margin: 50px;
 }

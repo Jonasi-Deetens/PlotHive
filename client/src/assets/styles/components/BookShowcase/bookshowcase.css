@@ -850,8 +850,7 @@ body div#root section.showcase-section h2.showcase-title {
   font-family: "Fredoka", sans-serif;
   font-size: 50px;
   color: #ecf0f3;
-  text-decoration: underline;
-  margin-left: 100px;
+  text-align: center;
   margin-bottom: 50px;
   filter: drop-shadow(1px 1px 1px black);
 }
