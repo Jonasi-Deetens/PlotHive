@@ -14,8 +14,8 @@ import linkedin from "../assets/svgs/linkedin.png";
 const AboutUs = () => {
   return (
     <main className="aboutUs">
+      <h1>About Us</h1>
       <section className="about">
-        <h1>About Us</h1>
         <p>
           At <a href="/">Plot Hive</a>, we believe that storytelling is a
           collaborative art form that thrives on diversity, creativity, and
@@ -25,8 +25,11 @@ const AboutUs = () => {
         </p>
       </section>
       <section className="our-mission">
+        <div className="images">
+          <img className="authors" src={bookAuthors} alt="picture" />
+        </div>
         <article>
-          <h1>Our Mission</h1>
+          <h2>Our Mission</h2>
           <p>
             Our mission is to democratize storytelling by providing a platform
             where everyone&apos;s voice can be heard. We strive to foster a
@@ -35,18 +38,15 @@ const AboutUs = () => {
           </p>
         </article>
         <div className="images">
-          <div className="top-images">
-            <img className="typewritter" src={typewritter} alt="picture" />
-            <img className="laptop" src={laptop} alt="picture" />
-          </div>
-          <img className="authors" src={bookAuthors} alt="picture" />
+          <img className="typewritter" src={typewritter} alt="picture" />
+          <img className="laptop" src={laptop} alt="picture" />
         </div>
       </section>
       <section className="meet-our-team">
-        <h1>Meet our Team</h1>
+        <h2>Meet our Team</h2>
         <div className="portraits">
           <div className="portrait">
-            <img className="img-alex" src={alex} alt="portrait" />
+            <img className="img-profile" src={alex} alt="portrait" />
             <p className="name">Alex</p>
             <div className="social-media-links">
               <a
@@ -66,7 +66,7 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="portrait">
-            <img className="img-dante" src={dante} alt="portrait" />
+            <img className="img-profile" src={dante} alt="portrait" />
             <p className="name">Dante</p>
             <div className="social-media-links">
               <a
@@ -86,7 +86,7 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="portrait">
-            <img className="img-jonasi" src={jonasi} alt="portrait" />
+            <img className="img-profile" src={jonasi} alt="portrait" />
             <p className="name">Jonasi</p>
             <div className="social-media-links">
               <a
@@ -106,7 +106,7 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="portrait">
-            <img className="img-kilian" src={kilian} alt="portrait" />
+            <img className="img-profile" src={kilian} alt="portrait" />
             <p className="name">Kilian</p>
             <div className="social-media-links">
               <a
@@ -128,8 +128,7 @@ const AboutUs = () => {
         </div>
       </section>
       <section className="contactUs">
-        <article className="hiring">
-          <h1>We&apos;re Hiring!</h1>
+          <h2>We&apos;re Hiring!</h2>
           <p>
             Whether you&apos;re a seasoned writer or just starting your
             storytelling journey, we invite you to join our community and become
@@ -139,7 +138,6 @@ const AboutUs = () => {
           <a href="/contact">
             <button className="contact-us">Contact Us</button>
           </a>
-        </article>
       </section>
     </main>
   );
