@@ -7,7 +7,6 @@ const BookProvider = ({ children }) => {
   const [books, setBooks] = useState(null);
 
   useEffect(() => {
-    console.log("a");
     const getBooks = async () => {
       try {
         const response = await fetch("http://127.0.0.1:5000/api/books", {
@@ -86,8 +85,10 @@ const BookProvider = ({ children }) => {
     try {
       // Fetch contribution data
       const contributionResponse = await fetch(
-        `http://127.0.0.1:5000/api/books/${contributionId}`
+        `http://127.0.0.1:5000/api/contributions/${contributionId}`
       );
+      console.log("response cont: ");
+      console.log(contributionResponse);
 
       if (!contributionResponse.ok) {
         throw new Error("Failed to fetch contribution data");
@@ -98,7 +99,7 @@ const BookProvider = ({ children }) => {
       contributionData.comments.push(comment);
 
       const updateResponse = await fetch(
-        `http://127.0.0.1:5000/api/books/${contributionId}`,
+        `http://127.0.0.1:5000/api/contributions/${contributionId}`,
         {
           method: "PATCH",
           headers: {
