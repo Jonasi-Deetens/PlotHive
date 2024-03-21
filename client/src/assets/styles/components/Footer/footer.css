@@ -850,19 +850,25 @@
   padding: 20px;
 }
 .footer .footer-left img {
-  width: 100px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 100px;
+  height: auto;
 }
 .footer .footer-right {
   display: flex;
   align-items: center;
 }
+.footer .footer-right .contact-link {
+  border-right: none;
+}
 .footer .footer-right a {
   color: #fff;
   text-decoration: none;
-  margin-left: 20px; /* Adjust the spacing between links */
-  transition: color 0.3s ease; /* Add transition for color change */
+  margin-left: 20px;
+  transition: color 0.3s ease;
+  padding-right: 2rem;
+  border: 0;
+  border-right: solid #ffbd59;
 }
 .footer .footer-right a:hover {
-  color: #ffbd59; /* Change color on hover */
+  color: #ffbd59;
 }/*# sourceMappingURL=footer.css.map */
