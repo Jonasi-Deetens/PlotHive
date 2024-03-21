@@ -1,11 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../providers/UserContext";
 import { Navigate } from "react-router";
 import { BookContext } from "../providers/BookContext";
 
-const CommentInput = (contributionId) => {
+const CommentInput = ({ contributionId }) => {
   const [newComment, setNewComment] = useState("");
-  const [user, authUser] = useContext(UserContext);
+  const { user, authUser } = useContext(UserContext);
   const { addCommentToContribution } = useContext(BookContext);
 
   useEffect(() => {

@@ -71,7 +71,7 @@ const Contribution = ({ contribution, userContribution }) => {
           <button onClick={() => setShowComments(!showComments)}>
             {showComments ? "Hide Comments" : "Show Comments"}
           </button>
-          {showComments && <CommentSection contribtion={contribution} />}
+          {showComments && <CommentSection contribution={contribution} />}
         </div>
       )}
     </>

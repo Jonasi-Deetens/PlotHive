@@ -6,7 +6,7 @@ import Comment from "./Comment";
 import CommentInput from "./CommentInput";
 
 const CommentSection = ({ contribution }) => {
-  const { authUser, user } = useContext(UserContext);
+  const { user, authUser } = useContext(UserContext);
 
   useEffect(() => {
     const isAuthorized = async () => {
@@ -32,7 +32,7 @@ const CommentSection = ({ contribution }) => {
         contribution.comments.map((comment, index) => (
           <Comment key={index} comment={comment} />
         ))}
-      <CommentInput contributionId={contribution._Id} />
+      <CommentInput contributionId={contribution._id} />
     </div>
   );
 };
