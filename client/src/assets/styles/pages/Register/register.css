@@ -846,7 +846,7 @@ body div#root main.register-page {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  padding: 20px;
+  padding: 50px 20px;
   height: 100%;
   display: flex;
 }
