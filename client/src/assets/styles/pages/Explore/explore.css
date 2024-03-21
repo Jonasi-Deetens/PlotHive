@@ -841,6 +841,11 @@
   transform: rotate(-90deg);
 }
 
+body div#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 body div#root main.explore-page h1.explore {
   font-family: "Fredoka", sans-serif;
   font-size: 50px;
@@ -918,10 +923,85 @@ body div#root main.explore-page section.showcase-section h2.showcase-title {
   text-align: center;
   font-weight: normal;
   font-size: 46px;
+  margin-left: 0;
 }
 body div#root main.explore-page section.showcase-section div.showcase-wrapper div.profile-book h3 {
   font-family: "Libre Baskerville", serif;
   margin: 0;
   color: rgb(211, 211, 211);
   font-size: 16px;
+  margin-top: -30px;
+  margin-bottom: 10px;
+}
+body div#root footer {
+  margin-top: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  body div#root main.explore-page h1.explore {
+    font-size: 44px;
+    margin: 30px 0;
+  }
+  body div#root main.explore-page div.search-bar {
+    width: 500px;
+    height: 30px;
+  }
+  body div#root main.explore-page div.search-bar input {
+    font-size: 24px;
+  }
+  body div#root main.explore-page div.search-bar input::-moz-placeholder {
+    font-size: 24px;
+  }
+  body div#root main.explore-page div.search-bar input::placeholder {
+    font-size: 24px;
+  }
+  body div#root main.explore-page div.search-bar img {
+    height: 24px;
+  }
+  body div#root main.explore-page div.search-buttons ul.buttons-list button {
+    padding: 10px 15px;
+    margin-top: -20px;
+  }
+  body div#root main.explore-page section.showcase-section {
+    width: 80%;
+    border-radius: 20px;
+  }
+  body div#root main.explore-page section.showcase-section h2.showcase-title {
+    font-size: 30px;
+    margin-left: 0;
+  }
+  body div#root main.explore-page section.showcase-section div.showcase-wrapper div.profile-book h3.profile-book-title {
+    margin-top: -30px;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 790px) {
+  body div#root main.explore-page h1.explore {
+    font-size: 36px;
+    margin: 30px 0;
+  }
+  body div#root main.explore-page div.search-bar {
+    width: 400px;
+    height: 30px;
+  }
+  body div#root main.explore-page div.search-bar input {
+    font-size: 24px;
+  }
+  body div#root main.explore-page div.search-bar input::-moz-placeholder {
+    font-size: 24px;
+  }
+  body div#root main.explore-page div.search-bar input::placeholder {
+    font-size: 24px;
+  }
+  body div#root main.explore-page div.search-bar img {
+    height: 24px;
+  }
+  body div#root main.explore-page div.search-buttons ul.buttons-list button {
+    padding: 5px 10px;
+    margin-top: -20px;
+  }
+  body div#root main.explore-page section.showcase-section {
+    width: 400px;
+    border-radius: 10px;
+  }
 }/*# sourceMappingURL=explore.css.map */

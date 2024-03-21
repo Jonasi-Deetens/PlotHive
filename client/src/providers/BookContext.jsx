@@ -122,7 +122,6 @@ const BookProvider = ({ children }) => {
         const titles = book.genres.map((genre) => genre.title);
         return titles.includes(selectedGenre);
       });
-      console.log(booksByGenre);
       return booksByGenre;
     }
   };

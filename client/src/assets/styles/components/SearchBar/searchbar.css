@@ -841,35 +841,64 @@
   transform: rotate(-90deg);
 }
 
-.footer {
+div.search-bar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #414042;
+  width: 230px;
+  margin: 0 auto;
+  padding: 0px 0px;
+  border-radius: 170px;
+  width: 65%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+div.search-bar .searchbar-button {
+  display: flex;
+  justify-content: center;
+  background-color: #414042;
+  margin: 0;
   padding: 20px;
+  border-radius: 100%;
+  border: solid #545454;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-.footer .footer-left img {
-  width: 100px;
-  height: auto;
+div.search-bar .searchbar-button:hover, div.search-bar .searchbar-button:focus {
+  background-color: #ffbd59;
+  border: solid #414042;
+  cursor: pointer;
 }
-.footer .footer-right {
-  display: flex;
-  align-items: center;
+div.search-bar input {
+  background-color: #414042;
+  border: none;
+  border-radius: 200px;
+  width: 85%;
+  font-size: 30px;
+  margin: 0 auto;
+  color: #ecf0f3;
+  padding-left: 30px;
 }
-.footer .footer-right .contact-link {
-  border-right: none;
+div.search-bar input:focus {
+  outline: none;
+  border-color: transparent;
+  -webkit-text-decoration: underline #ffbd59;
+          text-decoration: underline #ffbd59;
+  text-decoration-thickness: 2px;
 }
-.footer .footer-right a {
-  color: #fff;
-  text-decoration: none;
+div.search-bar input[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+div.search-bar input::-moz-placeholder {
+  font-style: italic;
+  font-size: 30px;
   margin-left: 20px;
-  transition: color 0.3s ease;
-  padding-right: 2rem;
-  padding-left: 1rem;
-  border: 0;
-  border-right: solid #ffbd59;
 }
-.footer .footer-right a:hover {
-  color: #ffbd59;
-}/*# sourceMappingURL=footer.css.map */
+div.search-bar input::placeholder {
+  font-style: italic;
+  font-size: 30px;
+  margin-left: 20px;
+}
+div.search-bar img {
+  height: 40px;
+  margin: auto 0;
+}/*# sourceMappingURL=searchbar.css.map */
