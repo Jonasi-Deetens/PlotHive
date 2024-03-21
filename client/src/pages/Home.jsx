@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     if (getLatestBook()) {
-      let prompt = getLatestBook().prompt_id.content + ", ...";
+      let prompt = getLatestBook().prompt_id.content + "...";
       let promptCharArray = prompt.split("");
 
       const maxIndex = promptCharArray.length;
