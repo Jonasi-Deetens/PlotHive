@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const CommentInput = () => {
   const [newComment, setNewComment] = useState("");
+  
   const handleInputChange = (event) => {
     setNewComment(event.target.value);
   };

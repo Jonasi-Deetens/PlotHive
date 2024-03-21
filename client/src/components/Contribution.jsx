@@ -7,13 +7,13 @@ import CommentSection from "./CommentSection";
 const Contribution = ({ contribution, userContribution }) => {
   const { user } = useContext(UserContext);
   const [upvoted, setUpvoted] = useState();
+  const [showComments, setShowComments] = useState(false);
 
   useEffect(() => {
     if (contribution) {
       setUpvoted(contribution.upvoters.indexOf(user?._id) != -1);
     }
-    
-  }, [])
+  }, []);
 
   const upvote = async () => {
     const index = contribution.upvoters.indexOf(user._id);
@@ -47,23 +47,33 @@ const Contribution = ({ contribution, userContribution }) => {
 
   return (
     <>
-    {contribution && (
-      <div className="contribution-component">
-        { !userContribution && 
-        <div className="contribution-wrapper">
-          <button onClick={upvote} className="contribution-button">
-            <img
-              src={upvoted ? "src/assets/svgs/vote-yellow.svg" : "src/assets/svgs/vote.svg"}
-              alt="icon of a arrow pointing up"
-            />
+      {contribution && (
+        <div className="contribution-component">
+          {!userContribution && (
+            <div className="contribution-wrapper">
+              <button onClick={upvote} className="contribution-button">
+                <img
+                  src={
+                    upvoted
+                      ? "src/assets/svgs/vote-yellow.svg"
+                      : "src/assets/svgs/vote.svg"
+                  }
+                  alt="icon of a arrow pointing up"
+                />
+              </button>
+              <p>{contribution.upvoters.length}</p>
+            </div>
+          )}
+          <div dangerouslySetInnerHTML={{ __html: contribution.text }}></div>
+          <p className="contribution-author">
+            By: {!userContribution ? contribution.user_id.username : "You"}
+          </p>
+          <button onClick={() => setShowComments(!showComments)}>
+            {showComments ? "Hide Comments" : "Show Comments"}
           </button>
-          <p>{contribution.upvoters.length}</p>
-        </div> }
-        <div dangerouslySetInnerHTML={{ __html: contribution.text }}></div>
-        <p className="contribution-author">By: {!userContribution ? contribution.user_id.username : 'You'}</p>
-        <CommentSection contribtion={contribution} />
-      </div>
-    )}
+          {showComments && <CommentSection contribtion={contribution} />}
+        </div>
+      )}
     </>
   );
 };
