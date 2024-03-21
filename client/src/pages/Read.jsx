@@ -2,8 +2,8 @@ import '../assets/styles/pages/Read/read.css'
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BookContext } from '../providers/BookContext'
-import star from '../assets/svgs/star.svg'
 import { UserContext } from '../providers/UserContext'
+import FavouriteButton from '../components/FavouriteButton'
 
 const Read = () => {
   const location = useLocation();
@@ -17,8 +17,7 @@ const Read = () => {
   const [page, setPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(1);
   const [pageContributions, setPageContributions] = useState(null);
-  const [inFavourites, setInFavourites] = useState(false);
-  
+
   useEffect(() => {
     const isAuthorized = async () => {
       try {
@@ -53,9 +52,6 @@ const Read = () => {
           setNumberOfPages(Math.ceil(book.sections.length / 5));
         else setNumberOfPages(1);
         setPageData();
-  
-        if (user.favourites.includes(book._id)) setInFavourites(true);
-        else setInFavourites(false);
       }
     }
   }, [book, user])
@@ -87,40 +83,11 @@ const Read = () => {
     setPageContributions(contributionsCopy.slice(startIndex, endIndex));
   }
 
-  const favourite = async () => {
-    if (!inFavourites) {
-      user.favourites.push(book._id);
-    } else {
-      const index = user.favourites.indexOf(book._id);
-      if (index !== -1) {
-        user.favourites.splice(index, 1);
-      }
-    }
-
-    try {
-      const response = await fetch('http://127.0.0.1:5000/api/users/' + user._id, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          favourites: user.favourites
-        })
-      })
-      if (response.ok) {
-        inFavourites ? alert("Succesfully removed from favourites!") : alert("Succesfully added to favourites!");
-        setInFavourites(!inFavourites);
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
-
   return (
     <main className='read-page'>
       <h1 className='read-page-title'>{book && book.title}</h1>
       <section className='read-page-section'>
-        <button className={inFavourites ? 'read-page-unfavourite' : 'read-page-favourite'} onClick={favourite}><img src={star} alt="icon of a star" /></button>
+        { book && <FavouriteButton book={book} /> }
         <section className='read-page-text'>
           {(book && page == 1) && <p className='read-page-prompt'>{'"' + book.prompt_id.content + ',..."'} </p>}
           {pageContributions && pageContributions.map((contribution) => (

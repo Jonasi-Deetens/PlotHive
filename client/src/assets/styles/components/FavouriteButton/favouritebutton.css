@@ -841,70 +841,35 @@
   transform: rotate(-90deg);
 }
 
-div.write-page h3.book-prompt {
-  color: #ecf0f3;
-  font-family: "Fredoka", sans-serif;
-  text-align: center;
-  font-size: 2rem;
-}
-div.write-page hr {
-  width: 50%;
-  margin: auto;
+.favourite-button {
   border: none;
-  border-top: 2px solid;
-  border-color: #949494;
-  margin: 20px auto;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  width: 40px;
+  height: 80px;
+  position: absolute;
+  top: -2px;
+  right: 20px;
 }
-div.write-page .title {
-  color: #ecf0f3;
-  text-align: center;
-  font-size: 50px;
-  font-weight: 500;
-  margin: 50px auto;
+
+.favourite {
+  background-color: #ffbd59;
 }
-div.write-page .editor-submit {
-  margin: 20px auto 0;
-  padding: 10px 30px;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  cursor: pointer;
+
+.favourite:hover {
   background-color: #ecf0f3;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  transition: all 0.3s ease;
-  margin: 10px 10px;
-}
-div.write-page .editor-submit button:hover,
-div.write-page .editor-submit button:focus {
   transform: scale(1.05);
-  background-color: #ffbd59;
 }
-div.write-page .editor-submit:hover {
+
+.unfavourite {
+  background-color: #ecf0f3;
+}
+
+.unfavourite:hover {
   background-color: #ffbd59;
   transform: scale(1.05);
 }
-div.write-page .write-book-contributions {
-  background-color: #737373;
-  border-radius: 20px;
-  padding: 50px;
-  width: 80%;
-  margin: auto;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  position: relative;
-}
-div.write-page .write-current-contributions {
-  background-color: #737373;
-  border-radius: 20px;
-  padding: 50px;
-  width: 80%;
-  margin: 50px auto;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-@media (max-width: 800px) {
-  div.write-page .write-current-contributions {
-    padding: 20px;
-  }
-  div.write-page .write-book-contributions {
-    padding: 20px;
-  }
-}/*# sourceMappingURL=write.css.map */
+
+.favourite-image {
+  max-height: 20px;
+  width: auto;
+}/*# sourceMappingURL=favouritebutton.css.map */

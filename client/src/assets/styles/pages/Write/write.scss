@@ -20,7 +20,9 @@ div.write-page {
     .title {
         color: $fontcolor;
         text-align: center;
-        margin-bottom: 50px;
+        font-size: 50px;
+        font-weight: 500;
+        margin: 50px auto;
     }
 
     .editor-submit {
@@ -40,6 +42,7 @@ div.write-page {
         width: 80%;
         margin: auto;
         @include shadow;
+        position: relative;
     }
 
     .write-current-contributions {

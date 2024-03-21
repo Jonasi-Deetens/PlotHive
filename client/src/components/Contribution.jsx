@@ -37,7 +37,6 @@ const Contribution = ({ contribution, userContribution }) => {
         }
       );
       if (response.ok) {
-        upvoted ? alert("Succesfully unvoted!") : alert("Succesfully upvoted!");
         setUpvoted(!upvoted);
       }
     } catch (error) {
@@ -49,8 +48,8 @@ const Contribution = ({ contribution, userContribution }) => {
     <>
       {contribution && (
         <div className="contribution-component">
-          {!userContribution && (
             <div className="contribution-wrapper">
+              {!userContribution ? (
               <button onClick={upvote} className="contribution-button">
                 <img
                   src={
@@ -61,9 +60,11 @@ const Contribution = ({ contribution, userContribution }) => {
                   alt="icon of a arrow pointing up"
                 />
               </button>
+              ) : (
+                <p className="contribution-vote">Upvotes:</p>
+              )}
               <p>{contribution.upvoters.length}</p>
             </div>
-          )}
           <div dangerouslySetInnerHTML={{ __html: contribution.text }}></div>
           <p className="contribution-author">
             By: {!userContribution ? contribution.user_id.username : "You"}

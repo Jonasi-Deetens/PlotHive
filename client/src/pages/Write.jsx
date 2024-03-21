@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Contribution from "../components/Contribution";
 import { BookContext } from "../providers/BookContext";
 import Tinymce from "../components/Tinymce";
+import FavouriteButton from '../components/FavouriteButton';
 
 const Write = () => {
   const { authUser, user } = useContext(UserContext);
@@ -73,6 +74,7 @@ const Write = () => {
           <div className="write-book">
             <h1 className='title'>{book.title}</h1>
             <div className="write-book-contributions">
+              <FavouriteButton book={book} />
               <h3 className='book-prompt'>{`"${book.prompt_id.content}..."`}</h3>
               <div dangerouslySetInnerHTML={{ __html: book.sections?.[0]?.text }}></div>
               {(userContributed) ?
