@@ -1069,7 +1069,8 @@ body div#root main.contact-page div.contact-map iframe {
   div.contact-wrapper div.contact-container {
     width: 100% !important;
   }
-  iframe {
+  div.contact-wrapper div.contact-map iframe {
     border-radius: 0 !important;
+    border: none !important;
   }
 }/*# sourceMappingURL=contact.css.map */
