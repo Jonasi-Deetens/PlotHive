@@ -257,8 +257,12 @@ body {
     div.contact-container {
       width: 100% !important;
     }
-  }
-  iframe {
-    border-radius: 0 !important;
+
+    div.contact-map {
+      iframe {
+        border-radius: 0 !important;
+        border: none !important;
+      }
+    }
   }
 }
