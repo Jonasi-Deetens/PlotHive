@@ -897,7 +897,7 @@ main.read-page section.read-page-section div.read-page-contribution p.read-page-
   opacity: 0;
   writing-mode: vertical-rl;
 }
-main.read-page section.read-page-section div.read-page-contribution p.read-page-contribution-text {
+main.read-page section.read-page-section div.read-page-contribution p {
   font-family: "Libre Baskerville", serif !important;
 }
 main.read-page section.read-page-section .read-page-favourite {

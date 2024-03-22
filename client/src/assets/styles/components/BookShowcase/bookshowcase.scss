@@ -1,21 +1,26 @@
 @use "../../../SASS/" as *;
 
 body {
-
     div#root {
         section.showcase-section {
-            border-radius: 50px;
-            margin: auto;
-            padding: 20px;
-
+            margin-bottom: 50px;
+            background-color: $background-dark;
+            border-radius: 30px;
+            border: 1px solid gray;
+            padding: 30px 0;
+            @include shadow;
             h2.showcase-title {
-                font-family: $logo-font;
-                font-size: 50px;
-                color: $fontcolor;
-                text-decoration: underline;
-                margin-left: 100px;
+                font-family: $serif-font;
+                font-style: italic;
+                color: $main;
+                text-decoration: none;
+                text-align: center;
+                font-weight: bold;
+                font-size: 30px;
+                margin-left: 0;
+                margin-top: 0;
                 margin-bottom: 50px;
-                filter: drop-shadow(1px 1px 1px black);
+                margin-top: 30px;
             }
 
             div.showcase-wrapper {
@@ -34,9 +39,12 @@ body {
                     align-items: center;
 
                     h3.profile-book-title {
-                        color: $fontcolor;
-                        font-family: $logo-font;
-                        text-align: center;
+                        font-family: $serif-font;
+                        margin: 0;
+                        color: rgb(211, 211, 211);
+                        font-size: 16px;
+                        margin-top: -30px;
+                        margin-bottom: 10px;
                     }
 
                     img {

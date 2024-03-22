@@ -3,7 +3,7 @@
 main.read-page {
     width: 80%;
     margin: auto;
-    
+
     h1.read-page-title {
         text-align: center;
         color: $fontcolor !important;
@@ -64,7 +64,7 @@ main.read-page {
                 writing-mode: vertical-rl;
             }
 
-            p.read-page-contribution-text {
+            p {
                 font-family: $serif-font !important;
             }
         }
@@ -109,7 +109,6 @@ main.read-page {
     }
 
     @media (min-width: 800px) {
-
         div.read-page-contribution:hover {
             background-color: $main;
             transform: scaleX(1.02);
@@ -137,7 +136,6 @@ main.read-page {
     }
 
     @media (max-width: 1260px) {
-
         h1.read-page-title {
             font-size: 1.5rem;
         }
@@ -153,7 +151,6 @@ main.read-page {
                 padding: 10px 23px 10px 63px;
             }
         }
-        
     }
 
     @media (max-width: 800px) {
@@ -178,7 +175,7 @@ main.read-page {
             color: $fontcolor-darker;
             font-size: 1rem;
         }
-        
+
         .read-page-button:hover {
             background-color: $main;
             transform: scale(1.05);
