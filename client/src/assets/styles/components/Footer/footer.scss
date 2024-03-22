@@ -17,6 +17,7 @@
 
   .footer-right {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     .contact-link {
       border-right: none;
@@ -34,6 +35,14 @@
       &:hover {
         color: $button-hover;
       }
+    }
+  }
+}
+@media (max-width: 370px) {
+  .footer-right {
+    justify-content: flex-end;
+    a {
+      border: 0 !important;
     }
   }
 }

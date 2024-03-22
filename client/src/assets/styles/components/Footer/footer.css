@@ -855,6 +855,7 @@
 }
 .footer .footer-right {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 .footer .footer-right .contact-link {
@@ -872,4 +873,13 @@
 }
 .footer .footer-right a:hover {
   color: #ffbd59;
+}
+
+@media (max-width: 370px) {
+  .footer-right {
+    justify-content: flex-end;
+  }
+  .footer-right a {
+    border: 0 !important;
+  }
 }/*# sourceMappingURL=footer.css.map */
