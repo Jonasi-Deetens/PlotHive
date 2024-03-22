@@ -9,7 +9,7 @@ const BookProvider = ({ children }) => {
   useEffect(() => {
     const getBooks = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/api/books", {
+        const response = await fetch("http://127.0.0.1:4000/api/books", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const BookProvider = ({ children }) => {
 
     getBooks();
 
-    const ws = new WebSocket("ws://127.0.0.1:5000/ws");
+    const ws = new WebSocket("ws://127.0.0.1:4000/ws");
     ws.onopen = () => {
       console.log("WebSocket connected");
     };
@@ -62,7 +62,7 @@ const BookProvider = ({ children }) => {
       updatedBook.contributions.push(contribution);
       try {
         const response = await fetch(
-          `http://127.0.0.1:5000/api/books/${bookId}`,
+          `http://127.0.0.1:4000/api/books/${bookId}`,
           {
             method: "PATCH",
             headers: {
@@ -85,7 +85,7 @@ const BookProvider = ({ children }) => {
     try {
       // Fetch contribution data
       const contributionResponse = await fetch(
-        `http://127.0.0.1:5000/api/contributions/${contributionId}`
+        `http://127.0.0.1:4000/api/contributions/${contributionId}`
       );
       console.log("response cont: ");
       console.log(contributionResponse);
@@ -99,7 +99,7 @@ const BookProvider = ({ children }) => {
       contributionData.comments.push(comment);
 
       const updateResponse = await fetch(
-        `http://127.0.0.1:5000/api/contributions/${contributionId}`,
+        `http://127.0.0.1:4000/api/contributions/${contributionId}`,
         {
           method: "PATCH",
           headers: {

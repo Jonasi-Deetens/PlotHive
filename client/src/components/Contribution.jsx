@@ -26,7 +26,7 @@ const Contribution = ({ contribution, userContribution }) => {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/contributions/" + contribution._id,
+        "http://127.0.0.1:4000/api/contributions/" + contribution._id,
         {
           method: "PATCH",
           headers: {

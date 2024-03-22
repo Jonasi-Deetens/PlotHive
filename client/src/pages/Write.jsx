@@ -75,7 +75,7 @@ const Write = () => {
             <h1 className='title'>{book.title}</h1>
             <div className="write-book-contributions">
               <FavouriteButton book={book} />
-              <h3 className='book-prompt'>{`"${book.prompt_id.content}..."`}</h3>
+              <h2 className='book-prompt'>{`"${book.prompt_id.content}..."`}</h2>
               <div dangerouslySetInnerHTML={{ __html: book.sections?.[0]?.text }}></div>
               {(userContributed) ?
                 <div>

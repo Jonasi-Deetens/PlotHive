@@ -1,7 +1,7 @@
 @use "../../../SASS/" as *;
 
 div.write-page {
-    h3.book-prompt {
+    h2.book-prompt {
         color: $fontcolor;
         font-family: $logo-font;
         text-align: center;
@@ -20,7 +20,7 @@ div.write-page {
     .title {
         color: $fontcolor;
         text-align: center;
-        font-size: 50px;
+        font-size: 2rem;
         font-weight: 500;
         margin: 50px auto;
     }
