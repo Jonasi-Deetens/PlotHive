@@ -6,7 +6,7 @@ import Comment from "./Comment";
 import CommentInput from "./CommentInput";
 
 const CommentSection = ({ contribution }) => {
-  const { user, authUser } = useContext(UserContext);
+  const { user, authUser } = useContext(UserContext);  
 
   useEffect(() => {
     const isAuthorized = async () => {
@@ -24,6 +24,8 @@ const CommentSection = ({ contribution }) => {
     };
     isAuthorized();
   }, [authUser, user]);
+
+  
 
   return (
     <div className="comment-section">
