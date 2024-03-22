@@ -1,0 +1,11 @@
+@use "../../../SASS/" as *;
+
+button.writepage-confirmation-button {
+  @include main-button;
+  margin: 10px;
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    background-color: $button-hover;
+  }
+}

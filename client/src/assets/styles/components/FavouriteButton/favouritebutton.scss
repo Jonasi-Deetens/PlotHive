@@ -1,34 +1,40 @@
 @use "../../../SASS/" as *;
 
 .favourite-button {
-    border: none;
-    @include shadow;
-    width: 40px;
-    height: 80px;
-    position: absolute;
-    top: -2px;
-    right: 20px;
+  border: none;
+  @include shadow;
+  width: 40px;
+  height: 80px;
+  position: absolute;
+  top: -2px;
+  right: 20px;
+  &:hover,
+  &:focus {
+    background-color: $button-hover;
+    border: solid $background-dark;
+    cursor: pointer;
+  }
 }
 
 .favourite {
-    background-color: $main;
+  background-color: $main;
 }
 
 .favourite:hover {
-    background-color: $fontcolor;
-    transform: scale(1.05);
+  background-color: $fontcolor;
+  transform: scale(1.05);
 }
 
 .unfavourite {
-    background-color: $fontcolor;
+  background-color: $fontcolor;
 }
 
 .unfavourite:hover {
-    background-color: $main;
-    transform: scale(1.05);
+  background-color: $main;
+  transform: scale(1.05);
 }
 
 .favourite-image {
-    max-height: 20px;
-    width: auto;
+  max-height: 20px;
+  width: auto;
 }
