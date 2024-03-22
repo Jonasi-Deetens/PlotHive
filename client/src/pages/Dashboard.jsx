@@ -11,7 +11,7 @@ import { BookContext } from "../providers/BookContext";
 
 const Dashboard = () => {
   const { authUser, user } = useContext(UserContext);
-  const { getLatestBook } = useContext(BookContext)
+  const { books, getLatestBook } = useContext(BookContext)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Dashboard = () => {
               <UserInfo />
           </section>
           <section className="section-profile-right">
-              <UserStats />
+              <UserStats user={user} books={books} />
               <hr />
               <div className="flex-wrapper">
                 <LatestContributions />
