@@ -31,23 +31,20 @@ router.get("/", async (req, res) => {
     const books = await BookModel.find()
       .populate("genres")
       .populate("prompt_id")
-      .populate({
-        path: "sections",
-        populate: {
-          path: "comments",
-          populate: {
-            path: "user_id",
-          },
-        },
-      })
+      .populate("sections")
       .populate({
         path: "contributions",
-        populate: {
-          path: "comments",
-          populate: {
+        populate: [
+          {
+            path: "comments",
+            populate: {
+              path: "user_id",
+            },
+          },
+          {
             path: "user_id",
           },
-        },
+        ],
       });
 
     res.json(books);

@@ -25,7 +25,9 @@ router.post("/", async (req, res) => {
 // Get all items
 router.get("/", async (req, res) => {
   try {
-    const contributions = await ContributionModel.find();
+    const contributions = await ContributionModel.find()
+      .populate("user_id")
+      .populate("comments");
     res.json(contributions);
   } catch (err) {
     res.status(500).json({ message: err.message });
