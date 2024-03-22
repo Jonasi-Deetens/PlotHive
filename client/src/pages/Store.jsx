@@ -1,10 +1,25 @@
+import { useEffect, useState } from "react";
 import "../assets/styles/pages/Store/store.css";
 import BookShowcase from "../components/BookShowcase";
 import SearchBar from "../components/SearchBar";
+useState;
 
 const Store = () => {
-  const handleSearch = () => {
-    // Handle search logic here
+  const [query, setQuery] = useState(null);
+  const [genres, setGenres] = useState(null);
+  const [selectedGenre, setSelectedGenre] = useState(null);
+  let timeoutId = null;
+
+  let handleSearch = ({ currentTarget = {} }) => {
+    const { value } = currentTarget;
+
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
+    timeoutId = setTimeout(() => {
+      setQuery(value);
+    }, 300);
   };
 
   return (
@@ -20,11 +35,15 @@ const Store = () => {
           buttonText={
             <img src="src/assets/svgs/search.png" alt="search-loupe-image" />
           }
-          onSubmit={handleSearch}
+          onChange={handleSearch}
         />
         <div className="book-store-showcase-all">
           <div className="book-store-showcase1">
-            <BookShowcase category={"top"} />
+            <BookShowcase
+              category={"search-results"}
+              query={query}
+              selectedGenre={selectedGenre}
+            />
           </div>
           <br />
           <div className="book-store-showcase2">

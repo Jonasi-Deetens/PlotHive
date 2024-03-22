@@ -850,6 +850,11 @@
   top: -2px;
   right: 20px;
 }
+.favourite-button:hover, .favourite-button:focus {
+  background-color: #ffbd59;
+  border: solid #414042;
+  cursor: pointer;
+}
 
 .favourite {
   background-color: #ffbd59;

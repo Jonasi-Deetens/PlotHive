@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
-import logo from "../assets/Logo/logo-navbar.svg"; // Import your logo image
+import { Link } from "react-router-dom";
+import logo from "../assets/Logo/logo-navbar.svg";
 import "../assets/styles/components/Footer/footer.css";
 
 const Footer = () => {
