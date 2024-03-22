@@ -2,25 +2,25 @@ import { useEffect, useState } from "react";
 import "../assets/styles/pages/Explore/explore.css";
 import loupe from "../assets/svgs/search.png";
 import BookShowcase from "../components/BookShowcase";
-useState;
+import SearchBar from "../components/SearchBar";
 
 const Explore = () => {
-  const [query, setQuery] = useState(null);
-  const [genres, setGenres] = useState(null);
-  const [selectedGenre, setSelectedGenre] = useState(null);
-  let timeoutId = null;
+  // const [query, setQuery] = useState(null);
+  // const [genres, setGenres] = useState(null);
+  // const [selectedGenre, setSelectedGenre] = useState(null);
+  // let timeoutId = null;
 
-  let handleSearch = ({ currentTarget = {} }) => {
-    const { value } = currentTarget;
+  // let handleSearch = ({ currentTarget = {} }) => {
+  //   const { value } = currentTarget;
 
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
+  //   if (timeoutId) {
+  //     clearTimeout(timeoutId);
+  //   }
 
-    timeoutId = setTimeout(() => {
-      setQuery(value);
-    }, 300);
-  };
+  //   timeoutId = setTimeout(() => {
+  //     setQuery(value);
+  //   }, 300);
+  // };
 
   useEffect(() => {
     const getGenres = async () => {
@@ -41,47 +41,21 @@ const Explore = () => {
       }
     };
 
-    getGenres();
-  }, []);
+  //   getGenres();
+  // }, []);
 
-  let handleSelected = (genre) => {
-    if (genre === selectedGenre) {
-      setSelectedGenre(null);
-    } else {
-      setSelectedGenre(genre);
-    }
-  };
+  // let handleSelected = (genre) => {
+  //   if (genre === selectedGenre) {
+  //     setSelectedGenre(null);
+  //   } else {
+  //     setSelectedGenre(genre);
+  //   }
+  // };
 
   return (
     <main className="explore-page">
       <h1 className="explore">Explore our titles!</h1>
-      <div className="search-bar">
-        <input
-          type="search"
-          name="search"
-          id="search"
-          placeholder="e.g. Pieter and the little kids..."
-          onChange={handleSearch}
-        />
-        <img src={loupe} alt="search loupe image" />
-      </div>
-      <div className="search-buttons">
-        <ul className="buttons-list">
-          {genres &&
-            genres.map((genre) => (
-              <button key={genre} onClick={() => handleSelected(genre)}>
-                {genre}
-              </button>
-            ))}
-        </ul>
-      </div>
-      {(query || selectedGenre) && (
-        <BookShowcase
-          category={"search-results"}
-          query={query}
-          selectedGenre={selectedGenre}
-        />
-      )}
+      <SearchBar placeholder={"Pieter and the little kids..."} />
       <BookShowcase category={"like-this"} />
     </main>
   );

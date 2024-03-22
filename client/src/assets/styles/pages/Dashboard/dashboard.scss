@@ -46,7 +46,6 @@ body {
                         border-radius: 20px;
                         @include shadow;
                     }
-                    
 
                     @media (max-width: 760px) {
                         section.section-profile-left {
@@ -61,8 +60,11 @@ body {
             }
 
             section.section-title {
+                width: 75%;
+                margin: 0 auto 50px;
                 padding: 50px;
                 background-color: $background-dark;
+                border-radius: 30px;
                 @include shadow;
 
                 h2.book-prompt {
@@ -74,7 +76,7 @@ body {
                 div.button-container {
                     display: flex;
                     justify-content: space-around;
-                    
+
                     button.prompt-button {
                         @include main-button;
                         .link {

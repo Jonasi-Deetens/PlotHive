@@ -32,6 +32,7 @@ const CommentInput = ({ contributionId }) => {
 
   const handleAddComment = async () => {
     console.log("Adding comment:", newComment);
+    console.log(user);
     const commentData = {
       content: newComment,
       user_id: user,

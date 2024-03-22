@@ -841,144 +841,24 @@
   transform: rotate(-90deg);
 }
 
-div.search-bar {
-  display: flex;
-  background-color: #414042;
-  width: 230px;
-  margin: 0 auto;
-  padding: 0px 0px;
-  border-radius: 170px;
-  width: 65%;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-div.search-bar .searchbar-button {
-  display: flex;
-  justify-content: center;
-  background-color: #414042;
-  margin: 0;
-  padding: 20px;
-  border-radius: 100%;
-  border: solid #545454;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-div.search-bar .searchbar-button:hover, div.search-bar .searchbar-button:focus {
-  background-color: #ffbd59;
-  border: solid #414042;
+button.writepage-confirmation-button {
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
   cursor: pointer;
-}
-div.search-bar input {
-  background-color: #414042;
-  border: none;
-  border-radius: 200px;
-  width: 85%;
-  font-size: 30px;
-  margin: 0 auto;
-  color: #ecf0f3;
-  padding-left: 30px;
-}
-div.search-bar input:focus {
-  outline: none;
-  border-color: transparent;
-  -webkit-text-decoration: underline #ffbd59;
-          text-decoration: underline #ffbd59;
-  text-decoration-thickness: 2px;
-}
-div.search-bar input[type=search]::-webkit-search-cancel-button {
-  display: none;
-}
-div.search-bar input::-moz-placeholder {
-  font-style: italic;
-  font-size: 30px;
-  margin-left: 20px;
-}
-div.search-bar input::placeholder {
-  font-style: italic;
-  font-size: 30px;
-  margin-left: 20px;
-}
-div.search-bar img {
-  height: 40px;
-  margin: auto 0;
-}
-
-div.search-buttons ul.buttons-list {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  margin-top: -20px;
-  margin-bottom: 30px;
-}
-div.search-buttons ul.buttons-list button {
-  padding: 10px 20px;
   background-color: #ecf0f3;
-  border: none;
-  margin: 0 5px 0 0;
-  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: all 0.3s ease;
+  margin: 10px;
 }
-div.search-buttons ul.buttons-list button:hover,
-div.search-buttons ul.buttons-list button:focus {
+button.writepage-confirmation-button button:hover,
+button.writepage-confirmation-button button:focus {
+  transform: scale(1.05);
   background-color: #ffbd59;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-
-@media screen and (max-width: 1024px) {
-  body div.search-bar {
-    width: 600px;
-    height: 50px;
-  }
-  body div.search-bar input {
-    font-size: 24px;
-  }
-  body div.search-bar input::-moz-placeholder {
-    font-size: 24px;
-  }
-  body div.search-bar input::placeholder {
-    font-size: 24px;
-  }
-  body div.search-bar div.button-div button.searchbar-button {
-    height: 50px;
-    width: 50px;
-  }
-  body div.search-bar div.button-div button.searchbar-button img {
-    height: 25px;
-    margin-top: -9px;
-  }
-  body div.search-buttons ul.buttons-list button {
-    padding: 5px 10px;
-    margin-top: -20px;
-  }
-}
-@media screen and (max-width: 790px) {
-  body div.search-bar {
-    width: 370px;
-    height: 30px;
-  }
-  body div.search-bar input {
-    font-size: 24px;
-  }
-  body div.search-bar input::-moz-placeholder {
-    font-size: 24px;
-  }
-  body div.search-bar input::placeholder {
-    font-size: 24px;
-  }
-  body div.search-bar div.button-div button.searchbar-button {
-    height: 30px;
-    width: 30px;
-    margin-top: -10px;
-  }
-  body div.search-bar div.button-div button.searchbar-button img {
-    height: 15px;
-    margin-top: -6px;
-  }
-  body div.search-buttons ul.buttons-list {
-    flex-wrap: wrap;
-  }
-  body div.search-buttons ul.buttons-list button {
-    padding: 5px 10px;
-    margin: 2px;
-  }
-}/*# sourceMappingURL=searchbar.css.map */
+button.writepage-confirmation-button:hover, button.writepage-confirmation-button:focus {
+  transform: scale(1.05);
+  background-color: #ffbd59;
+}/*# sourceMappingURL=confirmationmodal.css.map */

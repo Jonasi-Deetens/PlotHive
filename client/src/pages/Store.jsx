@@ -3,10 +3,6 @@ import BookShowcase from "../components/BookShowcase";
 import SearchBar from "../components/SearchBar";
 
 const Store = () => {
-  const handleSearch = () => {
-    // Handle search logic here
-  };
-
   return (
     <>
       <div className="store-page-body">
@@ -15,13 +11,7 @@ const Store = () => {
             Shop our community written books!
           </h1>
         </div>
-        <SearchBar
-          placeholder="e.g. Pieter and the little kids..."
-          buttonText={
-            <img src="src/assets/svgs/search.png" alt="search-loupe-image" />
-          }
-          onSubmit={handleSearch}
-        />
+        <SearchBar placeholder="e.g. Pieter and the little kids..." />
         <div className="book-store-showcase-all">
           <div className="book-store-showcase1">
             <BookShowcase category={"top"} />

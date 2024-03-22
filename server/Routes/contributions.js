@@ -26,8 +26,8 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const contributions = await ContributionModel.find()
-      .populate('user_id')
-      .populate('comments');
+      .populate("user_id")
+      .populate("comments");
     res.json(contributions);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -47,8 +47,8 @@ router.patch("/:id", getContribution, async (req, res) => {
   if (req.body.user_id != null) {
     res.contribution.user_id = req.body.user_id;
   }
-  if (req.body.upvoters != null) {
-    res.contribution.upvoters = req.body.upvoters;
+  if (req.body.upvote_count != null) {
+    res.contribution.upvote_count = req.body.upvote_count;
   }
   if (req.body.comments != null) {
     res.contribution.comments = req.body.comments;
@@ -75,9 +75,7 @@ router.delete("/:id", getContribution, async (req, res) => {
 async function getContribution(req, res, next) {
   let contribution;
   try {
-    contribution = await ContributionModel.findById(req.params.id)
-      .populate('user_id')
-      .populate('comments');
+    contribution = await ContributionModel.findById(req.params.id);
     if (contribution == null) {
       return res.status(404).json({ message: "Contribution not found" });
     }

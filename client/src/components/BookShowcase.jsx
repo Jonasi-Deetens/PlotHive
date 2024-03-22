@@ -80,7 +80,7 @@ const BookShowcase = ({ category, query, selectedGenre }) => {
               </div>
             ))
           ) : (
-            <h1>No books found that match your</h1>
+            <h1>No books found that match your search!</h1>
           )
         ) : (
           ""
