@@ -81,38 +81,24 @@ const BookProvider = ({ children }) => {
     }
   };
 
-  const addCommentToContribution = async (contributionId, comment) => {
+  const addCommentToContribution = async (contribution, comment) => {
     try {
-      // Fetch contribution data
-      const contributionResponse = await fetch(
-        `http://127.0.0.1:4000/api/contributions/${contributionId}`
-      );
-      console.log("response cont: ");
-      console.log(contributionResponse);
-
-      if (!contributionResponse.ok) {
-        throw new Error("Failed to fetch contribution data");
-      }
-
-      const contributionData = await contributionResponse.json();
-
-      contributionData.comments.push(comment);
+      contribution.comments.push(comment);
 
       const updateResponse = await fetch(
-        `http://127.0.0.1:4000/api/contributions/${contributionId}`,
+        `http://127.0.0.1:4000/api/contributions/${contribution._id}`,
         {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ comments: contributionData.comments }),
+          body: JSON.stringify({ comments: contribution.comments }),
         }
       );
 
       if (!updateResponse.ok) {
         throw new Error("Failed to update contribution with new comment");
       }
-
       console.log("Comment added to contribution successfully");
     } catch (e) {
       console.error(e.message);
