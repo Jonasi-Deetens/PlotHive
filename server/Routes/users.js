@@ -135,6 +135,11 @@ async function validateRegistrationData(req, res, next) {
         return res.status(400).json({ message: 'All fields are required' });
     }
 
+    const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;
+    if (!usernameRegex.test(username)) {
+        return res.status(400).json({ message: 'No special characters allowed as username' });
+    }
+
     if (password !== confirmPassword) {
         return res.status(400).json({ message: 'Passwords do not match' });
     }

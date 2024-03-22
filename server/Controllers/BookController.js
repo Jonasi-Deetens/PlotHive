@@ -26,6 +26,7 @@ class BookController {
     }
 
     static async addFavoriteContributionsToBooks () {
+        const today = new Date().toISOString().slice(0, 10);
         try {
             const books = await BookModel.find({
                 'finished': false
@@ -34,7 +35,6 @@ class BookController {
             console.log(books)
 
             const updatedBooks = books.map(book => {
-                const today = new Date().toISOString().slice(0, 10);
                 const contributionsToday = book.contributions.filter(contribution => contribution.created_at.toISOString().slice(0, 10) === today);
                 console.log('CONTRIBUTION OF TODAY...');
                 console.log(contributionsToday)
