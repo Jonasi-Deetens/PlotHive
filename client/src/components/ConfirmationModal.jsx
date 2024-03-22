@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import "../assets/styles/components/ConfirmationModal/confirmationmodal.css";
 
 const ConfirmationModal = ({ isOpen, onCancel, onConfirm }) => {
   if (!isOpen) return null;
@@ -7,11 +8,15 @@ const ConfirmationModal = ({ isOpen, onCancel, onConfirm }) => {
     <div className="modal">
       <div className="modal-content">
         <p>Are you sure you want to submit your contribution?</p>
-        <button onClick={onConfirm}>Yes</button>
-        <button onClick={onCancel}>No</button>
+        <button onClick={onConfirm} className="writepage-confirmation-button">
+          Yes
+        </button>
+        <button onClick={onCancel} className="writepage-confirmation-button">
+          No
+        </button>
       </div>
     </div>
   );
 };
 
-export default ConfirmationModal
+export default ConfirmationModal;
