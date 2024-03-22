@@ -29,23 +29,29 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const books = await BookModel.find()
-      .populate("genres")
-      .populate("prompt_id")
-      .populate("sections")
-      .populate({
+    .populate("genres")
+    .populate("prompt_id")
+    .populate({
+        path: "sections",
+        populate: [
+            {
+                path: "user_id",
+            }]
+        })
+    .populate({
         path: "contributions",
         populate: [
-          {
+        {
             path: "comments",
             populate: {
-              path: "user_id",
-            },
-          },
-          {
             path: "user_id",
-          },
+            },
+        },
+        {
+            path: "user_id",
+        },
         ],
-      });
+    });
 
     res.json(books);
   } catch (err) {
@@ -101,14 +107,28 @@ async function getBook(req, res, next) {
   let book;
   try {
     book = await BookModel.findById(req.params.id)
-      .populate("genres")
-      .populate("prompt_id")
-      .populate({
+    .populate("genres")
+    .populate("prompt_id")
+    .populate({
+        path: "sections",
+        populate: [
+            {
+                path: "user_id",
+            }]
+        })
+    .populate({
         path: "contributions",
-        populate: {
-          path: "comments user_id",
+        populate: [
+        {
+            path: "comments",
+            populate: {
+                path: "user_id",
+            },
         },
-      });
+        {
+            path: "user_id",
+        }],
+    });
     if (book == null) {
       return res.status(404).json({ message: "Book not found" });
     }

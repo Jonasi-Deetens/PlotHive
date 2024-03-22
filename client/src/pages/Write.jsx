@@ -62,6 +62,24 @@ const Write = () => {
     }
   }, [user, book, books])
 
+  const genresToString = () => {
+    if (book) {
+      console.log("in genresToString")
+      let genres = "("
+      
+      book.genres.forEach((genre, index) => {
+        if (index === 0) genres += genre.title;
+        else {
+          genres += ", " + genre.title
+        }
+      })
+
+      genres += ")";
+      return genres;
+    }
+    return "";
+  }
+
   const getBookIdFromUrl = () => {
     const queryParams = new URLSearchParams(window.location.search);
     return queryParams.get("id");
@@ -73,6 +91,7 @@ const Write = () => {
         <div className="write-page">
           <div className="write-book">
             <h1 className='title'>{book.title}</h1>
+            <p className='genres'>{genresToString()}</p>
             <div className="write-book-contributions">
               <FavouriteButton book={book} />
               <h2 className='book-prompt'>{`"${book.prompt_id.content}..."`}</h2>

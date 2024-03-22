@@ -83,9 +83,28 @@ const Read = () => {
     setPageContributions(contributionsCopy.slice(startIndex, endIndex));
   }
 
+  const genresToString = () => {
+    if (book) {
+      console.log("in genresToString")
+      let genres = "("
+      
+      book.genres.forEach((genre, index) => {
+        if (index === 0) genres += genre.title;
+        else {
+          genres += ", " + genre.title
+        }
+      })
+
+      genres += ")";
+      return genres;
+    }
+    return "";
+  }
+
   return (
     <main className='read-page'>
       <h1 className='read-page-title'>{book && book.title}</h1>
+      <p className='read-page-genres'>{genresToString()}</p>
       <section className='read-page-section'>
         { book && <FavouriteButton book={book} /> }
         <section className='read-page-text'>
