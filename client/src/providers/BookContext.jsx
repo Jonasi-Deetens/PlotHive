@@ -134,6 +134,8 @@ const BookProvider = ({ children }) => {
   const getBookById = (id) => {
     if (books) {
       const book = books.find((book) => book._id === id);
+      console.log("find book: ");
+      console.log(book);
       return book;
     }
   };

@@ -8,7 +8,8 @@ const Contribution = ({ contribution, userContribution }) => {
   const { user } = useContext(UserContext);
   const [upvoted, setUpvoted] = useState();
   const [showComments, setShowComments] = useState(false);
-
+  console.log("con:  dzqdqzdz");
+  console.log(contribution);
   useEffect(() => {
     if (contribution) {
       setUpvoted(contribution.upvoters.indexOf(user?._id) != -1);
@@ -48,8 +49,8 @@ const Contribution = ({ contribution, userContribution }) => {
     <>
       {contribution && (
         <div className="contribution-component">
-            <div className="contribution-wrapper">
-              {!userContribution ? (
+          <div className="contribution-wrapper">
+            {!userContribution ? (
               <button onClick={upvote} className="contribution-button">
                 <img
                   src={
@@ -60,11 +61,11 @@ const Contribution = ({ contribution, userContribution }) => {
                   alt="icon of a arrow pointing up"
                 />
               </button>
-              ) : (
-                <p className="contribution-vote">Upvotes:</p>
-              )}
-              <p>{contribution.upvoters.length}</p>
-            </div>
+            ) : (
+              <p className="contribution-vote">Upvotes:</p>
+            )}
+            <p>{contribution.upvoters.length}</p>
+          </div>
           <div dangerouslySetInnerHTML={{ __html: contribution.text }}></div>
           <p className="contribution-author">
             By: {!userContribution ? contribution.user_id.username : "You"}
