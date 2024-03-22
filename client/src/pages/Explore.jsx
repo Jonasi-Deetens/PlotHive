@@ -22,24 +22,24 @@ const Explore = () => {
   //   }, 300);
   // };
 
-  // useEffect(() => {
-  //   const getGenres = async () => {
-  //     try {
-  //       const response = await fetch("http://127.0.0.1:5000/api/genres", {
-  //         method: "GET",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //       });
-  //       if (response.ok) {
-  //         const data = await response.json();
-  //         const titles = data.map((genre) => genre.title);
-  //         setGenres(titles);
-  //       }
-  //     } catch (error) {
-  //       throw new Error(error.message);
-  //     }
-  //   };
+  useEffect(() => {
+    const getGenres = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:4000/api/genres", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          const titles = data.map((genre) => genre.title);
+          setGenres(titles);
+        }
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    };
 
   //   getGenres();
   // }, []);
