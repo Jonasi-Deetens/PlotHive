@@ -2,6 +2,7 @@ import express from "express";
 const router = express.Router();
 import mongoose from "mongoose";
 import ContributionModel from "../Models/Contribution.js";
+import { wss } from "../server.js";
 
 // Create a new item
 router.post("/", async (req, res) => {
@@ -55,6 +56,12 @@ router.patch("/:id", getContribution, async (req, res) => {
   }
   try {
     const updatedContribution = await res.contribution.save();
+    wss.clients.forEach((client) => {
+      if (client._readyState === client.OPEN) {
+        console.log("message sent");
+        client.send(JSON.stringify({ event: "bookUpdate" }));
+      }
+    });
     res.json(updatedContribution);
   } catch (err) {
     res.status(400).json({ message: err.message });

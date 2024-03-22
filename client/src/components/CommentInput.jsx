@@ -4,7 +4,7 @@ import { UserContext } from "../providers/UserContext";
 import { Navigate } from "react-router";
 import { BookContext } from "../providers/BookContext";
 
-const CommentInput = ({ contributionId }) => {
+const CommentInput = ({ contribution }) => {
   const [newComment, setNewComment] = useState("");
   const { user, authUser } = useContext(UserContext);
   const { addCommentToContribution } = useContext(BookContext);
@@ -48,7 +48,7 @@ const CommentInput = ({ contributionId }) => {
 
       if (response.ok) {
         const data = await response.json();
-        await addCommentToContribution(contributionId, data);
+        await addCommentToContribution(contribution, data);
         console.log("Post created successfully");
         setNewComment("");
       } else {

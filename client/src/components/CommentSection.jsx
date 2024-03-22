@@ -34,7 +34,7 @@ const CommentSection = ({ contribution }) => {
         contribution.comments.map((comment, index) => (
           <Comment key={index} comment={comment} />
         ))}
-      <CommentInput contributionId={contribution._id} />
+      <CommentInput contribution={contribution} />
     </div>
   );
 };
