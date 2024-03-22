@@ -8,12 +8,6 @@
   position: absolute;
   top: -2px;
   right: 20px;
-  &:hover,
-  &:focus {
-    background-color: $button-hover;
-    border: solid $background-dark;
-    cursor: pointer;
-  }
 }
 
 .favourite {
@@ -22,7 +16,9 @@
 
 .favourite:hover {
   background-color: $fontcolor;
-  transform: scale(1.05);
+  border: solid $background-dark;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .unfavourite {
@@ -31,7 +27,9 @@
 
 .unfavourite:hover {
   background-color: $main;
-  transform: scale(1.05);
+  border: solid $background-dark;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .favourite-image {

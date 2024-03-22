@@ -13,13 +13,9 @@ const Store = () => {
         </div>
         <SearchBar placeholder="e.g. Pieter and the little kids..." />
         <div className="book-store-showcase-all">
-          <div className="book-store-showcase1">
             <BookShowcase category={"top"} />
-          </div>
           <br />
-          <div className="book-store-showcase2">
             <BookShowcase category={"like-this"} />
-          </div>
         </div>
       </div>
     </>
