@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/pages/Home/home.css";
 import BookShowcase from "../components/BookShowcase";
