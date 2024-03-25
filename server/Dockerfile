@@ -16,7 +16,7 @@ COPY . .
 COPY Certificates/ /server/Certificates/
 
 # Expose the port that your app runs on
-EXPOSE 8443
+EXPOSE 443
 
 # Command to run your application
 CMD ["npm", "start"]
