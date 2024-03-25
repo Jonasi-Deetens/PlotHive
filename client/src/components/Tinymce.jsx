@@ -35,7 +35,7 @@ const Tinymce = ({ bookId }) => {
       };
       try {
         const response = await fetch(
-          "http://127.0.0.1:4000/api/contributions",
+          "https://plothiveserver-9kh2sv0d.b4a.run/api/contributions",
           {
             method: "POST",
             headers: {

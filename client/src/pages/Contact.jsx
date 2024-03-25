@@ -1,6 +1,5 @@
 import "../assets/styles/pages/contact/contact.css";
 import userLogo from "../assets/svgs/user.png";
-import userPassword from "../assets/svgs/password.png";
 import userEmail from "../assets/svgs/email.png";
 import facebook from "../assets/svgs/facebook.png";
 import twitter from "../assets/svgs/twitter.png";
