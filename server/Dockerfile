@@ -13,7 +13,7 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-COPY Certificates/ /usr/src/app/certificates/
+COPY Certificates/ /server/Certificates/
 
 # Expose the port that your app runs on
 EXPOSE 443
