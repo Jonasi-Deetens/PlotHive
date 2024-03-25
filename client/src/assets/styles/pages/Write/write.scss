@@ -25,6 +25,10 @@ div.write-page {
         margin: 50px auto;
     }
 
+    .genres {
+        text-align: center;
+    }
+
     .editor-submit {
         @include main-button;
         margin: 10px 10px;
