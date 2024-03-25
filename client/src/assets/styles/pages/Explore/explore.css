@@ -873,4 +873,11 @@ body div#root footer {
     font-size: 36px;
     margin: 30px 0;
   }
+  body div#root main.explore-page div.showcase-wrapper {
+    padding: 20px;
+  }
+  body div#root main.explore-page div.showcase-wrapper h1 {
+    text-align: center;
+    font-size: 24px;
+  }
 }/*# sourceMappingURL=explore.css.map */

@@ -903,25 +903,32 @@ div.search-bar img {
   margin: auto 0;
 }
 
+div.search-buttons {
+  margin: 20px;
+}
 div.search-buttons ul.buttons-list {
   display: flex;
   justify-content: center;
-  margin: 0;
   padding: 0;
-  margin-top: -20px;
-  margin-bottom: 30px;
+  margin: auto;
+  width: 80%;
+  flex-wrap: wrap;
 }
 div.search-buttons ul.buttons-list button {
   padding: 10px 20px;
   background-color: #ecf0f3;
   border: none;
-  margin: 0 5px 0 0;
+  margin: 5px;
   border-radius: 5px;
 }
-div.search-buttons ul.buttons-list button:hover,
-div.search-buttons ul.buttons-list button:focus {
+div.search-buttons ul.buttons-list button:hover {
   background-color: #ffbd59;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+div.search-buttons ul.buttons-list button:active {
+  box-shadow: none;
+  background-color: #545454;
+  border: 1px solid #ecf0f3;
 }
 
 @media screen and (max-width: 1024px) {
@@ -948,7 +955,7 @@ div.search-buttons ul.buttons-list button:focus {
   }
   body div.search-buttons ul.buttons-list button {
     padding: 5px 10px;
-    margin-top: -20px;
+    margin: 2px;
   }
 }
 @media screen and (max-width: 790px) {
@@ -973,9 +980,6 @@ div.search-buttons ul.buttons-list button:focus {
   body div.search-bar div.button-div button.searchbar-button img {
     height: 15px;
     margin-top: -6px;
-  }
-  body div.search-buttons ul.buttons-list {
-    flex-wrap: wrap;
   }
   body div.search-buttons ul.buttons-list button {
     padding: 5px 10px;

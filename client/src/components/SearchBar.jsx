@@ -49,6 +49,7 @@ const SearchBar = ({ placeholder }) => {
       setSelectedGenre(genre);
     }
   };
+  
   return (
     <>
       <div className="search-bar">
