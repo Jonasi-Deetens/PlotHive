@@ -70,9 +70,18 @@ const Contribution = ({ contribution, userContribution }) => {
           <p className="contribution-author">
             By: {!userContribution ? contribution.user_id.username : "You"}
           </p>
-          <button onClick={() => setShowComments(!showComments)}>
-            {showComments ? "Hide Comments" : "Show Comments"}
-          </button>
+          <div className="contribution-wrapper">
+            <button
+              className="comment-toggle"
+              onClick={() => setShowComments(!showComments)}
+            >
+              {showComments ? (
+                <img src="src/assets/svgs/commentIcon.svg"></img>
+              ) : (
+                <img src="src/assets/svgs/commentIconYellow.svg"></img>
+              )}
+            </button>
+          </div>
           {showComments && <CommentSection contribution={contribution} />}
         </div>
       )}

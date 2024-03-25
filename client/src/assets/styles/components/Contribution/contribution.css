@@ -882,4 +882,12 @@ div.contribution-component button.contribution-button:hover img {
 }
 div.contribution-component button.contribution-button:active img {
   transform: scale(1);
+}
+div.contribution-component button.comment-toggle {
+  background: none;
+  border: none;
+  margin-left: auto;
+}
+div.contribution-component button.comment-toggle:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=contribution.css.map */
