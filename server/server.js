@@ -20,20 +20,20 @@ const port = process.env.PORT || 4000;
 
 connectToDatabase();
 
-// cron.schedule('50 59 00 * * *', async () => {
-//   console.log('Creating new book...');
-//   await BookController.createBook();
+cron.schedule('50 59 00 * * *', async () => {
+  // console.log('Creating new book...');
+  // await BookController.createBook();
 
-//   console.log('Updating Contributions...');
-//   await BookController.addFavoriteContributionsToBooks();
+  console.log('Updating Contributions...');
+  await BookController.addFavoriteContributionsToBooks();
 
-//   wss.clients.forEach((client) => {
-//     if (client._readyState === client.OPEN) {
-//         console.log("message sent")
-//         client.send(JSON.stringify({ event: 'bookUpdate' }));
-//     }
-//   });
-// });
+  wss.clients.forEach((client) => {
+    if (client._readyState === client.OPEN) {
+        console.log("message sent")
+        client.send(JSON.stringify({ event: 'bookUpdate' }));
+    }
+  });
+});
 
 import authRoutes from './Routes/auth.js';
 app.use('/auth', authRoutes);
