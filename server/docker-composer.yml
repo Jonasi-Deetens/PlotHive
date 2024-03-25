@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    image: PlotHiveServer
+    ports:
+      - "443:443"  # Expose port 443 for HTTPS
+    environment:
+      - NODE_ENV=production
+      # Add any other environment variables related to HTTPS configuration
+    volumes:
+      - ./certificates:/server/certificates  # Mount SSL/TLS certificates and keys
+    command: ["npm", "start"]
