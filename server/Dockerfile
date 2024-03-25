@@ -16,7 +16,7 @@ COPY . .
 COPY Certificates/ /server/Certificates/
 
 # Expose the port that your app runs on
-EXPOSE 443
+EXPOSE 3050/tcp
 
 # Command to run your application
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
