@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from 'dotenv';
 import cors from 'cors';
+import https from 'https';
 import cron from "node-cron";
 import connectToDatabase from "./Database/database.js";
 import BookController from "./Controllers/BookController.js";
@@ -64,7 +65,8 @@ app.all("*", (req, res) => {
   res.send("No resource found!");
 });
 
-app.listen(port, () => {
+const server = https.createServer(app);
+server.listen(port, () => {
   console.log("Welcome " + host + ", server is listening on port: " + port);
 });
 
