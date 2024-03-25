@@ -38,7 +38,7 @@ const CommentInput = ({ contribution }) => {
       user_id: user,
     };
     try {
-      const response = await fetch("http://127.0.0.1:4000/api/comments", {
+      const response = await fetch("https://plothiveserver-9kh2sv0d.b4a.run/api/comments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
