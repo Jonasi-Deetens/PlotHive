@@ -22,7 +22,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const host = process.env.HOST || "localhost";
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 443;
 
 connectToDatabase();
 
