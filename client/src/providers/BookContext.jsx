@@ -26,7 +26,7 @@ const BookProvider = ({ children }) => {
 
     getBooks();
 
-    const ws = new WebSocket("ws://plothiveserver-9kh2sv0d.b4a.run/ws");
+    const ws = new WebSocket("wss://plothiveserver-9kh2sv0d.b4a.run/ws");
     ws.onopen = () => {
       console.log("WebSocket connected");
     };
