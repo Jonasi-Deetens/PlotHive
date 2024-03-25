@@ -1,6 +1,6 @@
 import "./assets/styles/app.css";
 import Navbar from "./components/Navbar";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
@@ -52,7 +52,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/store" element={<Store />} />
         <Route path="/write" element={<Write />} />
-        <Route path="*" element={<Error404 />} />
+        <Route path="/Error404" element={<Error404 />} />
+        <Route path="*" element={<Navigate to="/Error404" />} />
       </Routes>
 
       {!is404Page && <Footer />}
