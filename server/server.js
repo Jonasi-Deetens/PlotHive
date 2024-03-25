@@ -13,7 +13,11 @@ dotenv.config();
 
 app.use(express.json());
 app.use(express.static('./public'));
-app.use(cors());
+const corsOptions = {
+  origin: 'https://plothive.netlify.app'
+};
+
+app.use(cors(corsOptions));
 
 const host = process.env.HOST || "localhost";
 const port = process.env.PORT || 4000;

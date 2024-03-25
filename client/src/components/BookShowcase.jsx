@@ -4,6 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import cover from "../assets/svgs/cover.png";
 import { BookContext } from "../providers/BookContext";
 import { Link } from "react-router-dom";
+import read from "../assets/svgs/read-book.svg"
+import write from "../assets/svgs/write-book.svg"
 
 const BookShowcase = ({ category, query, selectedGenre }) => {
   const { books, getTopBooks, getBookByTitle, getBooksByGenre } =
@@ -64,13 +66,13 @@ const BookShowcase = ({ category, query, selectedGenre }) => {
                   <div className="button-wrapper">
                     <Link className="link" to={"/read?id=" + book._id}>
                       <img
-                        src="src/assets/svgs/read-book.svg"
+                        src={read}
                         alt="read-book-icon"
                       />
                     </Link>
                     <Link className="link" to={"/write?id=" + book._id}>
                       <img
-                        src="src/assets/svgs/write-book.svg"
+                        src={write}
                         alt="write-book-icon"
                       />
                     </Link>

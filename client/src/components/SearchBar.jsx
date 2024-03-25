@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../assets/styles/components/SearchBar/searchbar.css";
 import BookShowcase from "./BookShowcase";
+import search from "../assets/svgs/search.png";
 
 const SearchBar = ({ placeholder }) => {
   const [query, setQuery] = useState(null);
@@ -62,7 +63,7 @@ const SearchBar = ({ placeholder }) => {
         />
         <div className="button-div">
           <button className="searchbar-button" onClick={handleSearch}>
-            <img src="src/assets/svgs/search.png" alt="search-loupe-image" />
+            <img src={search} alt="search-loupe-image" />
           </button>
         </div>
       </div>

@@ -4,6 +4,11 @@ import "../assets/styles/pages/Home/home.css";
 import BookShowcase from "../components/BookShowcase";
 import { BookContext } from "../providers/BookContext";
 import { UserContext } from "../providers/UserContext";
+import logoHome from "../assets/Logo/logo-home.svg";
+import vote from "../assets/svgs/vote.svg";
+import book from "../assets/svgs/book.svg";
+import badge from "../assets/svgs/badge.svg";
+import money from "../assets/svgs/money.svg";
 
 const Home = () => {
   const { user } = useContext(UserContext);
@@ -42,7 +47,7 @@ const Home = () => {
       <header className="home-page-header">
         <div className="home-page-navbar">
           <Link to="/">
-            <img src="src/assets/Logo/logo-home.svg" alt="Large-Logo" />
+            <img src={logoHome} alt="Large-Logo" />
           </Link>
           {user ? (
             <Link to="/Dashboard">
@@ -69,26 +74,26 @@ const Home = () => {
       <section className="card-container-wrapper">
         <div className="card-container">
           <Link to="/AboutUs" className="card">
-            <img src="src/assets/svgs/book.svg" alt="icon of a book" />
+            <img src={book} alt="icon of a book" />
             <p>Write stories as a community</p>
           </Link>
           <Link to="/AboutUs" className="card">
             <img
-              src="src/assets/svgs/vote.svg"
+              src={vote}
               alt="icon of a arrow pointing up"
             />
             <p>Upvote the part that would fit the story best</p>
           </Link>
           <Link to="/AboutUs" className="card">
             <img
-              src="src/assets/svgs/money.svg"
+              src={money}
               alt="icon of a hand holding a bag of money"
             />
             <p>Earn by contributing</p>
           </Link>
           <Link to="/AboutUs" className="card">
             <img
-              src="src/assets/svgs/badge.svg"
+              src={badge}
               alt="icon of a badge with a star"
             />
             <p>Earn badges</p>
