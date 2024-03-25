@@ -1,8 +1,6 @@
 import express from "express";
 import dotenv from 'dotenv';
 import cors from 'cors';
-import https from 'https';
-import fs from 'fs';
 import cron from "node-cron";
 import connectToDatabase from "./Database/database.js";
 import BookController from "./Controllers/BookController.js";
@@ -22,7 +20,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const host = process.env.HOST || "localhost";
-const port = process.env.PORT || 3050;
+const port = process.env.PORT || 4000;
 
 connectToDatabase();
 
@@ -66,11 +64,7 @@ app.all("*", (req, res) => {
   res.send("No resource found!");
 });
 
-const server = https.createServer({
-  key: fs.readFileSync('Certificates/cert.key'),
-  cert: fs.readFileSync('Certificates/cert.crt')
-},app);
-server.listen(port, () => {
+app.listen(port, () => {
   console.log("Welcome " + host + ", server is listening on port: " + port);
 });
 
