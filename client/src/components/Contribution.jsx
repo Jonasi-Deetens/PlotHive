@@ -3,6 +3,10 @@ import { useContext, useEffect, useState } from "react";
 import "../assets/styles/components/Contribution/contribution.css";
 import { UserContext } from "../providers/UserContext";
 import CommentSection from "./CommentSection";
+import commentIcon from "../assets/svgs/commentIcon.svg";
+import commentIconYellow from "../assets/svgs/commentIconYellow.svg";
+import voteYellow from "../assets/svgs/vote-yellow.svg";
+import vote from "../assets/svgs/vote.svg";
 
 const Contribution = ({ contribution, userContribution }) => {
   const { user } = useContext(UserContext);
@@ -55,8 +59,8 @@ const Contribution = ({ contribution, userContribution }) => {
                 <img
                   src={
                     upvoted
-                      ? "src/assets/svgs/vote-yellow.svg"
-                      : "src/assets/svgs/vote.svg"
+                      ? voteYellow
+                      : vote
                   }
                   alt="icon of a arrow pointing up"
                 />
@@ -76,9 +80,9 @@ const Contribution = ({ contribution, userContribution }) => {
               onClick={() => setShowComments(!showComments)}
             >
               {showComments ? (
-                <img src="src/assets/svgs/commentIcon.svg"></img>
+                <img src={commentIcon}></img>
               ) : (
-                <img src="src/assets/svgs/commentIconYellow.svg"></img>
+                <img src={commentIconYellow}></img>
               )}
             </button>
           </div>
