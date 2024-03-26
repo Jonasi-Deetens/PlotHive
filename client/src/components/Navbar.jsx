@@ -3,6 +3,7 @@ import "../assets/styles/components/Navbar/navbar.css";
 import { useState, useEffect, useContext } from "react";
 import navBarLogo from "../assets/Logo/logo-navbar.svg";
 import { UserContext } from "../providers/UserContext";
+import logoutIcon from "../assets/svgs/logout.svg";
 
 const Navbar = () => {
   const { user, authUser, logout } = useContext(UserContext);
@@ -80,7 +81,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a className="logout-button" onClick={logout}>
-                  <img src="src/assets/svgs/logout.svg" alt="logout-icon" />
+                  <img src={logoutIcon} alt="logout-icon" />
                 </a>
               </li>
             </>
@@ -144,7 +145,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <a className="logout-button" onClick={logout}>
-                    <img src="src/assets/svgs/logout.svg" alt="logout-icon" />
+                    <img src={logoutIcon} alt="logout-icon" />
                   </a>
                 </li>
               </>
