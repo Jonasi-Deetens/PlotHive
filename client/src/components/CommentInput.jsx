@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../providers/UserContext";
 import { Navigate } from "react-router";
 import { BookContext } from "../providers/BookContext";
+import "../assets/styles/components/CommentInput/commentInput.css";
 
 const CommentInput = ({ contribution }) => {
   const [newComment, setNewComment] = useState("");
@@ -38,13 +39,16 @@ const CommentInput = ({ contribution }) => {
       user_id: user,
     };
     try {
-      const response = await fetch("https://plothiveserver-9kh2sv0d.b4a.run/api/comments", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(commentData),
-      });
+      const response = await fetch(
+        "https://plothiveserver-9kh2sv0d.b4a.run/api/comments",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(commentData),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -59,15 +63,15 @@ const CommentInput = ({ contribution }) => {
     }
   };
   return (
-    <>
-      <input
+    <div className="comment-input">
+      <textarea
         type="text"
         placeholder="Add a comment..."
         value={newComment}
         onChange={handleInputChange}
       />
-      <button onClick={handleAddComment}>Add Comment</button>
-    </>
+      <button onClick={handleAddComment}>Submit</button>
+    </div>
   );
 };
 

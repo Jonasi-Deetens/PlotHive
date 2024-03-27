@@ -1,0 +1,29 @@
+@use "../../../SASS/" as *;
+
+.comment-component {
+  background-color: $background-dark;
+  border-top: 0.5px solid $break-line;
+
+  .comment-content {
+    font-family: $serif-font !important;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .comment-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 10px;
+
+    .comment-user {
+      text-align: right;
+      font-size: 0.8rem;
+    }
+
+    .comment-time {
+      margin-left: auto;
+      font-size: 0.8rem;
+    }
+  }
+}
