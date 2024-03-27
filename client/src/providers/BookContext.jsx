@@ -24,22 +24,32 @@ const BookProvider = ({ children }) => {
       }
     };
 
-    getBooks();
+    let ws;
+    const connectWebSocket = () => {
+      ws = new WebSocket("wss://plothiveserver-9kh2sv0d.b4a.run/ws");
+      ws.onopen = () => {
+        console.log("WebSocket connected");
+      };
+      ws.onmessage = (event) => {
+        const message = JSON.parse(event.data);
+        if (message.event === "bookUpdate") {
+          console.log("message received");
+          getBooks();
+        }
+      };
+      ws.onclose = () => {
+        console.log("WebSocket disconnected. Reconnecting...");
+        connectWebSocket(); // Retry after 5 seconds
+      };
+    };
 
-    const ws = new WebSocket("wss://plothiveserver-9kh2sv0d.b4a.run/ws");
-    ws.onopen = () => {
-      console.log("WebSocket connected");
-    };
-    ws.onmessage = (event) => {
-      const message = JSON.parse(event.data);
-      if (message.event === "bookUpdate") {
-        console.log("message received");
-        getBooks();
-      }
-    };
+    getBooks();
+    connectWebSocket();
 
     return () => {
-      ws.close();
+      if (ws) {
+        ws.close();
+      }
     };
   }, []);
 
