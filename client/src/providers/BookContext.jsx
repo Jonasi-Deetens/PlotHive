@@ -38,9 +38,9 @@ const BookProvider = ({ children }) => {
       }
     };
 
-    return () => {
-      ws.close();
-    };
+    // return () => {
+    //   ws.close();
+    // };
   }, []);
 
   const getTopBooks = () => {
