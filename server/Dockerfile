@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3050/tcp
 
 # Command to run your application
-# CMD ["node", "server.js"]
+CMD ["node", "server.js"]
