@@ -1,8 +1,8 @@
 # Use the official Node.js 20.10 image as the base image
-FROM node:20
+FROM node:20.10 AS builder
 
 # Set the working directory in the container
-WORKDIR ./app
+WORKDIR /server/
 
 # Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
@@ -11,10 +11,10 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the application code to the working directory
-COPY . ./app
+COPY . .
 
 # Expose the port that your app runs on
 EXPOSE 3050/tcp
 
 # Command to run your application
-CMD ["node", "server.js"]
+# CMD ["node", "server.js"]
