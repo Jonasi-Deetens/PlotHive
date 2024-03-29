@@ -1,5 +1,5 @@
 # Use the official Node.js 20.10 image as the base image
-FROM mongo-express:latest
+FROM php:8.2-cli
 
 # Set the working directory in the container
 WORKDIR /server/
