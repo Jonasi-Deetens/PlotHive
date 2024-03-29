@@ -17,7 +17,7 @@ const corsOptions = {
   origin: 'https://plothive.netlify.app'
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 const host = process.env.HOST || "localhost";
 const port = process.env.PORT || 4000;
