@@ -3,7 +3,6 @@ FROM node:20
 
 # Set the working directory in the container
 WORKDIR /server/
-
 # Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
@@ -17,4 +16,4 @@ COPY . .
 EXPOSE 3050/tcp
 
 # Command to run your application
-CMD ["node", "server.js"]
+# CMD ["node", "server.js"]
