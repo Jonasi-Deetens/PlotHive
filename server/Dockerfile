@@ -1,5 +1,5 @@
 # Use the official Node.js 20.10 image as the base image
-FROM node:20.10 AS builder
+FROM node:20
 
 # Set the working directory in the container
 WORKDIR /server/
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3050/tcp
 
 # Command to run your application
-# CMD ["node", "server.js"]
+CMD ["node", "server.js"]
