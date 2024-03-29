@@ -49,11 +49,11 @@ const Navbar = () => {
           </span>
         </button>
         <ul className="hamburger-list">
-          <li>
+          {/* <li>
             <NavLink to="/Store" activeclassname="active">
               Store
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink to="/Explore" activeclassname="active">
               Explore
@@ -97,11 +97,11 @@ const Navbar = () => {
       {isActive && (
         <nav className="menu-modal">
           <ul>
-            <li>
+            {/* <li>
               <NavLink to="/Store" activeclassname="active" onClick={hideModal}>
                 Store
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 to="/Explore"
