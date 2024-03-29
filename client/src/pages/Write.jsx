@@ -40,13 +40,15 @@ const Write = () => {
     const bookId = getBookIdFromUrl();
     const foundBook = getBookById(bookId);
     setBook(foundBook);
-
+    console.log(today);
     const todaysContributions = foundBook.contributions.filter(
       (contribution) => {
         console.log(contribution);
+        console.log(contribution.created_at.slice(0, 10));
         return contribution.created_at.slice(0, 10) === today;
       }
     );
+    console.log(todaysContributions);
     setContributions(todaysContributions);
 
     if (user && book && contributions) {
@@ -66,7 +68,6 @@ const Write = () => {
 
   const genresToString = () => {
     if (book) {
-      console.log("in genresToString")
       let genres = "("
       
       book.genres.forEach((genre, index) => {

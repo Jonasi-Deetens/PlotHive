@@ -15,6 +15,7 @@ const BookProvider = ({ children }) => {
             "Content-Type": "application/json",
           },
         });
+        console.log("huh")
         if (response.ok) {
           const data = await response.json();
           setBooks(data);
