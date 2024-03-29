@@ -18,7 +18,7 @@ const UserUpdateForm = ({ setEditing }) => {
             confirmPassword: formData.get("confirm-password"),
         };
         try {
-            const response = await fetch('https://plothiveserver-9kh2sv0d.b4a.run/api/users/' + user._id, {
+            const response = await fetch('https://plothiveserver1-1y57tl0h.b4a.run/api/users/' + user._id, {
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json'

@@ -9,7 +9,7 @@ const BookProvider = ({ children }) => {
   useEffect(() => {
     const getBooks = async () => {
       try {
-        const response = await fetch("https://plothiveserver-9kh2sv0d.b4a.run/api/books", {
+        const response = await fetch("https://plothiveserver1-1y57tl0h.b4a.run/api/books", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -27,7 +27,7 @@ const BookProvider = ({ children }) => {
 
     let ws;
     const connectWebSocket = () => {
-      ws = new WebSocket("wss://plothiveserver-9kh2sv0d.b4a.run/ws");
+      ws = new WebSocket("wss://plothiveserver1-1y57tl0h.b4a.run/ws");
       ws.onopen = () => {
         console.log("WebSocket connected");
       };
@@ -73,7 +73,7 @@ const BookProvider = ({ children }) => {
       updatedBook.contributions.push(contribution);
       try {
         const response = await fetch(
-          `https://plothiveserver-9kh2sv0d.b4a.run/api/books/${bookId}`,
+          `https://plothiveserver1-1y57tl0h.b4a.run/api/books/${bookId}`,
           {
             method: "PATCH",
             headers: {
@@ -97,7 +97,7 @@ const BookProvider = ({ children }) => {
       contribution.comments.push(comment);
 
       const updateResponse = await fetch(
-        `https://plothiveserver-9kh2sv0d.b4a.run/api/contributions/${contribution._id}`,
+        `https://plothiveserver1-1y57tl0h.b4a.run/api/contributions/${contribution._id}`,
         {
           method: "PATCH",
           headers: {

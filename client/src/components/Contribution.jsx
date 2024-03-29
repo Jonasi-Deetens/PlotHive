@@ -30,7 +30,7 @@ const Contribution = ({ contribution, userContribution }) => {
 
     try {
       const response = await fetch(
-        "https://plothiveserver-9kh2sv0d.b4a.run/api/contributions/" + contribution._id,
+        "https://plothiveserver1-1y57tl0h.b4a.run/api/contributions/" + contribution._id,
         {
           method: "PATCH",
           headers: {

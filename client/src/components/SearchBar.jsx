@@ -24,7 +24,7 @@ const SearchBar = ({ placeholder }) => {
   useEffect(() => {
     const getGenres = async () => {
       try {
-        const response = await fetch("https://plothiveserver-9kh2sv0d.b4a.run/api/genres", {
+        const response = await fetch("https://plothiveserver1-1y57tl0h.b4a.run/api/genres", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

@@ -40,7 +40,7 @@ const CommentInput = ({ contribution }) => {
     };
     try {
       const response = await fetch(
-        "https://plothiveserver-9kh2sv0d.b4a.run/api/comments",
+        "https://plothiveserver1-1y57tl0h.b4a.run/api/comments",
         {
           method: "POST",
           headers: {
