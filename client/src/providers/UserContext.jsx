@@ -14,7 +14,7 @@ const UserProvider = ({ children }) => {
     if (!user) {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("https://plothiveserver-9kh2sv0d.b4a.run/auth/user", {
+        const response = await fetch("https://plothiveserver1-1y57tl0h.b4a.run/auth/user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const UserProvider = ({ children }) => {
 
   const loginUser = async (userData) => {
     try {
-      const response = await fetch("https://plothiveserver-9kh2sv0d.b4a.run/api/users/login", {
+      const response = await fetch("https://plothiveserver1-1y57tl0h.b4a.run/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const UserProvider = ({ children }) => {
 
   const registerUser = async (userData) => {
     try {
-      const response = await fetch("https://plothiveserver-9kh2sv0d.b4a.run/api/users", {
+      const response = await fetch("https://plothiveserver1-1y57tl0h.b4a.run/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
