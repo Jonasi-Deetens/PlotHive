@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
     const newComment = new CommentModel({
       _id: new mongoose.Types.ObjectId(),
       content: req.body.content,
-      user_id: req.body.user_id,
+      user_id: req.body.user_id
     });
 
     const savedComment = await newComment.save();

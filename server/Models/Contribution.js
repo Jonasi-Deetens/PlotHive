@@ -18,7 +18,7 @@ const contributionSchema = new mongoose.Schema({
     created_at: {
         type: Date,
         required: true,
-        default: Date.now()
+        default: Date.now
     },
     upvoters: [{
         type: mongoose.Schema.Types.ObjectId,

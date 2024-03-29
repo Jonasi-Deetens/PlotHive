@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
       text: req.body.text,
       user_id: req.body.user_id,
       upvoters: [],
-      comments: req.body.comments,
+      comments: req.body.comments
     });
 
     const savedContribution = await newContribution.save();
