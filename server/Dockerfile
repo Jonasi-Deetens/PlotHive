@@ -1,5 +1,5 @@
 # Use the official Node.js 20.10 image as the base image
-FROM php:8.2-cli
+FROM node:20
 
 # Set the working directory in the container
 WORKDIR /server/
