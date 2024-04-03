@@ -920,6 +920,7 @@ div.search-buttons ul.buttons-list button {
   border: none;
   margin: 5px;
   border-radius: 5px;
+  cursor: pointer;
 }
 div.search-buttons ul.buttons-list button:hover {
   background-color: #ffbd59;
@@ -956,6 +957,7 @@ div.search-buttons ul.buttons-list button:active {
   body div.search-buttons ul.buttons-list button {
     padding: 5px 10px;
     margin: 2px;
+    cursor: pointer;
   }
 }
 @media screen and (max-width: 790px) {
@@ -984,5 +986,6 @@ div.search-buttons ul.buttons-list button:active {
   body div.search-buttons ul.buttons-list button {
     padding: 5px 10px;
     margin: 2px;
+    cursor: pointer;
   }
 }/*# sourceMappingURL=searchbar.css.map */

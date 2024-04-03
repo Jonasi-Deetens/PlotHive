@@ -72,6 +72,7 @@ div.search-buttons {
       border: none;
       margin: 5px;
       border-radius: 5px;
+      cursor: pointer;
     }
     button:hover {
       background-color: $main;
@@ -112,6 +113,7 @@ div.search-buttons {
         button {
           padding: 5px 10px;
           margin: 2px;
+          cursor: pointer;
         }
       }
     }
@@ -147,10 +149,6 @@ div.search-buttons {
           padding: 5px 10px;
           margin: 2px;
           cursor: pointer;
-          button:hover,
-          button:focus {
-            transform: scale(1.05);
-            background-color: $button-hover;
         }
       }
     }
