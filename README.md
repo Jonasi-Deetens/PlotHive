@@ -1,21 +1,24 @@
 # PlotHive
 
-## Short Summary
+## Overview
 
-The project is a crowd sourced storytelling platform where it is our goal to bring writers and readers of all levels together to build stories.
-Every fixed time period, the platform launches a new prompt, everyone can choose to contribute and write the next section to this prompt.
-All people who have an account, can then comment and vote for their favourite version of the next section.At fixed times, the most upvoted section gets added to the story and the cycle starts again.
-The platform keeps track of all the user’s contributions, likes and comments and can see these on their personalised dashboard.
-When the story is finished, they get added to our ‘bookstore’ and users can buy the final versions.
-Depending on how much a user contributed, they get paid a percentage of the profit.
+PlotHive is an innovative crowd-sourced storytelling platform designed to unite writers and readers of all levels, fostering collaborative story creation. Users participate by contributing sections to a story prompt, with the community ultimately voting for the best continuation. The winning segment is then integrated into the evolving narrative. As users engage with the platform, they accrue points and privileges, visible on their personalized dashboard. Once a story is complete, it's added to our virtual bookstore, where users can purchase final versions. Contributors receive a percentage of the profits based on their level of involvement.
+
+## Features
+
+- Crowd-sourced storytelling: Engage with a community of writers and readers to collaboratively build stories.
+- Story prompts: Regularly issued prompts serve as the starting point for each story.
+- Community voting: Users can vote on their favorite contributions, shaping the direction of the narrative.
+- Personalized dashboard: Track contributions, likes, comments, and other metrics via a customizable dashboard.
+- Virtual bookstore: Completed stories are available for purchase, allowing users to support their favorite narratives.
+- Contributor rewards: Earn a percentage of profits based on the level of contribution to a completed story.
 
 ## Tech Stack
 
-- React.js
-- Express.js
-- MongoDB
-- Node.js
-- Canva
+- **Frontend**: React.js
+- **Backend**: Express.js, Node.js
+- **Database**: MongoDB
+- **Design**: Canva
 
 ## Collaborators
 
@@ -33,4 +36,10 @@ Depending on how much a user contributed, they get paid a percentage of the prof
 
 ## Usage Instructions
 
-## Documentation
+1. Install dependencies: `npm install`
+2. Start the server: `npm start`
+3. Access the application via your web browser.
+
+## Contribution Guidelines
+
+Please contact us through the contact form with any suggestions or feedback for the platform.
