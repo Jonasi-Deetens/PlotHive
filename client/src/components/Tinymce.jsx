@@ -26,6 +26,7 @@ const Tinymce = ({ bookId }) => {
   }, [authUser, user]);
 
   const submit = async () => {
+    setIsModalOpen(false);
     if (editorRef.current && user) {
       const content = editorRef.current.getContent();
 
@@ -57,7 +58,6 @@ const Tinymce = ({ bookId }) => {
       }
     }
 
-    setIsModalOpen(false);
   };
 
   const handleFormSubmit = () => {
