@@ -100,7 +100,7 @@ const Write = () => {
               <FavouriteButton book={book} />
               <h2 className="book-prompt">{`"${book.prompt_id.content}..."`}</h2>
               <div
-                dangerouslySetInnerHTML={{ __html: book.sections?.[0]?.text }}
+                dangerouslySetInnerHTML={{ __html: book.sections?.[book.sections.length-1]?.text }}
               ></div>
               {userContributed ? (
                 <div>
