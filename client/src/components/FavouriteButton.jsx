@@ -20,8 +20,6 @@ const FavouriteButton = ({book}) => {
     
 
     const favourite = async () => {
-        console.log(book)
-        console.log(user)
         if (!inFavourites) {
           user.favourites.push(book._id);
         } else {

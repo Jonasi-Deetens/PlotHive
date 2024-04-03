@@ -12,8 +12,6 @@ const Contribution = ({ contribution, userContribution }) => {
   const { user } = useContext(UserContext);
   const [upvoted, setUpvoted] = useState();
   const [showComments, setShowComments] = useState(false);
-  console.log("con:  dzqdqzdz");
-  console.log(contribution);
   useEffect(() => {
     if (contribution) {
       setUpvoted(contribution.upvoters.indexOf(user?._id) != -1);

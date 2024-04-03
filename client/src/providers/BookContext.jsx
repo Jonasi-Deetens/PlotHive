@@ -65,8 +65,6 @@ const BookProvider = ({ children }) => {
   };
 
   const addContributionToBook = async (bookId, contribution) => {
-    console.log(bookId);
-    console.log(contribution);
     if (books) {
       const updatedBook = getBookById(bookId);
       updatedBook.contributions.push(contribution);
@@ -81,7 +79,6 @@ const BookProvider = ({ children }) => {
             body: JSON.stringify(updatedBook),
           }
         );
-        console.log(updatedBook);
         if (!response.ok) {
           throw new Error("Failed to update book");
         }
@@ -109,7 +106,6 @@ const BookProvider = ({ children }) => {
       if (!updateResponse.ok) {
         throw new Error("Failed to update contribution with new comment");
       }
-      console.log("Comment added to contribution successfully");
     } catch (e) {
       console.error(e.message);
     }
