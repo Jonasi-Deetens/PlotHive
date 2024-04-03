@@ -37,7 +37,6 @@ const Read = () => {
   }, [user, authUser]);
 
   useEffect(() => {
-    console.log("z")
     const fetchedBook = getBookById(bookId)
     if (fetchedBook) {
       fetchedBook.sections.sort((bookA, bookB) => {

@@ -903,6 +903,9 @@ div.write-page .write-current-contributions {
   margin: 50px auto;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+div.write-page .write-current-contributions div.highlight div.contribution-component {
+  border: 2px solid #ffbd59;
+}
 @media (max-width: 800px) {
   div.write-page .write-current-contributions {
     padding: 20px;

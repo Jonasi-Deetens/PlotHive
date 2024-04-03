@@ -16,7 +16,7 @@ const LatestContributions = () => {
             if (books && user) {
                 books.map((book) => {
                     book.contributions.forEach(contribution => {
-                        if (contribution.user_id._id === user._id) contributions.push(book);
+                        if (contribution.user_id._id === user._id) contributions.push({book: book, date: contribution.created_at.split("T")[0]});
                     });
                 });
             }
@@ -30,10 +30,10 @@ const LatestContributions = () => {
         <section className="books-section">
             <h2 className="books-title">Latest contributions</h2>
             <div className="book-wrapper">
-            {contributed.length ?( contributed.slice(0,4).map((book) => (
+            {contributed.length ?( contributed.slice(0,4).map((contribution) => (
                 <div className='flex-wrapper'>
-                    <Link className='book-link' to={"/write?id=" + book._id}><p className="book-title">{book.title}</p></Link>
-                    <p className="book-date">{book.created_at.split("T")[0]}</p>
+                    <Link className='book-link' to={"/write?id=" + contribution.book._id}><p className="book-title">{contribution.book.title}</p></Link>
+                    <p className="book-date">{contribution.date}</p>
                 </div>
             ))) : (
                 <p className="book-error">No contributions yet.</p>

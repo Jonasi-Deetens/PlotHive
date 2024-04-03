@@ -21,7 +21,6 @@ const Write = () => {
     const isAuthorized = async () => {
       try {
         if (!user) {
-          console.log("a");
           const checkAuth = await authUser();
           if (!checkAuth) {
             navigate("/Login");
@@ -40,15 +39,18 @@ const Write = () => {
     const bookId = getBookIdFromUrl();
     const foundBook = getBookById(bookId);
     setBook(foundBook);
-    console.log(today);
-    const todaysContributions = foundBook.contributions.filter(
+    
+    let todaysContributions = foundBook.contributions.filter(
       (contribution) => {
-        console.log(contribution);
-        console.log(contribution.created_at.slice(0, 10));
         return contribution.created_at.slice(0, 10) === today;
       }
     );
-    console.log(todaysContributions);
+
+    todaysContributions = todaysContributions.sort((contA, contB) => {
+      const voteA = contA.upvoters.length;
+      const voteB = contB.upvoters.length;
+      return voteB - voteA;
+    })
     setContributions(todaysContributions);
 
     if (user && book && contributions) {
@@ -121,7 +123,7 @@ const Write = () => {
               {contributions?.map(
                 (contribution, index) =>
                   contribution.user_id._id != user._id && (
-                    <div key={contribution._id}>
+                    <div key={contribution._id} className={index == 0 ? "highlight" : ""}>
                       <Contribution contribution={contribution} />
                       {index < book.contributions.length - 1 && <hr />}
                     </div>

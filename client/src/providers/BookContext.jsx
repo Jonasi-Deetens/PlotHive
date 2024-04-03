@@ -15,7 +15,6 @@ const BookProvider = ({ children }) => {
             "Content-Type": "application/json",
           },
         });
-        console.log("huh")
         if (response.ok) {
           const data = await response.json();
           setBooks(data);
@@ -131,8 +130,6 @@ const BookProvider = ({ children }) => {
   const getBookById = (id) => {
     if (books) {
       const book = books.find((book) => book._id === id);
-      console.log("find book: ");
-      console.log(book);
       return book;
     }
   };
