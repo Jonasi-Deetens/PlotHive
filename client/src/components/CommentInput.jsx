@@ -32,8 +32,6 @@ const CommentInput = ({ contribution }) => {
   };
 
   const handleAddComment = async () => {
-    console.log("Adding comment:", newComment);
-    console.log(user);
     const commentData = {
       content: newComment,
       user_id: user,
@@ -53,7 +51,6 @@ const CommentInput = ({ contribution }) => {
       if (response.ok) {
         const data = await response.json();
         await addCommentToContribution(contribution, data);
-        console.log("Post created successfully");
         setNewComment("");
       } else {
         console.error("Failed to create post");

@@ -15,7 +15,6 @@ const BookProvider = ({ children }) => {
             "Content-Type": "application/json",
           },
         });
-        console.log("huh")
         if (response.ok) {
           const data = await response.json();
           setBooks(data);
@@ -66,8 +65,6 @@ const BookProvider = ({ children }) => {
   };
 
   const addContributionToBook = async (bookId, contribution) => {
-    console.log(bookId);
-    console.log(contribution);
     if (books) {
       const updatedBook = getBookById(bookId);
       updatedBook.contributions.push(contribution);
@@ -82,7 +79,6 @@ const BookProvider = ({ children }) => {
             body: JSON.stringify(updatedBook),
           }
         );
-        console.log(updatedBook);
         if (!response.ok) {
           throw new Error("Failed to update book");
         }
@@ -110,7 +106,6 @@ const BookProvider = ({ children }) => {
       if (!updateResponse.ok) {
         throw new Error("Failed to update contribution with new comment");
       }
-      console.log("Comment added to contribution successfully");
     } catch (e) {
       console.error(e.message);
     }
@@ -131,8 +126,6 @@ const BookProvider = ({ children }) => {
   const getBookById = (id) => {
     if (books) {
       const book = books.find((book) => book._id === id);
-      console.log("find book: ");
-      console.log(book);
       return book;
     }
   };

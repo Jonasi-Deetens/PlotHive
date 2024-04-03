@@ -22,7 +22,6 @@ const Read = () => {
     const isAuthorized = async () => {
       try {
         if (!user) {
-          console.log('a')
           const checkAuth = await authUser();
           if (!checkAuth) {
             navigate("/Login");
@@ -37,7 +36,6 @@ const Read = () => {
   }, [user, authUser]);
 
   useEffect(() => {
-    console.log("z")
     const fetchedBook = getBookById(bookId)
     if (fetchedBook) {
       fetchedBook.sections.sort((bookA, bookB) => {
@@ -85,7 +83,6 @@ const Read = () => {
 
   const genresToString = () => {
     if (book) {
-      console.log("in genresToString")
       let genres = "("
       
       book.genres.forEach((genre, index) => {

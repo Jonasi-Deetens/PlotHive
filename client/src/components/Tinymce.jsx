@@ -49,7 +49,6 @@ const Tinymce = ({ bookId }) => {
         if (response.ok) {
           const data = await response.json();
           await addContributionToBook(bookId, data);
-          console.log("Post created successfully");
         } else {
           console.error("Failed to create post");
         }

@@ -25,10 +25,8 @@ const port = process.env.PORT || 4000;
 connectToDatabase();
 
 cron.schedule('50 59 00 * * *', async () => {
-  // console.log('Creating new book...');
   // await BookController.createBook();
 
-  console.log('Updating Contributions...');
   await BookController.addFavoriteContributionsToBooks();
 
   wss.clients.forEach((client) => {
