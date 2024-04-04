@@ -109,6 +109,18 @@ const Tinymce = ({ bookId }) => {
             "help",
             "wordcount",
           ],
+          setup: function (editor) {
+            var max = 1200; // Set the character limit here
+            editor.on("submit", function (event) {
+              var numChars =
+                tinymce.activeEditor.plugins.wordcount.body.getCharacterCount();
+              if (numChars > max) {
+                alert("Maximum " + max + " characters allowed.");
+                event.preventDefault();
+                return false;
+              }
+            });
+          },
           toolbar:
             "bold italic | alignleft aligncenter alignright alignjustify | outdent indent",
           content_style:
