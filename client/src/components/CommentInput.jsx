@@ -7,8 +7,10 @@ import "../assets/styles/components/CommentInput/commentInput.css";
 
 const CommentInput = ({ contribution }) => {
   const [newComment, setNewComment] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
   const { user, authUser } = useContext(UserContext);
   const { addCommentToContribution } = useContext(BookContext);
+  const maxLength = 400;
 
   useEffect(() => {
     const isAuthorized = async () => {
@@ -28,7 +30,11 @@ const CommentInput = ({ contribution }) => {
   }, [authUser, user]);
 
   const handleInputChange = (event) => {
-    setNewComment(event.target.value);
+    const input = event.target.value;
+    if (input.length <= maxLength) {
+      // Check if input length exceeds the character limit
+      setNewComment(input);
+    }
   };
 
   const handleAddComment = async () => {
@@ -59,6 +65,15 @@ const CommentInput = ({ contribution }) => {
       console.log(e.message);
     }
   };
+
+  useEffect(() => {
+    if (newComment.length >= maxLength) {
+      setIsDisabled(true);
+    } else {
+      setIsDisabled(false);
+    }
+  }, [newComment]);
+
   return (
     <div className="comment-input">
       <textarea
@@ -66,8 +81,15 @@ const CommentInput = ({ contribution }) => {
         placeholder="Add a comment..."
         value={newComment}
         onChange={handleInputChange}
+        disabled={isDisabled} // Disable textarea if character limit is reached
       />
-      <button onClick={handleAddComment}>Submit</button>
+      <button onClick={handleAddComment} disabled={isDisabled}>
+        Submit
+      </button>
+      {isDisabled && (
+        <p>Maximum character limit reached ({maxLength} characters).</p>
+      )}
+      {"Comment can only be 400 characters"}
     </div>
   );
 };
