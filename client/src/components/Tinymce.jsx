@@ -110,10 +110,10 @@ const Tinymce = ({ bookId }) => {
             "wordcount",
           ],
           setup: function (editor) {
-            var max = 1200; // Set the character limit here
+            var max = 1200;
             editor.on("submit", function (event) {
               var numChars =
-                tinymce.activeEditor.plugins.wordcount.body.getCharacterCount();
+                editor.activeEditor.plugins.wordcount.body.getCharacterCount();
               if (numChars > max) {
                 alert("Maximum " + max + " characters allowed.");
                 event.preventDefault();
@@ -124,7 +124,7 @@ const Tinymce = ({ bookId }) => {
           toolbar:
             "bold italic | alignleft aligncenter alignright alignjustify | outdent indent",
           content_style:
-            "p { color: #fefefe; font-family: 'Libre Baskerville', serif; font-size: 1.2rem; } body { background-color: #414042; }",
+            "p { color: #fefefe; font-family: 'Libre Baskerville', serif; font-size: 1.2rem; } body { background-color: #414042; } ::placeholder { color: #ecf0f3; }",
           placeholder: "Start writing your story here!",
           readonly: isDisabled,
         }}
