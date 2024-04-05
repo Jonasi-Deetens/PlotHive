@@ -858,7 +858,6 @@ main.read-page section.read-page-section {
   background-color: #414042;
   position: relative;
   width: 70%;
-  max-height: 900px;
   padding: 100px 0 0 0;
   margin: 50px auto;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
