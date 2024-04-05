@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../providers/UserContext";
 import { Navigate } from "react-router";
 import { BookContext } from "../providers/BookContext";
+import "../assets/styles/components/CommentInput/commentInput.css";
 
 const CommentInput = ({ contribution }) => {
   const [newComment, setNewComment] = useState("");
@@ -31,15 +32,13 @@ const CommentInput = ({ contribution }) => {
   };
 
   const handleAddComment = async () => {
-    console.log("Adding comment:", newComment);
-    console.log(user);
     const commentData = {
       content: newComment,
       user_id: user,
     };
     try {
       const response = await fetch(
-        "https://plothiveserver-9kh2sv0d.b4a.run/api/comments",
+        "https://plothiveserver1-1y57tl0h.b4a.run/api/comments",
         {
           method: "POST",
           headers: {
@@ -52,7 +51,6 @@ const CommentInput = ({ contribution }) => {
       if (response.ok) {
         const data = await response.json();
         await addCommentToContribution(contribution, data);
-        console.log("Post created successfully");
         setNewComment("");
       } else {
         console.error("Failed to create post");
@@ -62,16 +60,16 @@ const CommentInput = ({ contribution }) => {
     }
   };
   return (
-    <>
-      <input
+    <div className="comment-input">
+      <textarea
         type="text"
         placeholder="Add a comment..."
         value={newComment}
         onChange={handleInputChange}
         maxLength={300}
       />
-      <button onClick={handleAddComment}>Add Comment</button>
-    </>
+      <button onClick={handleAddComment}>Submit</button>
+    </div>
   );
 };
 
